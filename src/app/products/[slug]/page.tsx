@@ -371,7 +371,9 @@ export default function ProductPage({ params }: ProductPageProps) {
             <p className="body-text mb-8">
               The product you're looking for doesn't exist or has been moved.
             </p>
-            <Button href="/products">Back to Products</Button>
+            <Link href="/products">
+              <Button>Back to Products</Button>
+            </Link>
           </div>
         </div>
       </Layout>
@@ -424,13 +426,17 @@ export default function ProductPage({ params }: ProductPageProps) {
 
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <Button size="lg" href={product.demoUrl}>
-                        <Play size={20} className="mr-2" />
-                        Book a Demo
-                      </Button>
-                      <Button variant="secondary" size="lg" href="#pricing">
-                        View Pricing
-                      </Button>
+                      <Link href={product.demoUrl}>
+                        <Button size="lg">
+                          <Play size={20} className="mr-2" />
+                          Book a Demo
+                        </Button>
+                      </Link>
+                      <Link href="#pricing">
+                        <Button variant="secondary" size="lg">
+                          View Pricing
+                        </Button>
+                      </Link>
                     </div>
                   </div>
 
@@ -518,13 +524,14 @@ export default function ProductPage({ params }: ProductPageProps) {
                       ))}
                     </ul>
 
-                    <Button 
-                      className="w-full" 
-                      variant={'popular' in plan && plan.popular ? 'primary' : 'secondary'}
-                      href={plan.price === 'Custom' ? '/contact' : '/book-demo'}
-                    >
-                      {plan.price === 'Custom' ? 'Contact Sales' : 'Get Started'}
-                    </Button>
+                    <Link href={plan.price === 'Custom' ? '/contact' : '/book-demo'}>
+                      <Button 
+                        className="w-full" 
+                        variant={'popular' in plan && plan.popular ? 'primary' : 'secondary'}
+                      >
+                        {plan.price === 'Custom' ? 'Contact Sales' : 'Get Started'}
+                      </Button>
+                    </Link>
                   </div>
                 ))}
               </div>

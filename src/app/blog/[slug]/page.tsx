@@ -187,7 +187,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             <p className="body-text mb-8">
               The blog post you're looking for doesn't exist or has been moved.
             </p>
-            <Button href="/blog">Back to Blog</Button>
+            <Link href="/blog">
+              <Button>Back to Blog</Button>
+            </Link>
           </div>
         </div>
       </Layout>
@@ -326,9 +328,11 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                       <p className="body-text text-sm mb-4">{relatedPost.excerpt}</p>
                       <div className="flex items-center justify-between">
                         <span className="text-xs text-medium-grey">{relatedPost.readTime}</span>
-                        <Button variant="secondary" size="sm" href={`/blog/${relatedSlug}`}>
-                          Read More
-                        </Button>
+                        <Link href={`/blog/${relatedSlug}`}>
+                          <Button variant="secondary" size="sm">
+                            Read More
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   )
@@ -347,9 +351,11 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 <p className="text-xl text-navy-100 mb-8">
                   Get the latest articles on AI technology and digital transformation in East Africa delivered to your inbox.
                 </p>
-                <Button size="lg" href="#newsletter">
-                  Subscribe to Newsletter
-                </Button>
+                <Link href="#newsletter">
+                  <Button size="lg">
+                    Subscribe to Newsletter
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -299,7 +299,9 @@ export default function JobPage({ params }: JobPageProps) {
             <p className="body-text mb-8">
               The job position you're looking for doesn't exist or has been closed.
             </p>
-            <Button href="/careers">View All Jobs</Button>
+            <Link href="/careers">
+              <Button>View All Jobs</Button>
+            </Link>
           </div>
         </div>
       </Layout>
@@ -491,10 +493,12 @@ export default function JobPage({ params }: JobPageProps) {
                   </div>
 
                   {/* Apply Button */}
-                  <Button size="lg" className="w-full" href="#apply">
-                    <Send size={20} className="mr-2" />
-                    Apply Now
-                  </Button>
+                  <Link href="#apply">
+                    <Button size="lg" className="w-full">
+                      <Send size={20} className="mr-2" />
+                      Apply Now
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
