@@ -15,6 +15,13 @@ export default function HomePage() {
         
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="space-y-8">
+            <div className="flex justify-center mb-6">
+              <img 
+                src="/logo.png" 
+                alt="Mylesoft Technologies" 
+                className="w-16 h-16 object-contain"
+              />
+            </div>
             <div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                 Transform Your Business with

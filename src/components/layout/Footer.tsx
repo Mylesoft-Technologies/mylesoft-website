@@ -181,7 +181,12 @@ export function Footer() {
           {/* Bottom Section */}
           <div className="border-t border-navy-400 pt-8 mt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-center md:text-left">
+              <div className="flex flex-col items-center md:items-start space-y-2">
+                <img 
+                  src="/logo.png" 
+                  alt="Mylesoft Technologies" 
+                  className="w-8 h-8 object-contain"
+                />
                 <p className="text-navy-200 mb-2">
                   Transforming Industries, Empowering Generations.
                 </p>

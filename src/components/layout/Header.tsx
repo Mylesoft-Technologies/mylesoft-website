@@ -27,9 +27,11 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <div className="w-10 h-10 bg-gradient-to-br from-navy-500 to-navy-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <span className="text-white font-bold text-lg">M</span>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Mylesoft Technologies" 
+              className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+            />
             <span className="ml-3 text-xl font-bold text-navy-500 group-hover:text-gold-500 transition-colors duration-300">Mylesoft</span>
           </Link>
 
