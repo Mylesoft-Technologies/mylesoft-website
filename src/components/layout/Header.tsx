@@ -7,20 +7,30 @@ import { DarkModeToggle } from '@/components/ui/DarkModeToggle'
 import { MegaMenu } from '@/components/layout/MegaMenu'
 import { Logo } from '@/components/ui/Logo'
 import Link from 'next/link'
+import { useSmoothScroll } from '@/components/ui/ScrollReveal'
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { scrollToElement } = useSmoothScroll()
 
   const navigation = [
-    { name: 'Home', href: '/' },
+    { name: 'Home', href: '#hero' },
+    { name: 'Stats', href: '#stats' },
+    { name: 'Features', href: '#features' },
+    { name: 'Progress', href: '#progress' },
     { name: 'Services', href: '/services' },
-    { name: 'Pricing', href: '/pricing' },
     { name: 'About', href: '/about' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Book Demo', href: '/book-demo' },
   ]
+
+  const handleNavClick = (href: string) => {
+    if (href.startsWith('#')) {
+      scrollToElement(href.substring(1), 80)
+    } else {
+      window.location.href = href
+    }
+    setIsMobileMenuOpen(false)
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50">
@@ -36,14 +46,14 @@ export function Header() {
           <nav className="hidden lg:flex items-center space-x-8">
             <MegaMenu />
             {navigation.map((item) => (
-              <Link
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => handleNavClick(item.href)}
                 className="relative text-gray-600 hover:text-navy-500 transition-colors duration-200 font-medium group"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-400 group-hover:w-full transition-all duration-300"></span>
-              </Link>
+              </button>
             ))}
           </nav>
 
@@ -72,22 +82,20 @@ export function Header() {
         <div className="lg:hidden bg-white border-t border-gray-200/50">
           <div className="px-4 py-6 space-y-4">
             <div className="flex flex-col space-y-4">
-              <Link
-                href="/products"
-                className="block px-4 py-3 text-lg font-medium text-gray-600 hover:text-navy-500 hover:bg-gray-50 rounded-lg transition-colors duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
+              <button
+                onClick={() => handleNavClick('/products')}
+                className="block px-4 py-3 text-lg font-medium text-gray-600 hover:text-navy-500 hover:bg-gray-50 rounded-lg transition-colors duration-200 text-left"
               >
                 Products
-              </Link>
+              </button>
               {navigation.map((item) => (
-                <Link
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="block px-4 py-3 text-lg font-medium text-gray-600 hover:text-navy-500 hover:bg-gray-50 rounded-lg transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => handleNavClick(item.href)}
+                  className="block px-4 py-3 text-lg font-medium text-gray-600 hover:text-navy-500 hover:bg-gray-50 rounded-lg transition-colors duration-200 text-left"
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
             </div>
             
