@@ -4,6 +4,7 @@ import { Layout } from '@/components/layout/Layout'
 import { AnalyticsProvider } from '@/components/analytics/Analytics'
 import { CookieConsent } from '@/components/ui/CookieConsent'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
+import { LiveChat } from '@/components/ui/LiveChat'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -122,6 +123,7 @@ export default function RootLayout({
         
         <CookieConsent />
         <WhatsAppButton />
+        <LiveChat />
         <AnalyticsProvider />
       </body>
     </html>
