@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { DarkModeToggle } from '@/components/ui/DarkModeToggle'
 import { MegaMenu } from '@/components/layout/MegaMenu'
+import { Logo } from '@/components/ui/Logo'
 import Link from 'next/link'
 
 export function Header() {
@@ -27,11 +28,7 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <img 
-              src="/logo.png" 
-              alt="Mylesoft Technologies" 
-              className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
-            />
+            <Logo size="md" className="group-hover:scale-110 transition-transform duration-300" />
             <span className="ml-3 text-xl font-bold text-navy-500 group-hover:text-gold-500 transition-colors duration-300">Mylesoft</span>
           </Link>
 
