@@ -12,7 +12,10 @@ import {
   Globe,
   TrendingUp,
   Shield,
-  Zap
+  Zap,
+  ArrowRight,
+  Star,
+  CheckCircle
 } from 'lucide-react'
 
 const featuredProducts = [
@@ -29,37 +32,65 @@ const featuredProducts = [
       'Library Management'
     ],
     status: 'live' as const,
-    href: '/products/edumyles'
-  },
-  {
-    name: 'MylesCare',
-    description: 'AI-powered hospital management system for modern healthcare delivery.',
-    icon: <Icon name="stethoscope" className="text-gold-400" />,
-    features: [
-      'Patient Records Management',
-      'Appointment Scheduling',
-      'AI Diagnostic Support',
-      'Medical Billing',
-      'Inventory Management',
-      'Telemedicine Integration'
-    ],
-    status: 'live' as const,
     href: '/products/mylescare'
   },
   {
     name: 'AgriMyles',
-    description: 'Smart farming solution for agricultural productivity and sustainability.',
-    icon: <Icon name="sprout" className="text-gold-400" />,
+    description: 'Smart agricultural platform empowering farmers with data-driven insights.',
+    icon: <Icon name="leaf" className="text-gold-400" />,
     features: [
-      'Crop Health Monitoring',
-      'Weather Integration',
-      'Market Price Analytics',
-      'Irrigation Management',
-      'Supply Chain Tracking',
-      'Farm Management'
+      'Crop Monitoring & Analysis',
+      'Weather Forecasting',
+      'Market Price Tracking',
+      'Farm Resource Management',
+      'Yield Prediction',
+      'Supply Chain Integration'
     ],
-    status: 'development' as const,
+    status: 'live' as const,
     href: '/products/agrimyles'
+  },
+  {
+    name: 'MylesCRM',
+    description: 'Customer relationship management solution for growing businesses.',
+    icon: <Icon name="users" className="text-gold-400" />,
+    features: [
+      'Lead Management',
+      'Sales Pipeline Tracking',
+      'Customer Analytics',
+      'Email Campaigns',
+      'Task Automation',
+      'Performance Reporting'
+    ],
+    status: 'beta' as const,
+    href: '/products/mylescrm'
+  }
+]
+
+const stats = [
+  { number: '500+', label: 'Schools Transformed', icon: <Target className="w-8 h-8" /> },
+  { number: '50K+', label: 'Students Managed', icon: <Users className="w-8 h-8" /> },
+  { number: '99.9%', label: 'Uptime Guaranteed', icon: <Shield className="w-8 h-8" /> },
+  { number: '24/7', label: 'Support Available', icon: <Heart className="w-8 h-8" /> }
+]
+
+const testimonials = [
+  {
+    name: 'Dr. Sarah Johnson',
+    role: 'Principal, Nairobi Academy',
+    content: 'EduMyles has transformed how we manage our school. The automation and analytics have saved us countless hours.',
+    rating: 5
+  },
+  {
+    name: 'John Kimani',
+    role: 'CEO, AgriTech Solutions',
+    content: 'AgriMyles gives us real-time insights into crop performance. Our yields have increased by 30% since implementation.',
+    rating: 5
+  },
+  {
+    name: 'Mary Wanjiku',
+    role: 'Hospital Administrator',
+    content: 'MylesCare streamlined our patient management system. Efficiency has improved dramatically across all departments.',
+    rating: 5
   }
 ]
 
@@ -97,165 +128,141 @@ const howItWorksSteps = [
   }
 ]
 
-const testimonials = [
-  {
-    name: 'Dr. Sarah Kimani',
-    role: 'Principal, Nairobi Academy',
-    content: 'EduMyles has transformed how we manage our school. The efficiency gains have been remarkable.',
-    rating: 5
-  },
-  {
-    name: 'John Mwangi',
-    role: 'CEO, Mwangi Enterprises',
-    content: 'The AI-powered solutions have revolutionized our business operations. Highly recommended!',
-    rating: 5
-  },
-  {
-    name: 'Grace Achieng',
-    role: 'Director, County Hospital',
-    content: 'MylesCare has improved our patient care and operational efficiency significantly.',
-    rating: 5
-  }
-]
-
 export default function HomePage() {
   return (
     <Layout>
-      <div className="min-h-screen">
-        {/* Hero Section */}
-        <section className="section gradient-navy">
-          <div className="section-padding">
-            <div className="text-center text-white">
-              <h1 className="heading-1 mb-6 fade-in">Transforming Africa with AI</h1>
-              <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed mb-8 slide-up">
-                East Africa's leading AI-powered software company building innovative solutions for Education, Healthcare, Agriculture, and Business.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in">
-                <Button size="lg">Get Started</Button>
-                <Button variant="secondary" size="lg">Book a Demo</Button>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-navy-500 via-navy-600 to-navy-700 overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-gold-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gold-300/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="space-y-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+              Transform Your Business with
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">
+                AI-Powered Solutions
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
+              East Africa's leading technology company delivering innovative solutions for Education, Healthcare, Agriculture, and Business.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button size="lg" className="shadow-2xl hover:shadow-3xl transform hover:-translate-y-1">
+                Get Started Today
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button variant="secondary" size="lg" className="shadow-2xl hover:shadow-3xl">
+                Book a Demo
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 bg-gradient-to-r from-gray-50 to-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-gold-400 to-gold-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="text-white">{stat.icon}</div>
+                </div>
+                <div className="text-4xl font-bold text-navy-500 mb-2 group-hover:text-gold-500 transition-colors duration-300">
+                  {stat.number}
+                </div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Impact Stats */}
-        <section className="section">
-          <div className="section-padding">
-            <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4">Making an Impact</h2>
-              <p className="body-text max-w-2xl mx-auto">
-                Our solutions are transforming organizations across East Africa.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {impactStats.map((stat, index) => (
-                <div key={index} className="text-center scale-in" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="stat-number mb-2">{stat.number}</div>
-                  <div className="stat-label">{stat.label}</div>
+      {/* Featured Products */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-navy-500 mb-4">
+              Our Featured Solutions
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Industry-specific products designed to solve real business challenges in East Africa
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {featuredProducts.map((product, index) => (
+              <ProductCard key={index} {...product} />
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button variant="outline" size="lg" className="shadow-lg hover:shadow-xl">
+              View All Products
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-navy-500 mb-4">
+              Trusted by Industry Leaders
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See what our customers have to say about their transformation journey
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-gold-400 fill-current" />
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Products */}
-        <section className="section bg-off-white">
-          <div className="section-padding">
-            <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4">Featured Solutions</h2>
-              <p className="body-text max-w-2xl mx-auto">
-                Discover our most popular AI-powered solutions designed for African markets.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredProducts.map((product, index) => (
-                <div key={index} className="fade-in" style={{ animationDelay: `${index * 150}ms` }}>
-                  <ProductCard {...product} />
+                <p className="text-gray-700 mb-6 italic">"{testimonial.content}"</p>
+                <div>
+                  <div className="font-semibold text-navy-500">{testimonial.name}</div>
+                  <div className="text-gray-600 text-sm">{testimonial.role}</div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* How It Works */}
-        <section className="section">
-          <div className="section-padding">
-            <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4">How It Works</h2>
-              <p className="body-text max-w-2xl mx-auto">
-                Our proven process ensures successful implementation and maximum value.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {howItWorksSteps.map((step, index) => (
-                <div key={index} className="text-center slide-up" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    {step.icon}
-                  </div>
-                  <div className="text-2xl font-bold text-gold-400 mb-3">Step {step.number}</div>
-                  <h3 className="heading-3 mb-3">{step.title}</h3>
-                  <p className="body-text">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials */}
-        <section className="section bg-off-white">
-          <div className="section-padding">
-            <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4">What Our Customers Say</h2>
-              <p className="body-text max-w-2xl mx-auto">
-                Don't just take our word for it. Here's what our customers have to say.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="testimonial-card fade-in" style={{ animationDelay: `${index * 150}ms` }}>
-                  <div className="testimonial-stars">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <span key={i}>★</span>
-                    ))}
-                  </div>
-                  <p className="testimonial-quote">{testimonial.content}</p>
-                  <div className="testimonial-author">{testimonial.name}</div>
-                  <div className="small-text text-medium-grey">{testimonial.role}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="section gradient-navy">
-          <div className="section-padding">
-            <div className="text-center text-white">
-              <h2 className="heading-2 mb-4">Ready to Transform Your Organization?</h2>
-              <p className="text-xl text-navy-100 mb-8">
-                Join hundreds of organizations across East Africa using our AI-powered solutions.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg">Get Started</Button>
-                <Button variant="secondary" size="lg">Contact Sales</Button>
               </div>
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Newsletter Section */}
-        <section className="section bg-off-white">
-          <div className="section-padding">
-            <div className="max-w-2xl mx-auto">
-              <NewsletterSignup />
-            </div>
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-navy-500 to-navy-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl text-gray-200 mb-8">
+            Join hundreds of organizations across East Africa already using our solutions
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-white text-navy-500 hover:bg-gray-100 shadow-2xl hover:shadow-3xl">
+              Start Your Journey
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-navy-500">
+              Schedule Consultation
+            </Button>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <NewsletterSignup />
     </Layout>
   )
 }
