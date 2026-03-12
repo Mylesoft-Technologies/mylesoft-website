@@ -1,212 +1,244 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { Icon } from '@/components/ui/Icon'
 import { Logo } from '@/components/ui/Logo'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
+import { ArrowUp, Mail, Phone, MapPin, Heart, Sparkles } from 'lucide-react'
+import { Button } from '@/components/ui/Button'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const [email, setEmail] = useState('')
+  const [isSubscribed, setIsSubscribed] = useState(false)
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Handle newsletter subscription
+    setIsSubscribed(true)
+    setTimeout(() => setIsSubscribed(false), 3000)
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
-    <footer className="bg-navy-500 text-white">
-      <div className="container">
+    <footer className="bg-gradient-to-br from-navy-600 via-navy-700 to-navy-800 text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+      </div>
+
+      <div className="container relative z-10">
+        {/* Main Footer Content */}
         <div className="section-padding">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+            
+            {/* Brand Column */}
+            <ScrollReveal direction="up" delay={0.1} className="lg:col-span-2">
+              <div className="space-y-6">
+                <div className="flex items-center space-x-3">
+                  <Logo size="lg" fallbackColor="gold" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">Mylesoft</h3>
+                    <p className="text-gold-400 text-sm">Technologies</p>
+                  </div>
+                </div>
+                
+                <p className="text-navy-200 leading-relaxed max-w-sm">
+                  Transforming industries across East Africa with innovative AI-powered solutions. 
+                  Your trusted partner for digital excellence.
+                </p>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3 text-navy-200">
+                    <Mail className="w-5 h-5 text-gold-400" />
+                    <span>info@mylesoft.com</span>
+                  </div>
+                  <div className="flex items-center space-x-3 text-navy-200">
+                    <Phone className="w-5 h-5 text-gold-400" />
+                    <span>+254 700 123 456</span>
+                  </div>
+                  <div className="flex items-center space-x-3 text-navy-200">
+                    <MapPin className="w-5 h-5 text-gold-400" />
+                    <span>Nairobi, Kenya</span>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
             {/* Products Column */}
-            <div>
-              <h3 className="heading-3 mb-6 text-white">Products</h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link href="/products/edumyles" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    EduMyles
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/products/mylescare" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    MylesCare
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/products/agrimyles" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    AgriMyles
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/products/mylescrm" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    MylesCRM
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/products/myles-ai" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    Myles AI
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/products" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    All Products →
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <ScrollReveal direction="up" delay={0.2}>
+              <div className="space-y-6">
+                <h3 className="text-xl font-bold text-white mb-6">Products</h3>
+                <ul className="space-y-3">
+                  {[
+                    { name: 'EduMyles', href: '/products/edumyles', desc: 'School Management' },
+                    { name: 'MylesCare', href: '/products/mylescare', desc: 'Healthcare Solutions' },
+                    { name: 'AgriMyles', href: '/products/agrimyles', desc: 'Agricultural Tech' },
+                    { name: 'MylesCRM', href: '/products/mylescrm', desc: 'Business Solutions' }
+                  ].map((item, index) => (
+                    <li key={index}>
+                      <Link 
+                        href={item.href}
+                        className="group block"
+                      >
+                        <div className="text-white hover:text-gold-400 transition-all duration-300 font-medium">
+                          {item.name}
+                        </div>
+                        <div className="text-navy-300 text-sm group-hover:text-navy-200 transition-colors duration-300">
+                          {item.desc}
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
 
             {/* Company Column */}
-            <div>
-              <h3 className="heading-3 mb-6 text-white">Company</h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link href="/about" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/careers" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/book-demo" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    Book a Demo
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <ScrollReveal direction="up" delay={0.3}>
+              <div className="space-y-6">
+                <h3 className="text-xl font-bold text-white mb-6">Company</h3>
+                <ul className="space-y-3">
+                  {[
+                    { name: 'About Us', href: '/about' },
+                    { name: 'Our Team', href: '/team' },
+                    { name: 'Careers', href: '/careers' },
+                    { name: 'Blog', href: '/blog' },
+                    { name: 'Partners', href: '/partners' }
+                  ].map((item, index) => (
+                    <li key={index}>
+                      <Link 
+                        href={item.href}
+                        className="text-navy-200 hover:text-gold-400 transition-all duration-300 flex items-center group"
+                      >
+                        <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300">
+                          {item.name}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
 
-            {/* Resources Column */}
-            <div>
-              <h3 className="heading-3 mb-6 text-white">Resources</h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link href="/services" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/pricing" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/docs" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    Documentation
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/support" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    Support
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/partners" className="text-navy-200 hover:text-gold-400 transition-colors">
-                    Partners
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            {/* Newsletter Column */}
+            <ScrollReveal direction="up" delay={0.4}>
+              <div className="space-y-6">
+                <h3 className="text-xl font-bold text-white mb-6">Stay Connected</h3>
+                <p className="text-navy-200 mb-4">
+                  Get the latest updates on our innovative solutions and industry insights.
+                </p>
+                
+                <form onSubmit={handleNewsletterSubmit} className="space-y-4">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="w-full px-4 py-3 bg-navy-600/50 border border-navy-500 rounded-lg text-white placeholder-navy-300 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300"
+                    required
+                  />
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-500 hover:to-gold-600 text-white shadow-premium-gold hover:shadow-premium-glow transform hover:-translate-y-0.5 transition-all duration-300"
+                    disabled={isSubscribed}
+                  >
+                    {isSubscribed ? (
+                      <span className="flex items-center justify-center">
+                        <Heart className="w-4 h-4 mr-2" />
+                        Subscribed!
+                      </span>
+                    ) : (
+                      <span className="flex items-center justify-center">
+                        <Sparkles className="w-4 h-4 mr-2" />
+                        Subscribe
+                      </span>
+                    )}
+                  </Button>
+                </form>
 
-            {/* Contact Column */}
-            <div>
-              <h3 className="heading-3 mb-6 text-white">Get in Touch</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-navy-200 mb-1">Email</p>
-                  <a href="mailto:info@mylesoft.com" className="text-gold-400 hover:text-gold-300 transition-colors">
-                    info@mylesoft.com
-                  </a>
-                </div>
-                <div>
-                  <p className="text-navy-200 mb-1">Phone</p>
-                  <a href="tel:+254743993715" className="text-gold-400 hover:text-gold-300 transition-colors">
-                    +254 743 993 715
-                  </a>
-                </div>
-                <div>
-                  <p className="text-navy-200 mb-1">Office</p>
-                  <p className="text-navy-200">
-                    Wester Heights, Westlands<br />
-                    Nairobi, Kenya
-                  </p>
+                {/* Social Links */}
+                <div className="space-y-3">
+                  <p className="text-navy-200 text-sm">Follow us</p>
+                  <div className="flex space-x-3">
+                    {[
+                      { name: 'linkedin', href: 'https://linkedin.com/company/mylesoft-technologies' },
+                      { name: 'twitter', href: 'https://twitter.com/mylesofttech' },
+                      { name: 'github', href: 'https://github.com/Mylesoft-Technologies' },
+                      { name: 'youtube', href: 'https://youtube.com/@mylesofttechnologies' }
+                    ].map((social, index) => (
+                      <Link
+                        key={index}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-navy-600/50 border border-navy-500 rounded-lg flex items-center justify-center text-navy-200 hover:text-gold-400 hover:bg-navy-600 hover:border-gold-400/50 transform hover:scale-110 transition-all duration-300"
+                        aria-label={social.name}
+                      >
+                        <Icon name={social.name} size={18} />
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
-
-              {/* Social Links */}
-              <div className="flex space-x-4 mt-6">
-                <a
-                  href="https://linkedin.com/company/mylesoft-technologies"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-navy-200 hover:text-gold-400 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Icon name="linkedin" size={20} />
-                </a>
-                <a
-                  href="https://twitter.com/mylesofttech"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-navy-200 hover:text-gold-400 transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Icon name="twitter" size={20} />
-                </a>
-                <a
-                  href="https://github.com/Mylesoft-Technologies"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-navy-200 hover:text-gold-400 transition-colors"
-                  aria-label="GitHub"
-                >
-                  <Icon name="github" size={20} />
-                </a>
-                <a
-                  href="https://youtube.com/@mylesofttechnologies"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-navy-200 hover:text-gold-400 transition-colors"
-                  aria-label="YouTube"
-                >
-                  <Icon name="youtube" size={20} />
-                </a>
-              </div>
-            </div>
+            </ScrollReveal>
           </div>
+        </div>
 
-          {/* Bottom Section */}
-          <div className="border-t border-navy-400 pt-8 mt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="flex flex-col items-center md:items-start space-y-2">
-                <Logo size="sm" fallbackColor="gold" />
-                <p className="text-navy-200 mb-2">
-                  Transforming Industries, Empowering Generations.
-                </p>
-                <p className="text-sm text-navy-300">
-                  {currentYear} Mylesoft Technologies Limited. All rights reserved.
-                </p>
+        {/* Bottom Section */}
+        <div className="border-t border-navy-600/50 py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <ScrollReveal direction="up" delay={0.5}>
+              <div className="text-navy-200 text-sm">
+                © {currentYear} Mylesoft Technologies. All rights reserved.
               </div>
-
-              <div className="flex flex-wrap items-center justify-center md:justify-end space-x-6 text-sm">
-                <Link href="/legal/privacy" className="text-navy-300 hover:text-gold-400 transition-colors">
+            </ScrollReveal>
+            
+            <ScrollReveal direction="up" delay={0.6}>
+              <div className="flex items-center space-x-6 text-sm">
+                <Link href="/privacy" className="text-navy-200 hover:text-gold-400 transition-colors duration-300">
                   Privacy Policy
                 </Link>
-                <Link href="/legal/terms" className="text-navy-300 hover:text-gold-400 transition-colors">
+                <Link href="/terms" className="text-navy-200 hover:text-gold-400 transition-colors duration-300">
                   Terms of Service
                 </Link>
-                <Link href="/legal/cookies" className="text-navy-300 hover:text-gold-400 transition-colors">
+                <Link href="/cookies" className="text-navy-200 hover:text-gold-400 transition-colors duration-300">
                   Cookie Policy
                 </Link>
               </div>
-            </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="up" delay={0.7}>
+              <button
+                onClick={scrollToTop}
+                className="group flex items-center space-x-2 text-navy-200 hover:text-gold-400 transition-all duration-300"
+              >
+                <span className="text-sm">Back to top</span>
+                <ArrowUp className="w-4 h-4 group-hover:animate-bounce" />
+              </button>
+            </ScrollReveal>
           </div>
         </div>
+
+        {/* Tagline */}
+        <ScrollReveal direction="fade" delay={0.8}>
+          <div className="text-center py-6 border-t border-navy-600/30">
+            <p className="text-gold-400 font-semibold italic text-lg">
+              Transforming Industries, Empowering Generations.
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
+
+      {/* Floating Elements */}
+      <div className="absolute top-10 left-10 w-20 h-20 bg-gold-400/10 rounded-full blur-xl animate-pulse" />
+      <div className="absolute bottom-10 right-10 w-32 h-32 bg-gold-400/5 rounded-full blur-2xl animate-pulse delay-1000" />
     </footer>
   )
 }
