@@ -1,5 +1,130 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
+import { ProductCard } from '@/components/ui/ProductCard'
+import { Icon } from '@/components/ui/Icon'
+import { StepCard } from '@/components/ui/StepCard'
+import { TestimonialCard } from '@/components/ui/TestimonialCard'
+import { Calendar, Settings, Rocket } from 'lucide-react'
+
+const featuredProducts = [
+  {
+    name: 'EduMyles',
+    description: 'Complete school management system transforming education across East Africa.',
+    icon: <Icon name="graduation-cap" className="text-gold-400" />,
+    features: [
+      'Student Information Management',
+      'Automated Grading & Reports',
+      'Parent Communication Portal'
+    ],
+    status: 'live' as const,
+    href: '/products/edumyles'
+  },
+  {
+    name: 'MylesCare',
+    description: 'AI-powered hospital management system for modern healthcare delivery.',
+    icon: <Icon name="stethoscope" className="text-gold-400" />,
+    features: [
+      'Patient Records Management',
+      'Appointment Scheduling',
+      'AI Diagnostic Support'
+    ],
+    status: 'live' as const,
+    href: '/products/mylescare'
+  },
+  {
+    name: 'MylesCRM',
+    description: 'Customer relationship management built for African businesses.',
+    icon: <Icon name="users" className="text-gold-400" />,
+    features: [
+      'Lead Management',
+      'Sales Pipeline Tracking',
+      'Customer Analytics'
+    ],
+    status: 'live' as const,
+    href: '/products/mylescrm'
+  },
+  {
+    name: 'AgriMyles',
+    description: 'Smart farming solution for agricultural productivity and sustainability.',
+    icon: <Icon name="sprout" className="text-gold-400" />,
+    features: [
+      'Crop Health Monitoring',
+      'Weather Integration',
+      'Market Price Analytics'
+    ],
+    status: 'live' as const,
+    href: '/products/agrimyles'
+  },
+  {
+    name: 'Myles AI',
+    description: 'Africa\'s intelligence engine with local language support.',
+    icon: <Icon name="brain" className="text-gold-400" />,
+    features: [
+      'Multi-language AI Models',
+      'Industry-specific Solutions',
+      'Real-time Analytics'
+    ],
+    status: 'live' as const,
+    href: '/products/myles-ai'
+  },
+  {
+    name: 'MylesPay',
+    description: 'Digital payment solution for seamless transactions.',
+    icon: <Icon name="credit-card" className="text-gold-400" />,
+    features: [
+      'Mobile Money Integration',
+      'Multi-currency Support',
+      'Instant Settlements'
+    ],
+    status: 'development' as const,
+    href: '/products/mylespay'
+  }
+]
+
+const howItWorksSteps = [
+  {
+    number: 1,
+    title: 'Book a Demo',
+    description: 'Schedule a personalized demonstration with our solutions expert to see how Mylesoft can transform your organization.',
+    icon: <Calendar size={24} />
+  },
+  {
+    number: 2,
+    title: 'Customise',
+    description: 'Work with our team to configure the solution to your specific needs and integrate with your existing systems.',
+    icon: <Settings size={24} />
+  },
+  {
+    number: 3,
+    title: 'Go Live',
+    description: 'Launch with comprehensive training, ongoing support, and start seeing immediate results in your operations.',
+    icon: <Rocket size={24} />
+  }
+]
+
+const testimonials = [
+  {
+    name: 'Dr. Sarah Kimani',
+    title: 'Principal',
+    organization: 'Nairobi Girls High School',
+    quote: 'EduMyles has transformed how we manage student information and communicate with parents. The AI-powered analytics help us make data-driven decisions.',
+    rating: 5
+  },
+  {
+    name: 'John Mwangi',
+    title: 'CEO',
+    organization: 'Mombasa General Hospital',
+    quote: 'MylesCare revolutionized our patient management system. We\'ve reduced wait times by 40% and improved patient outcomes significantly.',
+    rating: 5
+  },
+  {
+    name: 'Grace Achieng',
+    title: 'Farm Manager',
+    organization: 'Green Valley Farms',
+    quote: 'AgriMyles helps us monitor crop health and predict yields. Our productivity increased by 35% in the first season.',
+    rating: 5
+  }
+]
 
 export default function HomePage() {
   return (
@@ -64,7 +189,9 @@ export default function HomePage() {
               </p>
             </div>
             <div className="grid-cols-3">
-              {/* Product cards will be added here */}
+              {featuredProducts.map((product) => (
+                <ProductCard key={product.name} {...product} />
+              ))}
             </div>
           </div>
         </section>
@@ -79,7 +206,9 @@ export default function HomePage() {
               </p>
             </div>
             <div className="grid-cols-3">
-              {/* Steps will be added here */}
+              {howItWorksSteps.map((step) => (
+                <StepCard key={step.number} {...step} />
+              ))}
             </div>
           </div>
         </section>
@@ -93,7 +222,11 @@ export default function HomePage() {
                 Trusted by leading organizations across East Africa.
               </p>
             </div>
-            {/* Testimonials will be added here */}
+            <div className="grid-cols-3">
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard key={index} {...testimonial} />
+              ))}
+            </div>
           </div>
         </section>
 
