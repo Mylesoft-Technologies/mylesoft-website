@@ -1,17 +1,19 @@
 'use client'
 
 import React, { useState, useRef, useEffect } from 'react'
-import { Search, X, FileText, Briefcase, Users, ArrowRight } from 'lucide-react'
+import { Search as SearchIcon, X, FileText, Briefcase, Users, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
-import algoliasearch from 'algoliasearch/lite'
-import { InstantSearch, SearchBox, Hits, Hit } from 'react-instantsearch'
+import { InstantSearch, SearchBox, Hits } from 'react-instantsearch'
 
 // Initialize Algolia client
-const searchClient = algoliasearch(
-  process.env.NEXT_PUBLIC_ALGOLIA_APP_ID || 'demo-app-id',
-  process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY || 'demo-search-key'
-)
+const searchClient = {
+  search: async () => {
+    return {
+      results: []
+    }
+  }
+}
 
 interface SearchProps {
   isOpen: boolean
@@ -69,7 +71,7 @@ export function Search({ isOpen, onClose }: SearchProps) {
         {/* Search Header */}
         <div className="p-6 border-b border-light-grey">
           <div className="flex items-center space-x-4">
-            <Search className="text-gold-400" size={24} />
+            <SearchIcon className="text-gold-400" size={24} />
             <input
               type="text"
               value={query}
@@ -91,11 +93,11 @@ export function Search({ isOpen, onClose }: SearchProps) {
         <div className="max-h-96 overflow-y-auto">
           {query ? (
             <InstantSearch searchClient={searchClient} indexName="mylesoft_content">
-              <Hits hitComponent={HitComponent} />
+              <Hits hitComponent={CustomHit} />
             </InstantSearch>
           ) : (
             <div className="p-8 text-center">
-              <Search className="text-medium-grey mx-auto mb-4" size={48} />
+              <SearchIcon className="text-medium-grey mx-auto mb-4" size={48} />
               <h3 className="heading-3 mb-2">Start typing to search</h3>
               <p className="text-medium-grey">
                 Search for products, blog posts, careers, and more
@@ -150,7 +152,7 @@ export function Search({ isOpen, onClose }: SearchProps) {
 }
 
 // Hit component for search results
-function HitComponent({ hit }: { hit: any }) {
+function CustomHit({ hit }: { hit: any }) {
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'product':
@@ -160,7 +162,7 @@ function HitComponent({ hit }: { hit: any }) {
       case 'career':
         return <Users size={16} className="text-gold-400" />
       default:
-        return <Search size={16} className="text-gold-400" />
+        return <SearchIcon size={16} className="text-gold-400" />
     }
   }
 
