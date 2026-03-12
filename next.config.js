@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
+  trailingSlash: true,
   images: {
     remotePatterns: [
-      { protocol: 'http',  hostname: 'localhost' },
+      { protocol: 'http', hostname: 'localhost' },
       { protocol: 'https', hostname: 'www.mylesoft.com' },
       { protocol: 'https', hostname: 'mylesoft.com' },
     ],
