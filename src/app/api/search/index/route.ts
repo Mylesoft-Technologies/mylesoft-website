@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
 import { algoliasearch } from 'algoliasearch'
+import type { SearchClient } from 'algoliasearch'
 
 // Initialize Algolia client
-const client = algoliasearch(
+const client: SearchClient = algoliasearch(
   process.env.ALGOLIA_APP_ID || 'demo-app-id',
   process.env.ALGOLIA_ADMIN_KEY || 'demo-admin-key'
 )
