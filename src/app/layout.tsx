@@ -73,6 +73,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://mylesoft.com" />
         <link rel="alternate" hrefLang="en" href="https://mylesoft.com" />
         <link rel="alternate" hrefLang="x-default" href="https://mylesoft.com" />
+        <link rel="alternate" type="application/rss+xml" title="Mylesoft Technologies Blog RSS Feed" href="https://mylesoft.com/rss.xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
