@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google'
-import './globals.css'
+import { Layout } from '@/components/layout/Layout'
+import { AnalyticsProvider } from '@/components/analytics/Analytics'
 import { CookieConsent } from '@/components/ui/CookieConsent'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
+import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-plus-jakarta' })
@@ -120,6 +122,7 @@ export default function RootLayout({
         
         <CookieConsent />
         <WhatsAppButton />
+        <AnalyticsProvider />
       </body>
     </html>
   )
