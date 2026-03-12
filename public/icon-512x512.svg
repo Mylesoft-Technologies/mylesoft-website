@@ -1,0 +1,33 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" rx="100" fill="#1e3a5f"/>
+  
+  <!-- Background pattern -->
+  <g opacity="0.1">
+    <circle cx="100" cy="100" r="80" fill="#C79639"/>
+    <circle cx="412" cy="412" r="120" fill="#C79639"/>
+    <circle cx="256" cy="256" r="60" fill="#C79639"/>
+  </g>
+  
+  <!-- M Logo -->
+  <g transform="translate(128, 160)">
+    <path d="M40 40h40l20 80h-40l-5-20h-20l-5 20H20l20-80zm20 20l-2.5 20h5l-2.5-20z" fill="#C79639"/>
+    <path d="M120 40h40c22 0 40 18 40 40v40c0 22-18 40-40 40h-40V40zm40 40v40h20V80h-20z" fill="#C79639"/>
+    <path d="M220 40v60h-20V40h-20V20h60v20h-20z" fill="#C79639"/>
+    
+    <!-- Technologies text -->
+    <text x="40" y="180" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#C79639">Technologies</text>
+  </g>
+  
+  <!-- Gold accent circles -->
+  <circle cx="440" cy="72" r="32" fill="#C79639" opacity="0.8"/>
+  <circle cx="72" cy="440" r="24" fill="#C79639" opacity="0.6"/>
+  <circle cx="440" cy="440" r="16" fill="#C79639" opacity="0.4"/>
+  
+  <!-- Decorative elements -->
+  <g opacity="0.3">
+    <rect x="320" y="100" width="80" height="4" fill="#C79639"/>
+    <rect x="320" y="120" width="60" height="4" fill="#C79639"/>
+    <rect x="320" y="140" width="40" height="4" fill="#C79639"/>
+  </g>
+</svg>

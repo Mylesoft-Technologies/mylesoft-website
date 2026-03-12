@@ -1,0 +1,19 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="192" height="192" rx="40" fill="#1e3a5f"/>
+  
+  <!-- M Logo -->
+  <g transform="translate(48, 60)">
+    <path d="M20 20h15l10 40h-10l-2.5-10h-10l-2.5 10H10l10-40zm7.5 10l-1.25 10h2.5l-1.25-10z" fill="#C79639"/>
+    <path d="M60 20h20c11 0 20 9 20 20v20c0 11-9 20-20 20H60V20zm20 20v20h10V40H80z" fill="#C79639"/>
+    <path d="M110 20v30h-10V20h-10V10h30v10h-10z" fill="#C79639"/>
+    
+    <!-- Technologies text -->
+    <text x="20" y="90" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#C79639">Technologies</text>
+  </g>
+  
+  <!-- Gold accent circles -->
+  <circle cx="156" cy="36" r="12" fill="#C79639" opacity="0.8"/>
+  <circle cx="36" cy="156" r="8" fill="#C79639" opacity="0.6"/>
+  <circle cx="156" cy="156" r="6" fill="#C79639" opacity="0.4"/>
+</svg>

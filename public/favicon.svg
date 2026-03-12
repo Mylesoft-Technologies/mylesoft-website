@@ -1,0 +1,12 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#1e3a5f"/>
+  
+  <!-- M Logo -->
+  <path d="M8 10h3l2 8h-2l-0.5-2h-2L8 18H6l2-8zm1 2l-0.5 2h1l-0.5-2z" fill="#C79639"/>
+  <path d="M15 10h4c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2h-4v-8zm2 2v4h2v-4h-2z" fill="#C79639"/>
+  <path d="M23 10v6h-2v-6h-2v-2h6v2h-2z" fill="#C79639"/>
+  
+  <!-- Gold accent -->
+  <circle cx="26" cy="6" r="2" fill="#C79639" opacity="0.8"/>
+</svg>

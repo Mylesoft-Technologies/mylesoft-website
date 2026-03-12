@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: 'Mylesoft Technologies',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
         alt: 'Mylesoft Technologies - AI-Powered Software Solutions',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Mylesoft Technologies - AI-Powered Software Solutions for East Africa',
     description: 'East Africa\'s leading AI-powered software company. Transforming Education, Healthcare, Agriculture, and Business with innovative solutions.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.svg'],
   },
   robots: {
     index: true,
@@ -73,6 +73,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable} ${jetbrainsMono.variable}`}>
       <head>
+        {/* Favicon */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon-16x16.svg" />
+        <link rel="icon" type="image/svg+xml" sizes="192x192" href="/icon-192x192.svg" />
+        <link rel="icon" type="image/svg+xml" sizes="512x512" href="/icon-512x512.svg" />
+        <link rel="shortcut icon" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/icon-192x192.svg" />
+        
+        {/* SEO */}
         <link rel="canonical" href="https://mylesoft.com" />
         <link rel="alternate" hrefLang="en" href="https://mylesoft.com" />
         <link rel="alternate" hrefLang="x-default" href="https://mylesoft.com" />
