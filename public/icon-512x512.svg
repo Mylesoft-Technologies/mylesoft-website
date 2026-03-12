@@ -9,25 +9,42 @@
     <circle cx="256" cy="256" r="60" fill="#C79639"/>
   </g>
   
-  <!-- M Logo -->
-  <g transform="translate(128, 160)">
+  <!-- Main Logo Container -->
+  <g transform="translate(128, 156)">
+    <!-- M Letter Design -->
     <path d="M40 40h40l20 80h-40l-5-20h-20l-5 20H20l20-80zm20 20l-2.5 20h5l-2.5-20z" fill="#C79639"/>
     <path d="M120 40h40c22 0 40 18 40 40v40c0 22-18 40-40 40h-40V40zm40 40v40h20V80h-20z" fill="#C79639"/>
-    <path d="M220 40v60h-20V40h-20V20h60v20h-20z" fill="#C79639"/>
+    <path d="M220 40v60h-20V40h-20V20h60v20h-20t" fill="#C79639"/>
     
-    <!-- Technologies text -->
+    <!-- Technologies Text -->
     <text x="40" y="180" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#C79639">Technologies</text>
   </g>
   
-  <!-- Gold accent circles -->
-  <circle cx="440" cy="72" r="32" fill="#C79639" opacity="0.8"/>
-  <circle cx="72" cy="440" r="24" fill="#C79639" opacity="0.6"/>
-  <circle cx="440" cy="440" r="16" fill="#C79639" opacity="0.4"/>
-  
-  <!-- Decorative elements -->
-  <g opacity="0.3">
-    <rect x="320" y="100" width="80" height="4" fill="#C79639"/>
-    <rect x="320" y="120" width="60" height="4" fill="#C79639"/>
-    <rect x="320" y="140" width="40" height="4" fill="#C79639"/>
+  <!-- Decorative Elements -->
+  <g opacity="0.8">
+    <!-- Top left accent -->
+    <circle cx="80" cy="80" r="8" fill="#C79639"/>
+    <circle cx="100" cy="60" r="6" fill="#C79639" opacity="0.7"/>
+    <circle cx="60" cy="100" r="4" fill="#C79639" opacity="0.5"/>
+    
+    <!-- Top right accent -->
+    <circle cx="432" cy="80" r="8" fill="#C79639"/>
+    <circle cx="452" cy="60" r="6" fill="#C79639" opacity="0.7"/>
+    <circle cx="412" cy="100" r="4" fill="#C79639" opacity="0.5"/>
+    
+    <!-- Bottom accents -->
+    <circle cx="80" cy="432" r="6" fill="#C79639" opacity="0.6"/>
+    <circle cx="432" cy="432" r="6" fill="#C79639" opacity="0.6"/>
   </g>
+  
+  <!-- Gold gradient overlay effect -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C79639;stop-opacity:0.3"/>
+      <stop offset="50%" style="stop-color:#A67C2A;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#C79639;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="512" height="512" rx="100" fill="url(#goldGradient)" opacity="0.5"/>
 </svg>
