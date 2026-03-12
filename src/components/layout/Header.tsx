@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { DarkModeToggle } from '@/components/ui/DarkModeToggle'
 import Link from 'next/link'
 
 export function Header() {
@@ -46,7 +47,8 @@ export function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center space-x-4">
+            <DarkModeToggle />
             <Link href="/book-demo">
               <Button size="sm">Book a Demo</Button>
             </Link>
@@ -95,7 +97,10 @@ export function Header() {
                 ))}
               </div>
               
-              <div className="mt-8 p-4">
+              <div className="mt-8 p-4 space-y-4">
+                <div className="flex justify-center">
+                  <DarkModeToggle />
+                </div>
                 <Link href="/book-demo" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button className="w-full">Book a Demo</Button>
                 </Link>

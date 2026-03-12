@@ -48,6 +48,21 @@
   --font-weight-h3: 600;
   --font-weight-body: 400;
   --font-weight-small: 400;
+}
+
+/* Dark mode color variables */
+.dark {
+  --color-white: #1A1A1A;
+  --color-off-white: #2D2D2D;
+  --color-light-grey: #404040;
+  --color-medium-grey: #B0B0B0;
+  --color-dark-grey: #E0E0E0;
+  --color-navy-100: #2D3E4F;
+  --color-gold-100: #3D2F1F;
+}
+
+/* Additional CSS variables */
+:root {
   --font-weight-button: 600;
   --font-weight-nav: 500;
   --font-weight-code: 400;
@@ -60,24 +75,35 @@
   --spacing-xl: 3rem;
   --spacing-2xl: 4rem;
   --spacing-3xl: 6rem;
-  --spacing-4xl: 8rem;
 
-  /* Border Radius */
-  --radius-sm: 0.125rem;
-  --radius-base: 0.25rem;
+  /* Border radius */
+  --radius-sm: 0.25rem;
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
   --radius-2xl: 1rem;
-  --radius-full: 9999px;
+  --radius-3xl: 1.5rem;
 
   /* Shadows */
-  --shadow-small: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  --shadow-medium: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
-  --shadow-large: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px 0 rgba(0, 0, 0, 0.15);
-  --shadow-gold: 0 4px 20px 0 rgba(199, 150, 57, 0.3);
-  --shadow-navy: 0 4px 20px 0 rgba(26, 57, 91, 0.3);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
 
   /* Animations */
   --duration-fast: 150ms;
