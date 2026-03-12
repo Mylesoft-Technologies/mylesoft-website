@@ -28,9 +28,14 @@ export default function HomePage() {
               </h1>
             </div>
             
-            <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-              East Africa's leading technology company delivering innovative solutions for Education, Healthcare, Agriculture, and Business.
-            </p>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-4">
+                East Africa's leading technology company delivering innovative solutions for Education, Healthcare, Agriculture, and Business.
+              </p>
+              <p className="text-lg text-gold-400 font-semibold italic">
+                Transforming Industries, Empowering Generations.
+              </p>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <div>
