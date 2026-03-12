@@ -24,7 +24,7 @@ export function GoogleMap({
     const geocoder = new google.maps.Geocoder()
     
     geocoder.geocode({ address }, (results, status) => {
-      if (status === google.maps.GeocoderStatus.OK && results[0]) {
+      if (status === google.maps.GeocoderStatus.OK && results && results[0]) {
         const location = results[0].geometry.location
         
         // Create map instance
