@@ -10,7 +10,7 @@ interface ProductCardProps {
   description: string
   icon: React.ReactNode
   features: string[]
-  status: 'live' | 'beta' | 'coming-soon'
+  status: 'live' | 'beta' | 'coming-soon' | 'development'
   href: string
   className?: string
 }
@@ -41,6 +41,12 @@ export function ProductCard({
       bg: 'bg-blue-100',
       text: 'text-blue-700',
       label: 'Coming Soon',
+      icon: <ArrowRight className="w-3 h-3" />
+    },
+    development: {
+      bg: 'bg-purple-100',
+      text: 'text-purple-700',
+      label: 'In Development',
       icon: <ArrowRight className="w-3 h-3" />
     }
   }
