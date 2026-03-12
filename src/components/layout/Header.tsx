@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { DarkModeToggle } from '@/components/ui/DarkModeToggle'
+import { MegaMenu } from '@/components/layout/MegaMenu'
 import Link from 'next/link'
 
 export function Header() {
@@ -11,7 +12,6 @@ export function Header() {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Products', href: '/products' },
     { name: 'Services', href: '/services' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'About', href: '/about' },
@@ -35,6 +35,7 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
+            <MegaMenu />
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -85,6 +86,13 @@ export function Header() {
             
             <nav className="flex-1 overflow-y-auto p-4">
               <div className="space-y-4">
+                <Link
+                  href="/products"
+                  className="block px-4 py-3 text-lg font-medium text-medium-grey hover:text-navy-500 hover:bg-off-white rounded-lg"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Products
+                </Link>
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
