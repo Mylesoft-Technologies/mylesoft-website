@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import design tokens */
-@import './styles/design-tokens.css';
-
 /* CSS Custom Properties - Exact values from design specification */
 :root {
   /* Colors - Exact hex values from specification */
