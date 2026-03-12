@@ -5,34 +5,55 @@
 /* Import design tokens */
 @import './styles/design-tokens.css';
 
-/* CSS Custom Properties */
+/* CSS Custom Properties - Exact values from design specification */
 :root {
-  /* Colors */
-  --color-navy-50: #E8EDF4;
-  --color-navy-100: #E8EDF4;
-  --color-navy-500: #1A395B;
-  --color-navy-900: #0F172A;
-  
-  --color-gold-50: #FEF3C7;
-  --color-gold-100: #FEF3C7;
-  --color-gold-400: #C79639;
-  --color-gold-600: #D4A574;
-  --color-gold-900: #B8860B;
-  
+  /* Colors - Exact hex values from specification */
+  --color-navy-primary: #1A395B;
+  --color-gold-primary: #C79639;
+  --color-gold-hover: #A67C2A;
   --color-white: #FFFFFF;
-  --color-off-white: #FAFBFC;
-  --color-light-grey: #E8EDF4;
-  --color-medium-grey: #545454;
+  --color-light-blue: #C7D7EF;
+  --color-off-white: #F8FAFC;
   --color-dark-grey: #212121;
+  --color-medium-grey: #545454;
+  --color-light-grey: #E8EDF4;
   --color-success-green: #2EA44F;
   --color-warning-amber: #F59E0B;
-  --color-error-red: #DC2626;
-  --color-info-blue: #3B82F6;
 
-  /* Typography */
+  /* Semantic color tokens for Tailwind */
+  --color-navy-500: #1A395B;
+  --color-navy-100: #C7D7EF;
+  --color-gold-400: #C79639;
+  --color-gold-500: #A67C2A;
+  --color-gold-100: #FEF3C7;
+
+  /* Typography - Exact specifications from design system */
   --font-plus-jakarta: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-inter: "Inter", system-ui, sans-serif;
   --font-jetbrains-mono: "JetBrains Mono", monospace;
+
+  /* Typography sizes */
+  --font-size-h1: 48px;
+  --font-size-h1-large: 64px;
+  --font-size-h2: 32px;
+  --font-size-h2-large: 40px;
+  --font-size-h3: 20px;
+  --font-size-h3-large: 24px;
+  --font-size-body: 16px;
+  --font-size-small: 14px;
+  --font-size-button: 16px;
+  --font-size-nav: 15px;
+  --font-size-code: 14px;
+
+  /* Typography weights */
+  --font-weight-h1: 800;
+  --font-weight-h2: 700;
+  --font-weight-h3: 600;
+  --font-weight-body: 400;
+  --font-weight-small: 400;
+  --font-weight-button: 600;
+  --font-weight-nav: 500;
+  --font-weight-code: 400;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -50,6 +71,7 @@
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
   --radius-full: 9999px;
 
   /* Shadows */
