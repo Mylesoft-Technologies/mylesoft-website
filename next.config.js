@@ -2,7 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost', 'www.mylesoft.com', 'mylesoft.com'],
+    remotePatterns: [
+      { protocol: 'http',  hostname: 'localhost' },
+      { protocol: 'https', hostname: 'www.mylesoft.com' },
+      { protocol: 'https', hostname: 'mylesoft.com' },
+    ],
     formats: ['image/webp', 'image/avif'],
   },
   experimental: {
@@ -13,18 +17,9 @@ const nextConfig = {
       {
         source: '/(.*)',
         headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
+          { key: 'X-Frame-Options',           value: 'DENY' },
+          { key: 'X-Content-Type-Options',     value: 'nosniff' },
+          { key: 'Referrer-Policy',            value: 'strict-origin-when-cross-origin' },
         ],
       },
     ];
