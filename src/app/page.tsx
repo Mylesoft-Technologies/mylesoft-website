@@ -2,9 +2,17 @@ import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { ProductCard } from '@/components/ui/ProductCard'
 import { Icon } from '@/components/ui/Icon'
-import { StepCard } from '@/components/ui/StepCard'
-import { TestimonialCard } from '@/components/ui/TestimonialCard'
-import { Calendar, Settings, Rocket } from 'lucide-react'
+import { 
+  Target, 
+  Eye, 
+  Heart, 
+  Users, 
+  Award, 
+  Globe,
+  TrendingUp,
+  Shield,
+  Zap
+} from 'lucide-react'
 
 const featuredProducts = [
   {
@@ -14,7 +22,10 @@ const featuredProducts = [
     features: [
       'Student Information Management',
       'Automated Grading & Reports',
-      'Parent Communication Portal'
+      'Parent Communication Portal',
+      'Attendance Tracking',
+      'Exam Management',
+      'Library Management'
     ],
     status: 'live' as const,
     href: '/products/edumyles'
@@ -26,22 +37,13 @@ const featuredProducts = [
     features: [
       'Patient Records Management',
       'Appointment Scheduling',
-      'AI Diagnostic Support'
+      'AI Diagnostic Support',
+      'Medical Billing',
+      'Inventory Management',
+      'Telemedicine Integration'
     ],
     status: 'live' as const,
     href: '/products/mylescare'
-  },
-  {
-    name: 'MylesCRM',
-    description: 'Customer relationship management built for African businesses.',
-    icon: <Icon name="users" className="text-gold-400" />,
-    features: [
-      'Lead Management',
-      'Sales Pipeline Tracking',
-      'Customer Analytics'
-    ],
-    status: 'live' as const,
-    href: '/products/mylescrm'
   },
   {
     name: 'AgriMyles',
@@ -50,78 +52,67 @@ const featuredProducts = [
     features: [
       'Crop Health Monitoring',
       'Weather Integration',
-      'Market Price Analytics'
-    ],
-    status: 'live' as const,
-    href: '/products/agrimyles'
-  },
-  {
-    name: 'Myles AI',
-    description: 'Africa\'s intelligence engine with local language support.',
-    icon: <Icon name="brain" className="text-gold-400" />,
-    features: [
-      'Multi-language AI Models',
-      'Industry-specific Solutions',
-      'Real-time Analytics'
-    ],
-    status: 'live' as const,
-    href: '/products/myles-ai'
-  },
-  {
-    name: 'MylesPay',
-    description: 'Digital payment solution for seamless transactions.',
-    icon: <Icon name="credit-card" className="text-gold-400" />,
-    features: [
-      'Mobile Money Integration',
-      'Multi-currency Support',
-      'Instant Settlements'
+      'Market Price Analytics',
+      'Irrigation Management',
+      'Supply Chain Tracking',
+      'Farm Management'
     ],
     status: 'development' as const,
-    href: '/products/mylespay'
+    href: '/products/agrimyles'
   }
+]
+
+const impactStats = [
+  { number: '500+', label: 'Educational Institutions' },
+  { number: '100+', label: 'Healthcare Providers' },
+  { number: '1,000+', label: 'Businesses' },
+  { number: '95%', label: 'Satisfaction Rate' }
 ]
 
 const howItWorksSteps = [
   {
     number: 1,
-    title: 'Book a Demo',
-    description: 'Schedule a personalized demonstration with our solutions expert to see how Mylesoft can transform your organization.',
-    icon: <Calendar size={24} />
+    title: 'Discovery',
+    description: 'We begin by understanding your organization\'s unique challenges and goals.',
+    icon: <Target size={24} className="text-gold-400" />
   },
   {
     number: 2,
-    title: 'Customise',
-    description: 'Work with our team to configure the solution to your specific needs and integrate with your existing systems.',
-    icon: <Settings size={24} />
+    title: 'Strategy',
+    description: 'Our experts develop a comprehensive strategy tailored to your specific needs.',
+    icon: <Eye size={24} className="text-gold-400" />
   },
   {
     number: 3,
-    title: 'Go Live',
-    description: 'Launch with comprehensive training, ongoing support, and start seeing immediate results in your operations.',
-    icon: <Rocket size={24} />
+    title: 'Implementation',
+    description: 'We execute the plan with minimal disruption to your operations.',
+    icon: <Zap size={24} className="text-gold-400" />
+  },
+  {
+    number: 4,
+    title: 'Success',
+    description: 'We ensure you achieve maximum value from our solutions.',
+    icon: <TrendingUp size={24} className="text-gold-400" />
   }
 ]
 
 const testimonials = [
   {
     name: 'Dr. Sarah Kimani',
-    title: 'Principal',
-    organization: 'Nairobi Girls High School',
-    quote: 'EduMyles has transformed how we manage student information and communicate with parents. The AI-powered analytics help us make data-driven decisions.',
+    role: 'Principal, Nairobi Academy',
+    content: 'EduMyles has transformed how we manage our school. The efficiency gains have been remarkable.',
     rating: 5
   },
   {
     name: 'John Mwangi',
-    title: 'CEO',
-    organization: 'Mombasa General Hospital',
-    quote: 'MylesCare revolutionized our patient management system. We\'ve reduced wait times by 40% and improved patient outcomes significantly.',
+    role: 'CEO, Mwangi Enterprises',
+    content: 'The AI-powered solutions have revolutionized our business operations. Highly recommended!',
     rating: 5
   },
   {
     name: 'Grace Achieng',
-    title: 'Farm Manager',
-    organization: 'Green Valley Farms',
-    quote: 'AgriMyles helps us monitor crop health and predict yields. Our productivity increased by 35% in the first season.',
+    role: 'Director, County Hospital',
+    content: 'MylesCare has improved our patient care and operational efficiency significantly.',
     rating: 5
   }
 ]
@@ -131,154 +122,125 @@ export default function HomePage() {
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="hero">
-          <div className="hero-background">
-            {/* Animated background will be added here */}
-          </div>
-          <div className="hero-content">
-            <h1 className="hero-title">
-              East Africa's Leading AI-Powered Software Company
-            </h1>
-            <p className="hero-subtitle">
-              Transforming Education, Healthcare, Agriculture & Business across East Africa with 20+ AI-powered solutions built for Africa, by Africa.
-            </p>
-            <div className="hero-buttons">
-              <Button>Book a Free Demo</Button>
-              <Button variant="secondary">Explore Products</Button>
+        <section className="section gradient-navy">
+          <div className="section-padding">
+            <div className="text-center text-white">
+              <h1 className="heading-1 mb-6 fade-in">Transforming Africa with AI</h1>
+              <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed mb-8 slide-up">
+                East Africa's leading AI-powered software company building innovative solutions for Education, Healthcare, Agriculture, and Business.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+                <Button size="lg">Get Started</Button>
+                <Button variant="secondary" size="lg">Book a Demo</Button>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Impact Stats Strip */}
-        <section className="impact-stats">
-          <div className="impact-stats-grid">
-            <div className="impact-stat">
-              <div className="stat-number">500+</div>
-              <div className="stat-label">Schools</div>
-            </div>
-            <div className="impact-stat">
-              <div className="stat-number">250K+</div>
-              <div className="stat-label">Students</div>
-            </div>
-            <div className="impact-stat">
-              <div className="stat-number">100+</div>
-              <div className="stat-label">Hospitals</div>
-            </div>
-            <div className="impact-stat">
-              <div className="stat-number">1K+</div>
-              <div className="stat-label">Farmers</div>
-            </div>
-            <div className="impact-stat">
-              <div className="stat-number">18</div>
-              <div className="stat-label">Sectors</div>
-            </div>
-            <div className="impact-stat">
-              <div className="stat-number">47</div>
-              <div className="stat-label">Counties</div>
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Products Grid */}
+        {/* Impact Stats */}
         <section className="section">
           <div className="section-padding">
             <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4">Featured Products</h2>
+              <h2 className="heading-2 mb-4">Making an Impact</h2>
               <p className="body-text max-w-2xl mx-auto">
-                Our most popular AI-powered solutions transforming organizations across East Africa.
+                Our solutions are transforming organizations across East Africa.
               </p>
             </div>
-            <div className="grid-cols-3">
-              {featuredProducts.map((product) => (
-                <ProductCard key={product.name} {...product} />
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {impactStats.map((stat, index) => (
+                <div key={index} className="text-center scale-in" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="stat-number mb-2">{stat.number}</div>
+                  <div className="stat-label">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Products */}
+        <section className="section bg-off-white">
+          <div className="section-padding">
+            <div className="text-center mb-12">
+              <h2 className="heading-2 mb-4">Featured Solutions</h2>
+              <p className="body-text max-w-2xl mx-auto">
+                Discover our most popular AI-powered solutions designed for African markets.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredProducts.map((product, index) => (
+                <div key={index} className="fade-in" style={{ animationDelay: `${index * 150}ms` }}>
+                  <ProductCard {...product} />
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* How It Works */}
-        <section className="section bg-off-white">
+        <section className="section">
           <div className="section-padding">
             <div className="text-center mb-12">
               <h2 className="heading-2 mb-4">How It Works</h2>
               <p className="body-text max-w-2xl mx-auto">
-                Get started with Mylesoft in three simple steps.
+                Our proven process ensures successful implementation and maximum value.
               </p>
             </div>
-            <div className="grid-cols-3">
-              {howItWorksSteps.map((step) => (
-                <StepCard key={step.number} {...step} />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {howItWorksSteps.map((step, index) => (
+                <div key={index} className="text-center slide-up" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    {step.icon}
+                  </div>
+                  <div className="text-2xl font-bold text-gold-400 mb-3">Step {step.number}</div>
+                  <h3 className="heading-3 mb-3">{step.title}</h3>
+                  <p className="body-text">{step.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Testimonials Carousel */}
-        <section className="section">
+        {/* Testimonials */}
+        <section className="section bg-off-white">
           <div className="section-padding">
             <div className="text-center mb-12">
               <h2 className="heading-2 mb-4">What Our Customers Say</h2>
               <p className="body-text max-w-2xl mx-auto">
-                Trusted by leading organizations across East Africa.
+                Don't just take our word for it. Here's what our customers have to say.
               </p>
             </div>
-            <div className="grid-cols-3">
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
-                <TestimonialCard key={index} {...testimonial} />
+                <div key={index} className="testimonial-card fade-in" style={{ animationDelay: `${index * 150}ms` }}>
+                  <div className="testimonial-stars">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <span key={i}>★</span>
+                    ))}
+                  </div>
+                  <p className="testimonial-quote">{testimonial.content}</p>
+                  <div className="testimonial-author">{testimonial.name}</div>
+                  <div className="small-text text-medium-grey">{testimonial.role}</div>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Myles AI Spotlight */}
-        <section className="section bg-navy-500">
+        {/* CTA Section */}
+        <section className="section gradient-navy">
           <div className="section-padding">
             <div className="text-center text-white">
-              <h2 className="heading-2 mb-4">Powered by Myles AI</h2>
-              <p className="text-xl mb-8 text-navy-100">
-                Africa's intelligence engine supporting local languages and industry-specific needs.
+              <h2 className="heading-2 mb-4">Ready to Transform Your Organization?</h2>
+              <p className="text-xl text-navy-100 mb-8">
+                Join hundreds of organizations across East Africa using our AI-powered solutions.
               </p>
-              {/* Myles AI features will be added here */}
-            </div>
-          </div>
-        </section>
-
-        {/* Trusted By */}
-        <section className="section">
-          <div className="section-padding">
-            <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4">Trusted By Leading Organizations</h2>
-            </div>
-            {/* Partner logos will be added here */}
-          </div>
-        </section>
-
-        {/* Blog Preview */}
-        <section className="section bg-off-white">
-          <div className="section-padding">
-            <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4">Latest Insights</h2>
-              <p className="body-text max-w-2xl mx-auto">
-                Thought leadership on technology, business, and innovation in Africa.
-              </p>
-            </div>
-            <div className="grid-cols-3">
-              {/* Blog cards will be added here */}
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="section bg-navy-500">
-          <div className="section-padding">
-            <div className="text-center text-white">
-              <h2 className="heading-2 mb-4">Ready to Transform Your Organisation?</h2>
-              <p className="text-xl mb-8 text-navy-100">
-                Join hundreds of organizations already using Mylesoft solutions.
-              </p>
-              <div className="hero-buttons">
-                <Button>Book a Demo</Button>
-                <Button variant="secondary">Contact Us</Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg">Get Started</Button>
+                <Button variant="secondary" size="lg">Contact Sales</Button>
               </div>
             </div>
           </div>

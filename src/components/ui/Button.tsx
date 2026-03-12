@@ -11,17 +11,16 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export function Button({ variant = 'primary', size = 'md', loading = false, className, children, disabled, ...props }: ButtonProps) {
   const baseClasses = 'font-semibold rounded-full transition-all duration-300 ease-out active:scale-95 relative overflow-hidden'
   
-  // Exact specifications from design system with enhanced professional styling
+  // Use the professional CSS classes from globals.css
   const variantClasses = {
-    primary: 'bg-gold-400 text-white hover:bg-gold-500 hover:shadow-gold hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none disabled:hover:translate-y-0', // Gold #C79639 bg · white text · hover darkens to #A67C2A · shadow on hover
-    secondary: 'bg-transparent text-navy-500 border-2 border-navy-500 hover:bg-navy-500 hover:text-white hover:shadow-navy hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none disabled:hover:translate-y-0', // Transparent · navy border · navy text · hover fills navy with white text
-    outline: 'bg-transparent text-gold-400 border-2 border-gold-400 hover:bg-gold-50 hover:text-gold-500 hover:shadow-gold hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none disabled:hover:translate-y-0' // Gold outline variant
+    primary: 'btn-primary',
+    secondary: 'btn-secondary', 
+    outline: 'btn-outline'
   }
   
-  // Exact padding specifications: px-8 py-3 = 12px 32px
   const sizeClasses = {
     sm: 'px-6 py-2 text-sm',
-    md: 'px-8 py-3 text-base', // Exact specification: px-8 py-3
+    md: 'px-8 py-3 text-base',
     lg: 'px-10 py-4 text-lg'
   }
 
