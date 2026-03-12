@@ -2,6 +2,7 @@ import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { ProductCard } from '@/components/ui/ProductCard'
 import { Icon } from '@/components/ui/Icon'
+import { NewsletterSignup } from '@/components/ui/NewsletterSignup'
 import { 
   Target, 
   Eye, 
@@ -242,6 +243,15 @@ export default function HomePage() {
                 <Button size="lg">Get Started</Button>
                 <Button variant="secondary" size="lg">Contact Sales</Button>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="section bg-off-white">
+          <div className="section-padding">
+            <div className="max-w-2xl mx-auto">
+              <NewsletterSignup />
             </div>
           </div>
         </section>

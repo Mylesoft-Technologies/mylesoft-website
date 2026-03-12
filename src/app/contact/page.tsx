@@ -3,15 +3,16 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
+import { GoogleMap } from '@/components/ui/GoogleMap'
 import { 
   Mail, 
   Phone, 
   MapPin, 
   Clock,
   Send,
-  Building,
   Users,
-  HelpCircle
+  Building,
+  FileText
 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -374,13 +375,7 @@ export default function ContactPage() {
               </p>
             </div>
             
-            <div className="bg-gold-100 rounded-2xl aspect-video flex items-center justify-center">
-              <div className="text-center">
-                <MapPin size={48} className="text-gold-400 mx-auto mb-4" />
-                <p className="text-navy-500 font-semibold">Interactive Map</p>
-                <p className="body-text">Westlands, Nairobi, Kenya</p>
-              </div>
-            </div>
+            <GoogleMap height="500px" zoom={15} />
           </div>
         </section>
 
