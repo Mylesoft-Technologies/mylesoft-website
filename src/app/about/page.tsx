@@ -18,11 +18,11 @@ export default function AboutPage() {
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="section bg-navy-500">
+        <section className="section gradient-navy">
           <div className="section-padding">
             <div className="text-center text-white">
-              <h1 className="heading-1 mb-6">About Mylesoft Technologies</h1>
-              <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed">
+              <h1 className="heading-1 mb-6 fade-in">About Mylesoft Technologies</h1>
+              <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed mb-8 slide-up">
                 Transforming Industries, Empowering Generations. East Africa's leading AI-powered software company building innovative solutions for Education, Healthcare, Agriculture, and Business.
               </p>
             </div>
@@ -52,10 +52,10 @@ export default function AboutPage() {
                   <Icon name="brain" className="text-gold-400" size={96} />
                 </div>
                 {/* Stats overlay */}
-                <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-medium p-6">
+                <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-gold p-6 hover-lift">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-navy-500 mb-1">4+</div>
-                    <div className="text-sm text-medium-grey">Years of Innovation</div>
+                    <div className="stat-number mb-1">4+</div>
+                    <div className="stat-label">Years of Innovation</div>
                   </div>
                 </div>
               </div>
@@ -219,7 +219,7 @@ export default function AboutPage() {
         </section>
 
         {/* Company Stats */}
-        <section className="section bg-navy-500">
+        <section className="section gradient-navy">
           <div className="section-padding">
             <div className="text-center text-white mb-12">
               <h2 className="heading-2 mb-4">By the Numbers</h2>
@@ -239,9 +239,9 @@ export default function AboutPage() {
                 { number: "20+", label: "Products" },
                 { number: "4", label: "Countries" }
               ].map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl font-bold text-gold-400 mb-2">{stat.number}</div>
-                  <div className="text-navy-100">{stat.label}</div>
+                <div key={index} className="text-center scale-in" style={{animationDelay: `${index * 100}ms`}}>
+                  <div className="stat-number mb-2">{stat.number}</div>
+                  <div className="stat-label">{stat.label}</div>
                 </div>
               ))}
             </div>

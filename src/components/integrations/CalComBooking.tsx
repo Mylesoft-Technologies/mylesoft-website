@@ -101,11 +101,11 @@ export function CalComBooking() {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-medium p-8">
+    <div className="bg-white rounded-xl shadow-medium p-8 hover-lift fade-in">
       <div className="mb-8">
         <h3 className="heading-3 mb-4">Book a Meeting</h3>
         <p className="body-text">
-          Schedule a personalized demonstration or consultation with our experts. Choose the meeting type that best fits your needs.
+          Schedule a personalized demonstration with our experts. Choose the meeting type that best fits your needs.
         </p>
       </div>
 
@@ -117,7 +117,7 @@ export function CalComBooking() {
             <button
               key={type.id}
               onClick={() => setSelectedType(type.id)}
-              className={`p-4 rounded-lg border text-left transition-colors ${
+              className={`p-4 rounded-lg border text-left transition-colors hover-lift ${
                 selectedType === type.id
                   ? 'border-gold-400 bg-gold-50 text-gold-600'
                   : 'border-light-grey hover:border-gold-400 hover:bg-gold-50'
@@ -148,7 +148,8 @@ export function CalComBooking() {
               min={new Date().toISOString().split('T')[0]}
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.target.value)}
-              className="w-full px-4 py-3 border border-light-grey rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
+              className="form-input"
+              placeholder="Select date"
             />
           </div>
 
@@ -162,7 +163,7 @@ export function CalComBooking() {
               required
               value={selectedTime}
               onChange={(e) => setSelectedTime(e.target.value)}
-              className="w-full px-4 py-3 border border-light-grey rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
+              className="form-input"
             >
               <option value="">Select a time</option>
               {timeSlots.map((slot) => (
@@ -185,7 +186,7 @@ export function CalComBooking() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 border border-light-grey rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
+                className="form-input"
                 placeholder="John Doe"
               />
             </div>
@@ -199,7 +200,7 @@ export function CalComBooking() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 border border-light-grey rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
+                className="form-input"
                 placeholder="john@example.com"
               />
             </div>

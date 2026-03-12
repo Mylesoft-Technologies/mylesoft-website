@@ -12,7 +12,7 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ name, title, organization, quote, rating, avatar }: TestimonialCardProps) {
   return (
-    <div className="testimonial-card">
+    <div className="testimonial-card fade-in">
       <div className="testimonial-stars">
         {[...Array(5)].map((_, index) => (
           <Star

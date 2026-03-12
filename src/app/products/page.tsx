@@ -336,11 +336,11 @@ export default function ProductsPage() {
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="section bg-navy-500">
+        <section className="section gradient-navy">
           <div className="section-padding">
             <div className="text-center text-white">
-              <h1 className="heading-1 mb-6">Our Products</h1>
-              <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed">
+              <h1 className="heading-1 mb-6 fade-in">Our Products</h1>
+              <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed mb-8 slide-up">
                 Discover our comprehensive suite of AI-powered solutions designed to transform 18 different sectors across East Africa and beyond.
               </p>
             </div>
@@ -351,21 +351,21 @@ export default function ProductsPage() {
         <section className="section bg-off-white">
           <div className="section-padding">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-4xl font-bold text-navy-500 mb-2">18</div>
-                <div className="text-medium-grey">Sectors Served</div>
+              <div className="fade-in">
+                <div className="stat-number mb-2">18</div>
+                <div className="stat-label">Sectors Served</div>
               </div>
-              <div>
-                <div className="text-4xl font-bold text-navy-500 mb-2">20+</div>
-                <div className="text-medium-grey">Products</div>
+              <div className="fade-in" style={{animationDelay: '100ms'}}>
+                <div className="stat-number mb-2">20+</div>
+                <div className="stat-label">Products</div>
               </div>
-              <div>
-                <div className="text-4xl font-bold text-navy-500 mb-2">6</div>
-                <div className="text-medium-grey">Live Products</div>
+              <div className="fade-in" style={{animationDelay: '200ms'}}>
+                <div className="stat-number mb-2">6</div>
+                <div className="stat-label">Live Products</div>
               </div>
-              <div>
-                <div className="text-4xl font-bold text-navy-500 mb-2">14</div>
-                <div className="text-medium-grey">In Development</div>
+              <div className="fade-in" style={{animationDelay: '300ms'}}>
+                <div className="stat-number mb-2">14</div>
+                <div className="stat-label">In Development</div>
               </div>
             </div>
           </div>
@@ -411,7 +411,7 @@ export default function ProductsPage() {
         ))}
 
         {/* CTA Section */}
-        <section className="section bg-navy-500">
+        <section className="section gradient-navy">
           <div className="section-padding">
             <div className="text-center text-white">
               <h2 className="heading-2 mb-4">Find Your Solution</h2>

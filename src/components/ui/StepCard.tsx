@@ -9,7 +9,7 @@ interface StepCardProps {
 
 export function StepCard({ number, title, description, icon }: StepCardProps) {
   return (
-    <div className="text-center group">
+    <div className="text-center group slide-up">
       <div className="relative mb-6">
         {/* Connection line */}
         {number < 3 && (
@@ -17,7 +17,7 @@ export function StepCard({ number, title, description, icon }: StepCardProps) {
         )}
         
         {/* Step circle */}
-        <div className="relative z-10 w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto group-hover:bg-gold-200 transition-colors">
+        <div className="relative z-10 w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto group-hover:bg-gold-200 transition-colors hover-scale">
           <div className="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform">
             {icon}
           </div>
