@@ -65,6 +65,11 @@ module.exports = {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
         'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
         'strong': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 4px 25px -5px rgba(0, 0, 0, 0.1)',
+        'gold': '0 8px 32px rgba(199, 150, 57, 0.25)',
+        'glow': '0 0 20px rgba(199, 150, 57, 0.3)',
+        'card': '0 10px 40px rgba(0, 0, 0, 0.1), 0 2px 10px rgba(0, 0, 0, 0.06)',
+        'large': '0 20px 60px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.1)',
+        'navy': '0 4px 20px rgba(26, 57, 91, 0.15)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',

@@ -12,7 +12,13 @@ import {
   Users,
   FileText,
   Shield,
-  Zap
+  Zap,
+  Leaf,
+  Linkedin,
+  Twitter,
+  Github,
+  Youtube,
+  Settings
 } from 'lucide-react'
 
 interface IconProps {
@@ -35,6 +41,12 @@ const iconMap = {
   'file-text': FileText,
   'shield': Shield,
   'zap': Zap,
+  'leaf': Leaf,
+  'linkedin': Linkedin,
+  'twitter': Twitter,
+  'github': Github,
+  'youtube': Youtube,
+  'settings': Settings,
 }
 
 export function Icon({ name, size = 48, className = '' }: IconProps) {

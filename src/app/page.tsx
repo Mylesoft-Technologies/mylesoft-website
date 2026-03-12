@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/Button'
 import { ProductCard } from '@/components/ui/ProductCard'
 import { Icon } from '@/components/ui/Icon'
 import { NewsletterSignup } from '@/components/ui/NewsletterSignup'
+import { motion } from 'framer-motion'
 import { 
   Target, 
   Eye, 
@@ -15,7 +16,8 @@ import {
   Zap,
   ArrowRight,
   Star,
-  CheckCircle
+  CheckCircle,
+  Sparkles
 } from 'lucide-react'
 
 const featuredProducts = [
@@ -133,34 +135,143 @@ export default function HomePage() {
     <Layout>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-navy-500 via-navy-600 to-navy-700 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+        {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-gold-400/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gold-300/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <motion.div 
+            className="absolute top-20 left-20 w-72 h-72 bg-gold-400/20 rounded-full blur-3xl animate-pulse-gold"
+            animate={{ 
+              scale: [1, 1.2, 1], 
+              opacity: [0.3, 0.6, 0.3] 
+            }}
+            transition={{ 
+              duration: 4, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+          />
+          <motion.div 
+            className="absolute bottom-20 right-20 w-96 h-96 bg-gold-300/10 rounded-full blur-3xl"
+            animate={{ 
+              scale: [1, 1.3, 1], 
+              opacity: [0.2, 0.5, 0.2],
+              x: [0, 50, 0],
+              y: [0, -30, 0]
+            }}
+            transition={{ 
+              duration: 6, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 1
+            }}
+          />
+          <motion.div 
+            className="absolute top-1/2 left-1/3 w-64 h-64 bg-gold-400/15 rounded-full blur-2xl"
+            animate={{ 
+              scale: [1, 1.1, 1], 
+              opacity: [0.2, 0.4, 0.2] 
+            }}
+            transition={{ 
+              duration: 5, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 2
+            }}
+          />
         </div>
         
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="space-y-8">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              Transform Your Business with
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">
-                AI-Powered Solutions
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-              East Africa's leading technology company delivering innovative solutions for Education, Healthcare, Agriculture, and Business.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="shadow-2xl hover:shadow-3xl transform hover:-translate-y-1">
-                Get Started Today
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button variant="secondary" size="lg" className="shadow-2xl hover:shadow-3xl">
-                Book a Demo
-              </Button>
-            </div>
-          </div>
+        {/* Floating Particles */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-gold-400 rounded-full"
+              initial={{
+                x: Math.random() * 100,
+                y: Math.random() * 100,
+                opacity: 0
+              }}
+              animate={{
+                y: [null, -100],
+                opacity: [0, 1, 0],
+                scale: [0, 1, 0]
+              }}
+              transition={{
+                duration: 10 + Math.random() * 20,
+                repeat: Infinity,
+                delay: Math.random() * 10,
+                ease: "linear"
+              }}
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`
+              }}
+            />
+          ))}
         </div>
+        
+        <motion.div 
+          className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          <div className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                Transform Your Business with
+                <motion.span 
+                  className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600 gradient-gold-animated"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  AI-Powered Solutions
+                </motion.span>
+              </h1>
+            </motion.div>
+            
+            <motion.p 
+              className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              East Africa's leading technology company delivering innovative solutions for Education, Healthcare, Agriculture, and Business.
+            </motion.p>
+            
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Button size="lg" className="shadow-premium-gold hover:shadow-premium-glow animate-glow">
+                  <Sparkles className="mr-2 w-5 h-5" />
+                  Get Started Today
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </motion.div>
+              
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Button variant="secondary" size="lg" className="glass-morphism hover:glass-morphism-dark">
+                  Book a Demo
+                </Button>
+              </motion.div>
+            </motion.div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Stats Section */}

@@ -25,12 +25,12 @@ export function Button({
   const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
   
   const variants = {
-    primary: 'bg-gradient-to-r from-gold-400 to-gold-500 text-white hover:from-gold-500 hover:to-gold-600 focus:ring-gold-400 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
-    secondary: 'bg-navy-500 text-white hover:bg-navy-600 focus:ring-navy-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
-    outline: 'border-2 border-navy-500 text-navy-500 hover:bg-navy-500 hover:text-white focus:ring-navy-500',
-    ghost: 'text-navy-500 hover:bg-navy-50 focus:ring-navy-500',
-    destructive: 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
-    link: 'text-gold-500 hover:text-gold-600 underline-offset-4 hover:underline focus:ring-gold-400 p-0'
+    primary: 'bg-gradient-to-r from-gold-400 to-gold-500 text-white hover:from-gold-500 hover:to-gold-600 focus:ring-gold-400 shadow-premium-gold hover:shadow-premium-glow transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-smooth',
+    secondary: 'bg-navy-500 text-white hover:bg-navy-600 focus:ring-navy-500 shadow-premium-card hover:shadow-premium-floating transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-smooth',
+    outline: 'border-2 border-navy-500 text-navy-500 hover:bg-navy-500 hover:text-white focus:ring-navy-500 hover:shadow-premium-gold transform hover:-translate-y-0.5 transition-all duration-300 ease-smooth',
+    ghost: 'text-navy-500 hover:bg-navy-50 focus:ring-navy-500 hover:text-gold-500 transition-all duration-300 ease-smooth',
+    destructive: 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-500 shadow-premium-card hover:shadow-premium-floating transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-smooth',
+    link: 'text-gold-500 hover:text-gold-600 underline-offset-4 hover:underline focus:ring-gold-400 p-0 hover:text-gold-gradient transition-all duration-300 ease-smooth'
   }
   
   const sizes = {
