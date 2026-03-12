@@ -8,12 +8,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Button({ variant = 'primary', size = 'md', className, children, ...props }: ButtonProps) {
-  const baseClasses = 'font-semibold rounded-full transition-all duration-200 active:scale-95'
+  const baseClasses = 'font-semibold rounded-full transition-all duration-150 ease active:scale-95'
   
   const variantClasses = {
     primary: 'bg-gold-400 text-white hover:bg-gold-500 hover:shadow-medium',
-    secondary: 'bg-transparent text-navy-500 border-2 border-navy-500 hover:bg-navy-500 hover:text-white',
-    outline: 'bg-transparent text-gold-400 border-2 border-gold-400 hover:bg-gold-400 hover:text-white'
+    secondary: 'bg-transparent text-navy-500 border-2 border-navy-500 hover:bg-navy-500 hover:text-white hover:shadow-medium',
+    outline: 'bg-transparent text-gold-400 border-2 border-gold-400 hover:bg-gold-50 hover:text-gold-500'
   }
   
   const sizeClasses = {
@@ -24,7 +24,12 @@ export function Button({ variant = 'primary', size = 'md', className, children, 
 
   return (
     <button
-      className={clsx(baseClasses, variantClasses[variant], sizeClasses[size], className)}
+      className={clsx(
+        baseClasses,
+        variantClasses[variant],
+        sizeClasses[size],
+        className
+      )}
       {...props}
     >
       {children}
