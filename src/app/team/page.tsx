@@ -6,10 +6,17 @@ import { Logo } from '@/components/ui/Logo'
 
 const teamMembers = [
   {
-    name: "Michael Myles",
+    name: "Jonathan Myles",
     role: "CEO & Founder",
-    bio: "Visionary leader with 15+ years in software development and business strategy. Passionate about transforming African businesses through technology.",
+    bio: "A visionary software engineer and entrepreneur, Jonathan founded Mylesoft Technologies in 2020 with a mission to build AI-powered solutions addressing East Africa's most critical challenges. He leads the company's overall strategy, product development, and technology architecture across all 20+ Mylesoft products.",
     image: "/team/michael.jpg",
+    social: { linkedin: "#", twitter: "#" }
+  },
+   {
+    name: "Pauline Moraa",
+    role: "COO",
+    bio: "Pauline brings operational excellence and business development expertise to Mylesoft. As COO, she drives the company's day-to-day operations, sales, marketing, and customer partnerships — ensuring every Mylesoft product delivers measurable impact across East Africa.",
+    image: "/team/david.jpg",
     social: { linkedin: "#", twitter: "#" }
   },
   {
@@ -17,13 +24,6 @@ const teamMembers = [
     role: "CTO",
     bio: "AI and machine learning expert with extensive experience in building scalable enterprise solutions. MIT graduate with multiple patents in AI.",
     image: "/team/sarah.jpg",
-    social: { linkedin: "#", twitter: "#" }
-  },
-  {
-    name: "David Kamau",
-    role: "Head of Operations",
-    bio: "Operations specialist with 10+ years experience in scaling tech companies across East Africa. Expert in process optimization and team building.",
-    image: "/team/david.jpg",
     social: { linkedin: "#", twitter: "#" }
   },
   {
