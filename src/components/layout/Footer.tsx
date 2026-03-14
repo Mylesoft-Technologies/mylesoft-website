@@ -61,7 +61,7 @@ export function Footer() {
                   </div>
                   <div className="flex items-center space-x-3 text-navy-200">
                     <Phone className="w-5 h-5 text-gold-400" />
-                    <span>+254 700 123 456</span>
+                    <span>+254 743993715</span>
                   </div>
                   <div className="flex items-center space-x-3 text-navy-200">
                     <MapPin className="w-5 h-5 text-gold-400" />
@@ -168,10 +168,10 @@ export function Footer() {
                   <p className="text-navy-200 text-sm">Follow us</p>
                   <div className="flex space-x-3">
                     {[
-                      { name: 'linkedin', href: 'https://linkedin.com/company/mylesoft-technologies' },
-                      { name: 'twitter', href: 'https://twitter.com/mylesofttech' },
+                      { name: 'linkedin', href: 'https://www.linkedin.com/company/mylesoft_tech' },
+                      { name: 'twitter', href: 'https://x.com/mylesoft_tech' },
                       { name: 'github', href: 'https://github.com/Mylesoft-Technologies' },
-                      { name: 'youtube', href: 'https://youtube.com/@mylesofttechnologies' }
+                      { name: 'youtube', href: 'https://www.youtube.com/@mylesoft_tech' }
                     ].map((social, index) => (
                       <Link
                         key={index}
