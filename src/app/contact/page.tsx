@@ -52,21 +52,21 @@ export default function ContactPage() {
       name: 'sales',
       title: 'Sales & Partnerships',
       email: 'sales@mylesoft.com',
-      phone: '+254 743 993 716',
+      phone: '+254 743 993 715',
       description: 'Interested in our products or partnership opportunities?'
     },
     {
       name: 'support',
       title: 'Technical Support',
       email: 'support@mylesoft.com',
-      phone: '+254 743 993 717',
+      phone: '+254 743 993 715',
       description: 'Need help with existing products or technical assistance.'
     },
     {
       name: 'careers',
       title: 'Human Resources',
       email: 'careers@mylesoft.com',
-      phone: '+254 743 993 718',
+      phone: '+254 743 993 715',
       description: 'Questions about job opportunities and working at Mylesoft.'
     }
   ]
@@ -83,7 +83,7 @@ export default function ContactPage() {
     {
       city: 'Mombasa',
       address: 'Mombasa CBD, Mombasa, Kenya',
-      phone: '+254 743 993 720',
+      phone: '+254 743 993 715',
       email: 'mombasa@mylesoft.com',
       hours: 'Mon-Fri: 8:00 AM - 5:00 PM',
       isHeadquarters: false
@@ -390,8 +390,8 @@ export default function ContactPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
                   <div className="text-2xl font-bold text-gold-400 mb-2">24/7 Support</div>
-                  <a href="tel:+254743993999" className="text-xl text-white hover:text-gold-300">
-                    +254 743 993 999
+                  <a href="tel:+254743993715" className="text-xl text-white hover:text-gold-300">
+                    +254 743 993 715
                   </a>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
