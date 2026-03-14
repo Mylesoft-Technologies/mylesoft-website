@@ -215,7 +215,7 @@ export default function TeamPage() {
                   <Phone className="w-8 h-8 text-gold-400" />
                 </div>
                 <h3 className="text-xl font-bold text-navy-500 mb-2">Phone</h3>
-                <p className="text-gray-600">+254 700 123 456</p>
+                <p className="text-gray-600">+254 743993715</p>
               </div>
             </ScrollReveal>
             
