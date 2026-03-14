@@ -300,7 +300,7 @@ export default function PartnersPage() {
               <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg">
                 <Phone className="w-8 h-8 text-gold-400 mb-4" />
                 <h3 className="text-xl font-bold text-navy-500 mb-2">Call Us</h3>
-                <p className="text-gray-600 mb-4">+254 700 123 456</p>
+                <p className="text-gray-600 mb-4">+254 743993715</p>
                 <p className="text-gray-600 text-sm">
                   Monday to Friday, 9:00 AM - 6:00 PM East Africa Time
                 </p>
