@@ -116,7 +116,7 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <StaggerReveal staggerDelay={0.1} itemDelay={0.4} direction="up">
               {values.map((value, index) => (
-                <Card variant="light" key={index} className="text-center group">
+                <Card variant="light" key={index} className="text-center group h-full flex flex-col">
                   <CardIcon size="md">
                     <div className="text-gold">{value.icon}</div>
                   </CardIcon>
@@ -160,7 +160,7 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             <StaggerReveal staggerDelay={0.1} itemDelay={0.2} direction="up">
               {teamMembers.map((member, index) => (
-                <Card variant="light" key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <Card variant="light" key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
                   {/* Professional Header */}
                   <div className="bg-gradient-to-r from-navy to-navy-dark p-6 text-center">
                     <div className="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -171,13 +171,13 @@ export default function TeamPage() {
                   </div>
                   
                   {/* Professional Content */}
-                  <div className="p-6">
-                    <p className="text-gray-600 leading-relaxed font-body text-sm mb-6 line-clamp-3">
+                  <div className="p-6 flex-grow flex flex-col">
+                    <p className="text-gray-600 leading-relaxed font-body text-sm mb-6 line-clamp-3 flex-grow">
                       {member.bio}
                     </p>
                     
                     {/* Professional Social Links */}
-                    <div className="flex items-center justify-center space-x-3">
+                    <div className="flex items-center justify-center space-x-3 mt-auto">
                       {member.email && (
                         <a
                           href={`mailto:${member.email}`}
@@ -266,7 +266,7 @@ export default function TeamPage() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <ScrollReveal direction="up" delay={0.3}>
-              <Card variant="light" className="text-center">
+              <Card variant="light" className="text-center h-full flex flex-col">
                 <CardIcon size="md">
                   <Mail className="text-gold" />
                 </CardIcon>
@@ -280,7 +280,7 @@ export default function TeamPage() {
             </ScrollReveal>
             
             <ScrollReveal direction="up" delay={0.4}>
-              <Card variant="light" className="text-center">
+              <Card variant="light" className="text-center h-full flex flex-col">
                 <CardIcon size="md">
                   <Phone className="text-gold" />
                 </CardIcon>
@@ -294,7 +294,7 @@ export default function TeamPage() {
             </ScrollReveal>
             
             <ScrollReveal direction="up" delay={0.5}>
-              <Card variant="light" className="text-center">
+              <Card variant="light" className="text-center h-full flex flex-col">
                 <CardIcon size="md">
                   <MapPin className="text-gold" />
                 </CardIcon>
