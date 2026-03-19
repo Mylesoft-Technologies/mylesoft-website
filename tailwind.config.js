@@ -8,45 +8,35 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Mylesoft Brand Colors
+        // Mylesoft Brand Colors - Corrected
         navy: {
-          50: '#F0F4F8',
-          100: '#E0E7EF',
-          200: '#C7D7EF',
-          300: '#A0B8D8',
-          400: '#7A94C2',
-          500: '#1A395B',
-          600: '#152E4D',
-          700: '#0F2338',
-          800: '#0A1929',
-          900: '#051419',
+          DEFAULT: '#1A395B',
+          dark: '#0f1f35',
+          deep: '#080e18'
         },
         gold: {
-          50: '#FEF7ED',
-          100: '#FDEAD7',
-          200: '#FBD4AE',
-          300: '#F8BB7A',
-          400: '#C79639',
-          500: '#A67C2A',
-          600: '#8B6423',
-          700: '#704F1C',
-          800: '#553A15',
-          900: '#3A250E',
+          DEFAULT: '#C79639',
+          light: '#e0b055',
+          pale: '#f5e4b8'
         },
+        ice: '#EEF2F8',
+        'light-blue': '#C7D7EF',
+        'muted-blue': '#95A9CC',
+        // Supporting Colors
+        white: '#ffffff',
+        'off-white': '#f8f6f2',
+        'dark-grey': '#212121',
+        'med-grey': '#545454',
         // Semantic Colors
         success: '#2EA44F',
         warning: '#F59E0B',
         error: '#DC2626',
-        // Neutral Colors
-        'off-white': '#F8FAFC',
-        'light-grey': '#E8EDF4',
-        'medium-grey': '#545454',
-        'dark-grey': '#212121',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        display: ['var(--font-display)'],
+        body: ['var(--font-body)'],
+        mono: ['var(--font-mono)'],
+        sans: ['var(--font-body)'],
       },
       fontSize: {
         '2xs': ['0.75rem', { lineHeight: '1rem' }],

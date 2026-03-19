@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google'
+import { Playfair_Display, Plus_Jakarta_Sans, DM_Mono } 
+  from 'next/font/google'
 import { Layout } from '@/components/layout/Layout'
 import { AnalyticsProvider } from '@/components/analytics/Analytics'
 import { CookieConsent } from '@/components/ui/CookieConsent'
@@ -7,9 +8,27 @@ import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 import { LiveChat } from '@/components/ui/LiveChat'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-plus-jakarta' })
-const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono' })
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  weight: ['400', '600', '700'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+})
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-jakarta',
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+})
+
+const dmMono = DM_Mono({
+  subsets: ['latin'],
+  variable: '--font-dm-mono',
+  weight: ['400', '500'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'MylesCorp Technologies - AI-Powered Software Solutions for East Africa',
@@ -36,7 +55,7 @@ export const metadata: Metadata = {
     siteName: 'MylesCorp Technologies',
     images: [
       {
-        url: '/og-image.svg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'MylesCorp Technologies - AI-Powered Software Solutions',
@@ -47,7 +66,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'MylesCorp Technologies - AI-Powered Software Solutions for East Africa',
     description: 'East Africa\'s leading AI-powered software company. Transforming Education, Healthcare, Agriculture, and Business with innovative solutions.',
-    images: ['/og-image.svg'],
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -71,15 +90,20 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${plusJakarta.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${jakarta.variable} ${dmMono.variable}`}>
       <head>
+        {/* Resource Hints */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://vercel.live" />
+        
         {/* Favicon */}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon-16x16.svg" />
         <link rel="icon" type="image/svg+xml" sizes="192x192" href="/icon-192x192.svg" />
         <link rel="icon" type="image/svg+xml" sizes="512x512" href="/icon-512x512.svg" />
         <link rel="shortcut icon" href="/favicon.svg" />
-        <link rel="apple-touch-icon" href="/icon-192x192.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         
         {/* SEO */}
         <link rel="canonical" href="https://mylescorp.co.ke" />
@@ -120,11 +144,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-white text-dark-grey antialiased">
-        <div className="skip-to-main">
-          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-navy-500 text-white p-2 rounded">
-            Skip to main content
-          </a>
-        </div>
+        {/* Skip to main content link */}
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-gold-DEFAULT focus:text-navy-DEFAULT focus:rounded-md font-body font-semibold"
+        >
+          Skip to main content
+        </a>
         
         <main id="main-content">
           {children}

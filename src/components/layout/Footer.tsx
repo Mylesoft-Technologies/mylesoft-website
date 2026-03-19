@@ -25,7 +25,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-gradient-to-br from-navy-600 via-navy-700 to-navy-800 text-white relative overflow-hidden">
+    <footer className="bg-navy-DEFAULT text-white relative overflow-hidden border-t border-gold-DEFAULT/20">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -44,8 +44,8 @@ export function Footer() {
                 <div className="flex items-center space-x-3">
                   <Logo size="lg" fallbackColor="gold" />
                   <div>
-                    <h3 className="text-2xl font-bold text-white">MylesCorp</h3>
-                    <p className="text-gold-400 text-sm">Technologies</p>
+                    <h3 className="text-[14px] font-body font-bold text-white">MylesCorp</h3>
+                    <p className="text-[10px] font-body text-gold-DEFAULT uppercase tracking-[1.5px]">Technologies Ltd</p>
                   </div>
                 </div>
                 
@@ -87,10 +87,10 @@ export function Footer() {
                         href={item.href}
                         className="group block"
                       >
-                        <div className="text-white hover:text-gold-400 transition-all duration-300 font-medium">
+                        <div className="text-light-blue hover:text-gold-DEFAULT transition-all duration-300 font-body font-medium">
                           {item.name}
                         </div>
-                        <div className="text-navy-300 text-sm group-hover:text-navy-200 transition-colors duration-300">
+                        <div className="text-muted-blue text-sm group-hover:text-light-blue transition-colors duration-300">
                           {item.desc}
                         </div>
                       </Link>
@@ -115,7 +115,7 @@ export function Footer() {
                     <li key={index}>
                       <Link 
                         href={item.href}
-                        className="text-navy-200 hover:text-gold-400 transition-all duration-300 flex items-center group"
+                        className="text-muted-blue hover:text-gold-DEFAULT transition-all duration-300 flex items-center group font-body"
                       >
                         <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300">
                           {item.name}
@@ -131,9 +131,9 @@ export function Footer() {
             <ScrollReveal direction="up" delay={0.4}>
               <div className="space-y-6">
                 <h3 className="text-xl font-bold text-white mb-6">Stay Connected</h3>
-                <p className="text-navy-200 mb-4">
+                <div className="text-muted-blue mb-4 font-body">
                   Get the latest updates on our innovative solutions and industry insights.
-                </p>
+                </div>
                 
                 <form onSubmit={handleNewsletterSubmit} className="space-y-4">
                   <input
@@ -141,12 +141,12 @@ export function Footer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="w-full px-4 py-3 bg-navy-600/50 border border-navy-500 rounded-lg text-white placeholder-navy-300 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-navy-dark/50 border border-gold-DEFAULT/20 rounded-lg text-white placeholder-muted-blue focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT focus:border-gold-DEFAULT transition-all duration-300 font-body"
                     required
                   />
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-500 hover:to-gold-600 text-white shadow-premium-gold hover:shadow-premium-glow transform hover:-translate-y-0.5 transition-all duration-300"
+                    className="w-full bg-gold-DEFAULT text-navy-DEFAULT hover:bg-gold-light shadow-gold hover:shadow-gold hover:-translate-y-0.5 transition-all duration-300 font-body font-bold"
                     disabled={isSubscribed}
                   >
                     {isSubscribed ? (
@@ -178,7 +178,7 @@ export function Footer() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-navy-600/50 border border-navy-500 rounded-lg flex items-center justify-center text-navy-200 hover:text-gold-400 hover:bg-navy-600 hover:border-gold-400/50 transform hover:scale-110 transition-all duration-300"
+                        className="w-10 h-10 bg-navy-dark/50 border border-gold-DEFAULT/20 rounded-lg flex items-center justify-center text-muted-blue hover:text-gold-DEFAULT hover:bg-navy-dark hover:border-gold-DEFAULT/50 transform hover:scale-110 transition-all duration-300"
                         aria-label={social.name}
                       >
                         <Icon name={social.name} size={18} />
@@ -192,23 +192,23 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-navy-600/50 py-8">
+        <div className="border-t border-gold-DEFAULT/20 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <ScrollReveal direction="up" delay={0.5}>
-              <div className="text-navy-200 text-sm">
-                © {currentYear} MylesCorp Technologies. All rights reserved.
+              <div className="text-muted-blue text-sm font-body">
+                © {currentYear} <span className="text-gold-DEFAULT font-semibold">MylesCorp Technologies Ltd</span>. All rights reserved.
               </div>
             </ScrollReveal>
             
             <ScrollReveal direction="up" delay={0.6}>
               <div className="flex items-center space-x-6 text-sm">
-                <Link href="/privacy" className="text-navy-200 hover:text-gold-400 transition-colors duration-300">
+                <Link href="/privacy" className="text-muted-blue hover:text-gold-DEFAULT transition-colors duration-300 font-body">
                   Privacy Policy
                 </Link>
-                <Link href="/terms" className="text-navy-200 hover:text-gold-400 transition-colors duration-300">
+                <Link href="/terms" className="text-muted-blue hover:text-gold-DEFAULT transition-colors duration-300 font-body">
                   Terms of Service
                 </Link>
-                <Link href="/cookies" className="text-navy-200 hover:text-gold-400 transition-colors duration-300">
+                <Link href="/cookies" className="text-muted-blue hover:text-gold-DEFAULT transition-colors duration-300 font-body">
                   Cookie Policy
                 </Link>
               </div>
@@ -217,7 +217,7 @@ export function Footer() {
             <ScrollReveal direction="up" delay={0.7}>
               <button
                 onClick={scrollToTop}
-                className="group flex items-center space-x-2 text-navy-200 hover:text-gold-400 transition-all duration-300"
+                className="group flex items-center space-x-2 text-muted-blue hover:text-gold-DEFAULT transition-all duration-300 font-body"
               >
                 <span className="text-sm">Back to top</span>
                 <ArrowUp className="w-4 h-4 group-hover:animate-bounce" />
@@ -228,9 +228,9 @@ export function Footer() {
 
         {/* Tagline */}
         <ScrollReveal direction="fade" delay={0.8}>
-          <div className="text-center py-6 border-t border-navy-600/30">
-            <p className="text-gold-400 font-semibold italic text-lg">
-              Transforming Industries, Empowering Generations.
+          <div className="text-center py-6 border-t border-gold-DEFAULT/20">
+            <p className="text-gold-DEFAULT font-display italic font-bold text-[13px]">
+              Transforming Industries, Empowering Generation.
             </p>
           </div>
         </ScrollReveal>

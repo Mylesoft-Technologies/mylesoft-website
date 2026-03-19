@@ -4,8 +4,95 @@ import { Resend } from 'resend'
 // Initialize Resend with your API key
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
+// In-memory rate limiting store
+interface RateLimitEntry {
+  count: number
+  timestamp: number
+}
+
+const rateLimitStore = new Map<string, RateLimitEntry>()
+const RATE_LIMIT_WINDOW = 15 * 60 * 1000 // 15 minutes in milliseconds
+const MAX_REQUESTS = 3
+
+// Clean up expired entries periodically
+function cleanupExpiredEntries() {
+  const now = Date.now()
+  const entries = Array.from(rateLimitStore.entries())
+  for (const [ip, entry] of entries) {
+    if (now - entry.timestamp > RATE_LIMIT_WINDOW) {
+      rateLimitStore.delete(ip)
+    }
+  }
+}
+
+// Run cleanup every 5 minutes
+setInterval(cleanupExpiredEntries, 5 * 60 * 1000)
+
+function getClientIP(request: NextRequest): string {
+  const forwarded = request.headers.get('x-forwarded-for')
+  const realIP = request.headers.get('x-real-ip')
+  
+  if (forwarded) {
+    return forwarded.split(',')[0].trim()
+  }
+  
+  if (realIP) {
+    return realIP
+  }
+  
+  return 'unknown'
+}
+
+function checkRateLimit(ip: string): { allowed: boolean; remaining: number; resetTime: number } {
+  const now = Date.now()
+  const entry = rateLimitStore.get(ip)
+  
+  if (!entry) {
+    // First request from this IP
+    rateLimitStore.set(ip, { count: 1, timestamp: now })
+    return { allowed: true, remaining: MAX_REQUESTS - 1, resetTime: now + RATE_LIMIT_WINDOW }
+  }
+  
+  // Check if window has expired
+  if (now - entry.timestamp > RATE_LIMIT_WINDOW) {
+    // Reset the window
+    rateLimitStore.set(ip, { count: 1, timestamp: now })
+    return { allowed: true, remaining: MAX_REQUESTS - 1, resetTime: now + RATE_LIMIT_WINDOW }
+  }
+  
+  // Window still active
+  if (entry.count >= MAX_REQUESTS) {
+    return { allowed: false, remaining: 0, resetTime: entry.timestamp + RATE_LIMIT_WINDOW }
+  }
+  
+  // Increment count
+  entry.count++
+  return { allowed: true, remaining: MAX_REQUESTS - entry.count, resetTime: entry.timestamp + RATE_LIMIT_WINDOW }
+}
+
 export async function POST(request: NextRequest) {
   try {
+    // Get client IP
+    const clientIP = getClientIP(request)
+    
+    // Check rate limit
+    const rateLimit = checkRateLimit(clientIP)
+    
+    // Set rate limit headers
+    const headers = new Headers()
+    headers.set('X-RateLimit-Limit', MAX_REQUESTS.toString())
+    headers.set('X-RateLimit-Remaining', Math.max(0, rateLimit.remaining).toString())
+    headers.set('X-RateLimit-Reset', new Date(rateLimit.resetTime).toISOString())
+    
+    if (!rateLimit.allowed) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { 
+          status: 429,
+          headers
+        }
+      )
+    }
     // Check if Resend is configured
     if (!resend) {
       return NextResponse.json(
@@ -114,7 +201,7 @@ export async function POST(request: NextRequest) {
         success: true,
         message: 'Successfully subscribed to newsletter',
         data: data
-      })
+      }, { headers })
 
     } catch (resendError) {
       console.error('Resend subscription error:', resendError)

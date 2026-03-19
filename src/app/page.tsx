@@ -33,12 +33,19 @@ export default function HomePage() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-navy-500 via-navy-600 to-navy-700 overflow-hidden">
-        {/* Static Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-gold-400/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gold-300/10 rounded-full blur-3xl" />
-        </div>
+      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-navy-deep overflow-hidden">
+        {/* CSS Grid Texture Overlay */}
+        <div className="absolute inset-0 opacity-100" style={{
+          backgroundImage: `
+            linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)
+          `,
+          backgroundSize: '64px 64px'
+        }} />
+        
+        {/* Radial Glow Elements */}
+        <div className="absolute top-right right-10 top-20 w-[600px] h-[600px] bg-navy-DEFAULT/50 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-left left-10 bottom-20 w-[500px] h-[500px] bg-gold-DEFAULT/7 rounded-full blur-3xl pointer-events-none" />
         
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="space-y-8">
@@ -50,22 +57,23 @@ export default function HomePage() {
             
             <SimpleReveal delay={0.4}>
               <div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                <h1 className="font-display font-bold text-white leading-tight" 
+                    style={{ fontSize: 'clamp(44px, 5.5vw, 76px)' }}>
                   Transform Your Business with
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">
+                  <em className="block text-gold-DEFAULT">
                     AI-Powered Solutions
-                  </span>
+                  </em>
                 </h1>
               </div>
             </SimpleReveal>
             
             <SimpleReveal delay={0.6}>
               <div className="max-w-3xl mx-auto">
-                <p className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-4">
+                <p className="font-body text-[18px] font-light text-light-blue leading-relaxed mb-4">
                   East Africa's leading technology company delivering innovative solutions for Education, Healthcare, Agriculture, and Business.
                 </p>
-                <p className="text-lg text-gold-400 font-semibold italic">
-                  Transforming Industries, Empowering Generations.
+                <p className="font-display italic font-bold text-gold-DEFAULT text-center">
+                  Transforming Industries, Empowering Generation.
                 </p>
               </div>
             </SimpleReveal>
@@ -73,7 +81,10 @@ export default function HomePage() {
             <SimpleReveal delay={0.8}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <div>
-                  <Button size="lg">
+                  <Button 
+                    variant="primary"
+                    className="bg-gold-DEFAULT text-navy-DEFAULT hover:bg-gold-light hover:-translate-y-2 shadow-gold hover:shadow-gold px-9 py-4 font-body font-bold text-[14px] tracking-[0.4px]"
+                  >
                     <Sparkles className="mr-2 w-5 h-5" />
                     Get Started Today
                     <ArrowRight className="ml-2 w-5 h-5" />
@@ -81,7 +92,10 @@ export default function HomePage() {
                 </div>
                 
                 <div>
-                  <Button variant="secondary" size="lg">
+                  <Button 
+                    variant="outline" 
+                    className="border-white/20 text-white hover:border-gold-DEFAULT hover:text-gold-DEFAULT font-body"
+                  >
                     Book a Demo
                   </Button>
                 </div>

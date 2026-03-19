@@ -2,63 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS Custom Properties - Exact values from design specification */
+/* CSS Custom Properties - Exact Brand Tokens */
 :root {
-  /* Colors - Exact hex values from specification */
-  --color-navy-primary: #1A395B;
-  --color-gold-primary: #C79639;
-  --color-gold-hover: #A67C2A;
-  --color-white: #FFFFFF;
-  --color-light-blue: #C7D7EF;
-  --color-off-white: #F8FAFC;
-  --color-dark-grey: #212121;
-  --color-medium-grey: #545454;
-  --color-light-grey: #E8EDF4;
-  --color-success-green: #2EA44F;
-  --color-warning-amber: #F59E0B;
+  /* ── Primary Brand ── */
+  --color-navy:           #1A395B;   /* corrected */
+  --color-navy-dark:      #0f1f35;
+  --color-navy-deep:      #080e18;
+  --color-gold:           #C79639;   /* corrected */
+  --color-gold-light:     #e0b055;
+  --color-gold-pale:      #f5e4b8;
 
-  /* Semantic color tokens for Tailwind */
-  --color-navy-500: #1A395B;
-  --color-navy-100: #C7D7EF;
-  --color-gold-400: #C79639;
-  --color-gold-500: #A67C2A;
-  --color-gold-100: #FEF3C7;
+  /* ── Supporting ── */
+  --color-white:          #ffffff;
+  --color-off-white:      #f8f6f2;
+  --color-ice:            #EEF2F8;
+  --color-light-blue:     #C7D7EF;
+  --color-muted-blue:     #95A9CC;
+  --color-dark-grey:      #212121;
+  --color-med-grey:       #545454;
 
-  /* Typography - Exact specifications from design system */
-  --font-plus-jakarta: "Plus Jakarta Sans", system-ui, sans-serif;
-  --font-inter: "Inter", system-ui, sans-serif;
-  --font-jetbrains-mono: "JetBrains Mono", monospace;
+  /* ── Semantic UI ── */
+  --color-bg-primary:     var(--color-navy-deep);
+  --color-bg-card:        #0d1929;
+  --color-bg-surface:     var(--color-navy-dark);
+  --color-text-primary:   var(--color-white);
+  --color-text-body:      var(--color-light-blue);
+  --color-text-muted:     var(--color-muted-blue);
+  --color-border:         rgba(199, 150, 57, 0.2);
+  --color-border-hover:   rgba(199, 150, 57, 0.5);
+  --color-border-subtle:  rgba(255, 255, 255, 0.08);
 
-  /* Typography sizes */
-  --font-size-h1: 48px;
-  --font-size-h1-large: 64px;
-  --font-size-h2: 32px;
-  --font-size-h2-large: 40px;
-  --font-size-h3: 20px;
-  --font-size-h3-large: 24px;
-  --font-size-body: 16px;
-  --font-size-small: 14px;
-  --font-size-button: 16px;
-  --font-size-nav: 15px;
-  --font-size-code: 14px;
+  /* ── Typography ── */
+  --font-display:  var(--font-playfair), Georgia, serif;
+  --font-body:     var(--font-jakarta), system-ui, sans-serif;
+  --font-mono:     var(--font-dm-mono), 'Courier New', monospace;
 
-  /* Typography weights */
-  --font-weight-h1: 800;
-  --font-weight-h2: 700;
-  --font-weight-h3: 600;
-  --font-weight-body: 400;
-  --font-weight-small: 400;
+  /* ── Spacing ── */
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px;
+  --space-5:20px; --space-6:24px; --space-8:32px; --space-10:40px;
+  --space-12:48px; --space-16:64px; --space-20:80px; --space-24:96px;
+
+  /* ── Radius ── */
+  --radius-sm:6px; --radius-md:8px; --radius-lg:12px;
+  --radius-xl:16px; --radius-2xl:20px; --radius-full:9999px;
+
+  /* ── Shadows ── */
+  --shadow-card:       0 4px 24px rgba(0,0,0,0.3);
+  --shadow-card-hover: 0 24px 60px rgba(0,0,0,0.5);
+  --shadow-gold:       0 12px 40px rgba(199,150,57,0.3);
+
+  /* ── Transitions ── */
+  --transition-fast: all 0.15s ease;
+  --transition-base: all 0.2s ease;
+  --transition-slow: all 0.3s ease;
 }
 
 /* Dark mode color variables */
 .dark {
-  --color-white: #1A1A1A;
-  --color-off-white: #2D2D2D;
-  --color-light-grey: #404040;
-  --color-medium-grey: #B0B0B0;
-  --color-dark-grey: #E0E0E0;
-  --color-navy-100: #2D3E4F;
-  --color-gold-100: #3D2F1F;
+  --color-bg-primary:   #080e18;
+  --color-bg-card:      #0d1929;
+  --color-bg-surface:   #0f1f35;
+  --color-text-primary: #ffffff;
+  --color-text-body:    #C7D7EF;
+  --color-text-muted:   #95A9CC;
+  --color-border:       rgba(199,150,57,0.2);
+  --color-border-hover: rgba(199,150,57,0.5);
 }
 
 /* Additional CSS variables */
@@ -141,6 +149,7 @@
   html {
     scroll-behavior: smooth;
     font-feature-settings: 'rlig' 1, 'calt' 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   body {
@@ -1125,3 +1134,12 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
