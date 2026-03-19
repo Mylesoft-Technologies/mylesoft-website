@@ -173,7 +173,7 @@ interface ProgressLineProps {
 
 export function ProgressLine({ 
   className = '', 
-  color = 'bg-gold-400',
+  color = 'bg-gold',
   height = 2,
   duration = 1,
   delay = 0
