@@ -35,6 +35,7 @@ module.exports = {
         // Supporting Colors
         white: '#ffffff',
         'off-white': '#f8f6f2',
+        'light-grey': '#E8EDF4',
         'dark-grey': '#212121',
         'med-grey': '#545454',
         // Semantic Colors
