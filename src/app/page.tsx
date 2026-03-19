@@ -110,7 +110,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SimpleReveal delay={0.2}>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-500 mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">
                 Impact by the Numbers
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -123,10 +123,10 @@ export default function HomePage() {
             {stats.map((stat, index) => (
               <SimpleReveal key={index} delay={0.4 + index * 0.1}>
                 <div className="text-center group">
-                  <div className="w-20 h-20 bg-gradient-to-br from-gold-400 to-gold-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="w-20 h-20 bg-gradient-to-br from-gold to-gold-light rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <div className="text-white">{stat.icon}</div>
                   </div>
-                  <div className="text-4xl font-bold text-navy-500 mb-2 group-hover:text-gold-500 transition-colors duration-300">
+                  <div className="text-4xl font-bold text-navy mb-2 group-hover:text-gold transition-colors duration-300">
                     {stat.number.toLocaleString()}{stat.suffix}
                   </div>
                   <div className="text-gray-600 font-medium">{stat.label}</div>
@@ -142,7 +142,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SimpleReveal delay={0.2}>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-500 mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">
                 Why Choose MylesCorp
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -155,10 +155,10 @@ export default function HomePage() {
             {features.map((feature, index) => (
               <SimpleReveal key={index} delay={0.4 + index * 0.2}>
                 <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
-                  <div className="w-16 h-16 bg-gradient-to-br from-gold-400 to-gold-500 rounded-xl flex items-center justify-center text-white mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-gold to-gold-light rounded-xl flex items-center justify-center text-white mb-6">
                     {feature.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-navy-500 mb-4">{feature.title}</h3>
+                  <h3 className="text-2xl font-bold text-navy mb-4">{feature.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
               </SimpleReveal>
@@ -168,7 +168,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section id="cta" className="py-20 bg-gradient-to-r from-gold-400 to-gold-500">
+      <section id="cta" className="py-20 bg-gradient-to-r from-gold to-gold-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SimpleReveal delay={0.2}>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -178,11 +178,11 @@ export default function HomePage() {
               Join hundreds of organizations across East Africa already using our solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-navy-500 hover:bg-gray-100 shadow-2xl hover:shadow-3xl">
+              <Button size="lg" className="bg-white text-navy hover:bg-gray-100 shadow-2xl hover:shadow-3xl">
                 Start Your Journey
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-navy-500">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-navy">
                 Schedule Consultation
               </Button>
             </div>
