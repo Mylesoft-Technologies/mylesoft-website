@@ -209,13 +209,13 @@ export default function ServicesPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {processSteps.map((step) => (
-                <div key={step.number} className="text-center">
-                  <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div key={step.number} className="text-center h-full flex flex-col">
+                  <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 flex-shrink-0">
                     {step.icon}
                   </div>
                   <div className="text-2xl font-bold text-gold-400 mb-3">Step {step.number}</div>
                   <h3 className="heading-3 mb-3">{step.title}</h3>
-                  <p className="body-text">{step.description}</p>
+                  <p className="body-text flex-grow">{step.description}</p>
                 </div>
               ))}
             </div>
