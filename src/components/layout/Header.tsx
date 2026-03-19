@@ -35,6 +35,7 @@ export function Header() {
     { name: 'Services', href: '/services' },
     { name: 'About', href: '/about' },
     { name: 'Team', href: '/team' },
+    { name: 'Coverage', href: '/coverage' },
     { name: 'Partners', href: '/partners' },
     { name: 'Blog', href: '/blog' },
     { name: 'Careers', href: '/careers' },
@@ -78,7 +79,7 @@ export function Header() {
           <nav className="hidden lg:flex items-center space-x-8">
             <MegaMenu />
             {navigation
-              .filter((item) => item.name !== 'Products')
+              .filter((item) => item.name !== 'Products' && item.name !== 'Coverage')
               .map((item) => (
                 <button
                   key={item.name}
