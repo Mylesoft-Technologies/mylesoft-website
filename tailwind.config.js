@@ -7,6 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      ringColor: {
+        gold: {
+          DEFAULT: '#C79639',
+          light: '#e0b055',
+        },
+        navy: {
+          DEFAULT: '#1A395B',
+          dark: '#0f1f35',
+        },
+      },
       colors: {
         // Mylesoft Brand Colors - Corrected
         navy: {
