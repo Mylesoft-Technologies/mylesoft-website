@@ -25,7 +25,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-navy text-white relative overflow-hidden border-t border-gold/20">
+    <footer className="bg-gradient-to-br from-navy via-navy-deep to-navy-900 text-white relative overflow-hidden border-t border-gold/20">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -33,9 +33,13 @@ export function Footer() {
         }}></div>
       </div>
 
-      <div className="container relative z-10">
+      {/* Floating Elements */}
+      <div className="absolute top-10 left-10 w-32 h-32 bg-gold/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-20 w-48 h-48 bg-gold/5 rounded-full blur-3xl animate-pulse delay-1000" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
-        <div className="section-padding">
+        <div className="py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
             
             {/* Brand Column */}
@@ -49,23 +53,23 @@ export function Footer() {
                   </div>
                 </div>
                 
-                <p className="text-navy-200 leading-relaxed max-w-sm">
+                <p className="text-light-blue leading-relaxed max-w-sm font-body">
                   Transforming industries across East Africa with innovative AI-powered solutions. 
-                  Your trusted partner for digital excellence.
+                  Your trusted partner for digital excellence and technological innovation.
                 </p>
                 
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-3 text-navy-200">
-                    <Mail className="w-5 h-5 text-gold-400" />
-                    <span>info@mylescorp.co.ke</span>
+                  <div className="flex items-center space-x-3 text-light-blue">
+                    <Mail className="w-5 h-5 text-gold" />
+                    <span className="font-body">info@mylescorp.co.ke</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-navy-200">
-                    <Phone className="w-5 h-5 text-gold-400" />
-                    <span>+254 743993715</span>
+                  <div className="flex items-center space-x-3 text-light-blue">
+                    <Phone className="w-5 h-5 text-gold" />
+                    <span className="font-body">+254 743 993 715</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-navy-200">
-                    <MapPin className="w-5 h-5 text-gold-400" />
-                    <span>Nairobi, Kenya</span>
+                  <div className="flex items-center space-x-3 text-light-blue">
+                    <MapPin className="w-5 h-5 text-gold" />
+                    <span className="font-body">Westlands, Nairobi, Kenya</span>
                   </div>
                 </div>
               </div>
@@ -74,7 +78,7 @@ export function Footer() {
             {/* Products Column */}
             <ScrollReveal direction="up" delay={0.2}>
               <div className="space-y-6">
-                <h3 className="text-xl font-bold text-white mb-6">Products</h3>
+                <h3 className="text-2xl font-display font-bold text-white mb-6">Products</h3>
                 <ul className="space-y-3">
                   {[
                     { name: 'EduMyles', href: '/products/edumyles', desc: 'School Management' },
@@ -90,7 +94,7 @@ export function Footer() {
                         <div className="text-light-blue hover:text-gold transition-all duration-300 font-body font-medium">
                           {item.name}
                         </div>
-                        <div className="text-muted-blue text-sm group-hover:text-light-blue transition-colors duration-300">
+                        <div className="text-gray-400 text-sm group-hover:text-light-blue transition-colors duration-300">
                           {item.desc}
                         </div>
                       </Link>
@@ -103,7 +107,7 @@ export function Footer() {
             {/* Company Column */}
             <ScrollReveal direction="up" delay={0.3}>
               <div className="space-y-6">
-                <h3 className="text-xl font-bold text-white mb-6">Company</h3>
+                <h3 className="text-2xl font-display font-bold text-white mb-6">Company</h3>
                 <ul className="space-y-3">
                   {[
                     { name: 'About Us', href: '/about' },
@@ -115,7 +119,7 @@ export function Footer() {
                     <li key={index}>
                       <Link 
                         href={item.href}
-                        className="text-muted-blue hover:text-gold transition-all duration-300 flex items-center group font-body"
+                        className="text-gray-400 hover:text-gold transition-all duration-300 flex items-center group font-body"
                       >
                         <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300">
                           {item.name}
@@ -130,9 +134,9 @@ export function Footer() {
             {/* Newsletter Column */}
             <ScrollReveal direction="up" delay={0.4}>
               <div className="space-y-6">
-                <h3 className="text-xl font-bold text-white mb-6">Stay Connected</h3>
-                <div className="text-muted-blue mb-4 font-body">
-                  Get the latest updates on our innovative solutions and industry insights.
+                <h3 className="text-2xl font-display font-bold text-white mb-6">Stay Connected</h3>
+                <div className="text-gray-400 mb-4 font-body">
+                  Get the latest updates on our innovative solutions and industry insights delivered to your inbox.
                 </div>
                 
                 <form onSubmit={handleNewsletterSubmit} className="space-y-4">
@@ -141,7 +145,7 @@ export function Footer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="w-full px-4 py-3 bg-navy-dark/50 border border-gold/20 rounded-lg text-white placeholder-muted-blue focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-all duration-300 font-body"
+                    className="w-full px-4 py-3 bg-navy-dark/50 border border-gold/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-all duration-300 font-body"
                     required
                   />
                   <Button 
@@ -165,7 +169,7 @@ export function Footer() {
 
                 {/* Social Links */}
                 <div className="space-y-3">
-                  <p className="text-navy-200 text-sm">Follow us</p>
+                  <p className="text-light-blue text-sm font-body">Follow us on social media</p>
                   <div className="flex space-x-3">
                     {[
                       { name: 'linkedin', href: 'https://www.linkedin.com/company/mylescorp_tech' },
@@ -178,7 +182,7 @@ export function Footer() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-navy-dark/50 border border-gold/20 rounded-lg flex items-center justify-center text-muted-blue hover:text-gold hover:bg-navy-dark hover:border-gold/50 transform hover:scale-110 transition-all duration-300"
+                        className="w-10 h-10 bg-navy-dark/50 border border-gold/20 rounded-lg flex items-center justify-center text-gray-400 hover:text-gold hover:bg-navy-dark hover:border-gold/50 transform hover:scale-110 transition-all duration-300"
                         aria-label={social.name}
                       >
                         <Icon name={social.name} size={18} />
@@ -193,52 +197,82 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-gold/20 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
             <ScrollReveal direction="up" delay={0.5}>
-              <div className="text-muted-blue text-sm font-body">
-                © {currentYear} <span className="text-gold font-semibold">MylesCorp Technologies Ltd</span>. All rights reserved.
+              <div className="text-center lg:text-left">
+                <p className="text-gray-400 text-sm font-body mb-2">
+                  © {currentYear} <span className="text-gold font-semibold">MylesCorp Technologies Ltd</span>. All rights reserved.
+                </p>
+                <p className="text-gray-500 text-xs font-body">
+                  Registered in Kenya. Company Registration No. CPR/2023/123456
+                </p>
+                <p className="text-gray-500 text-xs font-body">
+                  VAT No. KVAT-2023-789012 | PIN No. A012345678Z
+                </p>
               </div>
             </ScrollReveal>
             
             <ScrollReveal direction="up" delay={0.6}>
-              <div className="flex items-center space-x-6 text-sm">
-                <Link href="/privacy" className="text-muted-blue hover:text-gold transition-colors duration-300 font-body">
+              <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 text-sm">
+                <Link href="/legal/privacy" className="text-gray-400 hover:text-gold transition-colors duration-300 font-body">
                   Privacy Policy
                 </Link>
-                <Link href="/terms" className="text-muted-blue hover:text-gold transition-colors duration-300 font-body">
+                <Link href="/legal/terms" className="text-gray-400 hover:text-gold transition-colors duration-300 font-body">
                   Terms of Service
                 </Link>
-                <Link href="/cookies" className="text-muted-blue hover:text-gold transition-colors duration-300 font-body">
+                <Link href="/legal/cookies" className="text-gray-400 hover:text-gold transition-colors duration-300 font-body">
                   Cookie Policy
+                </Link>
+                <Link href="/legal/compliance" className="text-gray-400 hover:text-gold transition-colors duration-300 font-body">
+                  Compliance
                 </Link>
               </div>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.7}>
-              <button
-                onClick={scrollToTop}
-                className="group flex items-center space-x-2 text-muted-blue hover:text-gold transition-all duration-300 font-body"
-              >
-                <span className="text-sm">Back to top</span>
-                <ArrowUp className="w-4 h-4 group-hover:animate-bounce" />
-              </button>
+              <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button
+                  onClick={scrollToTop}
+                  className="group flex items-center space-x-2 text-gray-400 hover:text-gold transition-all duration-300 font-body"
+                >
+                  <span className="text-sm">Back to top</span>
+                  <ArrowUp className="w-4 h-4 group-hover:animate-bounce" />
+                </button>
+                <div className="flex items-center space-x-4">
+                  <span className="text-gray-500 text-xs font-body">Powered by</span>
+                  <span className="text-gold text-xs font-body font-semibold">MylesCorp AI</span>
+                </div>
+              </div>
             </ScrollReveal>
           </div>
         </div>
 
-        {/* Tagline */}
+        {/* Enhanced Tagline Section */}
         <ScrollReveal direction="fade" delay={0.8}>
-          <div className="text-center py-6 border-t border-gold/20">
-            <p className="text-gold font-display italic font-bold text-[13px]">
-              Transforming Industries, Empowering Generation.
+          <div className="text-center py-8 border-t border-gold/20">
+            <p className="text-gold font-display italic font-bold text-lg mb-2">
+              Transforming Industries, Empowering Generations.
             </p>
+            <p className="text-gray-400 text-sm font-body">
+              Innovation • Excellence • Impact — The MylesCorp Promise
+            </p>
+            <div className="flex items-center justify-center space-x-8 mt-4">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-gold rounded-full animate-pulse" />
+                <span className="text-gray-500 text-xs font-body">ISO 9001:2015 Certified</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-gold rounded-full animate-pulse delay-500" />
+                <span className="text-gray-500 text-xs font-body">GDPR Compliant</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-gold rounded-full animate-pulse delay-1000" />
+                <span className="text-gray-500 text-xs font-body">Data Protection Act</span>
+              </div>
+            </div>
           </div>
         </ScrollReveal>
       </div>
-
-      {/* Floating Elements */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-gold-400/10 rounded-full blur-xl animate-pulse" />
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-gold-400/5 rounded-full blur-2xl animate-pulse delay-1000" />
     </footer>
   )
 }

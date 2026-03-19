@@ -141,18 +141,20 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen bg-white text-dark-grey antialiased">
+      <body className="min-h-screen bg-white text-gray-900 antialiased font-body">
         {/* Skip to main content link */}
         <a 
           href="#main-content" 
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-gold focus:text-navy focus:rounded-md font-body font-semibold"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-gold focus:text-navy focus:rounded-md font-body font-semibold transition-all duration-300"
         >
           Skip to main content
         </a>
         
-        <main id="main-content">
-          {children}
-        </main>
+        <div className="min-h-screen flex flex-col">
+          <main id="main-content" className="flex-1 relative">
+            {children}
+          </main>
+        </div>
         
         <CookieConsent />
         <WhatsAppButton />
