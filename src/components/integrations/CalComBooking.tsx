@@ -302,8 +302,8 @@ export function CalComBooking() {
             </div>
             <div className="text-center">
               <div className="text-sm text-medium-grey mb-1">Email</div>
-              <a href="mailto:sales@mylesoft.com" className="text-lg text-gold-600 hover:text-gold-500 font-semibold">
-                sales@mylesoft.com
+              <a href="mailto:sales@mylescorp.co.ke" className="text-lg text-gold-600 hover:text-gold-500 font-semibold">
+                sales@mylescorp.co.ke
               </a>
             </div>
           </div>

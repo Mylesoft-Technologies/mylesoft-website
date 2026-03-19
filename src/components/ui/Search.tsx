@@ -92,7 +92,7 @@ export function Search({ isOpen, onClose }: SearchProps) {
         {/* Search Results */}
         <div className="max-h-96 overflow-y-auto">
           {query ? (
-            <InstantSearch searchClient={searchClient} indexName="mylesoft_content">
+            <InstantSearch searchClient={searchClient} indexName="mylescorp_content">
               <Hits hitComponent={CustomHit} />
             </InstantSearch>
           ) : (

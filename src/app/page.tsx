@@ -129,7 +129,7 @@ export default function HomePage() {
           <SimpleReveal delay={0.2}>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-navy-500 mb-4">
-                Why Choose Mylesoft
+                Why Choose MylesCorp
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 We combine cutting-edge technology with deep industry expertise

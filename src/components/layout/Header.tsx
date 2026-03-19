@@ -40,7 +40,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" transitionTypes={['fade']} className="flex items-center group">
             <Logo size="md" className="group-hover:scale-110 transition-transform duration-300" />
-            <span className="ml-3 text-xl font-bold text-white group-hover:text-gold-400 transition-colors duration-300">Mylesoft</span>
+            <span className="ml-3 text-xl font-bold text-white group-hover:text-gold-400 transition-colors duration-300">MylesCorp</span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -85,7 +85,7 @@ export function LiveChat() {
     } else if (input.includes('support') || input.includes('help')) {
       return 'I\'m here to help! For technical support, you can reach our team at support@mylesoft.com or call +254 743 993 715. What specific issue are you experiencing?'
     } else if (input.includes('contact') || input.includes('phone') || input.includes('email')) {
-      return 'You can reach us at:\n📧 Email: info@mylesoft.com\n📞 Phone: +254 743 993 715\n📍 Location: Wester Heights, Westlands, Nairobi\n\nWould you like me to connect you with a specific team member?'
+      return 'You can reach us at:\n📧 Email: info@mylesoft.com\n📞 Phone: +254 743 993 715\n📍 Location: Wester Heights, Westlands, Nairobi\nWould you like me to connect you with a specific team member?'
     } else if (input.includes('career') || input.includes('job') || input.includes('work')) {
       return 'We\'re always looking for talented individuals! Check our careers page at /careers for current openings. What type of role are you interested in?'
     } else {

@@ -296,7 +296,7 @@ export function MegaMenu() {
 
               {/* Benefits Sidebar */}
               <div className="w-64 bg-navy-500 text-white p-6 hidden xl:block">
-                <h3 className="text-lg font-bold mb-4">Why Choose Mylesoft?</h3>
+                <h3 className="text-lg font-bold mb-4">Why Choose MylesCorp?</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <Star className="w-5 h-5 text-gold-400 flex-shrink-0 mt-1" />

@@ -44,7 +44,7 @@ export function Footer() {
                 <div className="flex items-center space-x-3">
                   <Logo size="lg" fallbackColor="gold" />
                   <div>
-                    <h3 className="text-2xl font-bold text-white">Mylesoft</h3>
+                    <h3 className="text-2xl font-bold text-white">MylesCorp</h3>
                     <p className="text-gold-400 text-sm">Technologies</p>
                   </div>
                 </div>
@@ -57,7 +57,7 @@ export function Footer() {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 text-navy-200">
                     <Mail className="w-5 h-5 text-gold-400" />
-                    <span>info@mylesoft.com</span>
+                    <span>info@mylescorp.co.ke</span>
                   </div>
                   <div className="flex items-center space-x-3 text-navy-200">
                     <Phone className="w-5 h-5 text-gold-400" />
@@ -168,10 +168,10 @@ export function Footer() {
                   <p className="text-navy-200 text-sm">Follow us</p>
                   <div className="flex space-x-3">
                     {[
-                      { name: 'linkedin', href: 'https://www.linkedin.com/company/mylesoft_tech' },
-                      { name: 'twitter', href: 'https://x.com/mylesoft_tech' },
-                      { name: 'github', href: 'https://github.com/Mylesoft-Technologies' },
-                      { name: 'youtube', href: 'https://www.youtube.com/@mylesoft_tech' }
+                      { name: 'linkedin', href: 'https://www.linkedin.com/company/mylescorp_tech' },
+                      { name: 'twitter', href: 'https://x.com/mylescorp_tech' },
+                      { name: 'github', href: 'https://github.com/MylesCorp-Technologies' },
+                      { name: 'youtube', href: 'https://www.youtube.com/@mylescorp_tech' }
                     ].map((social, index) => (
                       <Link
                         key={index}

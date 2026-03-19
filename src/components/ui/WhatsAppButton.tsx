@@ -5,7 +5,7 @@ import { MessageCircle, X, Phone, Clock } from 'lucide-react'
 
 export function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false)
-  const phoneNumber = '+254743993715' // Mylesoft WhatsApp number
+  const phoneNumber = '+254743993715' // MylesCorp WhatsApp number
   
   const handleClick = () => {
     const message = encodeURIComponent('Hi! I\'m interested in learning more about MylesCorp Technologies solutions.')
@@ -63,6 +63,16 @@ export function WhatsAppButton() {
             <div className="flex items-center space-x-2 text-sm text-medium-grey">
               <Clock size={16} />
               <span>Mon-Fri: 9AM-6PM EAT</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm text-medium-grey">
+              <Phone size={16} />
+              <span>+254 743 993 715</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm text-medium-grey">
+              <a href="mailto:info@mylescorp.co.ke" className="text-gold-500 hover:text-gold-600">
+                <MessageCircle size={16} />
+              </a>
+              <span>info@mylescorp.co.ke</span>
             </div>
           </div>
         </div>

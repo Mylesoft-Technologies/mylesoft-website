@@ -71,8 +71,8 @@ function CustomErrorBoundary(
         <div className="mt-6 pt-6 border-t border-light-grey">
           <p className="text-sm text-medium-grey">
             If this problem continues, please contact{' '}
-            <a href="mailto:support@mylesoft.com" className="text-gold-500 hover:text-gold-600">
-              support@mylesoft.com
+            <a href="mailto:support@mylescorp.co.ke" className="text-gold-500 hover:text-gold-600">
+              support@mylescorp.co.ke
             </a>
           </p>
         </div>
