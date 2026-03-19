@@ -43,8 +43,9 @@ export function Footer() {
                 </div>
                 
                 <p className="text-light-blue leading-relaxed max-w-sm font-body">
-                  Transforming industries across East Africa with innovative AI-powered solutions. 
-                  Your trusted partner for digital excellence and technological innovation.
+                  MylesCorp Technologies Ltd is a Nairobi-based software company 
+                  dedicated to building innovative digital solutions that transform 
+                  businesses and industries across Africa and beyond.
                 </p>
                 
                 <div className="space-y-4">
@@ -189,11 +190,8 @@ export function Footer() {
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
             <ScrollReveal direction="up" delay={0.5}>
               <div className="text-center lg:text-left">
-                <p className="text-gray-400 text-xs font-body">
-                  Registered in Kenya. Company Registration No. CPR/2023/123456
-                </p>
-                <p className="text-gray-400 text-xs font-body">
-                  VAT No. KVAT-2023-789012 | PIN No. A012345678Z
+                <p className="text-gray-400 text-sm font-body">
+                  © 2026 <span className="text-gold font-semibold">MylesCorp Technologies Ltd</span>. All rights reserved.
                 </p>
               </div>
             </ScrollReveal>
@@ -216,19 +214,12 @@ export function Footer() {
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.7}>
-              <div className="flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8">
-                <button
-                  onClick={scrollToTop}
-                  className="group flex items-center space-x-2 text-gray-300 hover:text-gold transition-all duration-300 font-body"
-                >
-                  <span className="text-sm">Back to top</span>
-                  <ArrowUp className="w-4 h-4 group-hover:animate-bounce" />
-                </button>
-                <div className="flex items-center space-x-4">
-                  <span className="text-gray-400 text-xs font-body">Powered by</span>
-                  <span className="text-gold text-xs font-body font-semibold">MylesCorp AI</span>
-                </div>
-              </div>
+              <button
+                onClick={scrollToTop}
+                className="group flex items-center space-x-2 text-gray-300 hover:text-gold transition-all duration-300 font-body"
+              >
+                <ArrowUp className="w-4 h-4 group-hover:animate-bounce" />
+              </button>
             </ScrollReveal>
           </div>
         </div>
@@ -258,15 +249,6 @@ export function Footer() {
             </div>
           </div>
         </ScrollReveal>
-
-        {/* Copyright - Very Bottom */}
-        <div className="border-t border-gold/20 py-6">
-          <div className="text-center">
-            <p className="text-gray-300 text-sm font-body">
-              © 2026 <span className="text-gold font-semibold">MylesCorp Technologies Ltd</span>. All rights reserved.
-            </p>
-          </div>
-        </div>
       </div>
     </footer>
   )
