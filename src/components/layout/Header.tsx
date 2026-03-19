@@ -14,6 +14,7 @@ export function Header() {
   const { scrollToElement } = useSmoothScroll()
 
   const navigation = [
+    { name: 'Products', href: '/products' },
     { name: 'Services', href: '/services' },
     { name: 'About', href: '/about' },
     { name: 'Team', href: '/team' },
@@ -45,16 +46,18 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <MegaMenu />
-            {navigation.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavClick(item.href)}
-                className="relative text-gray-200 hover:text-gold-400 transition-colors duration-200 font-medium group"
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-400 group-hover:w-full transition-all duration-300"></span>
-              </button>
-            ))}
+            {navigation
+              .filter((item) => item.name !== 'Products')
+              .map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavClick(item.href)}
+                  className="relative text-gray-200 hover:text-gold-400 transition-colors duration-200 font-medium group"
+                >
+                  {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-400 group-hover:w-full transition-all duration-300"></span>
+                </button>
+              ))}
           </nav>
 
           {/* Desktop CTA */}
@@ -82,13 +85,7 @@ export function Header() {
         <div className="lg:hidden bg-gradient-to-b from-navy-700 to-navy-800 border-t border-gold-400/20">
           <div className="px-4 py-6 space-y-4">
             <div className="flex flex-col space-y-4">
-              <button
-                onClick={() => handleNavClick('/products')}
-                className="block px-4 py-3 text-lg font-medium text-gray-200 hover:text-gold-400 hover:bg-navy-600/50 rounded-lg transition-colors duration-200 text-left"
-              >
-                Products
-              </button>
-              {navigation.map((item) => (
+
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
