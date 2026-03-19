@@ -38,7 +38,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          <Link href="/" transitionTypes={['fade']} className="flex items-center group">
             <Logo size="md" className="group-hover:scale-110 transition-transform duration-300" />
             <span className="ml-3 text-xl font-bold text-white group-hover:text-gold-400 transition-colors duration-300">Mylesoft</span>
           </Link>
@@ -63,7 +63,7 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
             <DarkModeToggle />
-            <Link href="/book-demo">
+            <Link href="/book-demo" transitionTypes={['slide']}>
               <Button size="sm" className="shadow-lg hover:shadow-xl">
                 Book a Demo
               </Button>
@@ -100,7 +100,7 @@ export function Header() {
               <div className="flex justify-center">
                 <DarkModeToggle />
               </div>
-              <Link href="/book-demo" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/book-demo" transitionTypes={['slide']} onClick={() => setIsMobileMenuOpen(false)}>
                 <Button className="w-full shadow-lg hover:shadow-xl">
                   Book a Demo
                 </Button>

@@ -11,7 +11,9 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ['lucide-react'],
+    prefetchInlining: true,
   },
+  serverExternalPackages: ['algoliasearch'],
   async headers() {
     return [
       {
