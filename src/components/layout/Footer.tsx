@@ -27,15 +27,15 @@ export function Footer() {
   return (
     <footer className="bg-gradient-to-br from-navy via-navy-deep to-navy-900 text-white relative overflow-hidden border-t border-gold/20">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-3">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
       </div>
 
       {/* Floating Elements */}
-      <div className="absolute top-10 left-10 w-32 h-32 bg-gold/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-20 w-48 h-48 bg-gold/5 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="absolute top-10 left-10 w-32 h-32 bg-gold/5 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-20 w-48 h-48 bg-gold/3 rounded-full blur-3xl animate-pulse delay-1000" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
@@ -119,7 +119,7 @@ export function Footer() {
                     <li key={index}>
                       <Link 
                         href={item.href}
-                        className="text-gray-400 hover:text-gold transition-all duration-300 flex items-center group font-body"
+                        className="text-gray-300 hover:text-gold transition-all duration-300 flex items-center group font-body"
                       >
                         <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300">
                           {item.name}
@@ -135,7 +135,7 @@ export function Footer() {
             <ScrollReveal direction="up" delay={0.4}>
               <div className="space-y-6">
                 <h3 className="text-2xl font-display font-bold text-white mb-6">Stay Connected</h3>
-                <div className="text-gray-400 mb-4 font-body">
+                <div className="text-gray-300 mb-4 font-body">
                   Get the latest updates on our innovative solutions and industry insights delivered to your inbox.
                 </div>
                 
@@ -182,7 +182,7 @@ export function Footer() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-navy-dark/50 border border-gold/20 rounded-lg flex items-center justify-center text-gray-400 hover:text-gold hover:bg-navy-dark hover:border-gold/50 transform hover:scale-110 transition-all duration-300"
+                        className="w-10 h-10 bg-navy-dark/50 border border-gold/20 rounded-lg flex items-center justify-center text-gray-300 hover:text-gold hover:bg-navy-dark hover:border-gold/50 transform hover:scale-110 transition-all duration-300"
                         aria-label={social.name}
                       >
                         <Icon name={social.name} size={18} />
@@ -200,13 +200,13 @@ export function Footer() {
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
             <ScrollReveal direction="up" delay={0.5}>
               <div className="text-center lg:text-left">
-                <p className="text-gray-400 text-sm font-body mb-2">
+                <p className="text-gray-300 text-sm font-body mb-2">
                   © {currentYear} <span className="text-gold font-semibold">MylesCorp Technologies Ltd</span>. All rights reserved.
                 </p>
-                <p className="text-gray-500 text-xs font-body">
+                <p className="text-gray-400 text-xs font-body">
                   Registered in Kenya. Company Registration No. CPR/2023/123456
                 </p>
-                <p className="text-gray-500 text-xs font-body">
+                <p className="text-gray-400 text-xs font-body">
                   VAT No. KVAT-2023-789012 | PIN No. A012345678Z
                 </p>
               </div>
@@ -214,16 +214,16 @@ export function Footer() {
             
             <ScrollReveal direction="up" delay={0.6}>
               <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 text-sm">
-                <Link href="/legal/privacy" className="text-gray-400 hover:text-gold transition-colors duration-300 font-body">
+                <Link href="/legal/privacy" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
                   Privacy Policy
                 </Link>
-                <Link href="/legal/terms" className="text-gray-400 hover:text-gold transition-colors duration-300 font-body">
+                <Link href="/legal/terms" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
                   Terms of Service
                 </Link>
-                <Link href="/legal/cookies" className="text-gray-400 hover:text-gold transition-colors duration-300 font-body">
+                <Link href="/legal/cookies" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
                   Cookie Policy
                 </Link>
-                <Link href="/legal/compliance" className="text-gray-400 hover:text-gold transition-colors duration-300 font-body">
+                <Link href="/legal/compliance" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
                   Compliance
                 </Link>
               </div>
@@ -233,13 +233,13 @@ export function Footer() {
               <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <button
                   onClick={scrollToTop}
-                  className="group flex items-center space-x-2 text-gray-400 hover:text-gold transition-all duration-300 font-body"
+                  className="group flex items-center space-x-2 text-gray-300 hover:text-gold transition-all duration-300 font-body"
                 >
                   <span className="text-sm">Back to top</span>
                   <ArrowUp className="w-4 h-4 group-hover:animate-bounce" />
                 </button>
                 <div className="flex items-center space-x-4">
-                  <span className="text-gray-500 text-xs font-body">Powered by</span>
+                  <span className="text-gray-400 text-xs font-body">Powered by</span>
                   <span className="text-gold text-xs font-body font-semibold">MylesCorp AI</span>
                 </div>
               </div>
@@ -253,21 +253,21 @@ export function Footer() {
             <p className="text-gold font-display italic font-bold text-lg mb-2">
               Transforming Industries, Empowering Generations.
             </p>
-            <p className="text-gray-400 text-sm font-body">
+            <p className="text-gray-300 text-sm font-body mb-2">
               Innovation • Excellence • Impact — The MylesCorp Promise
             </p>
             <div className="flex items-center justify-center space-x-8 mt-4">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-gold rounded-full animate-pulse" />
-                <span className="text-gray-500 text-xs font-body">ISO 9001:2015 Certified</span>
+                <span className="text-gray-400 text-xs font-body">ISO 9001:2015 Certified</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-gold rounded-full animate-pulse delay-500" />
-                <span className="text-gray-500 text-xs font-body">GDPR Compliant</span>
+                <span className="text-gray-400 text-xs font-body">GDPR Compliant</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-gold rounded-full animate-pulse delay-1000" />
-                <span className="text-gray-500 text-xs font-body">Data Protection Act</span>
+                <span className="text-gray-400 text-xs font-body">Data Protection Act</span>
               </div>
             </div>
           </div>
