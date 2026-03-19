@@ -5,7 +5,7 @@ import { Loader2 } from 'lucide-react'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'link'
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'nav'
   loading?: boolean
   icon?: React.ReactNode
   iconPosition?: 'left' | 'right'
@@ -22,23 +22,35 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
+  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy-deep disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group'
   
   const variants = {
-    primary: 'bg-gradient-to-r from-gold-400 to-gold-500 text-white hover:from-gold-500 hover:to-gold-600 focus:ring-gold-400 shadow-premium-gold hover:shadow-premium-glow transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-smooth',
-    secondary: 'bg-navy-500 text-white hover:bg-navy-600 focus:ring-navy-500 shadow-premium-card hover:shadow-premium-floating transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-smooth',
-    outline: 'border-2 border-navy-500 text-navy-500 hover:bg-navy-500 hover:text-white focus:ring-navy-500 hover:shadow-premium-gold transform hover:-translate-y-0.5 transition-all duration-300 ease-smooth',
-    ghost: 'text-navy-500 hover:bg-navy-50 focus:ring-navy-500 hover:text-gold-500 transition-all duration-300 ease-smooth',
-    destructive: 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-500 shadow-premium-card hover:shadow-premium-floating transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-smooth',
-    link: 'text-gold-500 hover:text-gold-600 underline-offset-4 hover:underline focus:ring-gold-400 p-0 hover:text-gold-gradient transition-all duration-300 ease-smooth'
+    // Primary CTA Button - Gold on Navy
+    primary: 'bg-gold text-navy hover:bg-gold-light hover:-translate-y-2 hover:shadow-gold focus:ring-gold active:scale-98 font-body font-bold tracking-[0.4px] btn-shine',
+    
+    // Secondary Button - Navy background
+    secondary: 'bg-navy text-white hover:bg-navy-dark focus:ring-navy shadow-card hover:shadow-card-hover transform hover:-translate-y-1',
+    
+    // Outline Button - Transparent with white border
+    outline: 'bg-transparent border border-white/20 text-white hover:border-gold hover:text-gold focus:ring-gold',
+    
+    // Ghost Button
+    ghost: 'text-light-blue hover:text-gold hover:bg-navy-dark/30 focus:ring-gold',
+    
+    // Destructive Button
+    destructive: 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-500',
+    
+    // Link Button
+    link: 'text-gold hover:text-gold-light underline-offset-4 hover:underline focus:ring-gold p-0'
   }
   
   const sizes = {
     xs: 'px-3 py-1.5 text-xs',
     sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
+    md: 'px-9 py-4 text-[14px]', // Primary CTA: 16px 36px
     lg: 'px-8 py-4 text-lg',
-    xl: 'px-10 py-5 text-xl'
+    xl: 'px-10 py-5 text-xl',
+    nav: 'px-5.5 py-2.5 text-[13px]' // Nav CTA: 10px 22px, 13px
   }
 
   const iconSizes = {
@@ -46,7 +58,8 @@ export function Button({
     sm: 'w-4 h-4',
     md: 'w-5 h-5',
     lg: 'w-6 h-6',
-    xl: 'w-7 h-7'
+    xl: 'w-7 h-7',
+    nav: 'w-4 h-4'
   }
 
   const renderContent = () => {

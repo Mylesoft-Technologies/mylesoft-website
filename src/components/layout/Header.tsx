@@ -97,9 +97,9 @@ export function Header() {
             <DarkModeToggle />
             <Link href="/book-demo" transitionTypes={['slide']}>
               <Button 
-                size="sm" 
+                size="nav" 
                 variant="primary"
-                className="shadow-lg hover:shadow-xl bg-gold text-navy hover:bg-gold-light hover:-translate-y-1 font-body font-bold text-[14px] tracking-[0.4px]"
+                className="shadow-lg hover:shadow-xl"
               >
                 Book a Demo
               </Button>

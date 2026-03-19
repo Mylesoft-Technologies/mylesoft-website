@@ -2,6 +2,7 @@ import { Layout } from '@/components/layout/Layout'
 import { Logo } from '@/components/ui/Logo'
 import { SimpleReveal } from '@/components/ui/SimpleReveal'
 import { Counter } from '@/components/ui/ScrollReveal'
+import { Card, CardIcon, CardHeader, CardContent } from '@/components/ui/Card'
 import { ArrowRight, Sparkles, Target, Users, Shield, Heart, Globe, TrendingUp, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 
@@ -171,13 +172,17 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <SimpleReveal key={index} delay={0.4 + index * 0.2}>
-                <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
-                  <div className="w-16 h-16 bg-gradient-to-br from-gold to-gold-light rounded-xl flex items-center justify-center text-white mb-6">
+                <Card variant="dark" className="group">
+                  <CardIcon size="md">
                     {feature.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-navy mb-4">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                </div>
+                  </CardIcon>
+                  <CardHeader>
+                    <h3 className="text-2xl font-bold text-white">{feature.title}</h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-navy-200 leading-relaxed">{feature.description}</p>
+                  </CardContent>
+                </Card>
               </SimpleReveal>
             ))}
           </div>
