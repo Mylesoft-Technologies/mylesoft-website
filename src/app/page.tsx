@@ -1,6 +1,7 @@
 import { Layout } from '@/components/layout/Layout'
 import { Logo } from '@/components/ui/Logo'
 import { SimpleReveal } from '@/components/ui/SimpleReveal'
+import { Counter } from '@/components/ui/ScrollReveal'
 import { ArrowRight, Sparkles, Target, Users, Shield, Heart, Globe, TrendingUp, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 
@@ -110,6 +111,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SimpleReveal delay={0.2}>
             <div className="text-center mb-16">
+              {/* Eyebrow Label */}
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="w-8 h-0.5 bg-gold" />
+                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                  OUR IMPACT
+                </span>
+                <div className="w-8 h-0.5 bg-gold" />
+              </div>
               <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">
                 Impact by the Numbers
               </h2>
@@ -127,7 +136,7 @@ export default function HomePage() {
                     <div className="text-white">{stat.icon}</div>
                   </div>
                   <div className="text-4xl font-bold text-navy mb-2 group-hover:text-gold transition-colors duration-300">
-                    {stat.number.toLocaleString()}{stat.suffix}
+                    <Counter end={stat.number} suffix={stat.suffix || ''} />
                   </div>
                   <div className="text-gray-600 font-medium">{stat.label}</div>
                 </div>
@@ -142,6 +151,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SimpleReveal delay={0.2}>
             <div className="text-center mb-16">
+              {/* Eyebrow Label */}
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="w-8 h-0.5 bg-gold" />
+                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                  WHY US
+                </span>
+                <div className="w-8 h-0.5 bg-gold" />
+              </div>
               <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">
                 Why Choose MylesCorp
               </h2>
@@ -171,6 +188,14 @@ export default function HomePage() {
       <section id="cta" className="py-20 bg-gradient-to-r from-gold to-gold-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SimpleReveal delay={0.2}>
+            {/* Eyebrow Label */}
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-8 h-0.5 bg-white/50" />
+              <span className="text-white/80 text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                GET STARTED
+              </span>
+              <div className="w-8 h-0.5 bg-white/50" />
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Ready to Transform Your Business?
             </h2>
