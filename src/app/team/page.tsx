@@ -11,7 +11,7 @@ const teamMembers = [
     role: "CEO & Founder",
     email: "jonathan@mylescorp.co.ke",
     bio: "A visionary software engineer and entrepreneur, Jonathan founded MylesCorp Technologies in 2020 with a mission to build AI-powered solutions addressing East Africa's most critical challenges. He leads the company's overall strategy, product development, and technology architecture across all 20+ MylesCorp products.",
-    image: "/team/michael.jpg",
+    image: "/team/jonathan.jpg",
     social: { linkedin: "#", twitter: "#" }
   },
    {
@@ -19,7 +19,7 @@ const teamMembers = [
     role: "COO",
     email: "pauline@mylescorp.co.ke",
     bio: "Pauline brings operational excellence and business development expertise to MylesCorp. As COO, she drives the company's day-to-day operations, sales, marketing, and customer partnerships — ensuring every MylesCorp product delivers measurable impact across East Africa.",
-    image: "/team/david.jpg",
+    image: "/team/pauline.jpg",
     social: { linkedin: "#", twitter: "#" }
   },
   {
