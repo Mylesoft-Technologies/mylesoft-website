@@ -103,10 +103,10 @@ export default function Error({ error, unstable_retry }: ErrorInfo) {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center text-sm font-body">
               <a 
-                href="mailto:support@mylesoft.com" 
+                href="mailto:support@MylesCorp.com" 
                 className="text-gold hover:text-gold-light font-medium"
               >
-                support@mylesoft.com
+                support@MylesCorp.com
               </a>
               <span className="text-muted-blue">•</span>
               <a 

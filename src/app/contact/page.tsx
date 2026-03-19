@@ -44,30 +44,30 @@ export default function ContactPage() {
     {
       name: 'general',
       title: 'General Inquiries',
-      email: 'info@mylesoft.com',
+      email: 'info@mylescorp.co.ke',
       phone: '+254 743 993 715',
       description: 'For general questions and information about our services.'
     },
     {
       name: 'sales',
       title: 'Sales & Partnerships',
-      email: 'sales@mylesoft.com',
+      email: 'sales@mylescorp.co.ke',
       phone: '+254 743 993 715',
       description: 'Interested in our products or partnership opportunities?'
     },
     {
       name: 'support',
       title: 'Technical Support',
-      email: 'support@mylesoft.com',
+      email: 'support@mylescorp.co.ke',
       phone: '+254 743 993 715',
       description: 'Need help with existing products or technical assistance.'
     },
     {
       name: 'careers',
       title: 'Human Resources',
-      email: 'careers@mylesoft.com',
+      email: 'careers@mylescorp.co.ke',
       phone: '+254 743 993 715',
-      description: 'Questions about job opportunities and working at Mylesoft.'
+      description: 'Questions about job opportunities and working at MylesCorp.'
     }
   ]
 
@@ -76,7 +76,7 @@ export default function ContactPage() {
       city: 'Nairobi',
       address: 'Westlands, Nairobi, Kenya',
       phone: '+254 743 993 715',
-      email: 'nairobi@mylesoft.com',
+      email: 'nairobi@mylescorp.co.ke',
       hours: 'Mon-Fri: 8:00 AM - 6:00 PM',
       isHeadquarters: true
     },
@@ -84,7 +84,7 @@ export default function ContactPage() {
       city: 'Mombasa',
       address: 'Mombasa CBD, Mombasa, Kenya',
       phone: '+254 743 993 715',
-      email: 'mombasa@mylesoft.com',
+      email: 'mombasa@mylescorp.co.ke',
       hours: 'Mon-Fri: 8:00 AM - 5:00 PM',
       isHeadquarters: false
     },
@@ -92,7 +92,7 @@ export default function ContactPage() {
       city: 'Kampala',
       address: 'Kampala Central, Uganda',
       phone: '+256 743 993 715',
-      email: 'kampala@mylesoft.com',
+      email: 'kampala@mylescorp.co.ke',
       hours: 'Mon-Fri: 8:00 AM - 5:00 PM',
       isHeadquarters: false
     },
@@ -100,7 +100,7 @@ export default function ContactPage() {
       city: 'Dar es Salaam',
       address: 'Dar es Salaam CBD, Tanzania',
       phone: '+255 743 993 715',
-      email: 'dar@mylesoft.com',
+      email: 'dar@mylescorp.co.ke',
       hours: 'Mon-Fri: 8:00 AM - 5:00 PM',
       isHeadquarters: false
     }
@@ -142,7 +142,7 @@ export default function ContactPage() {
             
             <ScrollReveal direction="up" delay={0.6}>
               <p className="text-xl text-light-blue max-w-3xl mx-auto leading-relaxed font-body">
-                Get in touch with our team to discuss how Mylesoft Technologies can help transform your organization. We're here to support your digital transformation journey.
+                Get in touch with our team to discuss how MylesCorp Technologies can help transform your organization. We're here to support your digital transformation journey.
               </p>
             </ScrollReveal>
           </div>
@@ -331,8 +331,8 @@ export default function ContactPage() {
                       <Mail size={20} className="text-gold-400 mr-3" />
                       <div>
                         <div className="font-semibold">Email</div>
-                        <a href="mailto:info@mylesoft.com" className="text-gold-400 hover:text-gold-300">
-                          info@mylesoft.com
+                        <a href="mailto:info@MylesCorp.com" className="text-gold-400 hover:text-gold-300">
+                          info@MylesCorp.com
                         </a>
                       </div>
                     </div>
@@ -442,8 +442,8 @@ export default function ContactPage() {
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
                   <div className="text-2xl font-bold text-gold-400 mb-2">Email Support</div>
-                  <a href="mailto:emergency@mylesoft.com" className="text-xl text-white hover:text-gold-300">
-                    emergency@mylesoft.com
+                  <a href="mailto:emergency@MylesCorp.com" className="text-xl text-white hover:text-gold-300">
+                    emergency@MylesCorp.com
                   </a>
                 </div>
               </div>

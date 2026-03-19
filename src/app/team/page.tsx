@@ -10,7 +10,7 @@ const teamMembers = [
     name: "Jonathan Myles",
     role: "CEO & Founder",
     email: "jonathan@mylescorp.co.ke",
-    bio: "A visionary software engineer and entrepreneur, Jonathan founded MylesCorp Technologies in 2020 with a mission to build AI-powered solutions addressing East Africa's most critical challenges. He leads the company's overall strategy, product development, and technology architecture across all 20+ Mylesoft products.",
+    bio: "A visionary software engineer and entrepreneur, Jonathan founded MylesCorp Technologies in 2020 with a mission to build AI-powered solutions addressing East Africa's most critical challenges. He leads the company's overall strategy, product development, and technology architecture across all 20+ MylesCorp products.",
     image: "/team/michael.jpg",
     social: { linkedin: "#", twitter: "#" }
   },
@@ -18,7 +18,7 @@ const teamMembers = [
     name: "Pauline Moraa",
     role: "COO",
     email: "pauline@mylescorp.co.ke",
-    bio: "Pauline brings operational excellence and business development expertise to Mylesoft. As COO, she drives the company's day-to-day operations, sales, marketing, and customer partnerships — ensuring every Mylesoft product delivers measurable impact across East Africa.",
+    bio: "Pauline brings operational excellence and business development expertise to MylesCorp. As COO, she drives the company's day-to-day operations, sales, marketing, and customer partnerships — ensuring every MylesCorp product delivers measurable impact across East Africa.",
     image: "/team/david.jpg",
     social: { linkedin: "#", twitter: "#" }
   },
@@ -152,7 +152,7 @@ export default function TeamPage() {
                 Leadership Team
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto font-body">
-                The brilliant minds behind Mylesoft's success
+                The brilliant minds behind MylesCorp's success
               </p>
             </div>
           </ScrollReveal>

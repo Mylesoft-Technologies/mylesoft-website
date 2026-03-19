@@ -165,7 +165,7 @@ export default function TermsOfService() {
                       If you have any questions about these Terms of Service, please contact us:
                     </p>
                     <div className="bg-off-white p-6 rounded-xl">
-                      <p><strong>Email:</strong> legal@mylesoft.com</p>
+                      <p><strong>Email:</strong> legal@MylesCorp.com</p>
                       <p><strong>Phone:</strong> +254 743 993 715</p>
                       <p><strong>Address:</strong> Wester Heights, Westlands, Nairobi, Kenya</p>
                     </div>

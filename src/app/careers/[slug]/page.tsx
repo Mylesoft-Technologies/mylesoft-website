@@ -33,7 +33,7 @@ const jobs = {
     posted: '2024-03-10',
     deadline: '2024-04-10',
     description: `
-We are seeking a highly skilled Senior Full Stack Developer to join our growing engineering team at Mylesoft Technologies. You will be responsible for designing, developing, and maintaining scalable web applications that power our AI-driven solutions for the African market.
+We are seeking a highly skilled Senior Full Stack Developer to join our growing engineering team at MylesCorp Technologies. You will be responsible for designing, developing, and maintaining scalable web applications that power our AI-driven solutions for the African market.
 
 ## About the Role
 
@@ -169,7 +169,7 @@ As a Senior Full Stack Developer, you will work on cutting-edge projects that le
       'Offer and onboarding process'
     ],
     contact: {
-      email: 'careers@mylesoft.com',
+      email: 'careers@mylescorp.co.ke',
       phone: '+254 743 993 715',
       location: 'Wester Heights, Westlands, Nairobi, Kenya'
     }
@@ -188,7 +188,7 @@ We are looking for a passionate Product Manager to drive the development of our 
 
 ## About the Role
 
-As Product Manager at Mylesoft Technologies, you will work at the intersection of technology, business, and user experience to deliver innovative products that transform industries across East Africa.
+As Product Manager at MylesCorp Technologies, you will work at the intersection of technology, business, and user experience to deliver innovative products that transform industries across East Africa.
 
 ## Key Responsibilities
 
@@ -274,7 +274,7 @@ As Product Manager at Mylesoft Technologies, you will work at the intersection o
       'Offer and onboarding'
     ],
     contact: {
-      email: 'careers@mylesoft.com',
+      email: 'careers@mylescorp.co.ke',
       phone: '+254 743 993 715',
       location: 'Wester Heights, Westlands, Nairobi, Kenya'
     }

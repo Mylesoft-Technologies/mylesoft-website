@@ -225,7 +225,7 @@ export default function ServicesPage() {
           <div className="section-padding">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="heading-2 mb-6">Why Choose Mylesoft Services?</h2>
+                <h2 className="heading-2 mb-6">Why Choose MylesCorp Services?</h2>
                 <div className="space-y-6">
                   {[
                     {

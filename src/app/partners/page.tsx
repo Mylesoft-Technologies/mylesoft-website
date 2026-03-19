@@ -98,7 +98,7 @@ export default function PartnersPage() {
             <h1 className="text-5xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
               Partner With
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light">
-                Mylesoft Technologies
+                MylesCorp Technologies
               </span>
             </h1>
           </ScrollReveal>
@@ -249,7 +249,7 @@ export default function PartnersPage() {
                 <div className="w-8 h-0.5 bg-gold" />
               </div>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-                Why Partner With Mylesoft?
+                Why Partner With MylesCorp?
               </h2>
               <p className="text-xl text-light-blue max-w-3xl mx-auto font-body">
                 Discover the advantages of joining our partner ecosystem
@@ -359,7 +359,7 @@ export default function PartnersPage() {
               <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg">
                 <Mail className="w-8 h-8 text-gold-400 mb-4" />
                 <h3 className="text-xl font-bold text-navy-500 mb-2">Email Us</h3>
-                <p className="text-gray-600 mb-4">partners@mylesoft.com</p>
+                <p className="text-gray-600 mb-4">partners@MylesCorp.com</p>
                 <p className="text-gray-600 text-sm">
                   Send us your partnership proposal and we'll get back to you within 48 hours.
                 </p>

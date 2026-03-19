@@ -6,7 +6,7 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url)
     
-    const title = searchParams.get('title') || 'Mylesoft Technologies'
+    const title = searchParams.get('title') || 'MylesCorp Technologies'
     const description = searchParams.get('description') || 'AI-Powered Solutions for East African Businesses'
 
     return new ImageResponse(
@@ -85,7 +85,7 @@ export async function GET(request: Request) {
               opacity: 0.7,
             }}
           >
-            <span>🇰🇪 Nairobi, Kenya • mylesoft.com</span>
+            <span>🇰🇪 Nairobi, Kenya • MylesCorp.com</span>
           </div>
         </div>
       ),

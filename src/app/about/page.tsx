@@ -172,7 +172,7 @@ export default function AboutPage() {
             <div className="text-center mb-12">
               <h2 className="heading-2 mb-4">Leadership Team</h2>
               <p className="body-text max-w-2xl mx-auto">
-                Meet the visionaries driving Mylesoft's mission to transform African technology.
+                Meet the visionaries driving MylesCorp's mission to transform African technology.
               </p>
             </div>
             

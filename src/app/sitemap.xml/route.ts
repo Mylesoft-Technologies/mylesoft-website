@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-  const baseUrl = 'https://mylesoft.com'
+  const baseUrl = 'https://MylesCorp.com'
   const currentDate = new Date().toISOString()
 
   // Static pages

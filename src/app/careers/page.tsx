@@ -94,7 +94,7 @@ const openPositions = [
     location: 'Nairobi, Kenya',
     type: 'Full-time',
     experience: '3+ years',
-    description: 'Drive growth of Mylesoft products across East Africa. Build relationships with educational institutions, hospitals, and businesses.',
+    description: 'Drive growth of MylesCorp products across East Africa. Build relationships with educational institutions, hospitals, and businesses.',
     requirements: [
       '3+ years of B2B sales experience',
       'Experience with SaaS or technology sales',
@@ -142,7 +142,7 @@ const openPositions = [
     location: 'Nairobi, Kenya',
     type: 'Full-time',
     experience: '5+ years',
-    description: 'Lead marketing initiatives to promote Mylesoft across East Africa. Develop campaigns that resonate with local markets.',
+    description: 'Lead marketing initiatives to promote MylesCorp across East Africa. Develop campaigns that resonate with local markets.',
     requirements: [
       '5+ years of marketing experience',
       'Experience with B2B technology marketing',
@@ -282,7 +282,7 @@ export default function CareersPage() {
             
             <ScrollReveal direction="up" delay={0.4}>
               <h1 className="text-5xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
-                Careers at Mylesoft
+                Careers at MylesCorp
               </h1>
             </ScrollReveal>
             
@@ -413,7 +413,7 @@ export default function CareersPage() {
               <div>
                 <h2 className="heading-2 mb-6">Our Culture</h2>
                 <p className="body-text mb-8">
-                  At Mylesoft, we've built a culture that brings out the best in people and drives innovation that matters for Africa.
+                  At MylesCorp, we've built a culture that brings out the best in people and drives innovation that matters for Africa.
                 </p>
                 
                 <div className="space-y-6">

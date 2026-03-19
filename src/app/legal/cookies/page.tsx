@@ -177,7 +177,7 @@ export default function CookiePolicy() {
                       If you have any questions about this Cookie Policy, please contact us:
                     </p>
                     <div className="bg-off-white p-6 rounded-xl">
-                      <p><strong>Email:</strong> privacy@mylesoft.com</p>
+                      <p><strong>Email:</strong> privacy@MylesCorp.com</p>
                       <p><strong>Phone:</strong> +254 743 993 715</p>
                       <p><strong>Address:</strong> Wester Heights, Westlands, Nairobi, Kenya</p>
                     </div>

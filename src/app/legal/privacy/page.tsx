@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
                     <ul className="list-disc pl-6 space-y-2">
                       <li>Fill out our contact forms or request a demo</li>
                       <li>Subscribe to our newsletter</li>
-                      <li>Apply for a position at Mylesoft</li>
+                      <li>Apply for a position at MylesCorp</li>
                       <li>Create an account for our products</li>
                       <li>Contact our customer support team</li>
                     </ul>
@@ -64,7 +64,7 @@ export default function PrivacyPolicy() {
                       <li>With service providers who assist us in operating our business</li>
                       <li>With your consent for specific purposes</li>
                       <li>To comply with legal obligations</li>
-                      <li>To protect and defend the rights or property of Mylesoft</li>
+                      <li>To protect and defend the rights or property of MylesCorp</li>
                     </ul>
                   </div>
                 </div>
@@ -147,7 +147,7 @@ export default function PrivacyPolicy() {
                       If you have any questions about this Privacy Policy, please contact us:
                     </p>
                     <div className="bg-off-white p-6 rounded-xl">
-                      <p><strong>Email:</strong> privacy@mylesoft.com</p>
+                      <p><strong>Email:</strong> privacy@MylesCorp.com</p>
                       <p><strong>Phone:</strong> +254 743 993 715</p>
                       <p><strong>Address:</strong> Wester Heights, Westlands, Nairobi, Kenya</p>
                     </div>

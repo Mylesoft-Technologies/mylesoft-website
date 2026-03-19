@@ -191,7 +191,7 @@ EduMyles represents the pinnacle of educational technology innovation, specifica
     demoUrl: '/book-demo?product=edumyles',
     trialAvailable: true,
     support: {
-      email: 'support@mylesoft.com',
+      email: 'support@mylescorp.co.ke',
       phone: '+254 743 993 715',
       documentation: '/docs/edumyles',
       training: '/training/edumyles'
@@ -345,7 +345,7 @@ MylesCare revolutionizes healthcare management with cutting-edge AI technology d
     demoUrl: '/book-demo?product=mylescare',
     trialAvailable: true,
     support: {
-      email: 'healthcare@mylesoft.com',
+      email: 'healthcare@mylescorp.co.ke',
       phone: '+254 743 993 715',
       documentation: '/docs/mylescare',
       training: '/training/mylescare'

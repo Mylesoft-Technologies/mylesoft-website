@@ -14,7 +14,7 @@ export default function BookDemoPage() {
             <div className="text-center text-white">
               <h1 className="heading-1 mb-6">Book a Demo</h1>
               <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed">
-                Experience our AI-powered solutions firsthand. Schedule a personalized demonstration with our experts to see how Mylesoft can transform your organization.
+                Experience our AI-powered solutions firsthand. Schedule a personalized demonstration with our experts to see how MylesCorp can transform your organization.
               </p>
               <div className="mt-8">
                 <Button size="lg">Schedule Your Demo</Button>
@@ -185,7 +185,7 @@ export default function BookDemoPage() {
             <div className="text-center text-white">
               <h2 className="heading-2 mb-4">Trusted by Leading Organizations</h2>
               <p className="text-xl text-navy-100 mb-8">
-                Join 500+ organizations across East Africa who have transformed their operations with Mylesoft solutions.
+                Join 500+ organizations across East Africa who have transformed their operations with MylesCorp solutions.
               </p>
             </div>
             
@@ -215,7 +215,7 @@ export default function BookDemoPage() {
             <div className="text-center">
               <h2 className="heading-2 mb-4">Ready to Transform Your Organization?</h2>
               <p className="body-text max-w-2xl mx-auto mb-8">
-                Take the first step towards digital transformation. Schedule your personalized demo today and see how Mylesoft can help you achieve your goals.
+                Take the first step towards digital transformation. Schedule your personalized demo today and see how MylesCorp can help you achieve your goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg">Schedule Your Demo</Button>

@@ -83,9 +83,9 @@ export function LiveChat() {
     } else if (input.includes('demo') || input.includes('trial')) {
       return 'Great! I can help you book a demo. Our team will walk you through our solutions and answer all your questions. Click the "Book a Demo" button or I can connect you with our sales team.'
     } else if (input.includes('support') || input.includes('help')) {
-      return 'I\'m here to help! For technical support, you can reach our team at support@mylesoft.com or call +254 743 993 715. What specific issue are you experiencing?'
+      return 'I\'m here to help! For technical support, you can reach our team at support@mylescorp.co.ke or call +254 743 993 715. What specific issue are you experiencing?'
     } else if (input.includes('contact') || input.includes('phone') || input.includes('email')) {
-      return 'You can reach us at:\n📧 Email: info@mylesoft.com\n📞 Phone: +254 743 993 715\n📍 Location: Wester Heights, Westlands, Nairobi\nWould you like me to connect you with a specific team member?'
+      return 'You can reach us at:\n📧 Email: info@mylescorp.co.ke\n📞 Phone: +254 743 993 715\n📍 Location: Wester Heights, Westlands, Nairobi\nWould you like me to connect you with a specific team member?'
     } else if (input.includes('career') || input.includes('job') || input.includes('work')) {
       return 'We\'re always looking for talented individuals! Check our careers page at /careers for current openings. What type of role are you interested in?'
     } else {
@@ -105,7 +105,7 @@ export function LiveChat() {
       <div className="fixed bottom-6 right-6 z-40">
         <Button
           onClick={() => setIsOpen(true)}
-          className="bg-gold-400 hover:bg-gold-500 text-white rounded-full p-4 shadow-lg hover-lift"
+          className="bg-gold hover:bg-gold-light text-white rounded-full p-4 shadow-lg hover:shadow-xl"
           aria-label="Open live chat"
         >
           <MessageCircle size={24} />
@@ -117,29 +117,29 @@ export function LiveChat() {
   return (
     <div className="fixed bottom-6 right-6 z-40 w-96 max-w-[calc(100vw-3rem)]">
       {!isMinimized && (
-        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-light-grey">
+        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gold/20">
           {/* Header */}
-          <div className="bg-navy-500 text-white p-4 flex items-center justify-between">
+          <div className="bg-navy text-white p-4 flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gold-400 rounded-full flex items-center justify-center">
-                <Bot size={20} className="text-navy-500" />
+              <div className="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center">
+                <Bot size={20} className="text-gold" />
               </div>
               <div>
                 <h3 className="font-semibold">Live Chat</h3>
-                <p className="text-sm text-navy-200">We typically reply in minutes</p>
+                <p className="text-sm text-light-blue">We typically reply in minutes</p>
               </div>
             </div>
             <div className="flex items-center space-x-2">
               <button
                 onClick={() => setIsMinimized(true)}
-                className="p-1 hover:bg-navy-600 rounded transition-colors"
+                className="p-1 hover:bg-navy-dark rounded transition-colors"
                 aria-label="Minimize chat"
               >
                 <Minimize2 size={18} />
               </button>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-1 hover:bg-navy-600 rounded transition-colors"
+                className="p-1 hover:bg-navy-dark rounded transition-colors"
                 aria-label="Close chat"
               >
                 <X size={18} />
@@ -157,15 +157,15 @@ export function LiveChat() {
                 }`}
               >
                 {message.sender === 'bot' && (
-                  <div className="w-8 h-8 bg-gold-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Bot size={16} className="text-gold-600" />
+                  <div className="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Bot size={16} className="text-gold" />
                   </div>
                 )}
                 <div
                   className={`max-w-[70%] p-3 rounded-lg ${
                     message.sender === 'user'
-                      ? 'bg-navy-500 text-white'
-                      : 'bg-white text-dark-grey border border-light-grey'
+                      ? 'bg-navy text-white'
+                      : 'bg-white text-gray-800 border border-gold/20'
                   }`}
                 >
                   <p className="text-sm whitespace-pre-wrap">{message.text}</p>
@@ -177,8 +177,8 @@ export function LiveChat() {
                   </p>
                 </div>
                 {message.sender === 'user' && (
-                  <div className="w-8 h-8 bg-navy-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <User size={16} className="text-navy-600" />
+                  <div className="w-8 h-8 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <User size={16} className="text-navy" />
                   </div>
                 )}
               </div>
@@ -186,10 +186,10 @@ export function LiveChat() {
             
             {isTyping && (
               <div className="flex items-start space-x-2 justify-start">
-                <div className="w-8 h-8 bg-gold-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Bot size={16} className="text-gold-600" />
+                <div className="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Bot size={16} className="text-gold" />
                 </div>
-                <div className="bg-white text-dark-grey border border-light-grey p-3 rounded-lg">
+                <div className="bg-white text-gray-800 border border-gold/20 p-3 rounded-lg">
                   <div className="flex space-x-1">
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
@@ -201,7 +201,7 @@ export function LiveChat() {
           </div>
 
           {/* Input */}
-          <div className="p-4 border-t border-light-grey bg-white">
+          <div className="p-4 border-t border-gold/20 bg-white">
             <div className="flex items-center space-x-2">
               <input
                 type="text"
@@ -209,7 +209,7 @@ export function LiveChat() {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
-                className="flex-1 px-3 py-2 border border-light-grey rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent"
+                className="flex-1 px-3 py-2 border border-gold/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                 disabled={isTyping}
               />
               <Button
@@ -221,7 +221,7 @@ export function LiveChat() {
                 <Send size={18} />
               </Button>
             </div>
-            <p className="text-xs text-medium-grey mt-2 text-center">
+            <p className="text-xs text-gray-500 mt-2 text-center">
               Powered by MylesCorp Technologies • Available 9 AM - 6 PM EAT
             </p>
           </div>
@@ -230,27 +230,27 @@ export function LiveChat() {
 
       {/* Minimized Chat */}
       {isMinimized && (
-        <div className="bg-white rounded-2xl shadow-2xl border border-light-grey p-3 flex items-center justify-between">
+        <div className="bg-white rounded-2xl shadow-2xl border border-gold/20 p-3 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gold-400 rounded-full flex items-center justify-center">
-              <Bot size={16} className="text-navy-500" />
+            <div className="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center">
+              <Bot size={16} className="text-gold" />
             </div>
             <div>
               <h3 className="font-semibold text-sm">Live Chat</h3>
-              <p className="text-xs text-medium-grey">Click to expand</p>
+              <p className="text-xs text-gray-500">Click to expand</p>
             </div>
           </div>
           <div className="flex items-center space-x-2">
             <button
               onClick={() => setIsMinimized(false)}
-              className="p-1 hover:bg-off-white rounded transition-colors"
+              className="p-1 hover:bg-gray-50 rounded transition-colors"
               aria-label="Expand chat"
             >
               <Maximize2 size={16} />
             </button>
             <button
               onClick={() => setIsOpen(false)}
-              className="p-1 hover:bg-off-white rounded transition-colors"
+              className="p-1 hover:bg-gray-50 rounded transition-colors"
               aria-label="Close chat"
             >
               <X size={16} />

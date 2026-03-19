@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server'
 
 export function GET() {
-  const robotsTxt = `# Mylesoft Technologies - Robots.txt
-# Website: https://mylesoft.com
+  const robotsTxt = `# MylesCorp Technologies - Robots.txt
+# Website: https://MylesCorp.com
 # Last updated: ${new Date().toISOString()}
 
 User-agent: *
@@ -12,8 +12,8 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap
-Sitemap: https://mylesoft.com/sitemap.xml
-Sitemap: https://mylesoft.com/sitemap.xml
+Sitemap: https://MylesCorp.com/sitemap.xml
+Sitemap: https://MylesCorp.com/sitemap.xml
 
 # Disallow admin and private areas
 Disallow: /admin/
