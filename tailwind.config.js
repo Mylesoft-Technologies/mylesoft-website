@@ -38,6 +38,7 @@ module.exports = {
         'light-grey': '#E8EDF4',
         'dark-grey': '#212121',
         'med-grey': '#545454',
+        'medium-grey': '#545454',
         // Semantic Colors
         success: '#2EA44F',
         warning: '#F59E0B',
