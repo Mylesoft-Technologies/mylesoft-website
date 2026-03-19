@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  logging: {
+    browserToTerminal: true,
+  },
   images: {
     remotePatterns: [
       { protocol: 'http', hostname: 'localhost' },
