@@ -25,22 +25,11 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-gradient-to-br from-navy via-navy-deep to-navy-900 text-white relative overflow-hidden border-t border-gold/20">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-3">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
-      </div>
-
-      {/* Floating Elements */}
-      <div className="absolute top-10 left-10 w-32 h-32 bg-gold/5 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-20 w-48 h-48 bg-gold/3 rounded-full blur-3xl animate-pulse delay-1000" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <footer className="bg-navy text-white relative border-t border-gold/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-16">
             
             {/* Brand Column */}
             <ScrollReveal direction="up" delay={0.1} className="lg:col-span-2">
@@ -78,7 +67,7 @@ export function Footer() {
             {/* Products Column */}
             <ScrollReveal direction="up" delay={0.2}>
               <div className="space-y-6">
-                <h3 className="text-2xl font-display font-bold text-white mb-6">Products</h3>
+                <h3 className="text-2xl font-display font-bold text-white mb-8">Products</h3>
                 <ul className="space-y-3">
                   {[
                     { name: 'EduMyles', href: '/products/edumyles', desc: 'School Management' },
@@ -107,7 +96,7 @@ export function Footer() {
             {/* Company Column */}
             <ScrollReveal direction="up" delay={0.3}>
               <div className="space-y-6">
-                <h3 className="text-2xl font-display font-bold text-white mb-6">Company</h3>
+                <h3 className="text-2xl font-display font-bold text-white mb-8">Company</h3>
                 <ul className="space-y-3">
                   {[
                     { name: 'About Us', href: '/about' },
@@ -134,12 +123,12 @@ export function Footer() {
             {/* Newsletter Column */}
             <ScrollReveal direction="up" delay={0.4}>
               <div className="space-y-6">
-                <h3 className="text-2xl font-display font-bold text-white mb-6">Stay Connected</h3>
-                <div className="text-gray-300 mb-4 font-body">
+                <h3 className="text-2xl font-display font-bold text-white mb-8">Stay Connected</h3>
+                <div className="text-gray-300 mb-6 font-body">
                   Get the latest updates on our innovative solutions and industry insights delivered to your inbox.
                 </div>
                 
-                <form onSubmit={handleNewsletterSubmit} className="space-y-4">
+                <form onSubmit={handleNewsletterSubmit} className="space-y-5">
                   <input
                     type="email"
                     value={email}
@@ -168,7 +157,7 @@ export function Footer() {
                 </form>
 
                 {/* Social Links */}
-                <div className="space-y-3">
+                <div className="space-y-4">
                   <p className="text-light-blue text-sm font-body">Follow us on social media</p>
                   <div className="flex space-x-3">
                     {[
@@ -196,8 +185,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gold/20 py-8">
-          <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
+        <div className="border-t border-gold/20 py-12">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-8 lg:space-y-0">
             <ScrollReveal direction="up" delay={0.5}>
               <div className="text-center lg:text-left">
                 <p className="text-gray-300 text-sm font-body mb-2">
@@ -213,7 +202,7 @@ export function Footer() {
             </ScrollReveal>
             
             <ScrollReveal direction="up" delay={0.6}>
-              <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 text-sm">
+              <div className="flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8 text-sm">
                 <Link href="/legal/privacy" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
                   Privacy Policy
                 </Link>
@@ -230,7 +219,7 @@ export function Footer() {
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.7}>
-              <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+              <div className="flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8">
                 <button
                   onClick={scrollToTop}
                   className="group flex items-center space-x-2 text-gray-300 hover:text-gold transition-all duration-300 font-body"
@@ -249,14 +238,14 @@ export function Footer() {
 
         {/* Enhanced Tagline Section */}
         <ScrollReveal direction="fade" delay={0.8}>
-          <div className="text-center py-8 border-t border-gold/20">
-            <p className="text-gold font-display italic font-bold text-lg mb-2">
+          <div className="text-center py-12 border-t border-gold/20">
+            <p className="text-gold font-display italic font-bold text-xl mb-4">
               Transforming Industries, Empowering Generations.
             </p>
-            <p className="text-gray-300 text-sm font-body mb-2">
+            <p className="text-gray-300 text-sm font-body mb-6">
               Innovation • Excellence • Impact — The MylesCorp Promise
             </p>
-            <div className="flex items-center justify-center space-x-8 mt-4">
+            <div className="flex items-center justify-center space-x-12 mt-6">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-gold rounded-full animate-pulse" />
                 <span className="text-gray-400 text-xs font-body">ISO 9001:2015 Certified</span>
