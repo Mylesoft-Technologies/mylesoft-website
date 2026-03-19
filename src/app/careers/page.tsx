@@ -305,60 +305,62 @@ export default function CareersPage() {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {openPositions.map((position, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-medium p-8 hover:shadow-large transition-shadow">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="heading-3 mb-2">{position.title}</h3>
-                      <div className="flex items-center text-sm text-medium-grey mb-4">
-                        <MapPin size={16} className="mr-2" />
-                        <span>{position.location}</span>
-                        <span className="mx-2">•</span>
-                        <span>{position.type}</span>
-                        <span className="mx-2">•</span>
-                        <span>{position.experience}</span>
+              <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
+                {openPositions.map((position, index) => (
+                  <Card variant="light" key={index} className="h-full flex flex-col">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-2xl font-display font-bold text-navy mb-2">{position.title}</h3>
+                        <div className="flex items-center text-sm text-gray-500 mb-4">
+                          <MapPin size={16} className="mr-2" />
+                          <span>{position.location}</span>
+                          <span className="mx-2">•</span>
+                          <span>{position.type}</span>
+                          <span className="mx-2">•</span>
+                          <span>{position.experience}</span>
+                        </div>
+                      </div>
+                      <div className="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-semibold font-body">
+                        {position.category}
                       </div>
                     </div>
-                    <div className="bg-gold-100 text-gold-600 px-3 py-1 rounded-full text-sm font-semibold">
-                      {position.category}
+                    
+                    <p className="text-gray-600 leading-relaxed mb-6 font-body flex-grow">{position.description}</p>
+                    
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-navy mb-3 font-body">Requirements:</h4>
+                      <ul className="space-y-2">
+                        {position.requirements.map((req, reqIndex) => (
+                          <li key={reqIndex} className="flex items-start text-sm">
+                            <div className="w-2 h-2 bg-gold rounded-full mr-3 mt-1 flex-shrink-0" />
+                            <span className="text-gray-600 font-body">{req}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
-                  
-                  <p className="body-text mb-6">{position.description}</p>
-                  
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-navy-500 mb-3">Requirements:</h4>
-                    <ul className="space-y-2">
-                      {position.requirements.map((req, reqIndex) => (
-                        <li key={reqIndex} className="flex items-start text-sm">
-                          <div className="w-2 h-2 bg-gold-400 rounded-full mr-3 mt-1 flex-shrink-0" />
-                          <span>{req}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-navy-500 mb-3">Benefits:</h4>
-                    <ul className="space-y-2">
-                      {position.benefits.map((benefit, benefitIndex) => (
-                        <li key={benefitIndex} className="flex items-start text-sm">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-3 mt-1 flex-shrink-0" />
-                          <span>{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="flex items-center justify-between">
-                    <div className="text-sm text-medium-grey">
-                      <Clock size={16} className="mr-2" />
-                      Posted {position.posted}
+                    
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-navy mb-3 font-body">Benefits:</h4>
+                      <ul className="space-y-2">
+                        {position.benefits.map((benefit, benefitIndex) => (
+                          <li key={benefitIndex} className="flex items-start text-sm">
+                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3 mt-1 flex-shrink-0" />
+                            <span className="text-gray-600 font-body">{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <Button>Apply Now</Button>
-                  </div>
-                </div>
-              ))}
+                    
+                    <div className="flex items-center justify-between mt-auto">
+                      <div className="text-sm text-gray-500">
+                        <Clock size={16} className="mr-2" />
+                        Posted {position.posted}
+                      </div>
+                      <Button>Apply Now</Button>
+                    </div>
+                  </Card>
+                ))}
+              </StaggerReveal>
             </div>
           </div>
         </section>
@@ -374,25 +376,31 @@ export default function CareersPage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {departments.map((dept, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Brain className="text-gold w-10 h-10" />
-                  </div>
-                  <h3 className="text-2xl font-display font-bold text-navy mb-3">{dept.name}</h3>
-                  <p className="text-gray-600 mb-4 font-body">{dept.description}</p>
-                  <div className="space-y-2">
-                    <div className="text-sm">
-                      <span className="font-semibold text-navy">Team Size:</span>
-                      <span className="ml-2">{dept.teamSize}</span>
-                    </div>
-                    <div className="text-sm">
-                      <span className="font-semibold text-navy">Focus:</span>
-                      <span className="ml-2">{dept.focus}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
+              <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
+                {departments.map((dept, index) => (
+                  <Card variant="light" key={index} className="text-center h-full flex flex-col">
+                    <CardIcon size="lg">
+                      <Brain className="text-gold" />
+                    </CardIcon>
+                    <CardHeader>
+                      <h3 className="text-2xl font-display font-bold text-navy mb-3">{dept.name}</h3>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 mb-4 font-body flex-grow">{dept.description}</p>
+                      <div className="space-y-2">
+                        <div className="text-sm">
+                          <span className="font-semibold text-navy">Team Size:</span>
+                          <span className="ml-2">{dept.teamSize}</span>
+                        </div>
+                        <div className="text-sm">
+                          <span className="font-semibold text-navy">Focus:</span>
+                          <span className="ml-2">{dept.focus}</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </StaggerReveal>
             </div>
           </div>
         </section>

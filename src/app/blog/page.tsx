@@ -181,11 +181,11 @@ export default function BlogPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
                   {featuredPosts.map((post, index) => (
-                    <Card variant="light" key={index} className="overflow-hidden group">
-                      <div className="aspect-video bg-gold/10 flex items-center justify-center">
+                    <Card variant="light" key={index} className="overflow-hidden group h-full flex flex-col">
+                      <div className="aspect-video bg-gold/10 flex items-center justify-center flex-shrink-0">
                         <Brain className="text-gold w-12 h-12" />
                       </div>
-                      <div className="p-6">
+                      <div className="p-6 flex-1 flex flex-col">
                         <div className="flex items-center mb-4">
                           <div className="flex-1">
                             <span className="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-xs font-semibold mb-2 font-body">
@@ -194,7 +194,7 @@ export default function BlogPage() {
                             <h3 className="text-2xl font-display font-bold text-navy mb-2">{post.title}</h3>
                           </div>
                         </div>
-                        <p className="text-gray-600 leading-relaxed mb-4 font-body">{post.excerpt}</p>
+                        <p className="text-gray-600 leading-relaxed mb-4 font-body flex-grow">{post.excerpt}</p>
                         <div className="flex items-center justify-between mb-4">
                           <div className="flex items-center text-sm text-gray-500">
                             <User size={16} className="mr-2" />
@@ -211,7 +211,7 @@ export default function BlogPage() {
                             <span>{post.readTime}</span>
                           </div>
                         </div>
-                        <div className="flex items-center text-gold font-semibold hover:text-gold-light transition-colors font-body">
+                        <div className="flex items-center text-gold font-semibold hover:text-gold-light transition-colors font-body mt-auto">
                           Read Article
                           <ArrowRight size={16} className="ml-2" />
                         </div>
@@ -247,11 +247,11 @@ export default function BlogPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
                 {recentPosts.map((post, index) => (
-                  <Card variant="light" key={index} className="overflow-hidden group">
-                    <div className="aspect-video bg-gold/10 flex items-center justify-center">
+                  <Card variant="light" key={index} className="overflow-hidden group h-full flex flex-col">
+                    <div className="aspect-video bg-gold/10 flex items-center justify-center flex-shrink-0">
                       <Brain className="text-gold w-8 h-8" />
                     </div>
-                    <div className="p-6">
+                    <div className="p-6 flex-1 flex flex-col">
                       <div className="flex items-center mb-4">
                         <div className="flex-1">
                           <span className="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-xs font-semibold mb-2 font-body">
@@ -260,7 +260,7 @@ export default function BlogPage() {
                           <h3 className="text-xl font-display font-bold text-navy mb-2">{post.title}</h3>
                         </div>
                       </div>
-                      <p className="text-gray-600 leading-relaxed mb-4 font-body text-sm">{post.excerpt}</p>
+                      <p className="text-gray-600 leading-relaxed mb-4 font-body text-sm flex-grow">{post.excerpt}</p>
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center text-sm text-gray-500">
                           <User size={16} className="mr-2" />
@@ -275,7 +275,7 @@ export default function BlogPage() {
                           <span>{post.readTime}</span>
                         </div>
                       </div>
-                      <div className="flex items-center text-gold font-semibold hover:text-gold-light transition-colors font-body">
+                      <div className="flex items-center text-gold font-semibold hover:text-gold-light transition-colors font-body mt-auto">
                         Read More
                         <ChevronRight size={16} className="ml-2" />
                       </div>

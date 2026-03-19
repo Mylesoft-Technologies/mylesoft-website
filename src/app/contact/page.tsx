@@ -285,27 +285,33 @@ export default function ContactPage() {
                 <div className="mb-12">
                   <h3 className="heading-3 mb-6">Departments</h3>
                   <div className="space-y-4">
+                  <StaggerReveal staggerDelay={0.1} itemDelay={0.3} direction="up">
                     {departments.map((dept) => (
-                      <div key={dept.name} className="bg-off-white rounded-lg p-6">
-                        <h4 className="font-semibold text-navy-500 mb-2">{dept.title}</h4>
-                        <p className="body-text text-sm mb-4">{dept.description}</p>
-                        <div className="space-y-2">
-                          <div className="flex items-center text-sm">
-                            <Mail size={16} className="text-gold-400 mr-2" />
-                            <a href={`mailto:${dept.email}`} className="text-gold-600 hover:text-gold-500">
-                              {dept.email}
-                            </a>
+                      <Card variant="light" key={dept.name} className="h-full">
+                        <CardHeader>
+                          <h4 className="text-xl font-display font-bold text-navy mb-2">{dept.title}</h4>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-gray-600 leading-relaxed mb-4 font-body text-sm">{dept.description}</p>
+                          <div className="space-y-2">
+                            <div className="flex items-center text-sm">
+                              <Mail size={16} className="text-gold mr-2" />
+                              <a href={`mailto:${dept.email}`} className="text-gold hover:text-gold-light font-body">
+                                {dept.email}
+                              </a>
+                            </div>
+                            <div className="flex items-center text-sm">
+                              <Phone size={16} className="text-gold mr-2" />
+                              <a href={`tel:${dept.phone}`} className="text-gold hover:text-gold-light font-body">
+                                {dept.phone}
+                              </a>
+                            </div>
                           </div>
-                          <div className="flex items-center text-sm">
-                            <Phone size={16} className="text-gold-400 mr-2" />
-                            <a href={`tel:${dept.phone}`} className="text-gold-600 hover:text-gold-500">
-                              {dept.phone}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
+                        </CardContent>
+                      </Card>
                     ))}
-                  </div>
+                  </StaggerReveal>
+                </div>
                 </div>
 
                 {/* Quick Contact */}
@@ -356,38 +362,44 @@ export default function ContactPage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {offices.map((office, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-medium p-6">
-                  {office.isHeadquarters && (
-                    <div className="inline-block bg-gold-100 text-gold-600 px-3 py-1 rounded-full text-sm font-semibold mb-4">
-                      Headquarters
-                    </div>
-                  )}
-                  <h3 className="heading-3 mb-4">{office.city}</h3>
-                  <div className="space-y-3">
-                    <div className="flex items-start">
-                      <MapPin size={16} className="text-gold-400 mr-2 mt-1 flex-shrink-0" />
-                      <span className="text-sm">{office.address}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Phone size={16} className="text-gold-400 mr-2" />
-                      <a href={`tel:${office.phone}`} className="text-sm text-gold-600 hover:text-gold-500">
-                        {office.phone}
-                      </a>
-                    </div>
-                    <div className="flex items-center">
-                      <Mail size={16} className="text-gold-400 mr-2" />
-                      <a href={`mailto:${office.email}`} className="text-sm text-gold-600 hover:text-gold-500">
-                        {office.email}
-                      </a>
-                    </div>
-                    <div className="flex items-start">
-                      <Clock size={16} className="text-gold-400 mr-2 mt-1 flex-shrink-0" />
-                      <span className="text-sm">{office.hours}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
+              <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
+                {offices.map((office, index) => (
+                  <Card variant="light" key={index} className="h-full flex flex-col">
+                    {office.isHeadquarters && (
+                      <div className="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-semibold mb-4 font-body">
+                        Headquarters
+                      </div>
+                    )}
+                    <CardHeader>
+                      <h3 className="text-2xl font-display font-bold text-navy mb-4">{office.city}</h3>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <div className="space-y-3">
+                        <div className="flex items-start">
+                          <MapPin size={16} className="text-gold mr-2 mt-1 flex-shrink-0" />
+                          <span className="text-sm text-gray-600 font-body">{office.address}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <Phone size={16} className="text-gold mr-2" />
+                          <a href={`tel:${office.phone}`} className="text-sm text-gold hover:text-gold-light font-body">
+                            {office.phone}
+                          </a>
+                        </div>
+                        <div className="flex items-center">
+                          <Mail size={16} className="text-gold mr-2" />
+                          <a href={`mailto:${office.email}`} className="text-sm text-gold hover:text-gold-light font-body">
+                            {office.email}
+                          </a>
+                        </div>
+                        <div className="flex items-start">
+                          <Clock size={16} className="text-gold mr-2 mt-1 flex-shrink-0" />
+                          <span className="text-sm text-gray-600 font-body">{office.hours}</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </StaggerReveal>
             </div>
           </div>
         </section>

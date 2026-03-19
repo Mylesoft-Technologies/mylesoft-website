@@ -160,8 +160,8 @@ export default function TeamPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
               {teamMembers.map((member, index) => (
-                <Card variant="light" key={index} className="overflow-hidden group">
-                  <div className="aspect-square bg-gradient-to-br from-navy to-navy-dark relative">
+                <Card variant="light" key={index} className="overflow-hidden group h-full flex flex-col">
+                  <div className="aspect-square bg-gradient-to-br from-navy to-navy-dark relative flex-shrink-0">
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-24 h-24 bg-gold/20 rounded-full flex items-center justify-center">
                         <Users className="w-12 h-12 text-gold" />
@@ -169,12 +169,12 @@ export default function TeamPage() {
                     </div>
                   </div>
                   
-                  <div className="p-6">
+                  <div className="p-6 flex-1 flex flex-col">
                     <h3 className="text-2xl font-display font-bold text-navy mb-2">{member.name}</h3>
                     <p className="text-gold font-semibold mb-4 font-body">{member.role}</p>
-                    <p className="text-gray-600 leading-relaxed mb-6 font-body text-sm">{member.bio}</p>
+                    <p className="text-gray-600 leading-relaxed mb-6 font-body text-sm flex-grow">{member.bio}</p>
                     
-                    <div className="flex space-x-3">
+                    <div className="flex space-x-3 mt-auto">
                       {member.email && (
                         <a
                           href={`mailto:${member.email}`}
