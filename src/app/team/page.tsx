@@ -157,44 +157,51 @@ export default function TeamPage() {
             </div>
           </ScrollReveal>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 lg:gap-8">
+            <StaggerReveal staggerDelay={0.1} itemDelay={0.2} direction="up">
               {teamMembers.map((member, index) => (
-                <Card variant="light" key={index} className="overflow-hidden group h-full flex flex-col">
-                  <div className="aspect-square bg-gradient-to-br from-navy to-navy-dark relative flex-shrink-0">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-24 h-24 bg-gold/20 rounded-full flex items-center justify-center">
-                        <Users className="w-12 h-12 text-gold" />
-                      </div>
+                <Card variant="light" key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  {/* Professional Header */}
+                  <div className="bg-gradient-to-r from-navy to-navy-dark p-6 text-center">
+                    <div className="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Users className="w-10 h-10 text-gold" />
                     </div>
+                    <h3 className="text-xl font-display font-bold text-white mb-1">{member.name}</h3>
+                    <p className="text-gold font-semibold text-sm font-body">{member.role}</p>
                   </div>
                   
-                  <div className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-2xl font-display font-bold text-navy mb-2">{member.name}</h3>
-                    <p className="text-gold font-semibold mb-4 font-body">{member.role}</p>
-                    <p className="text-gray-600 leading-relaxed mb-6 font-body text-sm flex-grow">{member.bio}</p>
+                  {/* Professional Content */}
+                  <div className="p-6">
+                    <p className="text-gray-600 leading-relaxed font-body text-sm mb-6 line-clamp-3">
+                      {member.bio}
+                    </p>
                     
-                    <div className="flex space-x-3 mt-auto">
+                    {/* Professional Social Links */}
+                    <div className="flex items-center justify-center space-x-3">
                       {member.email && (
                         <a
                           href={`mailto:${member.email}`}
-                          className="w-10 h-10 bg-navy/10 rounded-lg flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
+                          className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300 group"
                           title={`Email ${member.name}`}
                         >
-                          <Mail className="w-5 h-5" />
+                          <Mail className="w-4 h-4" />
                         </a>
                       )}
                       <a
                         href={member.social.linkedin}
-                        className="w-10 h-10 bg-navy/10 rounded-lg flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
+                        className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300 group"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <Linkedin className="w-5 h-5" />
+                        <Linkedin className="w-4 h-4" />
                       </a>
                       <a
                         href={member.social.twitter}
-                        className="w-10 h-10 bg-navy/10 rounded-lg flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
+                        className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300 group"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <Twitter className="w-5 h-5" />
+                        <Twitter className="w-4 h-4" />
                       </a>
                     </div>
                   </div>
