@@ -228,7 +228,7 @@ export default function AboutPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { number: "500+", label: "Schools" },
                 { number: "250K+", label: "Students" },

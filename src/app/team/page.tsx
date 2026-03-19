@@ -113,7 +113,7 @@ export default function TeamPage() {
             </div>
           </ScrollReveal>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <StaggerReveal staggerDelay={0.1} itemDelay={0.4} direction="up">
               {values.map((value, index) => (
                 <Card variant="light" key={index} className="text-center group">
@@ -157,7 +157,7 @@ export default function TeamPage() {
             </div>
           </ScrollReveal>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             <StaggerReveal staggerDelay={0.1} itemDelay={0.2} direction="up">
               {teamMembers.map((member, index) => (
                 <Card variant="light" key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
@@ -264,7 +264,7 @@ export default function TeamPage() {
             </div>
           </ScrollReveal>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <ScrollReveal direction="up" delay={0.3}>
               <Card variant="light" className="text-center">
                 <CardIcon size="md">

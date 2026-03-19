@@ -160,7 +160,7 @@ export default function ServicesPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-medium p-8 hover:shadow-large transition-shadow h-full flex flex-col">
                   <div className="mb-6 flex-shrink-0">{service.icon}</div>
@@ -207,7 +207,7 @@ export default function ServicesPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {processSteps.map((step) => (
                 <div key={step.number} className="text-center h-full flex flex-col">
                   <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 flex-shrink-0">
@@ -288,7 +288,7 @@ export default function ServicesPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { number: "95%", label: "Client Satisfaction" },
                 { number: "200+", label: "Projects Delivered" },

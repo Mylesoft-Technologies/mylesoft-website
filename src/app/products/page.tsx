@@ -350,7 +350,7 @@ export default function ProductsPage() {
         {/* Stats Overview */}
         <section className="section bg-off-white">
           <div className="section-padding">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div className="fade-in">
                 <div className="stat-number mb-2">18</div>
                 <div className="stat-label">Sectors Served</div>
@@ -399,7 +399,7 @@ export default function ProductsPage() {
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {allProducts
                   .filter(product => product.sector === sector)
                   .map((product) => (

@@ -200,7 +200,7 @@ export default function PricingPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {pricingPlans.map((plan, index) => (
                 <div 
                   key={index} 
@@ -268,7 +268,7 @@ export default function PricingPage() {
               {productPricing.map((category, categoryIndex) => (
                 <div key={categoryIndex}>
                   <h3 className="heading-3 mb-6 text-center">{category.category}</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {category.products.map((product, productIndex) => (
                       <div key={productIndex} className="bg-white rounded-lg shadow-medium p-6">
                         <h4 className="font-semibold text-navy-500 mb-2">{product.name}</h4>

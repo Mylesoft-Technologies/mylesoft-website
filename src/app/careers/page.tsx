@@ -215,7 +215,7 @@ export default function CareersPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
               <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
                 {openPositions.map((position, index) => (
                   <Card variant="light" key={index} className="h-full flex flex-col">
@@ -286,7 +286,7 @@ export default function CareersPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
                 {departments.map((dept, index) => (
                   <Card variant="light" key={index} className="text-center h-full flex flex-col">
@@ -356,7 +356,7 @@ export default function CareersPage() {
                   We offer comprehensive benefits and perks to support our team members' growth and well-being.
                 </p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {benefits.map((benefit, index) => (
                     <div key={index} className="text-center">
                       <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-4">

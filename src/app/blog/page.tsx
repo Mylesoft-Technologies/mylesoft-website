@@ -178,7 +178,7 @@ export default function BlogPage() {
                 </div>
               </ScrollReveal>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
                 <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
                   {featuredPosts.map((post, index) => (
                     <Card variant="light" key={index} className="overflow-hidden group h-full flex flex-col">
@@ -244,7 +244,7 @@ export default function BlogPage() {
               </div>
             </ScrollReveal>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
                 {recentPosts.map((post, index) => (
                   <Card variant="light" key={index} className="overflow-hidden group h-full flex flex-col">
@@ -307,7 +307,7 @@ export default function BlogPage() {
               </div>
             </ScrollReveal>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
               <StaggerReveal staggerDelay={0.1} itemDelay={0.3} direction="up">
                 {categories.map((category, index) => (
                   <Card variant="light" key={index} className="text-center h-full flex flex-col">

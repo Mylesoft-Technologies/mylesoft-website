@@ -129,7 +129,7 @@ export default function HomePage() {
             </div>
           </SimpleReveal>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <SimpleReveal key={index} delay={0.4 + index * 0.1}>
                 <div className="text-center group">
@@ -169,7 +169,7 @@ export default function HomePage() {
             </div>
           </SimpleReveal>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <SimpleReveal key={index} delay={0.4 + index * 0.2}>
                 <Card variant="dark" className="group">

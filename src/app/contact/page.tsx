@@ -361,7 +361,7 @@ export default function ContactPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
                 {offices.map((office, index) => (
                   <Card variant="light" key={index} className="h-full flex flex-col">
