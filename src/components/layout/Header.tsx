@@ -85,7 +85,7 @@ export function Header() {
         <div className="lg:hidden bg-gradient-to-b from-navy-700 to-navy-800 border-t border-gold-400/20">
           <div className="px-4 py-6 space-y-4">
             <div className="flex flex-col space-y-4">
-
+              {navigation.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
@@ -95,7 +95,7 @@ export function Header() {
                 </button>
               ))}
             </div>
-            
+
             <div className="mt-8 pt-6 border-t border-gold-400/20 space-y-4">
               <div className="flex justify-center">
                 <DarkModeToggle />
