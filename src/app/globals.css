@@ -164,7 +164,7 @@
 
   /* Focus styles for accessibility */
   *:focus {
-    @apply outline-none ring-2 ring-gold-400 ring-offset-2;
+    @apply outline-none ring-2 ring-gold-DEFAULT ring-offset-2;
   }
 
   /* Custom scrollbar styling */
@@ -232,7 +232,7 @@
 
   /* Skip to main content link for accessibility */
   .skip-to-main {
-    @apply absolute -top-full left-0 bg-navy-500 text-white p-2 z-50;
+    @apply absolute -top-full left-0 bg-navy-DEFAULT text-white p-2 z-50;
   }
 
   .skip-to-main:focus {
@@ -281,25 +281,25 @@
 @layer components {
   /* Professional Button Styles */
   .btn-primary {
-    @apply bg-gold-400 text-white font-semibold rounded-full px-8 py-3 
-           hover:bg-gold-500 hover:shadow-gold hover:-translate-y-0.5
+    @apply bg-gold-DEFAULT text-white font-semibold rounded-full px-8 py-3 
+           hover:bg-gold-light hover:shadow-gold hover:-translate-y-0.5
            active:scale-95 active:shadow-medium
            transition-all duration-300 ease-out;
     box-shadow: 0 2px 4px rgba(199, 150, 57, 0.2);
   }
 
   .btn-secondary {
-    @apply bg-transparent text-navy-500 border-2 border-navy-500 
+    @apply bg-transparent text-navy-DEFAULT border-2 border-navy-DEFAULT 
            font-semibold rounded-full px-8 py-3 
-           hover:bg-navy-500 hover:text-white hover:shadow-navy hover:-translate-y-0.5
+           hover:bg-navy-DEFAULT hover:text-white hover:shadow-navy hover:-translate-y-0.5
            active:scale-95 active:shadow-medium
            transition-all duration-300 ease-out;
   }
 
   .btn-outline {
-    @apply bg-transparent text-gold-400 border-2 border-gold-400 
+    @apply bg-transparent text-gold-DEFAULT border-2 border-gold-DEFAULT 
            font-semibold rounded-full px-8 py-3 
-           hover:bg-gold-50 hover:text-gold-500 hover:shadow-gold hover:-translate-y-0.5
+           hover:bg-gold-pale hover:text-gold-light hover:shadow-gold hover:-translate-y-0.5
            active:scale-95 active:shadow-medium
            transition-all duration-300 ease-out;
   }
@@ -315,16 +315,16 @@
   }
 
   .card-gold-accent {
-    @apply border-t-4 border-t-gold-400;
+    @apply border-t-4 border-t-gold-DEFAULT;
   }
 
   .card-gold-accent:hover {
-    @apply border-t-gold-500;
+    @apply border-t-gold-light;
   }
 
   /* Professional Navigation */
   .nav-link {
-    @apply text-navy-500 font-medium text-nav hover:text-gold-400 
+    @apply text-navy-DEFAULT font-medium text-nav hover:text-gold-DEFAULT 
            transition-colors duration-200 ease-out;
     position: relative;
   }
@@ -348,7 +348,7 @@
   /* Professional Form Styles */
   .form-input {
     @apply w-full px-4 py-3 border border-light-grey rounded-xl
-           focus:ring-2 focus:ring-gold-400 focus:border-transparent
+           focus:ring-2 focus:ring-gold-DEFAULT focus:border-transparent
            transition-all duration-200 ease-out;
   }
 
@@ -371,11 +371,11 @@
   }
 
   .badge-gold {
-    @apply bg-gold-100 text-gold-600;
+    @apply bg-gold-100 text-gold-light;
   }
 
   .badge-navy {
-    @apply bg-navy-100 text-navy-600;
+    @apply bg-ice text-light-bluedark;
   }
 
   .badge-success {
@@ -388,7 +388,7 @@
 
   /* Professional Stats Styles */
   .stat-number {
-    @apply text-4xl font-bold text-gold-400;
+    @apply text-4xl font-bold text-gold-DEFAULT;
     font-family: var(--font-plus-jakarta);
   }
 
@@ -402,7 +402,7 @@
   }
 
   .testimonial-stars {
-    @apply text-gold-400 mb-4;
+    @apply text-gold-DEFAULT mb-4;
   }
 
   .testimonial-quote {
@@ -410,7 +410,7 @@
   }
 
   .testimonial-author {
-    @apply text-navy-500 font-semibold;
+    @apply text-navy-DEFAULT font-semibold;
   }
 
   /* Professional Blog Card Styles */
@@ -420,11 +420,11 @@
   }
 
   .blog-category {
-    @apply inline-block bg-gold-100 text-gold-600 px-3 py-1 rounded-full text-xs font-semibold mb-4;
+    @apply inline-block bg-gold-100 text-gold-light px-3 py-1 rounded-full text-xs font-semibold mb-4;
   }
 
   .blog-title {
-    @apply text-navy-500 font-semibold text-xl mb-3;
+    @apply text-navy-DEFAULT font-semibold text-xl mb-3;
     font-family: var(--font-plus-jakarta);
   }
 
@@ -448,13 +448,13 @@
 
   /* Professional Loading Styles */
   .loading-spinner {
-    @apply w-6 h-6 border-2 border-gold-400 border-t-transparent rounded-full;
+    @apply w-6 h-6 border-2 border-gold-DEFAULT border-t-transparent rounded-full;
     animation: spin 1s linear infinite;
   }
 
   /* Professional Gradient Styles */
   .gradient-navy {
-    background: linear-gradient(135deg, var(--color-navy-primary) 0%, #0F172A 100%);
+    background: linear-gradient(135deg, var(--color-light-blueprimary) 0%, #0F172A 100%);
   }
 
   .gradient-gold {
@@ -541,7 +541,7 @@
 
   /* Professional Utility Classes */
   .text-gradient {
-    @apply bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-gold-DEFAULT to-gold-light bg-clip-text text-transparent;
   }
 
   .shadow-gold {
@@ -579,7 +579,7 @@
   }
 
   .glass-dark {
-    @apply bg-navy-500/80 backdrop-blur-sm border border-white/10;
+    @apply bg-navy-DEFAULT/80 backdrop-blur-sm border border-white/10;
   }
 
   /* Professional Scrollbar Styles */
@@ -607,11 +607,11 @@
 
   /* Professional Selection Styles */
   ::selection {
-    @apply bg-gold-400 text-white;
+    @apply bg-gold-DEFAULT text-white;
   }
 
   ::-moz-selection {
-    @apply bg-gold-400 text-white;
+    @apply bg-gold-DEFAULT text-white;
   }
 }
 
@@ -627,12 +627,12 @@
 
   /* Focus styles for accessibility */
   *:focus-visible {
-    @apply outline-none ring-2 ring-gold-400 ring-offset-2;
+    @apply outline-none ring-2 ring-gold-DEFAULT ring-offset-2;
   }
 
   /* Skip to main content link for accessibility */
   .skip-to-main {
-    @apply absolute -top-full left-0 bg-navy-500 text-white p-2 z-50;
+    @apply absolute -top-full left-0 bg-navy-DEFAULT text-white p-2 z-50;
   }
 
   .skip-to-main:focus {
@@ -643,24 +643,24 @@
 @layer components {
   /* Buttons */
   .btn-primary {
-    @apply bg-gold-400 text-white font-semibold rounded-full px-8 py-3 
-           hover:bg-gold-500 hover:shadow-medium 
+    @apply bg-gold-DEFAULT text-white font-semibold rounded-full px-8 py-3 
+           hover:bg-gold-light hover:shadow-medium 
            active:scale-95 
            transition-all duration-150 ease;
   }
 
   .btn-secondary {
-    @apply bg-transparent text-navy-500 border-2 border-navy-500 
+    @apply bg-transparent text-navy-DEFAULT border-2 border-navy-DEFAULT 
            font-semibold rounded-full px-8 py-3 
-           hover:bg-navy-500 hover:text-white hover:shadow-medium 
+           hover:bg-navy-DEFAULT hover:text-white hover:shadow-medium 
            active:scale-95 
            transition-all duration-150 ease;
   }
 
   .btn-outline {
-    @apply bg-transparent text-gold-400 border-2 border-gold-400 
+    @apply bg-transparent text-gold-DEFAULT border-2 border-gold-DEFAULT 
            font-semibold rounded-full px-8 py-3 
-           hover:bg-gold-50 hover:text-gold-500 
+           hover:bg-gold-pale hover:text-gold-light 
            active:scale-95 
            transition-all duration-150 ease;
   }
@@ -671,25 +671,25 @@
   }
 
   .card-gold-accent {
-    @apply border-t-4 border-t-gold-400;
+    @apply border-t-4 border-t-gold-DEFAULT;
   }
 
   /* Navigation */
   .nav-link {
-    @apply text-medium-grey hover:text-navy-500 transition-colors duration-200 font-medium text-sm;
+    @apply text-medium-grey hover:text-navy-DEFAULT transition-colors duration-200 font-medium text-sm;
   }
 
   .nav-link-active {
-    @apply text-navy-500 relative;
+    @apply text-navy-DEFAULT relative;
   }
 
   .nav-link-active::after {
-    @apply absolute bottom-0 left-0 w-full h-0.5 bg-gold-400 content-[''];
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-gold-DEFAULT content-[''];
   }
 
   /* Form Components */
   .form-input {
-    @apply w-full px-4 py-3 rounded-xl border border-light-grey focus:border-gold-400 focus:ring-2 focus:ring-gold-100 transition-all duration-200;
+    @apply w-full px-4 py-3 rounded-xl border border-light-grey focus:border-gold-DEFAULT focus:ring-2 focus:ring-gold-100 transition-all duration-200;
   }
 
   .form-label {
@@ -698,15 +698,15 @@
 
   /* Typography */
   .heading-1 {
-    @apply font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-navy-500 leading-tight;
+    @apply font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-navy-DEFAULT leading-tight;
   }
 
   .heading-2 {
-    @apply font-display text-2xl md:text-3xl lg:text-4xl font-bold text-navy-500 leading-tight;
+    @apply font-display text-2xl md:text-3xl lg:text-4xl font-bold text-navy-DEFAULT leading-tight;
   }
 
   .heading-3 {
-    @apply font-display text-xl md:text-2xl font-semibold text-navy-500 leading-tight;
+    @apply font-display text-xl md:text-2xl font-semibold text-navy-DEFAULT leading-tight;
   }
 
   .body-text {
@@ -727,7 +727,7 @@
   }
 
   .badge-navy {
-    @apply bg-navy-100 text-navy-700;
+    @apply bg-ice text-light-bluedark;
   }
 
   .badge-success {
@@ -740,11 +740,11 @@
 
   /* Stats Counter */
   .stat-number {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gold-400;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gold-DEFAULT;
   }
 
   .stat-label {
-    @apply text-sm md:text-base font-medium text-navy-500;
+    @apply text-sm md:text-base font-medium text-navy-DEFAULT;
   }
 
   /* Testimonial Card */
@@ -769,7 +769,7 @@
   }
 
   .testimonial-name {
-    @apply font-semibold text-navy-500;
+    @apply font-semibold text-navy-DEFAULT;
   }
 
   .testimonial-title {
@@ -782,11 +782,11 @@
   }
 
   .product-icon {
-    @apply w-12 h-12 text-gold-400 mb-4;
+    @apply w-12 h-12 text-gold-DEFAULT mb-4;
   }
 
   .product-title {
-    @apply heading-3 mb-2 group-hover:text-gold-400 transition-colors;
+    @apply heading-3 mb-2 group-hover:text-gold-DEFAULT transition-colors;
   }
 
   .product-description {
@@ -835,7 +835,7 @@
   }
 
   .blog-title {
-    @apply heading-3 mb-2 group-hover:text-gold-400 transition-colors line-clamp-2;
+    @apply heading-3 mb-2 group-hover:text-gold-DEFAULT transition-colors line-clamp-2;
   }
 
   .blog-excerpt {
@@ -852,7 +852,7 @@
   }
 
   .hero-background {
-    @apply absolute inset-0 bg-gradient-to-br from-navy-500 to-navy-700;
+    @apply absolute inset-0 bg-gradient-to-br from-navy-DEFAULT to-navydark;
   }
 
   .hero-content {
@@ -864,7 +864,7 @@
   }
 
   .hero-subtitle {
-    @apply text-xl md:text-2xl mb-8 text-navy-100 leading-relaxed;
+    @apply text-xl md:text-2xl mb-8 text-ice leading-relaxed;
   }
 
   .hero-buttons {
@@ -873,7 +873,7 @@
 
   /* Impact Stats Strip */
   .impact-stats {
-    @apply bg-navy-500 py-12 md:py-16;
+    @apply bg-navy-DEFAULT py-12 md:py-16;
   }
 
   .impact-stats-grid {
