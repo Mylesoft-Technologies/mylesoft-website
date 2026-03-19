@@ -103,63 +103,63 @@ export default function AboutPage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="text-center group">
+              <div className="text-center group h-full flex flex-col">
                 <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-200 transition-colors">
                   <Heart className="text-gold-400" size={40} />
                 </div>
                 <h3 className="heading-3 mb-3">Customer First</h3>
-                <p className="body-text">
+                <p className="body-text flex-grow">
                   We exist to serve our customers. Every decision we make starts with the question: "How does this create value for our users?"
                 </p>
               </div>
 
-              <div className="text-center group">
+              <div className="text-center group h-full flex flex-col">
                 <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-200 transition-colors">
                   <Zap className="text-gold-400" size={40} />
                 </div>
                 <h3 className="heading-3 mb-3">Innovation</h3>
-                <p className="body-text">
+                <p className="body-text flex-grow">
                   We push boundaries and challenge the status quo. Innovation isn't just what we do—it's who we are.
                 </p>
               </div>
 
-              <div className="text-center group">
+              <div className="text-center group h-full flex flex-col">
                 <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-200 transition-colors">
                   <Shield className="text-gold-400" size={40} />
                 </div>
                 <h3 className="heading-3 mb-3">Integrity</h3>
-                <p className="body-text">
+                <p className="body-text flex-grow">
                   We build trust through transparency, honesty, and ethical practices in all our relationships and operations.
                 </p>
               </div>
 
-              <div className="text-center group">
+              <div className="text-center group h-full flex flex-col">
                 <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-200 transition-colors">
                   <Users className="text-gold-400" size={40} />
                 </div>
                 <h3 className="heading-3 mb-3">Collaboration</h3>
-                <p className="body-text">
+                <p className="body-text flex-grow">
                   We believe in the power of teamwork and partnerships. Together, we achieve more than we ever could alone.
                 </p>
               </div>
 
-              <div className="text-center group">
+              <div className="text-center group h-full flex flex-col">
                 <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-200 transition-colors">
                   <Globe className="text-gold-400" size={40} />
                 </div>
                 <h3 className="heading-3 mb-3">Local Focus</h3>
-                <p className="body-text">
-                  We understand African markets because we're part of them. Our solutions are built by Africans, for Africa.
+                <p className="body-text flex-grow">
+                  While we think globally, our solutions are deeply rooted in local context. We understand African challenges because we live them.
                 </p>
               </div>
 
-              <div className="text-center group">
+              <div className="text-center group h-full flex flex-col">
                 <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-200 transition-colors">
                   <TrendingUp className="text-gold-400" size={40} />
                 </div>
                 <h3 className="heading-3 mb-3">Excellence</h3>
-                <p className="body-text">
-                  We pursue excellence in everything we do, from code quality to customer service, continuously raising our standards.
+                <p className="body-text flex-grow">
+                  We pursue excellence in everything we do. From code quality to customer service, good enough is never good enough.
                 </p>
               </div>
             </div>
@@ -203,15 +203,15 @@ export default function AboutPage() {
                   avatar: null
                 }
               ].map((member, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-32 h-32 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div key={index} className="text-center h-full flex flex-col">
+                  <div className="w-32 h-32 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-4 flex-shrink-0">
                     <span className="text-gold-600 font-bold text-2xl">
                       {member.name.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
                   <h3 className="heading-3 mb-2">{member.name}</h3>
                   <p className="text-gold-600 font-medium mb-3">{member.role}</p>
-                  <p className="body-text text-sm">{member.bio}</p>
+                  <p className="body-text text-sm flex-grow">{member.bio}</p>
                 </div>
               ))}
             </div>

@@ -204,50 +204,50 @@ export default function PricingPage() {
               {pricingPlans.map((plan, index) => (
                 <div 
                   key={index} 
-                  className={`relative bg-white rounded-xl shadow-medium p-8 hover:shadow-large transition-shadow ${
-                    plan.popular ? 'ring-2 ring-gold-400' : ''
+                  className={`relative bg-white rounded-2xl shadow-medium p-8 hover:shadow-large transition-all duration-300 h-full flex flex-col ${
+                    plan.popular ? 'ring-2 ring-gold-400 ring-offset-4' : ''
                   }`}
                 >
                   {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                      <div className="bg-gold-400 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <span className="bg-gold-400 text-white px-4 py-1 rounded-full text-sm font-semibold">
                         Most Popular
-                      </div>
+                      </span>
                     </div>
                   )}
                   
-                  <div className="text-center mb-8">
-                    <h3 className="heading-3 mb-2">{plan.name}</h3>
-                    <p className="body-text text-sm mb-4">{plan.description}</p>
-                    <div className="mb-4">
-                      <span className="text-4xl font-bold text-navy-500">{plan.price}</span>
-                      <span className="text-medium-grey">{plan.period}</span>
+                  <div className="text-center mb-8 flex-shrink-0">
+                    <h3 className="text-2xl font-bold text-navy-500 mb-2">{plan.name}</h3>
+                    <div className="mb-6">
+                      <div className="text-4xl font-bold text-gold-400 mb-1">{plan.price}</div>
+                      <div className="text-medium-grey text-sm">{plan.period}</div>
                     </div>
                   </div>
                   
-                  <div className="mb-8">
-                    <div className="space-y-3">
-                      {plan.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center">
-                          <Check size={16} className="text-green-500 mr-3 flex-shrink-0" />
-                          <span className="text-sm">{feature}</span>
-                        </div>
-                      ))}
-                      {plan.notIncluded.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center opacity-60">
-                          <X size={16} className="text-medium-grey mr-3 flex-shrink-0" />
-                          <span className="text-sm">{feature}</span>
-                        </div>
-                      ))}
+                  <div className="flex-grow">
+                    <div className="mb-8">
+                      <div className="space-y-3">
+                        {plan.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center">
+                            <Check size={16} className="text-green-500 mr-3 flex-shrink-0" />
+                            <span className="text-sm">{feature}</span>
+                          </div>
+                        ))}
+                        {plan.notIncluded.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center opacity-60">
+                            <X size={16} className="text-medium-grey mr-3 flex-shrink-0" />
+                            <span className="text-sm">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                   
-                  <Button 
-                    className={`w-full ${plan.popular ? '' : 'variant="secondary"'}`}
-                    variant={plan.popular ? 'primary' : 'secondary'}
-                  >
-                    {plan.cta}
-                  </Button>
+                  <div className="mt-auto">
+                    <Button className={`w-full ${plan.popular ? 'bg-gold-400 text-white hover:bg-gold-500' : ''}`}>
+                      {plan.cta}
+                    </Button>
+                  </div>
                 </div>
               ))}
             </div>

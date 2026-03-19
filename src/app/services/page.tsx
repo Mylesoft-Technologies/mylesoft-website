@@ -162,31 +162,33 @@ export default function ServicesPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-medium p-8 hover:shadow-large transition-shadow">
-                  <div className="mb-6">{service.icon}</div>
-                  <h3 className="heading-3 mb-4">{service.name}</h3>
-                  <p className="body-text mb-6">{service.description}</p>
-                  
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-navy-500 mb-3">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start">
-                          <CheckCircle size={16} className="text-gold-400 mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="border-t border-light-grey pt-4">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm text-medium-grey">Duration:</span>
-                      <span className="text-sm font-medium">{service.duration}</span>
+                <div key={index} className="bg-white rounded-xl shadow-medium p-8 hover:shadow-large transition-shadow h-full flex flex-col">
+                  <div className="mb-6 flex-shrink-0">{service.icon}</div>
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-semibold text-navy-500 mb-3">{service.name}</h3>
+                    <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
+                    
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-navy-500 mb-3">Key Features:</h4>
+                      <ul className="space-y-2">
+                        {service.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-start">
+                            <CheckCircle size={16} className="text-gold-400 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-medium-grey">Price:</span>
-                      <span className="text-sm font-medium">{service.price}</span>
+                    
+                    <div className="border-t border-light-grey pt-4">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm text-medium-grey">Duration:</span>
+                        <span className="text-sm font-medium">{service.duration}</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-medium-grey">Price:</span>
+                        <span className="text-sm font-medium">{service.price}</span>
+                      </div>
                     </div>
                   </div>
                 </div>

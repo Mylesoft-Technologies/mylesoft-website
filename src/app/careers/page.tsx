@@ -1,34 +1,36 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
-import { Card, CardIcon, CardHeader, CardContent } from '@/components/ui/Card'
+import { Card, CardHeader, CardContent, CardIcon } from '@/components/ui/Card'
 import { ScrollReveal, StaggerReveal } from '@/components/ui/ScrollReveal'
 import { 
   MapPin, 
+  Clock, 
   Users, 
-  Briefcase, 
+  Brain, 
   Heart, 
+  Shield,
   TrendingUp,
-  Clock,
-  DollarSign,
-  Award,
   Target,
-  Brain
+  Award,
+  Briefcase,
+  DollarSign
 } from 'lucide-react'
 
 const openPositions = [
   {
     title: 'Senior Full Stack Developer',
-    department: 'Engineering',
     location: 'Nairobi, Kenya',
     type: 'Full-time',
     experience: '5+ years',
-    description: 'Lead development of our AI-powered products and mentor junior developers. Experience with React, Node.js, and cloud technologies.',
+    category: 'Engineering',
+    description: 'We are looking for an experienced full-stack developer to join our engineering team and help build scalable AI-powered solutions for African markets.',
     requirements: [
-      '5+ years of full-stack development experience',
-      'Proficiency in React, Next.js, and TypeScript',
-      'Experience with Node.js and cloud platforms',
-      'Strong problem-solving and communication skills',
-      'Passion for education technology in Africa'
+      '5+ years of experience in full-stack development',
+      'Proficiency in React, Node.js, and TypeScript',
+      'Experience with cloud platforms (AWS, Azure, or GCP)',
+      'Strong understanding of databases and API design',
+      'Experience with AI/ML concepts is a plus',
+      'Excellent problem-solving and communication skills'
     ],
     benefits: [
       'Competitive salary and equity options',
@@ -37,94 +39,22 @@ const openPositions = [
       'Health insurance and wellness benefits',
       'Opportunity to work on impactful projects'
     ],
-    posted: '2 weeks ago',
-    category: 'Engineering'
+    posted: '2 weeks ago'
   },
   {
-    title: 'AI/ML Engineer',
-    department: 'Engineering',
+    title: 'Product Manager',
     location: 'Nairobi, Kenya',
     type: 'Full-time',
     experience: '3+ years',
-    description: 'Design and implement machine learning ls for our products, particularly in natural language processing and computer vision.',
+    category: 'Product',
+    description: 'Join our product team to drive the development of innovative solutions that address real challenges in education, healthcare, and agriculture.',
     requirements: [
-      '3+ years of AI/ML engineering experience',
-      'Strong Python and TensorFlow/PyTorch skills',
-      'Experience with NLP and computer vision',
-      'Understanding of African language contexts',
-      'Research publication record preferred'
-    ],
-    benefits: [
-      'Cutting-edge AI projects',
-      'Conference and training opportunities',
-      'Competitive compensation package',
-      'Work with latest AI technologies',
-      'Impact on African industries'
-    ],
-    posted: '1 week ago',
-    category: 'Engineering'
-  },
-  {
-    title: 'Product Designer',
-    department: 'Design',
-    location: 'Nairobi, Kenya',
-    type: 'Full-time',
-    experience: '3+ years',
-    description: 'Create beautiful, intuitive user interfaces for our products serving African markets. Strong understanding of mobile-first design.',
-    requirements: [
-      '3+ years of product design experience',
-      'Strong portfolio of digital products',
-      'Proficiency in Figma, Adobe Creative Suite',
-      'Experience with mobile app design',
-      'Understanding of African user contexts'
-    ],
-    benefits: [
-      'Creative freedom and autonomy',
-      'Opportunity to shape product direction',
-      'Work with diverse product portfolio',
-      'Professional development budget',
-      'Collaborative, innovative team'
-    ],
-    posted: '3 days ago',
-    category: 'Design'
-  },
-  {
-    title: 'Sales Executive',
-    department: 'Sales',
-    location: 'Nairobi, Kenya',
-    type: 'Full-time',
-    experience: '3+ years',
-    description: 'Drive growth of MylesCorp products across East Africa. Build relationships with educational institutions, hospitals, and businesses.',
-    requirements: [
-      '3+ years of B2B sales experience',
-      'Experience with SaaS or technology sales',
-      'Strong understanding of African business landscape',
-      'Excellent communication and presentation skills',
-      'Ability to travel within East Africa'
-    ],
-    benefits: [
-      'Competitive base salary plus commission',
-      'Company car and travel allowance',
-      'Sales training and development',
-      'Opportunity to work with cutting-edge technology',
-      'Impact on education and healthcare'
-    ],
-    posted: '1 week ago',
-    category: 'Sales'
-  },
-  {
-    title: 'Customer Success Manager',
-    department: 'Customer Success',
-    location: 'Nairobi, Kenya',
-    type: 'Full-time',
-    experience: '4+ years',
-    description: 'Ensure our customers achieve maximum value from our products. Build lasting relationships with educational and healthcare institutions.',
-    requirements: [
-      '4+ years of customer success experience',
-      'Experience with SaaS or enterprise software',
-      'Strong problem-solving and relationship-building skills',
-      'Understanding of education or healthcare sectors',
-      'Excellent communication in English and Swahili'
+      '3+ years of product management experience',
+      'Experience with SaaS products and enterprise software',
+      'Strong analytical and data-driven decision making',
+      'Excellent communication and stakeholder management',
+      'Understanding of African markets is a plus',
+      'Experience with agile development methodologies'
     ],
     benefits: [
       'Competitive salary and performance bonuses',
@@ -133,65 +63,46 @@ const openPositions = [
       'Flexible work environment',
       'Direct impact on customer success'
     ],
-    posted: '2 weeks ago',
-    category: 'Customer Success'
-  },
-  {
-    title: 'Marketing Manager',
-    department: 'Marketing',
-    location: 'Nairobi, Kenya',
-    type: 'Full-time',
-    experience: '5+ years',
-    description: 'Lead marketing initiatives to promote MylesCorp across East Africa. Develop campaigns that resonate with local markets.',
-    requirements: [
-      '5+ years of marketing experience',
-      'Experience with B2B technology marketing',
-      'Understanding of African digital landscape',
-      'Strong content creation and campaign management skills',
-      'Experience with SEO and digital marketing'
-    ],
-    benefits: [
-      'Competitive salary and performance incentives',
-      'Marketing budget and creative freedom',
-      'Professional development opportunities',
-      'Health and wellness benefits',
-      'Opportunity to build brand across Africa'
-    ],
-    posted: '4 days ago',
-    category: 'Marketing'
+    posted: '1 week ago'
   }
 ]
 
 const departments = [
   {
     name: 'Engineering',
-    description: 'Build innovative software solutions that transform African industries.',
+    description: 'Build innovative AI-powered solutions that transform African industries.',
     teamSize: '15+',
-    focus: 'Product development, AI implementation, technical innovation'
+    focusAreas: ['Frontend', 'Backend', 'AI/ML', 'DevOps']
   },
   {
-    name: 'Design',
-    description: 'Create beautiful, intuitive experiences for our diverse user base across Africa.',
-    teamSize: '5+',
-    focus: 'User experience, interface design, product design'
+    name: 'Product',
+    description: 'Shape the future of our products and ensure they solve real customer problems.',
+    teamSize: '6+',
+    focusAreas: ['Product Strategy', 'Design', 'Research', 'Analytics']
+  },
+  {
+    name: 'Operations',
+    description: 'Keep our business running smoothly and efficiently as we scale.',
+    teamSize: '8+',
+    focusAreas: ['Finance', 'HR', 'Legal', 'Admin']
   },
   {
     name: 'Sales',
     description: 'Drive growth and build relationships with organizations across East Africa.',
     teamSize: '8+',
-    focus: 'Business development, customer acquisition, partnerships'
+    focusAreas: ['Business development', 'customer acquisition', 'partnerships']
   },
   {
     name: 'Customer Success',
     description: 'Ensure our customers achieve maximum value and success with our solutions.',
     teamSize: '6+',
-    focus: 'Customer onboarding, support, relationship management'
+    focusAreas: ['Customer onboarding', 'support', 'relationship management']
   },
   {
     name: 'Marketing',
     description: 'Tell our story and build our brand across African markets.',
     teamSize: '4+',
-    focus: 'Brand building, content creation, digital marketing'
+    focusAreas: ['Brand building', 'content creation', 'digital marketing']
   }
 ]
 
@@ -385,19 +296,24 @@ export default function CareersPage() {
                     <CardHeader>
                       <h3 className="text-2xl font-display font-bold text-navy mb-3">{dept.name}</h3>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="flex-grow">
                       <p className="text-gray-600 mb-4 font-body flex-grow">{dept.description}</p>
                       <div className="space-y-2">
                         <div className="text-sm">
                           <span className="font-semibold text-navy">Team Size:</span>
-                          <span className="ml-2">{dept.teamSize}</span>
+                          <span className="text-gray-500 ml-2">{dept.teamSize}</span>
                         </div>
                         <div className="text-sm">
-                          <span className="font-semibold text-navy">Focus:</span>
-                          <span className="ml-2">{dept.focus}</span>
+                          <span className="font-semibold text-navy">Focus Areas:</span>
+                          <span className="text-gray-500 ml-2">{dept.focusAreas.join(', ')}</span>
                         </div>
                       </div>
                     </CardContent>
+                    <div className="mt-auto p-6 pt-0">
+                      <Button variant="secondary" className="w-full">
+                        View {dept.name} Roles
+                      </Button>
+                    </div>
                   </Card>
                 ))}
               </StaggerReveal>

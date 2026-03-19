@@ -101,14 +101,14 @@ const blogPosts = [
 ]
 
 const categories = [
-  { name: 'All', count: blogPosts.length },
-  { name: 'Education Technology', count: 1 },
-  { name: 'Healthcare Innovation', count: 1 },
-  { name: 'AgriTech', count: 1 },
-  { name: 'Software Development', count: 1 },
-  { name: 'Security', count: 1 },
-  { name: 'Cloud Computing', count: 1 },
-  { name: 'FinTech', count: 1 }
+  { name: 'All', count: blogPosts.length, description: 'View all articles' },
+  { name: 'Education Technology', count: 1, description: 'EdTech insights' },
+  { name: 'Healthcare Innovation', count: 1, description: 'Health tech trends' },
+  { name: 'AgriTech', count: 1, description: 'Agricultural tech' },
+  { name: 'Software Development', count: 1, description: 'Dev best practices' },
+  { name: 'Security', count: 1, description: 'Cybersecurity' },
+  { name: 'Cloud Computing', count: 1, description: 'Cloud solutions' },
+  { name: 'FinTech', count: 1, description: 'Financial tech' }
 ]
 
 const featuredPosts = blogPosts.filter(post => post.featured)
@@ -310,16 +310,12 @@ export default function BlogPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <StaggerReveal staggerDelay={0.1} itemDelay={0.3} direction="up">
                 {categories.map((category, index) => (
-                  <Card variant="light" key={index} className="text-center">
-                    <CardHeader>
-                      <div className="text-3xl font-display font-bold text-navy mb-2">{category.count}</div>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-sm text-gray-600 mb-4 font-body">{category.name}</div>
-                      <Button variant="outline" className="w-full">
-                        View {category.name}
-                      </Button>
-                    </CardContent>
+                  <Card variant="light" key={index} className="text-center h-full flex flex-col">
+                    <div className="p-6">
+                      <div className="text-3xl font-bold text-gold mb-3">{category.count}</div>
+                      <h3 className="font-semibold text-navy mb-2">{category.name}</h3>
+                      <p className="text-sm text-gray-600">{category.description}</p>
+                    </div>
                   </Card>
                 ))}
               </StaggerReveal>
