@@ -2,8 +2,8 @@
 
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
-import { Icon } from '@/components/ui/Icon'
-import { GoogleMap } from '@/components/ui/GoogleMap'
+import { Card, CardIcon, CardHeader, CardContent } from '@/components/ui/Card'
+import { ScrollReveal, StaggerReveal } from '@/components/ui/ScrollReveal'
 import { 
   Mail, 
   Phone, 
@@ -110,14 +110,41 @@ export default function ContactPage() {
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="section bg-navy-500">
-          <div className="section-padding">
-            <div className="text-center text-white">
-              <h1 className="heading-1 mb-6">Contact Us</h1>
-              <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed">
+        <section className="relative py-20 bg-gradient-to-br from-navy via-navy-deep to-navy-900 overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            }}></div>
+          </div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-20 left-20 w-72 h-72 bg-gold/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-pulse delay-1000" />
+          
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <ScrollReveal direction="up" delay={0.2}>
+              {/* Eyebrow Label */}
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="w-8 h-0.5 bg-gold" />
+                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                  CONTACT US
+                </span>
+                <div className="w-8 h-0.5 bg-gold" />
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal direction="up" delay={0.4}>
+              <h1 className="text-5xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
+                Contact Us
+              </h1>
+            </ScrollReveal>
+            
+            <ScrollReveal direction="up" delay={0.6}>
+              <p className="text-xl text-light-blue max-w-3xl mx-auto leading-relaxed font-body">
                 Get in touch with our team to discuss how Mylesoft Technologies can help transform your organization. We're here to support your digital transformation journey.
               </p>
-            </div>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -369,13 +396,20 @@ export default function ContactPage() {
         <section className="section">
           <div className="section-padding">
             <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4">Visit Our Headquarters</h2>
-              <p className="body-text max-w-2xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-navy mb-4">Visit Our Headquarters</h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto font-body">
                 Located in the heart of Westlands, Nairobi. We'd love to meet you in person.
               </p>
             </div>
             
-            <GoogleMap height="500px" zoom={15} />
+            <div className="bg-gradient-to-br from-navy to-navy-dark rounded-lg p-8 text-center">
+              <MapPin className="w-16 h-16 text-gold mx-auto mb-4" />
+              <h3 className="text-2xl font-display font-bold text-white mb-2">Westlands, Nairobi</h3>
+              <p className="text-light-blue mb-4">Visit us at our headquarters</p>
+              <Button size="lg">
+                Get Directions
+              </Button>
+            </div>
           </div>
         </section>
 

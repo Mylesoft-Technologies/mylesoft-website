@@ -1,6 +1,7 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
-import { Icon } from '@/components/ui/Icon'
+import { Card, CardIcon, CardHeader, CardContent } from '@/components/ui/Card'
+import { ScrollReveal, StaggerReveal } from '@/components/ui/ScrollReveal'
 import { 
   Calendar, 
   User, 
@@ -8,7 +9,8 @@ import {
   Tag, 
   Search,
   ChevronRight,
-  ArrowRight
+  ArrowRight,
+  Brain
 } from 'lucide-react'
 
 const blogPosts = [
@@ -117,164 +119,245 @@ export default function BlogPage() {
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="section bg-navy-500">
-          <div className="section-padding">
-            <div className="text-center text-white">
-              <h1 className="heading-1 mb-6">Blog & Insights</h1>
-              <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed">
+        <section className="relative py-20 bg-gradient-to-br from-navy via-navy-deep to-navy-900 overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            }}></div>
+          </div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-20 left-20 w-72 h-72 bg-gold/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-pulse delay-1000" />
+          
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <ScrollReveal direction="up" delay={0.2}>
+              {/* Eyebrow Label */}
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="w-8 h-0.5 bg-gold" />
+                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                  BLOG & INSIGHTS
+                </span>
+                <div className="w-8 h-0.5 bg-gold" />
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal direction="up" delay={0.4}>
+              <h1 className="text-5xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
+                Blog & Insights
+              </h1>
+            </ScrollReveal>
+            
+            <ScrollReveal direction="up" delay={0.6}>
+              <p className="text-xl text-light-blue max-w-3xl mx-auto leading-relaxed font-body">
                 Thought leadership on technology, business, and innovation in Africa. Stay updated with the latest trends, insights, and best practices from our experts.
               </p>
-            </div>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* Featured Posts */}
         {featuredPosts.length > 0 && (
-          <section className="section">
-            <div className="section-padding">
-              <div className="mb-12">
-                <h2 className="heading-2 mb-4">Featured Articles</h2>
-                <p className="body-text max-w-2xl mx-auto">
-                  Our most important insights and thought leadership pieces.
-                </p>
-              </div>
+          <section className="py-20 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <ScrollReveal direction="up" delay={0.2}>
+                <div className="text-center mb-16">
+                  {/* Eyebrow Label */}
+                  <div className="flex items-center justify-center gap-3 mb-4">
+                    <div className="w-8 h-0.5 bg-gold" />
+                    <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                      FEATURED
+                    </span>
+                    <div className="w-8 h-0.5 bg-gold" />
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-display font-bold text-navy mb-4">Featured Articles</h2>
+                  <p className="text-xl text-gray-600 max-w-2xl mx-auto font-body">
+                    Our most important insights and thought leadership pieces.
+                  </p>
+                </div>
+              </ScrollReveal>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {featuredPosts.map((post, index) => (
-                  <article key={index} className="bg-white rounded-xl shadow-medium overflow-hidden hover:shadow-large transition-shadow">
-                    <div className="aspect-video bg-gold-100 flex items-center justify-center">
-                      <Icon name="brain" className="text-gold-400" size={48} />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center mb-4">
-                        <div className="flex-1">
-                          <span className="inline-block bg-gold-100 text-gold-600 px-3 py-1 rounded-full text-xs font-semibold mb-2">
-                            {post.category}
-                          </span>
-                          <h3 className="heading-3 mb-2">{post.title}</h3>
+                <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
+                  {featuredPosts.map((post, index) => (
+                    <Card variant="light" key={index} className="overflow-hidden group">
+                      <div className="aspect-video bg-gold/10 flex items-center justify-center">
+                        <Brain className="text-gold w-12 h-12" />
+                      </div>
+                      <div className="p-6">
+                        <div className="flex items-center mb-4">
+                          <div className="flex-1">
+                            <span className="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-xs font-semibold mb-2 font-body">
+                              {post.category}
+                            </span>
+                            <h3 className="text-2xl font-display font-bold text-navy mb-2">{post.title}</h3>
+                          </div>
+                        </div>
+                        <p className="text-gray-600 leading-relaxed mb-4 font-body">{post.excerpt}</p>
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="flex items-center text-sm text-gray-500">
+                            <User size={16} className="mr-2" />
+                            <span>{post.author}</span>
+                            <span className="mx-2">•</span>
+                            <span>{post.role}</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="flex items-center text-sm text-gray-500">
+                            <Calendar size={16} className="mr-2" />
+                            <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                            <span className="mx-2">•</span>
+                            <span>{post.readTime}</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center text-gold font-semibold hover:text-gold-light transition-colors font-body">
+                          Read Article
+                          <ArrowRight size={16} className="ml-2" />
                         </div>
                       </div>
-                      <p className="body-text mb-4">{post.excerpt}</p>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center text-sm text-medium-grey">
-                          <User size={16} className="mr-2" />
-                          <span>{post.author}</span>
-                          <span className="mx-2">•</span>
-                          <span>{post.role}</span>
-                        </div>
-                        <div className="flex items-center text-sm text-medium-grey">
-                          <Calendar size={16} className="mr-2" />
-                          <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                          <span className="mx-2">•</span>
-                          <span>{post.readTime}</span>
-                        </div>
-                      </div>
-                      <div className="flex items-center text-gold-600 font-medium hover:text-gold-500 transition-colors">
-                        Read Article
-                        <ArrowRight size={16} className="ml-2" />
-                      </div>
-                    </div>
-                  </article>
-                ))}
+                    </Card>
+                  ))}
+                </StaggerReveal>
               </div>
             </div>
           </section>
         )}
 
         {/* Recent Posts */}
-        <section className="section bg-off-white">
-          <div className="section-padding">
-            <div className="mb-12">
-              <h2 className="heading-2 mb-4">Recent Articles</h2>
-              <p className="body-text max-w-2xl mx-auto">
-                Latest insights from our team on technology trends, industry analysis, and innovation.
-              </p>
-            </div>
+        <section className="py-20 bg-gradient-to-r from-gray-50 to-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ScrollReveal direction="up" delay={0.2}>
+              <div className="text-center mb-16">
+                {/* Eyebrow Label */}
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="w-8 h-0.5 bg-gold" />
+                  <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                    LATEST ARTICLES
+                  </span>
+                  <div className="w-8 h-0.5 bg-gold" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-navy mb-4">Recent Articles</h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto font-body">
+                  Latest insights from our team on technology trends, industry analysis, and innovation.
+                </p>
+              </div>
+            </ScrollReveal>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {recentPosts.map((post, index) => (
-                <article key={index} className="bg-white rounded-xl shadow-medium overflow-hidden hover:shadow-large transition-shadow">
-                  <div className="aspect-video bg-gold-100 flex items-center justify-center">
-                    <Icon name="brain" className="text-gold-400" size={32} />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="flex-1">
-                        <span className="inline-block bg-gold-100 text-gold-600 px-3 py-1 rounded-full text-xs font-semibold mb-2">
-                          {post.category}
-                        </span>
-                        <h3 className="heading-3 mb-2">{post.title}</h3>
+              <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
+                {recentPosts.map((post, index) => (
+                  <Card variant="light" key={index} className="overflow-hidden group">
+                    <div className="aspect-video bg-gold/10 flex items-center justify-center">
+                      <Brain className="text-gold w-8 h-8" />
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center mb-4">
+                        <div className="flex-1">
+                          <span className="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-xs font-semibold mb-2 font-body">
+                            {post.category}
+                          </span>
+                          <h3 className="text-xl font-display font-bold text-navy mb-2">{post.title}</h3>
+                        </div>
+                      </div>
+                      <p className="text-gray-600 leading-relaxed mb-4 font-body text-sm">{post.excerpt}</p>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center text-sm text-gray-500">
+                          <User size={16} className="mr-2" />
+                          <span>{post.author}</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center text-sm text-gray-500">
+                          <Calendar size={16} className="mr-2" />
+                          <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+                          <span className="mx-2">•</span>
+                          <span>{post.readTime}</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center text-gold font-semibold hover:text-gold-light transition-colors font-body">
+                        Read More
+                        <ChevronRight size={16} className="ml-2" />
                       </div>
                     </div>
-                    <p className="body-text mb-4">{post.excerpt}</p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center text-sm text-medium-grey">
-                        <User size={16} className="mr-2" />
-                        <span>{post.author}</span>
-                      </div>
-                      <div className="flex items-center text-sm text-medium-grey">
-                        <Calendar size={16} className="mr-2" />
-                        <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
-                        <span className="mx-2">•</span>
-                        <span>{post.readTime}</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center text-gold-600 font-medium hover:text-gold-500 transition-colors">
-                      Read More
-                      <ChevronRight size={16} className="ml-2" />
-                    </div>
-                  </div>
-                </article>
-              ))}
+                  </Card>
+                ))}
+              </StaggerReveal>
             </div>
           </div>
         </section>
 
         {/* Categories */}
-        <section className="section">
-          <div className="section-padding">
-            <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4">Browse by Category</h2>
-              <p className="body-text max-w-2xl mx-auto">
-                Explore our articles by topic to find insights most relevant to your interests.
-              </p>
-            </div>
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ScrollReveal direction="up" delay={0.2}>
+              <div className="text-center mb-16">
+                {/* Eyebrow Label */}
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="w-8 h-0.5 bg-gold" />
+                  <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                    CATEGORIES
+                  </span>
+                  <div className="w-8 h-0.5 bg-gold" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-navy mb-4">Browse by Category</h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto font-body">
+                  Explore our articles by topic to find insights most relevant to your interests.
+                </p>
+              </div>
+            </ScrollReveal>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {categories.map((category, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-medium p-6 text-center hover:shadow-large transition-shadow">
-                  <div className="text-3xl font-bold text-navy-500 mb-2">{category.count}</div>
-                  <div className="text-sm text-medium-grey mb-4">{category.name}</div>
-                  <Button variant="outline" className="w-full">
-                    View {category.name}
-                  </Button>
-                </div>
-              ))}
+              <StaggerReveal staggerDelay={0.1} itemDelay={0.3} direction="up">
+                {categories.map((category, index) => (
+                  <Card variant="light" key={index} className="text-center">
+                    <CardHeader>
+                      <div className="text-3xl font-display font-bold text-navy mb-2">{category.count}</div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="text-sm text-gray-600 mb-4 font-body">{category.name}</div>
+                      <Button variant="outline" className="w-full">
+                        View {category.name}
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </StaggerReveal>
             </div>
           </div>
         </section>
 
         {/* Newsletter Signup */}
-        <section className="section bg-navy-500">
-          <div className="section-padding">
-            <div className="text-center text-white">
-              <h2 className="heading-2 mb-4">Stay Updated</h2>
-              <p className="text-xl text-navy-100 mb-8">
-                Get the latest insights delivered to your inbox. Join our community of technology leaders and innovators.
-              </p>
-              <div className="max-w-md mx-auto">
-                <form className="flex flex-col sm:flex-row gap-4">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-6 py-3 rounded-lg border border-white/20 bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white focus:bg-white/20"
-                  />
-                  <Button type="submit">
-                    Subscribe
-                  </Button>
-                </form>
+        <section className="py-20 bg-navy">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ScrollReveal direction="up" delay={0.2}>
+              <div className="text-center text-white">
+                {/* Eyebrow Label */}
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="w-8 h-0.5 bg-gold" />
+                  <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                    STAY UPDATED
+                  </span>
+                  <div className="w-8 h-0.5 bg-gold" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">Stay Updated</h2>
+                <p className="text-xl text-light-blue mb-8 font-body">
+                  Get the latest insights delivered to your inbox. Join our community of technology leaders and innovators.
+                </p>
+                <div className="max-w-md mx-auto">
+                  <form className="flex flex-col sm:flex-row gap-4">
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      className="flex-1 px-6 py-3 rounded-lg border border-white/20 bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-gold focus:bg-white/20 font-body"
+                    />
+                    <Button type="submit">
+                      Subscribe
+                    </Button>
+                  </form>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </section>
       </div>

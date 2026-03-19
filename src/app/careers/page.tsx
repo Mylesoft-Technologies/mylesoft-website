@@ -1,6 +1,7 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
-import { Icon } from '@/components/ui/Icon'
+import { Card, CardIcon, CardHeader, CardContent } from '@/components/ui/Card'
+import { ScrollReveal, StaggerReveal } from '@/components/ui/ScrollReveal'
 import { 
   MapPin, 
   Users, 
@@ -10,7 +11,8 @@ import {
   Clock,
   DollarSign,
   Award,
-  Target
+  Target,
+  Brain
 } from 'lucide-react'
 
 const openPositions = [
@@ -254,14 +256,41 @@ export default function CareersPage() {
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="section bg-navy-500">
-          <div className="section-padding">
-            <div className="text-center text-white">
-              <h1 className="heading-1 mb-6">Careers at Mylesoft</h1>
-              <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed">
+        <section className="relative py-20 bg-gradient-to-br from-navy via-navy-deep to-navy-900 overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            }}></div>
+          </div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-20 left-20 w-72 h-72 bg-gold/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-pulse delay-1000" />
+          
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <ScrollReveal direction="up" delay={0.2}>
+              {/* Eyebrow Label */}
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="w-8 h-0.5 bg-gold" />
+                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                  CAREERS
+                </span>
+                <div className="w-8 h-0.5 bg-gold" />
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal direction="up" delay={0.4}>
+              <h1 className="text-5xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
+                Careers at Mylesoft
+              </h1>
+            </ScrollReveal>
+            
+            <ScrollReveal direction="up" delay={0.6}>
+              <p className="text-xl text-light-blue max-w-3xl mx-auto leading-relaxed font-body">
                 Join our team of innovators transforming Africa through technology. We're looking for passionate individuals who want to make a real impact.
               </p>
-            </div>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -347,18 +376,18 @@ export default function CareersPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {departments.map((dept, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Icon name="brain" className="text-gold-400" size={40} />
+                  <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Brain className="text-gold w-10 h-10" />
                   </div>
-                  <h3 className="heading-3 mb-3">{dept.name}</h3>
-                  <p className="body-text mb-4">{dept.description}</p>
+                  <h3 className="text-2xl font-display font-bold text-navy mb-3">{dept.name}</h3>
+                  <p className="text-gray-600 mb-4 font-body">{dept.description}</p>
                   <div className="space-y-2">
                     <div className="text-sm">
-                      <span className="font-semibold text-navy-500">Team Size:</span>
+                      <span className="font-semibold text-navy">Team Size:</span>
                       <span className="ml-2">{dept.teamSize}</span>
                     </div>
                     <div className="text-sm">
-                      <span className="font-semibold text-navy-500">Focus:</span>
+                      <span className="font-semibold text-navy">Focus:</span>
                       <span className="ml-2">{dept.focus}</span>
                     </div>
                   </div>
