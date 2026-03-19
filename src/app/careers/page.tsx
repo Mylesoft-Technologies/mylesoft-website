@@ -46,7 +46,7 @@ const openPositions = [
     location: 'Nairobi, Kenya',
     type: 'Full-time',
     experience: '3+ years',
-    description: 'Design and implement machine learning models for our products, particularly in natural language processing and computer vision.',
+    description: 'Design and implement machine learning ls for our products, particularly in natural language processing and computer vision.',
     requirements: [
       '3+ years of AI/ML engineering experience',
       'Strong Python and TensorFlow/PyTorch skills',

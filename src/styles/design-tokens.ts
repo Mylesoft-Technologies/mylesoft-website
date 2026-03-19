@@ -1,5 +1,5 @@
-// MylesCorp Technologies Design System v4 - Modern Professional UI
-// Enhanced design tokens for modern, professional appearance
+// MylesCorp Technologies Design System v4 - rn Professional UI
+// Enhanced design tokens for rn, professional appearance
 
 export const colors = {
   // Brand Colors - Enhanced palette
@@ -28,7 +28,7 @@ export const colors = {
     900: '#1C0F00',
   },
   
-  // Modern semantic colors
+  // rn semantic colors
   white: '#FFFFFF',
   black: '#000000',
   gray: {

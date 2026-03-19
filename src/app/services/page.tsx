@@ -51,7 +51,7 @@ const services = [
     icon: <Icon name="brain" className="text-gold-400" size={48} />,
     features: [
       'AI Readiness Assessment',
-      'Machine Learning Model Development',
+      'Machine Learning l Development',
       'Data Strategy Development',
       'AI Integration Planning',
       'Ethical AI Implementation',

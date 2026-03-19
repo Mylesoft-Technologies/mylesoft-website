@@ -159,7 +159,7 @@ export default function PartnersPage() {
                 Partnership Opportunities
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto font-body">
-                Find the perfect partnership model for your business
+                Find the perfect partnership l for your business
               </p>
             </div>
           </ScrollReveal>

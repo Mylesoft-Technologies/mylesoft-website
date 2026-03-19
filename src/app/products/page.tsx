@@ -25,7 +25,7 @@ const allProducts = [
   // Healthcare Sector
   {
     name: 'MylesCare',
-    description: 'AI-powered hospital management system for modern healthcare delivery.',
+    description: 'AI-powered hospital management system for rn healthcare delivery.',
     icon: <Icon name="stethoscope" className="text-gold-400" />,
     features: [
       'Patient Records Management',
@@ -82,7 +82,7 @@ const allProducts = [
     description: 'Africa\'s intelligence engine with local language support.',
     icon: <Icon name="brain" className="text-gold-400" />,
     features: [
-      'Multi-language AI Models',
+      'Multi-language AI ls',
       'Industry-specific Solutions',
       'Real-time Analytics',
       'Natural Language Processing',
@@ -379,7 +379,7 @@ export default function ProductsPage() {
                 <h2 className="heading-2 mb-4">{sector} Sector</h2>
                 <p className="body-text">
                   {sector === 'Education' && 'Transforming educational institutions with comprehensive management solutions.'}
-                  {sector === 'Healthcare' && 'Modernizing healthcare delivery with AI-powered systems and patient management.'}
+                  {sector === 'Healthcare' && 'rnizing healthcare delivery with AI-powered systems and patient management.'}
                   {sector === 'Agriculture' && 'Empowering farmers with smart technology for increased productivity and sustainability.'}
                   {sector === 'Business' && 'Driving business growth with intelligent customer relationship and operational management.'}
                   {sector === 'AI Platform' && 'Africa\'s intelligence engine powering all our solutions with advanced AI capabilities.'}
@@ -395,7 +395,7 @@ export default function ProductsPage() {
                   {sector === 'Non-Profit' && 'Empowering NGOs with tools for donor and volunteer management.'}
                   {sector === 'Construction' && 'Managing construction projects with intelligent project tracking.'}
                   {sector === 'Media' && 'Streamlining content creation and distribution for media organizations.'}
-                  {sector === 'Transportation' && 'Modernizing public transit with intelligent management systems.'}
+                  {sector === 'Transportation' && 'rnizing public transit with intelligent management systems.'}
                 </p>
               </div>
               

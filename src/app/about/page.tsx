@@ -43,7 +43,7 @@ export default function AboutPage() {
                     Our journey began with the development of EduMyles, our flagship school management system that transformed how educational institutions across Kenya and beyond operate. Today, we power over 500 schools, serving more than 250,000 students with cutting-edge technology.
                   </p>
                   <p>
-                    From healthcare to agriculture, from customer relationship management to digital payments, our solutions touch every aspect of modern life in East Africa. We're not just building software; we're building the future of African innovation.
+                    From healthcare to agriculture, from customer relationship management to digital payments, our solutions touch every aspect of rn life in East Africa. We're not just building software; we're building the future of African innovation.
                   </p>
                 </div>
               </div>

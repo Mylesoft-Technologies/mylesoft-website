@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
-import { DarkModeToggle } from '@/components/ui/DarkModeToggle'
 import { MegaMenu } from '@/components/layout/MegaMenu'
 import { Logo } from '@/components/ui/Logo'
 import Link from 'next/link'
@@ -93,8 +92,7 @@ export function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <DarkModeToggle />
+          <div className="hidden lg:flex items-center">
             <Link href="/book-demo" transitionTypes={['slide']}>
               <Button 
                 size="nav" 
@@ -134,10 +132,7 @@ export function Header() {
               ))}
             </div>
 
-            <div className="mt-8 pt-6 border-t border-gold/20 space-y-4">
-              <div className="flex justify-center">
-                <DarkModeToggle />
-              </div>
+            <div className="mt-8 pt-6 border-t border-gold/20">
               <Link href="/book-demo" transitionTypes={['slide']} onClick={() => setIsMobileMenuOpen(false)}>
                 <Button 
                   variant="primary"

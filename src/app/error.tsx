@@ -55,7 +55,7 @@ export default function Error({ error, unstable_retry }: ErrorInfo) {
           {process.env.NODE_ENV === 'development' && (
             <details className="mb-6">
               <summary className="cursor-pointer text-sm font-medium text-navy-500 mb-2 hover:text-gold-500">
-                Error Details (Development Mode)
+                Error Details (Development )
               </summary>
               <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-2">
                 <pre className="text-xs font-mono text-red-700 whitespace-pre-wrap break-all">

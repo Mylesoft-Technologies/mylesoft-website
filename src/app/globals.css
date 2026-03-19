@@ -57,18 +57,6 @@
   --transition-slow: all 0.3s ease;
 }
 
-/* Dark mode color variables */
-.dark {
-  --color-bg-primary:   #080e18;
-  --color-bg-card:      #0d1929;
-  --color-bg-surface:   #0f1f35;
-  --color-text-primary: #ffffff;
-  --color-text-body:    #C7D7EF;
-  --color-text-muted:   #95A9CC;
-  --color-border:       rgba(199,150,57,0.2);
-  --color-border-hover: rgba(199,150,57,0.5);
-}
-
 /* Additional CSS variables */
 :root {
   --font-weight-button: 600;
@@ -579,10 +567,7 @@
     @apply bg-white/80 backdrop-blur-sm border border-white/20;
   }
 
-  .glass-dark {
-    @apply bg-navy/80 backdrop-blur-sm border border-white/10;
-  }
-
+  
   /* Professional Scrollbar Styles */
   .scrollbar-thin {
     scrollbar-width: thin;

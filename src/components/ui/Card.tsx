@@ -29,7 +29,7 @@ export function Card({
   ...props 
 }: CardProps) {
   const variants = {
-    dark: 'bg-bg-card border border-gold/20 rounded-xl p-8 relative overflow-hidden hover:-translate-y-6 hover:border-gold/50 hover:shadow-xl transition-all duration-300 group',
+    dark: 'bg-navy-dark border border-gold/20 rounded-xl p-8 relative overflow-hidden hover:-translate-y-6 hover:border-gold/50 hover:shadow-xl transition-all duration-300 group',
     light: 'bg-white border border-navy/10 rounded-lg p-7 hover:border-gold hover:shadow-md transition-all duration-300'
   }
 

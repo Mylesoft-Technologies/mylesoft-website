@@ -21,10 +21,10 @@ export function WhatsAppButton() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-6 left-6 z-50">
       {/* Quick Message Options */}
       {isOpen && (
-        <div className="absolute bottom-16 right-0 space-y-2 fade-in">
+        <div className="absolute bottom-16 left-0 space-y-2 fade-in">
           <div className="bg-white rounded-lg shadow-gold p-4 mb-2">
             <div className="flex items-center space-x-2 mb-3">
               <MessageCircle className="text-green-500" size={20} />
