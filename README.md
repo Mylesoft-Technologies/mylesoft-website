@@ -8,7 +8,7 @@
 [![Status](https://img.shields.io/badge/Status-In%20Development-C4972A?style=for-the-badge)](https://www.mylesoft.com)
 [![License](https://img.shields.io/badge/License-Proprietary-C4972A?style=for-the-badge)](LICENSE)
 
-**The official marketing and company website for Mylesoft Technologies Limited.**
+**The official marketing and company website for MylesCorp Technologies Limited.**
 
 [Live Site](https://www.mylesoft.com) · [Report Bug](https://github.com/Mylesoft-Technologies/mylesoft-website/issues/new?template=bug_report.md) · [Request Feature](https://github.com/Mylesoft-Technologies/mylesoft-website/issues/new?template=feature_request.md)
 
@@ -18,9 +18,9 @@
 
 ## 🌍 About
 
-This repository contains the source code for the official Mylesoft Technologies Limited website at [www.mylesoft.com](https://www.mylesoft.com).
+This repository contains the source code for the official MylesCorp Technologies Limited website at [www.mylesoft.com](https://www.mylesoft.com).
 
-The website serves as the primary marketing and information hub for Mylesoft, showcasing our products, services, team, company story, and contact information to prospective clients, partners, and investors across East Africa and beyond.
+The website serves as the primary marketing and information hub for MylesCorp, showcasing our products, services, team, company story, and contact information to prospective clients, partners, and investors across East Africa and beyond.
 
 ---
 
@@ -34,7 +34,7 @@ The website serves as the primary marketing and information hub for Mylesoft, sh
 | `/services` | Professional services and consulting packages |
 | `/pricing` | Product pricing in KES with comparison tables |
 | `/blog` | Thought leadership, product updates, and industry insights |
-| `/careers` | Open positions at Mylesoft Technologies |
+| `/careers` | Open positions at MylesCorp Technologies |
 | `/contact` | Contact form, office location, and department emails |
 | `/book-demo` | Cal.com integrated demo booking |
 
@@ -120,7 +120,7 @@ Please read our [Contributing Guide](https://github.com/Mylesoft-Technologies/.g
 
 <div align="center">
 
-*© 2025 Mylesoft Technologies Limited. All Rights Reserved.*
+*© 2025 MylesCorp Technologies Limited. All Rights Reserved.*
 
 **Transforming Industries, Empowering Generations.** 🌍
 

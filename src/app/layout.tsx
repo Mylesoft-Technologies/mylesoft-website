@@ -12,12 +12,12 @@ const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-pl
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono' })
 
 export const metadata: Metadata = {
-  title: 'Mylesoft Technologies - AI-Powered Software Solutions for East Africa',
+  title: 'MylesCorp Technologies - AI-Powered Software Solutions for East Africa',
   description: 'East Africa\'s leading AI-powered software company. Transforming Education, Healthcare, Agriculture, and Business with innovative solutions.',
   keywords: 'AI software Kenya, school management system, hospital management software, agricultural technology, business solutions, East Africa',
-  authors: [{ name: 'Mylesoft Technologies' }],
-  creator: 'Mylesoft Technologies',
-  publisher: 'Mylesoft Technologies',
+  authors: [{ name: 'MylesCorp Technologies' }],
+  creator: 'MylesCorp Technologies',
+  publisher: 'MylesCorp Technologies',
   formatDetection: {
     email: false,
     address: false,
@@ -31,21 +31,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://mylesoft.com',
-    title: 'Mylesoft Technologies - AI-Powered Software Solutions for East Africa',
+    title: 'MylesCorp Technologies - AI-Powered Software Solutions for East Africa',
     description: 'East Africa\'s leading AI-powered software company. Transforming Education, Healthcare, Agriculture, and Business with innovative solutions.',
-    siteName: 'Mylesoft Technologies',
+    siteName: 'MylesCorp Technologies',
     images: [
       {
         url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'Mylesoft Technologies - AI-Powered Software Solutions',
+        alt: 'MylesCorp Technologies - AI-Powered Software Solutions',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mylesoft Technologies - AI-Powered Software Solutions for East Africa',
+    title: 'MylesCorp Technologies - AI-Powered Software Solutions for East Africa',
     description: 'East Africa\'s leading AI-powered software company. Transforming Education, Healthcare, Agriculture, and Business with innovative solutions.',
     images: ['/og-image.svg'],
   },
@@ -85,14 +85,14 @@ export default function RootLayout({
         <link rel="canonical" href="https://mylesoft.com" />
         <link rel="alternate" hrefLang="en" href="https://mylesoft.com" />
         <link rel="alternate" hrefLang="x-default" href="https://mylesoft.com" />
-        <link rel="alternate" type="application/rss+xml" title="Mylesoft Technologies Blog RSS Feed" href="https://mylesoft.com/rss.xml" />
+        <link rel="alternate" type="application/rss+xml" title="MylesCorp Technologies Blog RSS Feed" href="https://mylesoft.com/rss.xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Mylesoft Technologies",
+              "name": "MylesCorp Technologies",
               "url": "https://mylesoft.com",
               "logo": "https://mylesoft.com/logo.png",
               "description": "East Africa's leading AI-powered software company building innovative solutions for Education, Healthcare, Agriculture, and Business.",

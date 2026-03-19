@@ -196,7 +196,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <ScrollReveal direction="up" delay={0.5}>
               <div className="text-navy-200 text-sm">
-                © {currentYear} Mylesoft Technologies. All rights reserved.
+                © {currentYear} MylesCorp Technologies. All rights reserved.
               </div>
             </ScrollReveal>
             

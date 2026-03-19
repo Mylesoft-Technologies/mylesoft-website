@@ -1,4 +1,4 @@
-// Mylesoft Technologies Design System v4 - Modern Professional UI
+// MylesCorp Technologies Design System v4 - Modern Professional UI
 // Enhanced design tokens for modern, professional appearance
 
 export const colors = {

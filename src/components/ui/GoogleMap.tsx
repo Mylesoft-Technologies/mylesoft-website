@@ -78,7 +78,7 @@ export function GoogleMap({
         new google.maps.Marker({
           position: location,
           map: mapInstanceRef.current,
-          title: "Mylesoft Technologies",
+          title: "MylesCorp Technologies",
           animation: google.maps.Animation.DROP,
           icon: {
             url: "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
@@ -96,7 +96,7 @@ export function GoogleMap({
         const infoWindow = new google.maps.InfoWindow({
           content: `
             <div style="padding: 10px; font-family: Inter, sans-serif;">
-              <h3 style="margin: 0 0 8px 0; color: #1A395B; font-weight: 600;">Mylesoft Technologies</h3>
+              <h3 style="margin: 0 0 8px 0; color: #1A395B; font-weight: 600;">MylesCorp Technologies</h3>
               <p style="margin: 0 0 4px 0; color: #545454; font-size: 14px;">Wester Heights, Westlands</p>
               <p style="margin: 0 0 8px 0; color: #545454; font-size: 14px;">Nairobi, Kenya</p>
               <a href="https://wa.me/254743993715" style="color: #C79639; text-decoration: none; font-weight: 500;">Get Directions →</a>
@@ -108,7 +108,7 @@ export function GoogleMap({
         const marker = new google.maps.Marker({
           position: location,
           map: mapInstanceRef.current,
-          title: "Mylesoft Technologies"
+          title: "MylesCorp Technologies"
         })
 
         marker.addListener('click', () => {
@@ -161,7 +161,7 @@ export function GoogleMap({
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
             </svg>
           </div>
-          <h3 className="heading-3 mb-2">Mylesoft Technologies</h3>
+          <h3 className="heading-3 mb-2">MylesCorp Technologies</h3>
           <p className="body-text text-medium-grey mb-4">
             Wester Heights, Westlands<br />
             Nairobi, Kenya

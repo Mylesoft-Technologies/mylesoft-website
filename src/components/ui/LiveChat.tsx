@@ -17,7 +17,7 @@ export function LiveChat() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Hello! Welcome to Mylesoft Technologies. How can I help you today?',
+      text: 'Hello! Welcome to MylesCorp Technologies. How can I help you today?',
       sender: 'bot',
       timestamp: new Date()
     }
@@ -222,7 +222,7 @@ export function LiveChat() {
               </Button>
             </div>
             <p className="text-xs text-medium-grey mt-2 text-center">
-              Powered by Mylesoft Technologies • Available 9 AM - 6 PM EAT
+              Powered by MylesCorp Technologies • Available 9 AM - 6 PM EAT
             </p>
           </div>
         </div>

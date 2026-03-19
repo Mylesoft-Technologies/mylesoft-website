@@ -8,7 +8,7 @@ export function WhatsAppButton() {
   const phoneNumber = '+254743993715' // Mylesoft WhatsApp number
   
   const handleClick = () => {
-    const message = encodeURIComponent('Hi! I\'m interested in learning more about Mylesoft Technologies solutions.')
+    const message = encodeURIComponent('Hi! I\'m interested in learning more about MylesCorp Technologies solutions.')
     const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^\d]/g, '')}?text=${message}`
     window.open(whatsappUrl, '_blank')
   }

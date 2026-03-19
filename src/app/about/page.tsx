@@ -21,7 +21,7 @@ export default function AboutPage() {
         <section className="section gradient-navy">
           <div className="section-padding">
             <div className="text-center text-white">
-              <h1 className="heading-1 mb-6 fade-in">About Mylesoft Technologies</h1>
+              <h1 className="heading-1 mb-6 fade-in">About MylesCorp Technologies</h1>
               <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed mb-8 slide-up">
                 Transforming Industries, Empowering Generations. East Africa's leading AI-powered software company building innovative solutions for Education, Healthcare, Agriculture, and Business.
               </p>
@@ -37,7 +37,7 @@ export default function AboutPage() {
                 <h2 className="heading-2 mb-6">Our Story</h2>
                 <div className="space-y-4 body-text">
                   <p>
-                    Founded in 2020, Mylesoft Technologies emerged from a simple yet powerful vision: to harness the power of artificial intelligence to solve Africa's most pressing challenges. What started as a small team of passionate developers has grown into East Africa's leading AI-powered software company.
+                    Founded in 2020, MylesCorp Technologies emerged from a simple yet powerful vision: to harness the power of artificial intelligence to solve Africa's most pressing challenges. What started as a small team of passionate developers has grown into East Africa's leading AI-powered software company.
                   </p>
                   <p>
                     Our journey began with the development of EduMyles, our flagship school management system that transformed how educational institutions across Kenya and beyond operate. Today, we power over 500 schools, serving more than 250,000 students with cutting-edge technology.

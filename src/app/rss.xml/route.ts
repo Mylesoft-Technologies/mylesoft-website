@@ -81,17 +81,17 @@ export async function GET() {
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>Mylesoft Technologies Blog</title>
+  <title>MylesCorp Technologies Blog</title>
   <description>Latest insights on AI technology and digital transformation in East Africa</description>
   <link>${siteUrl}/blog</link>
   <language>en-us</language>
-  <copyright>Copyright 2024 Mylesoft Technologies Limited. All rights reserved.</copyright>
+  <copyright>Copyright 2024 MylesCorp Technologies Limited. All rights reserved.</copyright>
   <atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml"/>
   <lastBuildDate>${currentDate}</lastBuildDate>
-  <generator>Mylesoft Technologies RSS Generator</generator>
+  <generator>MylesCorp Technologies RSS Generator</generator>
   <image>
     <url>${siteUrl}/logo.png</url>
-    <title>Mylesoft Technologies</title>
+    <title>MylesCorp Technologies</title>
     <link>${siteUrl}</link>
     <width>144</width>
     <height>144</height>

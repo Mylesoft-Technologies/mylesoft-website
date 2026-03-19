@@ -8,7 +8,7 @@ const teamMembers = [
   {
     name: "Jonathan Myles",
     role: "CEO & Founder",
-    bio: "A visionary software engineer and entrepreneur, Jonathan founded Mylesoft Technologies in 2020 with a mission to build AI-powered solutions addressing East Africa's most critical challenges. He leads the company's overall strategy, product development, and technology architecture across all 20+ Mylesoft products.",
+    bio: "A visionary software engineer and entrepreneur, Jonathan founded MylesCorp Technologies in 2020 with a mission to build AI-powered solutions addressing East Africa's most critical challenges. He leads the company's overall strategy, product development, and technology architecture across all 20+ Mylesoft products.",
     image: "/team/michael.jpg",
     social: { linkedin: "#", twitter: "#" }
   },

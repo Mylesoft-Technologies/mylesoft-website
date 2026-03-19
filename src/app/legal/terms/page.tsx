@@ -11,7 +11,7 @@ export default function TermsOfService() {
             <div className="text-center text-white">
               <h1 className="heading-1 mb-6">Terms of Service</h1>
               <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed">
-                Terms and conditions governing your use of Mylesoft Technologies' website and services.
+                Terms and conditions governing your use of MylesCorp Technologies' website and services.
               </p>
             </div>
           </div>
@@ -26,7 +26,7 @@ export default function TermsOfService() {
                   <h2 className="heading-2 mb-4">1. Acceptance of Terms</h2>
                   <div className="space-y-4 body-text">
                     <p>
-                      By accessing and using Mylesoft Technologies' website and services, you accept and agree 
+                      By accessing and using MylesCorp Technologies' website and services, you accept and agree 
                       to be bound by the terms and provision of this agreement.
                     </p>
                     <p>
@@ -39,7 +39,7 @@ export default function TermsOfService() {
                   <h2 className="heading-2 mb-4">2. Description of Service</h2>
                   <div className="space-y-4 body-text">
                     <p>
-                      Mylesoft Technologies provides AI-powered software solutions for Education, Healthcare, 
+                      MylesCorp Technologies provides AI-powered software solutions for Education, Healthcare, 
                       Agriculture, and Business sectors across East Africa. Our services include:
                     </p>
                     <ul className="list-disc pl-6 space-y-2">
@@ -85,7 +85,7 @@ export default function TermsOfService() {
                   <div className="space-y-4 body-text">
                     <p>
                       The Service and its original content, features and functionality are and will remain 
-                      the exclusive property of Mylesoft Technologies Limited.
+                      the exclusive property of MylesCorp Technologies Limited.
                     </p>
                     <p>
                       You may not modify, publish, transmit, reverse engineer, participate in the transfer 
@@ -120,7 +120,7 @@ export default function TermsOfService() {
                   <h2 className="heading-2 mb-4">8. Limitation of Liability</h2>
                   <div className="space-y-4 body-text">
                     <p>
-                      In no event shall Mylesoft Technologies Limited, its directors, employees, partners, 
+                      In no event shall MylesCorp Technologies Limited, its directors, employees, partners, 
                       agents, suppliers, or affiliates be liable for any indirect, incidental, special, 
                       consequential, or punitive damages.
                     </p>

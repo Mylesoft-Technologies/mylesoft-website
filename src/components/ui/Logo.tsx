@@ -30,7 +30,7 @@ export function Logo({ size = 'md', className = '', fallbackColor = 'navy' }: Lo
     <div className={`${sizeClasses[size]} ${className}`}>
       <img 
         src="/logo.png" 
-        alt="Mylesoft Technologies" 
+        alt="MylesCorp Technologies" 
         className={`w-full h-full object-contain`}
         onError={(e) => {
           const target = e.currentTarget;
