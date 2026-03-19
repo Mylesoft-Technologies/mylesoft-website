@@ -44,8 +44,8 @@ export default function HomePage() {
         }} />
         
         {/* Radial Glow Elements */}
-        <div className="absolute top-right right-10 top-20 w-[600px] h-[600px] bg-navy-DEFAULT/50 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-left left-10 bottom-20 w-[500px] h-[500px] bg-gold-DEFAULT/7 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-right right-10 top-20 w-[600px] h-[600px] bg-navy/50 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-left left-10 bottom-20 w-[500px] h-[500px] bg-gold/7 rounded-full blur-3xl pointer-events-none" />
         
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="space-y-8">
@@ -60,7 +60,7 @@ export default function HomePage() {
                 <h1 className="font-display font-bold text-white leading-tight" 
                     style={{ fontSize: 'clamp(44px, 5.5vw, 76px)' }}>
                   Transform Your Business with
-                  <em className="block text-gold-DEFAULT">
+                  <em className="block text-gold">
                     AI-Powered Solutions
                   </em>
                 </h1>
@@ -72,7 +72,7 @@ export default function HomePage() {
                 <p className="font-body text-[18px] font-light text-light-blue leading-relaxed mb-4">
                   East Africa's leading technology company delivering innovative solutions for Education, Healthcare, Agriculture, and Business.
                 </p>
-                <p className="font-display italic font-bold text-gold-DEFAULT text-center">
+                <p className="font-display italic font-bold text-gold text-center">
                   Transforming Industries, Empowering Generation.
                 </p>
               </div>
@@ -83,7 +83,7 @@ export default function HomePage() {
                 <div>
                   <Button 
                     variant="primary"
-                    className="bg-gold-DEFAULT text-navy-DEFAULT hover:bg-gold-light hover:-translate-y-2 shadow-gold hover:shadow-gold px-9 py-4 font-body font-bold text-[14px] tracking-[0.4px]"
+                    className="bg-gold text-navy hover:bg-gold-light hover:-translate-y-2 shadow-gold hover:shadow-gold px-9 py-4 font-body font-bold text-[14px] tracking-[0.4px]"
                   >
                     <Sparkles className="mr-2 w-5 h-5" />
                     Get Started Today
@@ -94,7 +94,7 @@ export default function HomePage() {
                 <div>
                   <Button 
                     variant="outline" 
-                    className="border-white/20 text-white hover:border-gold-DEFAULT hover:text-gold-DEFAULT font-body"
+                    className="border-white/20 text-white hover:border-gold hover:text-gold font-body"
                   >
                     Book a Demo
                   </Button>

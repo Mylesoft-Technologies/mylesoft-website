@@ -47,8 +47,8 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
           <div className="min-h-[400px] flex items-center justify-center bg-navy-deep p-6">
             <div className="text-center max-w-md">
               {/* Gold Icon */}
-              <div className="w-16 h-16 bg-gold-DEFAULT/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <AlertTriangle className="w-8 h-8 text-gold-DEFAULT" />
+              <div className="w-16 h-16 bg-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <AlertTriangle className="w-8 h-8 text-gold" />
               </div>
               
               {/* Heading */}
@@ -79,7 +79,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
               <Button
                 onClick={this.handleRetry}
                 variant="primary"
-                className="bg-gold-DEFAULT text-navy-DEFAULT hover:bg-gold-light font-body font-bold"
+                className="bg-gold text-navy hover:bg-gold-light font-body font-bold"
               >
                 <RefreshCw className="mr-2 w-4 h-4" />
                 Reload Page

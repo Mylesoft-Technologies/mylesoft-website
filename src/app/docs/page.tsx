@@ -15,8 +15,8 @@ export default function DocsPage() {
         <div className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <SimpleReveal delay={0.2}>
             <div className="flex justify-center mb-8">
-              <div className="w-20 h-20 bg-gold-DEFAULT/20 rounded-2xl flex items-center justify-center">
-                <FileText className="w-10 h-10 text-gold-DEFAULT" />
+              <div className="w-20 h-20 bg-gold/20 rounded-2xl flex items-center justify-center">
+                <FileText className="w-10 h-10 text-gold" />
               </div>
             </div>
             
@@ -32,7 +32,7 @@ export default function DocsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 variant="primary"
-                className="bg-gold-DEFAULT text-navy-DEFAULT hover:bg-gold-light hover:-translate-y-2 shadow-gold hover:shadow-gold px-9 py-4 font-body font-bold"
+                className="bg-gold text-navy hover:bg-gold-light hover:-translate-y-2 shadow-gold hover:shadow-gold px-9 py-4 font-body font-bold"
               >
                 <BookOpen className="mr-2 w-5 h-5" />
                 Browse Documentation
@@ -41,7 +41,7 @@ export default function DocsPage() {
               
               <Button 
                 variant="outline"
-                className="border-gold-DEFAULT/20 text-gold-DEFAULT hover:border-gold-DEFAULT hover:bg-gold-DEFAULT/10 font-body"
+                className="border-gold/20 text-gold hover:border-gold hover:bg-gold/10 font-body"
               >
                 API Reference
               </Button>
@@ -55,7 +55,7 @@ export default function DocsPage() {
               </p>
               <p className="font-body text-muted-blue text-sm mt-2">
                 Need immediate assistance?{' '}
-                <a href="/contact" className="text-gold-DEFAULT hover:text-gold-light transition-colors">
+                <a href="/contact" className="text-gold hover:text-gold-light transition-colors">
                   Contact our support team
                 </a>
               </p>

@@ -25,7 +25,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-navy-DEFAULT text-white relative overflow-hidden border-t border-gold-DEFAULT/20">
+    <footer className="bg-navy text-white relative overflow-hidden border-t border-gold/20">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -45,7 +45,7 @@ export function Footer() {
                   <Logo size="lg" fallbackColor="gold" />
                   <div>
                     <h3 className="text-[14px] font-body font-bold text-white">MylesCorp</h3>
-                    <p className="text-[10px] font-body text-gold-DEFAULT uppercase tracking-[1.5px]">Technologies Ltd</p>
+                    <p className="text-[10px] font-body text-gold uppercase tracking-[1.5px]">Technologies Ltd</p>
                   </div>
                 </div>
                 
@@ -87,7 +87,7 @@ export function Footer() {
                         href={item.href}
                         className="group block"
                       >
-                        <div className="text-light-blue hover:text-gold-DEFAULT transition-all duration-300 font-body font-medium">
+                        <div className="text-light-blue hover:text-gold transition-all duration-300 font-body font-medium">
                           {item.name}
                         </div>
                         <div className="text-muted-blue text-sm group-hover:text-light-blue transition-colors duration-300">
@@ -115,7 +115,7 @@ export function Footer() {
                     <li key={index}>
                       <Link 
                         href={item.href}
-                        className="text-muted-blue hover:text-gold-DEFAULT transition-all duration-300 flex items-center group font-body"
+                        className="text-muted-blue hover:text-gold transition-all duration-300 flex items-center group font-body"
                       >
                         <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300">
                           {item.name}
@@ -141,12 +141,12 @@ export function Footer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="w-full px-4 py-3 bg-navy-dark/50 border border-gold-DEFAULT/20 rounded-lg text-white placeholder-muted-blue focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-all duration-300 font-body"
+                    className="w-full px-4 py-3 bg-navy-dark/50 border border-gold/20 rounded-lg text-white placeholder-muted-blue focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-all duration-300 font-body"
                     required
                   />
                   <Button 
                     type="submit" 
-                    className="w-full bg-gold-DEFAULT text-navy-DEFAULT hover:bg-gold-light shadow-gold hover:shadow-gold hover:-translate-y-0.5 transition-all duration-300 font-body font-bold"
+                    className="w-full bg-gold text-navy hover:bg-gold-light shadow-gold hover:shadow-gold hover:-translate-y-0.5 transition-all duration-300 font-body font-bold"
                     disabled={isSubscribed}
                   >
                     {isSubscribed ? (
@@ -178,7 +178,7 @@ export function Footer() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-navy-dark/50 border border-gold-DEFAULT/20 rounded-lg flex items-center justify-center text-muted-blue hover:text-gold-DEFAULT hover:bg-navy-dark hover:border-gold-DEFAULT/50 transform hover:scale-110 transition-all duration-300"
+                        className="w-10 h-10 bg-navy-dark/50 border border-gold/20 rounded-lg flex items-center justify-center text-muted-blue hover:text-gold hover:bg-navy-dark hover:border-gold/50 transform hover:scale-110 transition-all duration-300"
                         aria-label={social.name}
                       >
                         <Icon name={social.name} size={18} />
@@ -192,23 +192,23 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gold-DEFAULT/20 py-8">
+        <div className="border-t border-gold/20 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <ScrollReveal direction="up" delay={0.5}>
               <div className="text-muted-blue text-sm font-body">
-                © {currentYear} <span className="text-gold-DEFAULT font-semibold">MylesCorp Technologies Ltd</span>. All rights reserved.
+                © {currentYear} <span className="text-gold font-semibold">MylesCorp Technologies Ltd</span>. All rights reserved.
               </div>
             </ScrollReveal>
             
             <ScrollReveal direction="up" delay={0.6}>
               <div className="flex items-center space-x-6 text-sm">
-                <Link href="/privacy" className="text-muted-blue hover:text-gold-DEFAULT transition-colors duration-300 font-body">
+                <Link href="/privacy" className="text-muted-blue hover:text-gold transition-colors duration-300 font-body">
                   Privacy Policy
                 </Link>
-                <Link href="/terms" className="text-muted-blue hover:text-gold-DEFAULT transition-colors duration-300 font-body">
+                <Link href="/terms" className="text-muted-blue hover:text-gold transition-colors duration-300 font-body">
                   Terms of Service
                 </Link>
-                <Link href="/cookies" className="text-muted-blue hover:text-gold-DEFAULT transition-colors duration-300 font-body">
+                <Link href="/cookies" className="text-muted-blue hover:text-gold transition-colors duration-300 font-body">
                   Cookie Policy
                 </Link>
               </div>
@@ -217,7 +217,7 @@ export function Footer() {
             <ScrollReveal direction="up" delay={0.7}>
               <button
                 onClick={scrollToTop}
-                className="group flex items-center space-x-2 text-muted-blue hover:text-gold-DEFAULT transition-all duration-300 font-body"
+                className="group flex items-center space-x-2 text-muted-blue hover:text-gold transition-all duration-300 font-body"
               >
                 <span className="text-sm">Back to top</span>
                 <ArrowUp className="w-4 h-4 group-hover:animate-bounce" />
@@ -228,8 +228,8 @@ export function Footer() {
 
         {/* Tagline */}
         <ScrollReveal direction="fade" delay={0.8}>
-          <div className="text-center py-6 border-t border-gold-DEFAULT/20">
-            <p className="text-gold-DEFAULT font-display italic font-bold text-[13px]">
+          <div className="text-center py-6 border-t border-gold/20">
+            <p className="text-gold font-display italic font-bold text-[13px]">
               Transforming Industries, Empowering Generation.
             </p>
           </div>

@@ -108,7 +108,7 @@ export default function RootLayout({
         {/* SEO */}
         <link rel="canonical" href="https://mylescorp.co.ke" />
         <link rel="alternate" hrefLang="en" href="https://mylescorp.co.ke" />
-        <link rel="alternate" hrefLang="x-default" href="https://mylescorp.co.ke" />
+        <link rel="alternate" hrefLang="x" href="https://mylescorp.co.ke" />
         <link rel="alternate" type="application/rss+xml" title="MylesCorp Technologies Blog RSS Feed" href="https://mylescorp.co.ke/rss.xml" />
         <script
           type="application/ld+json"
@@ -147,7 +147,7 @@ export default function RootLayout({
         {/* Skip to main content link */}
         <a 
           href="#main-content" 
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-gold-DEFAULT focus:text-navy-DEFAULT focus:rounded-md font-body font-semibold"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-gold focus:text-navy focus:rounded-md font-body font-semibold"
         >
           Skip to main content
         </a>

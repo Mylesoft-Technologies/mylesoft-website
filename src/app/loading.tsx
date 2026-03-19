@@ -3,11 +3,11 @@ export default function Loading() {
     <div className="min-h-screen bg-navy-deep flex flex-col items-center justify-center">
       {/* Gold M Logo */}
       <div className="relative">
-        <div className="w-20 h-20 border-4 border-gold-DEFAULT rounded-lg flex items-center justify-center">
-          <span className="text-gold-DEFAULT font-display text-4xl font-bold">M</span>
+        <div className="w-20 h-20 border-4 border-gold rounded-lg flex items-center justify-center">
+          <span className="text-gold font-display text-4xl font-bold">M</span>
         </div>
         {/* Pulse animation ring */}
-        <div className="absolute inset-0 border-4 border-gold-DEFAULT/30 rounded-lg animate-ping" />
+        <div className="absolute inset-0 border-4 border-gold/30 rounded-lg animate-ping" />
       </div>
       
       {/* Loading text */}

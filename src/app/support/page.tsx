@@ -15,8 +15,8 @@ export default function SupportPage() {
         <div className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <SimpleReveal delay={0.2}>
             <div className="flex justify-center mb-8">
-              <div className="w-20 h-20 bg-gold-DEFAULT/20 rounded-2xl flex items-center justify-center">
-                <Headphones className="w-10 h-10 text-gold-DEFAULT" />
+              <div className="w-20 h-20 bg-gold/20 rounded-2xl flex items-center justify-center">
+                <Headphones className="w-10 h-10 text-gold" />
               </div>
             </div>
             
@@ -32,7 +32,7 @@ export default function SupportPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 variant="primary"
-                className="bg-gold-DEFAULT text-navy-DEFAULT hover:bg-gold-light hover:-translate-y-2 shadow-gold hover:shadow-gold px-9 py-4 font-body font-bold"
+                className="bg-gold text-navy hover:bg-gold-light hover:-translate-y-2 shadow-gold hover:shadow-gold px-9 py-4 font-body font-bold"
               >
                 <MessageCircle className="mr-2 w-5 h-5" />
                 Start Live Chat
@@ -41,7 +41,7 @@ export default function SupportPage() {
               
               <Button 
                 variant="outline"
-                className="border-gold-DEFAULT/20 text-gold-DEFAULT hover:border-gold-DEFAULT hover:bg-gold-DEFAULT/10 font-body"
+                className="border-gold/20 text-gold hover:border-gold hover:bg-gold/10 font-body"
               >
                 <Mail className="mr-2 w-5 h-5" />
                 Email Support
@@ -52,8 +52,8 @@ export default function SupportPage() {
           <SimpleReveal delay={0.4}>
             <div className="mt-16 grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gold-DEFAULT/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-8 h-8 text-gold-DEFAULT" />
+                <div className="w-16 h-16 bg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-8 h-8 text-gold" />
                 </div>
                 <h3 className="font-body font-semibold text-white mb-2">Phone Support</h3>
                 <p className="font-body text-muted-blue text-sm">
@@ -63,8 +63,8 @@ export default function SupportPage() {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-gold-DEFAULT/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-8 h-8 text-gold-DEFAULT" />
+                <div className="w-16 h-16 bg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-8 h-8 text-gold" />
                 </div>
                 <h3 className="font-body font-semibold text-white mb-2">Email Support</h3>
                 <p className="font-body text-muted-blue text-sm">
@@ -74,8 +74,8 @@ export default function SupportPage() {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-gold-DEFAULT/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <MessageCircle className="w-8 h-8 text-gold-DEFAULT" />
+                <div className="w-16 h-16 bg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <MessageCircle className="w-8 h-8 text-gold" />
                 </div>
                 <h3 className="font-body font-semibold text-white mb-2">Live Chat</h3>
                 <p className="font-body text-muted-blue text-sm">

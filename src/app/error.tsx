@@ -28,11 +28,11 @@ export default function Error({ error, unstable_retry }: ErrorInfo) {
 
   return (
     <div className="min-h-screen bg-navy-deep flex items-center justify-center p-4">
-      <div className="max-w-lg w-full bg-navy-dark border border-gold-DEFAULT/20 rounded-2xl shadow-card overflow-hidden">
+      <div className="max-w-lg w-full bg-navy-dark border border-gold/20 rounded-2xl shadow-card overflow-hidden">
         {/* Error Header */}
-        <div className="bg-navy-DEFAULT border-b border-gold-DEFAULT/20 p-6 text-white text-center">
-          <div className="w-20 h-20 bg-gold-DEFAULT/20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <AlertTriangle className="w-10 h-10 text-gold-DEFAULT" />
+        <div className="bg-navy border-b border-gold/20 p-6 text-white text-center">
+          <div className="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <AlertTriangle className="w-10 h-10 text-gold" />
           </div>
           <h1 className="font-display text-3xl font-bold mb-2">Application Error</h1>
           <p className="font-body text-light-blue">Something unexpected happened</p>
@@ -70,7 +70,7 @@ export default function Error({ error, unstable_retry }: ErrorInfo) {
             <Button
               onClick={handleRetry}
               variant="primary"
-              className="bg-gold-DEFAULT text-navy-DEFAULT hover:bg-gold-light font-body font-bold"
+              className="bg-gold text-navy hover:bg-gold-light font-body font-bold"
             >
               <RefreshCw className="w-4 h-4 mr-2" />
               Try Again
@@ -79,7 +79,7 @@ export default function Error({ error, unstable_retry }: ErrorInfo) {
             <Button
               variant="outline"
               onClick={handleReload}
-              className="border-gold-DEFAULT/20 text-gold-DEFAULT hover:border-gold-DEFAULT hover:bg-gold-DEFAULT/10 font-body"
+              className="border-gold/20 text-gold hover:border-gold hover:bg-gold/10 font-body"
             >
               <Bug className="w-4 h-4 mr-2" />
               Reload Page
@@ -88,7 +88,7 @@ export default function Error({ error, unstable_retry }: ErrorInfo) {
             <Button
               variant="outline"
               onClick={handleGoHome}
-              className="border-gold-DEFAULT/20 text-gold-DEFAULT hover:border-gold-DEFAULT hover:bg-gold-DEFAULT/10 font-body"
+              className="border-gold/20 text-gold hover:border-gold hover:bg-gold/10 font-body"
             >
               <Home className="w-4 h-4 mr-2" />
               Go Home
@@ -96,7 +96,7 @@ export default function Error({ error, unstable_retry }: ErrorInfo) {
           </div>
 
           {/* Support Information */}
-          <div className="bg-navy-dark/50 border border-gold-DEFAULT/10 rounded-lg p-6 text-center">
+          <div className="bg-navy-dark/50 border border-gold/10 rounded-lg p-6 text-center">
             <h3 className="font-display font-semibold text-white mb-2">Need Help?</h3>
             <p className="font-body text-sm text-muted-blue mb-4">
               If this problem continues, please don't hesitate to reach out to our support team.
@@ -104,14 +104,14 @@ export default function Error({ error, unstable_retry }: ErrorInfo) {
             <div className="flex flex-col sm:flex-row gap-3 justify-center text-sm font-body">
               <a 
                 href="mailto:support@mylesoft.com" 
-                className="text-gold-DEFAULT hover:text-gold-light font-medium"
+                className="text-gold hover:text-gold-light font-medium"
               >
                 support@mylesoft.com
               </a>
               <span className="text-muted-blue">•</span>
               <a 
                 href="tel:+254743993715" 
-                className="text-gold-DEFAULT hover:text-gold-light font-medium"
+                className="text-gold hover:text-gold-light font-medium"
               >
                 +254 743 993 715
               </a>
@@ -120,7 +120,7 @@ export default function Error({ error, unstable_retry }: ErrorInfo) {
         </div>
 
         {/* Error Footer */}
-        <div className="bg-navy-deep border-t border-gold-DEFAULT/10 px-8 py-4 text-center">
+        <div className="bg-navy-deep border-t border-gold/10 px-8 py-4 text-center">
           <p className="font-mono text-xs text-muted-blue">
             Error ID: {Date.now()} | Reference: {error.name || 'Unknown'}
           </p>
