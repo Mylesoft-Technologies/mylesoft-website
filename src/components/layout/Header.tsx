@@ -92,12 +92,12 @@ export function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:flex items-center ml-8">
             <Link href="/book-demo" transitionTypes={['slide']}>
               <Button 
-                size="nav" 
+                size="sm" 
                 variant="primary"
-                className="shadow-lg hover:shadow-xl"
+                className="shadow-lg hover:shadow-xl px-6 py-2 text-sm font-semibold"
               >
                 Book a Demo
               </Button>

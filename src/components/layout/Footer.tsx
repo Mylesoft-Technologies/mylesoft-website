@@ -185,13 +185,10 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gold/20 py-12">
-          <div className="flex flex-col lg:flex-row justify-between items-center space-y-8 lg:space-y-0">
+        <div className="border-t border-gold/20 py-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
             <ScrollReveal direction="up" delay={0.5}>
               <div className="text-center lg:text-left">
-                <p className="text-gray-300 text-sm font-body mb-2">
-                  © {currentYear} <span className="text-gold font-semibold">MylesCorp Technologies Ltd</span>. All rights reserved.
-                </p>
                 <p className="text-gray-400 text-xs font-body">
                   Registered in Kenya. Company Registration No. CPR/2023/123456
                 </p>
@@ -238,7 +235,7 @@ export function Footer() {
 
         {/* Enhanced Tagline Section */}
         <ScrollReveal direction="fade" delay={0.8}>
-          <div className="text-center py-12 border-t border-gold/20">
+          <div className="text-center py-8 border-t border-gold/20">
             <p className="text-gold font-display italic font-bold text-xl mb-4">
               Transforming Industries, Empowering Generations.
             </p>
@@ -261,6 +258,15 @@ export function Footer() {
             </div>
           </div>
         </ScrollReveal>
+
+        {/* Copyright - Very Bottom */}
+        <div className="border-t border-gold/20 py-6">
+          <div className="text-center">
+            <p className="text-gray-300 text-sm font-body">
+              © 2026 <span className="text-gold font-semibold">MylesCorp Technologies Ltd</span>. All rights reserved.
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   )
