@@ -67,12 +67,12 @@ Kenya's agricultural sector, the backbone of the nation's economy, is experienci
     publishedAt: '2024-03-05T09:15:00Z',
     category: 'Agriculture',
     tags: ['Agriculture AI', 'AgriMyles', 'Kenyan Farming', 'Sustainability'],
-    image: 'https://mylesoft.com/images/blog/agricultural-technology-kenya.jpg'
+    image: 'https://mylescorp.co.ke/images/blog/agricultural-technology-kenya.jpg'
   }
 ]
 
 export async function GET() {
-  const siteUrl = 'https://mylesoft.com'
+  const siteUrl = 'https://mylescorp.co.ke'
   const currentDate = new Date().toISOString()
 
   const rssXml = `<?xml version="1.0" encoding="UTF-8"?>

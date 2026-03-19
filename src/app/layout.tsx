@@ -23,14 +23,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://mylesoft.com'),
+  metadataBase: new URL('https://mylescorp.co.ke'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://mylesoft.com',
+    url: 'https://mylescorp.co.ke',
     title: 'MylesCorp Technologies - AI-Powered Software Solutions for East Africa',
     description: 'East Africa\'s leading AI-powered software company. Transforming Education, Healthcare, Agriculture, and Business with innovative solutions.',
     siteName: 'MylesCorp Technologies',
@@ -82,10 +82,10 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icon-192x192.svg" />
         
         {/* SEO */}
-        <link rel="canonical" href="https://mylesoft.com" />
-        <link rel="alternate" hrefLang="en" href="https://mylesoft.com" />
-        <link rel="alternate" hrefLang="x-default" href="https://mylesoft.com" />
-        <link rel="alternate" type="application/rss+xml" title="MylesCorp Technologies Blog RSS Feed" href="https://mylesoft.com/rss.xml" />
+        <link rel="canonical" href="https://mylescorp.co.ke" />
+        <link rel="alternate" hrefLang="en" href="https://mylescorp.co.ke" />
+        <link rel="alternate" hrefLang="x-default" href="https://mylescorp.co.ke" />
+        <link rel="alternate" type="application/rss+xml" title="MylesCorp Technologies Blog RSS Feed" href="https://mylescorp.co.ke/rss.xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -93,8 +93,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "MylesCorp Technologies",
-              "url": "https://mylesoft.com",
-              "logo": "https://mylesoft.com/logo.png",
+              "url": "https://mylescorp.co.ke",
+              "logo": "https://mylescorp.co.ke/logo.png",
               "description": "East Africa's leading AI-powered software company building innovative solutions for Education, Healthcare, Agriculture, and Business.",
               "address": {
                 "@type": "PostalAddress",
@@ -111,9 +111,9 @@ export default function RootLayout({
                 "availableLanguage": "English"
               },
               "sameAs": [
-                "https://www.linkedin.com/company/mylesoft-technologies",
-                "https://twitter.com/mylesofttech",
-                "https://github.com/Mylesoft-Technologies"
+                "https://www.linkedin.com/company/mylescorp-technologies",
+                "https://twitter.com/mylescorptech",
+                "https://github.com/MylesCorp-Technologies"
               ]
             })
           }}

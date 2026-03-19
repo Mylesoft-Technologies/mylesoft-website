@@ -8,6 +8,7 @@ const teamMembers = [
   {
     name: "Jonathan Myles",
     role: "CEO & Founder",
+    email: "jonathan@mylescorp.co.ke",
     bio: "A visionary software engineer and entrepreneur, Jonathan founded MylesCorp Technologies in 2020 with a mission to build AI-powered solutions addressing East Africa's most critical challenges. He leads the company's overall strategy, product development, and technology architecture across all 20+ Mylesoft products.",
     image: "/team/michael.jpg",
     social: { linkedin: "#", twitter: "#" }
@@ -15,6 +16,7 @@ const teamMembers = [
    {
     name: "Pauline Moraa",
     role: "COO",
+    email: "pauline@mylescorp.co.ke",
     bio: "Pauline brings operational excellence and business development expertise to Mylesoft. As COO, she drives the company's day-to-day operations, sales, marketing, and customer partnerships — ensuring every Mylesoft product delivers measurable impact across East Africa.",
     image: "/team/david.jpg",
     social: { linkedin: "#", twitter: "#" }
@@ -141,6 +143,15 @@ export default function TeamPage() {
                     <p className="text-gray-600 leading-relaxed mb-6">{member.bio}</p>
                     
                     <div className="flex space-x-3">
+                      {member.email && (
+                        <a
+                          href={`mailto:${member.email}`}
+                          className="w-10 h-10 bg-navy-100 rounded-lg flex items-center justify-center text-navy-600 hover:bg-gold-400 hover:text-white transition-colors duration-300"
+                          title={`Email ${member.name}`}
+                        >
+                          <Mail className="w-5 h-5" />
+                        </a>
+                      )}
                       <a
                         href={member.social.linkedin}
                         className="w-10 h-10 bg-navy-100 rounded-lg flex items-center justify-center text-navy-600 hover:bg-gold-400 hover:text-white transition-colors duration-300"
