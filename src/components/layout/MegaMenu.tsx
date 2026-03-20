@@ -403,6 +403,47 @@ export function MegaMenu() {
                     </Link>
                   </div>
                 </div>
+
+                {/* Why Choose MylesCorp */}
+                <div className="mt-6 p-4 bg-navy-deep/5 rounded-lg border border-gold/20">
+                  <h4 className="font-semibold text-navy mb-4 font-body">Why Choose MylesCorp?</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-gold rounded-full mt-1.5 flex-shrink-0"></div>
+                      <div>
+                        <h5 className="font-medium text-navy text-sm font-body">East African Focus</h5>
+                        <p className="text-xs text-gray-600 font-body">Solutions designed for African markets and challenges</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-gold rounded-full mt-1.5 flex-shrink-0"></div>
+                      <div>
+                        <h5 className="font-medium text-navy text-sm font-body">Secure & Compliant</h5>
+                        <p className="text-xs text-gray-600 font-body">Data protection and regulatory compliance</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-gold rounded-full mt-1.5 flex-shrink-0"></div>
+                      <div>
+                        <h5 className="font-medium text-navy text-sm font-body">AI-Powered</h5>
+                        <p className="text-xs text-gray-600 font-body">Cutting-edge artificial intelligence technology</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-gold rounded-full mt-1.5 flex-shrink-0"></div>
+                      <div>
+                        <h5 className="font-medium text-navy text-sm font-body">24/7 Support</h5>
+                        <p className="text-xs text-gray-600 font-body">Round-the-clock customer assistance</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-gold/20">
+                    <Link href="/about" onClick={closeMenu} className="flex items-center justify-between text-gold hover:text-gold-light transition-colors text-sm font-medium font-body">
+                      <span>About Us</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
               </div>
 
               {/* Products Content */}
