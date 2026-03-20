@@ -15,30 +15,11 @@ import {
   FileText
 } from 'lucide-react'
 import { useState } from 'react'
+import { sendContactEmail } from '@/app/actions/sendEmail'
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    subject: '',
-    message: '',
-    department: 'general'
-  })
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-  }
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
 
   const departments = [
     {
@@ -68,7 +49,7 @@ export default function ContactPage() {
       email: 'careers@mylescorp.co.ke',
       phone: '+254 743 993 715',
       description: 'Questions about job opportunities and working at MylesCorp.'
-    }
+    },
   ]
 
   const offices = [
@@ -103,8 +84,33 @@ export default function ContactPage() {
       email: 'dar@mylescorp.co.ke',
       hours: 'Mon-Fri: 8:00 AM - 5:00 PM',
       isHeadquarters: false
-    }
+    },
   ]
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setStatus('loading')
+
+    const form = e.currentTarget
+    const data = {
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement)?.value,
+      organisation: (form.elements.namedItem('organisation') as HTMLInputElement)?.value,
+      subject: (form.elements.namedItem('subject') as HTMLSelectElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+    }
+
+    const result = await sendContactEmail(data)
+
+    if (result.success) {
+      setStatus('success')
+      form.reset()
+    } else {
+      setStatus('error')
+      setErrorMsg(result.error || 'Something went wrong.')
+    }
+  }
 
   return (
     <Layout>
@@ -163,8 +169,7 @@ export default function ContactPage() {
             
             <ScrollReveal direction="up" delay={0.6}>
               <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-                Have a project in mind? Need a demo? Want to partner with us? We'd love to 
-                hear from you.
+                Have a project in mind? Need a demo? Want to partner with us? We'd love to hear from you.
               </p>
             </ScrollReveal>
           </div>
@@ -178,124 +183,113 @@ export default function ContactPage() {
               <div>
                 <h2 className="heading-2 mb-6">Send Us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-navy-500 mb-2">
+                      <label className="block text-sm font-bold text-navy mb-2 font-body">
                         Full Name *
                       </label>
                       <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-light-grey rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
-                        placeholder="John Doe"
+                        name="name" type="text" required
+                        placeholder="John Mwangi"
+                        className="w-full px-4 py-3 rounded-lg border border-navy/20 font-body text-sm focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-navy-500 mb-2">
+                      <label className="block text-sm font-bold text-navy mb-2 font-body">
                         Email Address *
                       </label>
                       <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-light-grey rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
-                        placeholder="john@example.com"
+                        name="email" type="email" required
+                        placeholder="john@company.co.ke"
+                        className="w-full px-4 py-3 rounded-lg border border-navy/20 font-body text-sm focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200"
                       />
                     </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-navy-500 mb-2">
+                      <label className="block text-sm font-bold text-navy mb-2 font-body">
                         Phone Number
                       </label>
                       <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-light-grey rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
+                        name="phone" type="tel"
                         placeholder="+254 7XX XXX XXX"
+                        className="w-full px-4 py-3 rounded-lg border border-navy/20 font-body text-sm focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200"
                       />
                     </div>
                     <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-navy-500 mb-2">
-                        Company/Organization
+                      <label className="block text-sm font-bold text-navy mb-2 font-body">
+                        Organisation
                       </label>
                       <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-light-grey rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
-                        placeholder="Company Name"
+                        name="organisation" type="text"
+                        placeholder="Your school, company, or clinic"
+                        className="w-full px-4 py-3 rounded-lg border border-navy/20 font-body text-sm focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="department" className="block text-sm font-medium text-navy-500 mb-2">
-                      Department
+                    <label className="block text-sm font-bold text-navy mb-2 font-body">
+                      Subject *
                     </label>
                     <select
-                      id="department"
-                      name="department"
-                      value={formData.department}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-light-grey rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
+                      name="subject" required
+                      className="w-full px-4 py-3 rounded-lg border border-navy/20 font-body text-sm focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200"
                     >
-                      <option value="general">General Inquiries</option>
-                      <option value="sales">Sales & Partnerships</option>
-                      <option value="support">Technical Support</option>
-                      <option value="careers">Human Resources</option>
+                      <option value="">Select a subject</option>
+                      <option value="Product Demo Request">
+                        Product Demo Request
+                      </option>
+                      <option value="Website Development Enquiry">
+                        Website Development Enquiry
+                      </option>
+                      <option value="Pricing Information">
+                        Pricing Information
+                      </option>
+                      <option value="Technical Support">
+                        Technical Support
+                      </option>
+                      <option value="Partnership Enquiry">
+                        Partnership Enquiry
+                      </option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-navy-500 mb-2">
-                      Subject *
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      required
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-light-grey rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none"
-                      placeholder="How can we help you?"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-navy-500 mb-2">
+                    <label className="block text-sm font-bold text-navy mb-2 font-body">
                       Message *
                     </label>
                     <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-light-grey rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-transparent outline-none resize-none"
-                      placeholder="Tell us more about your needs..."
+                      name="message" required rows={5}
+                      placeholder="Tell us how we can help you..."
+                      className="w-full px-4 py-3 rounded-lg border border-navy/20 font-body text-sm focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200 resize-none"
                     />
                   </div>
 
-                  <Button type="submit" className="w-full">
-                    <Send size={20} className="mr-2" />
-                    Send Message
-                  </Button>
+                  {status === 'success' && (
+                    <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                      <p className="text-green-700 text-sm font-body">
+                        Message sent successfully! We will get back to you within 2 business hours. Check your email for a confirmation.
+                      </p>
+                    </div>
+                  )}
+
+                  {status === 'error' && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                      <p className="text-red-700 text-sm font-body">
+                        {errorMsg}
+                      </p>
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="w-full py-4 bg-gold text-navy font-body font-bold text-[15px] rounded-lg tracking-[0.4px] hover:bg-gold-light hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200"
+                  >
+                    {status === 'loading'
+                      ? 'Sending...'
+                      : 'Send Message →'}
+                  </button>
                 </form>
               </div>
 
@@ -305,35 +299,35 @@ export default function ContactPage() {
                 
                 {/* Departments */}
                 <div className="mb-12">
-                  <h3 className="heading-3 mb-6">Departments</h3>
+                  <h3 className="heading-3 mb-4">Departments</h3>
                   <div className="space-y-4">
-                  <StaggerReveal staggerDelay={0.1} itemDelay={0.3} direction="up">
-                    {departments.map((dept) => (
-                      <Card variant="light" key={dept.name} className="h-full">
-                        <CardHeader>
-                          <h4 className="text-xl font-display font-bold text-navy mb-2">{dept.title}</h4>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600 leading-relaxed mb-4 font-body text-sm">{dept.description}</p>
-                          <div className="space-y-2">
-                            <div className="flex items-center text-sm">
-                              <Mail size={16} className="text-gold mr-2" />
-                              <a href={`mailto:${dept.email}`} className="text-gold hover:text-gold-light font-body">
-                                {dept.email}
-                              </a>
+                    <StaggerReveal staggerDelay={0.1} itemDelay={0.3} direction="up">
+                      {departments.map((dept: any) => (
+                        <Card variant="light" key={dept.name} className="h-full">
+                          <CardHeader>
+                            <h4 className="text-2xl font-display font-bold text-navy mb-2">{dept.title}</h4>
+                          </CardHeader>
+                          <CardContent>
+                            <p className="text-gray-600 leading-relaxed mb-4 font-body text-sm">{dept.description}</p>
+                            <div className="space-y-2">
+                              <div className="flex items-center text-sm">
+                                <Mail size={16} className="text-gold mr-2" />
+                                <a href={`mailto:${dept.email}`} className="text-gold hover:text-gold-light font-body">
+                                  {dept.email}
+                                </a>
+                              </div>
+                              <div className="flex items-center text-sm">
+                                <Phone size={16} className="text-gold mr-2" />
+                                <a href={`tel:${dept.phone}`} className="text-gold hover:text-gold-light font-body">
+                                  {dept.phone}
+                                </a>
+                              </div>
                             </div>
-                            <div className="flex items-center text-sm">
-                              <Phone size={16} className="text-gold mr-2" />
-                              <a href={`tel:${dept.phone}`} className="text-gold hover:text-gold-light font-body">
-                                {dept.phone}
-                              </a>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </StaggerReveal>
-                </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </StaggerReveal>
+                  </div>
                 </div>
 
                 {/* Quick Contact */}
@@ -383,15 +377,10 @@ export default function ContactPage() {
               </p>
             </div>
             
-            <StaggerReveal
-              staggerDelay={0.2}
-              itemDelay={0.4}
-              direction="up"
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-            >
-              {offices.map((office, index) => (
-                  <Card variant="light" key={index} className="h-full flex flex-col">
-                    {office.isHeadquarters && (
+            <StaggerReveal staggerDelay={0.2} itemDelay={0.3} direction="up">
+              {offices.map((office: any, index: number) => (
+                <Card variant="light" key={index} className="h-full flex flex-col">
+                  {office.isHeadquarters && (
                       <div className="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-semibold mb-4 font-body">
                         Headquarters
                       </div>
@@ -407,13 +396,13 @@ export default function ContactPage() {
                         </div>
                         <div className="flex items-center">
                           <Phone size={16} className="text-gold mr-2" />
-                          <a href={`tel:${office.phone}`} className="text-sm text-gold hover:text-gold-light font-body">
+                          <a href={`tel:${office.phone}`} className="text-gold hover:text-gold-light font-body">
                             {office.phone}
                           </a>
                         </div>
                         <div className="flex items-center">
                           <Mail size={16} className="text-gold mr-2" />
-                          <a href={`mailto:${office.email}`} className="text-sm text-gold hover:text-gold-light font-body">
+                          <a href={`mailto:${office.email}`} className="text-gold hover:text-gold-light font-body">
                             {office.email}
                           </a>
                         </div>
@@ -425,6 +414,7 @@ export default function ContactPage() {
                     </CardContent>
                   </Card>
                 ))}
+              </div>
             </StaggerReveal>
           </div>
         </section>

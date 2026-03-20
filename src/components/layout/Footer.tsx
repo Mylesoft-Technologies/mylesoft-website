@@ -7,17 +7,19 @@ import { Logo } from '@/components/ui/Logo'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { ArrowUp, Mail, Phone, MapPin, Heart, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { subscribeToNewsletter } from '@/app/actions/subscribeNewsletter'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
   const [email, setEmail] = useState('')
-  const [isSubscribed, setIsSubscribed] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle newsletter subscription
-    setIsSubscribed(true)
-    setTimeout(() => setIsSubscribed(false), 3000)
+  async function handleSubscribe() {
+    if (!email) return
+    setStatus('loading')
+    const result = await subscribeToNewsletter(email)
+    setStatus(result.success ? 'success' : 'error')
+    if (result.success) setEmail('')
   }
 
   const scrollToTop = () => {
@@ -131,33 +133,44 @@ export function Footer() {
                   Get the latest updates on our innovative solutions and industry insights delivered to your inbox.
                 </div>
                 
-                <form onSubmit={handleNewsletterSubmit} className="space-y-5">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    className="w-full px-4 py-3 bg-navy-dark/50 border border-gold/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-all duration-300 font-body"
-                    required
-                  />
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-gold text-navy hover:bg-gold-light shadow-gold hover:shadow-gold hover:-translate-y-0.5 transition-all duration-300 font-body font-bold"
-                    disabled={isSubscribed}
-                  >
-                    {isSubscribed ? (
-                      <span className="flex items-center justify-center">
-                        <Heart className="w-4 h-4 mr-2" />
-                        Subscribed!
-                      </span>
-                    ) : (
-                      <span className="flex items-center justify-center">
-                        <Sparkles className="w-4 h-4 mr-2" />
-                        Subscribe
-                      </span>
-                    )}
-                  </Button>
-                </form>
+                {status === 'success' ? (
+                  <p className="text-green-400 text-sm font-body">
+                    ✅ Subscribed! Check your email.
+                  </p>
+                ) : (
+                  <div className="flex gap-2">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={e => setEmail(e.target.value)}
+                      placeholder="your@email.com"
+                      className="flex-1 px-3 py-2 bg-white/10 border
+                                 border-white/20 rounded-md text-white
+                                 text-sm placeholder:text-gray-400
+                                 focus:outline-none focus:border-gold
+                                 font-body"
+                      onKeyDown={e =>
+                        e.key === 'Enter' && handleSubscribe()
+                      }
+                    />
+                    <button
+                      onClick={handleSubscribe}
+                      disabled={status === 'loading'}
+                      className="px-4 py-2 bg-gold text-navy text-sm
+                                 font-bold rounded-md font-body
+                                 hover:bg-gold-light disabled:opacity-60
+                                 transition-all duration-200"
+                    >
+                      {status === 'loading' ? '...' : 'Subscribe'}
+                    </button>
+                  </div>
+                )}
+
+                {status === 'error' && (
+                  <p className="text-red-400 text-sm font-body">
+                    ❌ Subscription failed. Please try again.
+                  </p>
+                )}
 
                 {/* Social Links */}
                 <div className="space-y-4">

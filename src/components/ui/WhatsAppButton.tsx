@@ -5,17 +5,19 @@ import { MessageCircle, X, Phone, Clock } from 'lucide-react'
 
 export function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false)
-  const phoneNumber = '+254743993715' // MylesCorp WhatsApp number
+  const WHATSAPP_LINK =
+  'https://wa.me/254743993715?' +
+  'text=Hi%20MylesCorp!%20I%20found%20you%20on%20' +
+  'your%20website%20and%20would%20like%20to%20' +
+  'learn%20more%20about%20your%20products.'
   
   const handleClick = () => {
-    const message = encodeURIComponent('Hi! I\'m interested in learning more about MylesCorp Technologies solutions.')
-    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^\d]/g, '')}?text=${message}`
-    window.open(whatsappUrl, '_blank')
+    window.open(WHATSAPP_LINK, '_blank')
   }
 
   const handleQuickMessage = (message: string) => {
     const encodedMessage = encodeURIComponent(message)
-    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^\d]/g, '')}?text=${encodedMessage}`
+    const whatsappUrl = `https://wa.me/254743993715?text=${encodedMessage}`
     window.open(whatsappUrl, '_blank')
     setIsOpen(false)
   }
