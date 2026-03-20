@@ -39,6 +39,14 @@ export function MegaMenu() {
           icon: <Target className="w-5 h-5" />,
           features: ['Student Management', 'AI Grading', 'Parent Portal', 'Analytics'],
           popular: true
+        },
+        {
+          name: 'EduRyde',
+          description: 'Modern school transport management and tracking system',
+          href: '/products/eduryde',
+          icon: <Shield className="w-5 h-5" />,
+          features: ['Real-time Tracking', 'Route Optimization', 'Parent Notifications', 'Safety Monitoring'],
+          badge: 'New'
         }
       ]
     },
