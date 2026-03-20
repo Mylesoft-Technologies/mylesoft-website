@@ -24,387 +24,654 @@ export default function AboutPage() {
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
-          {/* Grid texture overlay — always present on dark sections */}
-          <div className="absolute inset-0 pointer-events-none"
+        <section
+          className="relative py-24 md:py-32 overflow-hidden"
+          style={{ background: '#080e18' }}
+        >
+          {/* Grid texture */}
+          <div
+            className="absolute inset-0 pointer-events-none"
             style={{
-              backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
+              backgroundImage: `
+                linear-gradient(rgba(199,150,57,0.04) 1px,
+                        transparent 1px),
+                linear-gradient(90deg,rgba(199,150,57,0.04) 1px,
+                        transparent 1px)
+              `,
               backgroundSize: '64px 64px',
             }}
           />
 
-          {/* Radial glow top-right */}
-          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+          {/* Glow top-right */}
+          <div
+            className="absolute -top-32 -right-32 w-[500px]
+               h-[500px] rounded-full pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
+              background: 'radial-gradient(circle,' +
+                'rgba(26,57,91,0.6) 0%,transparent 70%)',
             }}
           />
 
-          {/* Radial glow bottom-left */}
-          <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
+          {/* Glow bottom-left */}
+          <div
+            className="absolute -bottom-32 -left-32 w-[400px]
+               h-[400px] rounded-full pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
+              background: 'radial-gradient(circle,' +
+                'rgba(199,150,57,0.07) 0%,transparent 70%)',
             }}
           />
 
-          {/* Gold top accent line */}
-          <div className="absolute top-0 left-0 right-0 h-[3px]"
+          {/* Gold top rule */}
+          <div
+            className="absolute top-0 left-0 right-0 h-[3px]"
             style={{
-              background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
+              background:
+                'linear-gradient(90deg,transparent,#C79639,transparent)',
             }}
           />
 
-          {/* Content */}
-          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-
-            {/* Eyebrow label */}
-            <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="w-8 h-0.5 bg-gold" />
-              <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+          {/* Content — relative + z-10 is MANDATORY */}
+          <div
+            className="relative z-10 max-w-4xl mx-auto
+               px-4 sm:px-6 lg:px-8 text-center"
+          >
+            {/* Eyebrow */}
+            <div className="flex items-center justify-center
+                    gap-3 mb-5">
+              <div className="w-8 h-px" style={{ background: '#C79639' }} />
+              <span style={{
+                color: '#C79639',
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '2.5px',
+                textTransform: 'uppercase',
+              }}>
                 OUR STORY
               </span>
-              <div className="w-8 h-0.5 bg-gold" />
+              <div className="w-8 h-px" style={{ background: '#C79639' }} />
             </div>
 
-            {/* Main heading */}
-            <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
-              About
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
+            {/* Heading */}
+            <h1
+              className="font-display font-bold text-white
+                 text-5xl md:text-6xl lg:text-7xl
+                 leading-[1.05] mb-6"
+            >
+              About{' '}
+              <em style={{
+                fontStyle: 'italic',
+                background: 'linear-gradient(135deg,#C79639,#e0b055)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}>
                 MylesCorp Technologies
-              </span>
+              </em>
             </h1>
 
             {/* Subtitle */}
-            <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-              Transforming industries across East Africa with innovative technology solutions since 2020.
+            <p
+              className="font-body font-light text-xl leading-relaxed
+                 max-w-2xl mx-auto"
+              style={{ color: '#C7D7EF' }}
+            >
+              Transforming industries across East Africa with 
+              innovative technology solutions since 2020.
             </p>
-
           </div>
         </section>
 
-        {/* Story Behind Our Name */}
-        <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
-          {/* Grid texture overlay — always present on dark sections */}
-          <div className="absolute inset-0 pointer-events-none"
+        {/* Name Meaning Section */}
+        <section
+          className="relative py-20 overflow-hidden"
+          style={{ background: '#080e18' }}
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
             style={{
-              backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
+              backgroundImage: `
+                linear-gradient(rgba(199,150,57,0.04) 1px,
+                        transparent 1px),
+                linear-gradient(90deg,rgba(199,150,57,0.04) 1px,
+                        transparent 1px)
+              `,
               backgroundSize: '64px 64px',
             }}
           />
-
-          {/* Radial glow top-right */}
-          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+          <div
+            className="absolute top-0 left-0 right-0 h-[3px]"
             style={{
-              background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
+              background:
+                'linear-gradient(90deg,transparent,#C79639,transparent)',
             }}
           />
 
-          {/* Radial glow bottom-left */}
-          <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
-            }}
-          />
+          <div className="relative z-10 max-w-7xl mx-auto
+                  px-4 sm:px-6 lg:px-8">
 
-          {/* Gold top accent line */}
-          <div className="absolute top-0 left-0 right-0 h-[3px]"
-            style={{
-              background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
-            }}
-          />
-          
-          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-            {/* Eyebrow label */}
-            <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="w-8 h-0.5 bg-gold" />
-              <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
-                OUR NAME
-              </span>
-              <div className="w-8 h-0.5 bg-gold" />
-            </div>
-
-            {/* Main heading */}
-            <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
-              The Story Behind Our
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
-                Name
-              </span>
-            </h1>
-
-            {/* Body content */}
-            <div className="font-body font-light text-light-blue text-xl leading-relaxed max-w-3xl mx-auto mb-12 text-center">
-              <p className="mb-6">
-                MylesCorp Technologies Ltd is a name built on ancient foundations — two words, two languages, one powerful identity.
-              </p>
-              <p className="mb-6">
-                <span className="text-gold font-semibold">MYLES</span> traces its roots to the Latin word <em>miles</em> — meaning soldier, warrior, and devoted champion. Throughout history the name has carried connotations of courage, strength, loyalty, and noble purpose. A miles was not simply a fighter — he was a disciplined servant of a cause greater than himself. Driven by conviction. Defined by commitment. Relentless in pursuit of mission.
-              </p>
-              <p className="mb-6">
-                <span className="text-gold font-semibold">CORP</span> derives from the Latin <em>corpus</em> — meaning body, whole, and unified structure. A corporation in its truest sense is not a building or a logo — it is a living, breathing body of people, united as one, moving toward a common purpose with shared discipline and shared vision.
-              </p>
-              <p className="mb-12">
-                Together, MylesCorp means: "A disciplined body of warriors, united in purpose, devoted to service, and relentless in pursuit of transformation."
-              </p>
-              <p>
-                This is not just a company name. It is a declaration. Every solution we build, every client we serve, and every industry we touch carries the spirit of these ancient roots — warrior's courage to tackle hard problems, and the unity of a body working as one.
+            {/* Section header */}
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center
+                      gap-3 mb-4">
+                <div className="w-8 h-px" style={{ background: '#C79639' }} />
+                <span style={{
+                  color: '#C79639', fontSize: '11px', fontWeight: 700,
+                  letterSpacing: '2.5px', textTransform: 'uppercase',
+                }}>
+                  OUR NAME
+                </span>
+                <div className="w-8 h-px" style={{ background: '#C79639' }} />
+              </div>
+              <h2 className="font-display font-bold text-white
+                     text-4xl md:text-5xl mb-4">
+                The Story Behind{' '}
+                <em style={{
+                  fontStyle: 'italic',
+                  background: 'linear-gradient(135deg,#C79639,#e0b055)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}>
+                  Our Name
+                </em>
+              </h2>
+              <p className="font-body font-light max-w-2xl mx-auto
+                    text-lg leading-relaxed"
+                 style={{ color: '#C7D7EF' }}>
+                MylesCorp Technologies Ltd is a name built on ancient 
+                foundations — two words, two languages, one powerful identity 
+                rooted in over 2,000 years of meaning.
               </p>
             </div>
 
-            {/* Word breakdown cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* Card 1: MYLES */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-                <h3 className="text-gold font-display font-bold text-2xl mb-4">MYLES</h3>
-                <p className="text-white font-body mb-4">Latin: <em>miles</em></p>
-                <ul className="space-y-2 text-white">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
-                    <span>Warrior</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
-                    <span>Soldier</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
-                    <span>Devoted Champion</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
-                    <span>Courage</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
-                    <span>Strength</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
-                    <span>Loyalty</span>
-                  </li>
-                </ul>
+            {/* MYLES + CORP cards — FULL WIDTH side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+
+              {/* MYLES */}
+              <div className="bg-gradient-to-br from-navy to-navy-dark
+                      border border-gold/20 rounded-2xl p-8
+                      hover:border-gold/50 hover:-translate-y-1
+                      transition-all duration-300">
+                <div style={{
+                  color: '#C79639', fontSize: '10px', fontWeight: 700,
+                  letterSpacing: '2px', textTransform: 'uppercase',
+                  marginBottom: '12px',
+                }}>
+                  Origin — Latin · <em>miles</em>
+                </div>
+                <div className="font-display font-bold text-white
+                        text-5xl mb-2">
+                  MYLES
+                </div>
+                <div className="font-body font-light italic text-sm mb-6"
+                     style={{ color: '#C7D7EF' }}>
+                  from Latin <em>miles</em> — soldier, warrior
+                </div>
+                <div style={{
+                  fontSize: '10px', fontWeight: 700, letterSpacing: '2px',
+                  textTransform: 'uppercase', color: '#95A9CC', marginBottom: '16px',
+                }}>
+                  Core Meanings
+                </div>
+                <div className="space-y-3">
+                  {[
+                    ['Warrior / Soldier',
+                     'Latin miles — disciplined servant of a cause'],
+                    ['Devoted Champion',
+                     'Old Irish — devoted follower, loyal servant'],
+                    ['Gracious & Dear',
+                     'Old Slavic milŭ — beloved, pleasant, kind'],
+                    ['Courageous Noble',
+                     'Old French — chivalrous, noble lineage'],
+                  ].map(([title, sub]) => (
+                    <div key={title}>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full flex-shrink-0"
+                             style={{ background: '#C79639' }} />
+                        <span className="text-white text-sm font-medium">
+                          {title}
+                        </span>
+                      </div>
+                      <p className="text-xs ml-4 mt-0.5"
+                         style={{ color: '#95A9CC' }}>
+                        {sub}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* Card 2: CORP */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-                <h3 className="text-gold font-display font-bold text-2xl mb-4">CORP</h3>
-                <p className="text-white font-body mb-4">Latin: <em>corpus</em></p>
-                <ul className="space-y-2 text-white">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
-                    <span>Body</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
-                    <span>Unity</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
-                    <span>Whole</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
-                    <span>Structure</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
-                    <span>Collective</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
-                    <span>Purpose</span>
-                  </li>
-                </ul>
+              {/* CORP */}
+              <div className="bg-gradient-to-br from-navy to-navy-dark
+                      border border-gold/20 rounded-2xl p-8
+                      hover:border-gold/50 hover:-translate-y-1
+                      transition-all duration-300">
+                <div style={{
+                  color: '#C79639', fontSize: '10px', fontWeight: 700,
+                  letterSpacing: '2px', textTransform: 'uppercase',
+                  marginBottom: '12px',
+                }}>
+                  Origin — Latin · <em>corpus</em>
+                </div>
+                <div className="font-display font-bold text-white
+                        text-5xl mb-2">
+                  CORP
+                </div>
+                <div className="font-body font-light italic text-sm mb-6"
+                     style={{ color: '#C7D7EF' }}>
+                  from Latin <em>corpus</em> — body, whole
+                </div>
+                <div style={{
+                  fontSize: '10px', fontWeight: 700, letterSpacing: '2px',
+                  textTransform: 'uppercase', color: '#95A9CC', marginBottom: '16px',
+                }}>
+                  Core Meanings
+                </div>
+                <div className="space-y-3">
+                  {[
+                    ['The Body',
+                     'Latin corpus — a living, structured organism'],
+                    ['Unity & Wholeness',
+                     'A whole composed of united, purposeful parts'],
+                    ['Collective Structure',
+                     'People united as one — moving with one will'],
+                    ['Embodied Purpose',
+                     'corporationem — assumption of a body'],
+                  ].map(([title, sub]) => (
+                    <div key={title}>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full flex-shrink-0"
+                             style={{ background: '#C79639' }} />
+                        <span className="text-white text-sm font-medium">
+                          {title}
+                        </span>
+                      </div>
+                      <p className="text-xs ml-4 mt-0.5"
+                         style={{ color: '#95A9CC' }}>
+                        {sub}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Quote */}
-            <div className="mt-12 max-w-2xl mx-auto">
-              <p className="font-display italic text-gold text-2xl text-center">
+            {/* Combined meaning quote */}
+            <div className="bg-gradient-to-br from-navy to-navy-dark
+                    border border-gold/20 rounded-2xl p-10
+                    text-center relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-[3px]"
+                   style={{ background: '#C79639' }} />
+              <p className="text-[10px] font-bold tracking-[2.5px]
+                    uppercase mb-3"
+                 style={{ color: '#95A9CC' }}>
+                Combined Meaning
+              </p>
+              <p className="font-display font-bold italic text-2xl
+                    md:text-3xl"
+                 style={{ color: '#C79639' }}>
                 "A unified body of warriors devoted to a cause."
               </p>
             </div>
+
           </div>
         </section>
 
-        {/* Company Story */}
-        <section className="section">
-          <div className="section-padding">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Our Story Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2
+                    gap-16 items-center">
+
+              {/* Left — text */}
               <div>
-                <h2 className="heading-2 mb-6">Our Story</h2>
-                <div className="space-y-4 body-text">
-                  <p>
-                    Founded in 2020, MylesCorp Technologies emerged from a simple yet powerful vision: to harness the power of artificial intelligence to solve Africa's most pressing challenges. What started as a small team of passionate developers has grown into East Africa's leading AI-powered software company.
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-0.5 bg-gold" />
+                  <span className="text-gold text-[11px] font-bold
+                           tracking-[2.5px] uppercase font-body">
+                    Our Story
+                  </span>
+                </div>
+                <h2 className="font-display font-bold text-navy
+                       text-4xl md:text-5xl mb-6">
+                  How We Started
+                </h2>
+                <div className="space-y-4">
+                  <p className="font-body text-base leading-relaxed
+                        font-light"
+                     style={{ color: '#545454' }}>
+                    Founded in 2020, MylesCorp Technologies emerged 
+                    from a simple yet powerful vision: to harness the 
+                    power of artificial intelligence to solve Africa's 
+                    most pressing challenges. What started as a small 
+                    team of passionate developers has grown into East 
+                    Africa's leading AI-powered software company.
                   </p>
-                  <p>
-                    Our journey began with the development of EduMyles, our flagship school management system that transformed how educational institutions across Kenya and beyond operate. Today, we power over 500 schools, serving more than 250,000 students with cutting-edge technology.
+                  <p className="font-body text-base leading-relaxed
+                        font-light"
+                     style={{ color: '#545454' }}>
+                    Our journey began with EduMyles, our flagship 
+                    school management system that transformed how 
+                    educational institutions across Kenya operate. 
+                    Today we power 500+ schools serving more than 
+                    50,000 students with cutting-edge technology.
                   </p>
-                  <p>
-                    From healthcare to agriculture, from customer relationship management to digital payments, our solutions touch every aspect of rn life in East Africa. We're not just building software; we're building the future of African innovation.
+                  <p className="font-body text-base leading-relaxed
+                        font-light"
+                     style={{ color: '#545454' }}>
+                    From healthcare to agriculture, from CRM to 
+                    transport management, our solutions touch every 
+                    aspect of life in East Africa. We are not just 
+                    building software — we are building the future 
+                    of African innovation.
                   </p>
                 </div>
               </div>
-              <div className="relative">
-                <div className="aspect-square bg-gold-100 rounded-2xl flex items-center justify-center">
-                  <Icon name="brain" className="text-gold-400" size={96} />
-                </div>
-                {/* Stats overlay */}
-                <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-gold p-6 hover-lift">
-                  <div className="text-center">
-                    <div className="stat-number mb-1">4+</div>
-                    <div className="stat-label">Years of Innovation</div>
-                  </div>
+
+              {/* Right — stats visual */}
+              <div className="bg-gradient-to-br from-navy to-navy-dark
+                      rounded-2xl p-10 border border-gold/20">
+                <div className="grid grid-cols-2 gap-5">
+                  {[
+                    { num: '2020',  label: 'Year Founded'      },
+                    { num: '500+',  label: 'Schools Powered'   },
+                    { num: '50K+',  label: 'Students Managed'  },
+                    { num: '4',     label: 'Products Live'     },
+                    { num: '47',    label: 'Counties Reached'  },
+                    { num: '100+',  label: 'Health Facilities' },
+                  ].map(s => (
+                    <div key={s.label}
+                         className="rounded-xl p-5 border"
+                         style={{
+                           background: 'rgba(8,14,24,0.5)',
+                           borderColor: 'rgba(255,255,255,0.05)',
+                         }}>
+                      <div className="font-display font-bold text-3xl
+                              mb-1"
+                           style={{ color: '#C79639' }}>
+                        {s.num}
+                      </div>
+                      <div className="font-body text-xs"
+                           style={{ color: '#95A9CC' }}>
+                        {s.label}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
+
             </div>
           </div>
         </section>
 
-        {/* Mission & Vision */}
-        <section className="section bg-off-white">
-          <div className="section-padding">
+        {/* Mission & Vision Section */}
+        <section className="py-20" style={{ background: '#f8f6f2' }}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            {/* Section header */}
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center
+                      gap-3 mb-4">
+                <div className="w-8 h-0.5 bg-gold" />
+                <span className="text-gold text-[11px] font-bold
+                         tracking-[2.5px] uppercase font-body">
+                  Who We Are
+                </span>
+                <div className="w-8 h-0.5 bg-gold" />
+              </div>
+              <h2 className="font-display font-bold text-navy
+                     text-4xl md:text-5xl">
+                Our Purpose &{' '}
+                <span className="text-transparent bg-clip-text
+                  bg-gradient-to-r from-gold to-gold-light italic">
+                  Direction
+                </span>
+              </h2>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
               {/* Mission */}
-              <div className="text-center md:text-left">
-                <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mx-auto md:mx-0 mb-6">
-                  <Target className="text-gold-400" size={32} />
+              <div className="bg-white border border-navy/10
+                      rounded-2xl p-10 flex flex-col
+                      hover:border-gold hover:-translate-y-1
+                      hover:shadow-xl transition-all
+                      duration-300 group">
+                <div className="w-14 h-14 bg-gold/10 border
+                        border-gold/20 rounded-xl flex
+                        items-center justify-center mb-6
+                        flex-shrink-0">
+                  <Target className="text-gold w-6 h-6" />
                 </div>
-                <h3 className="heading-3 mb-4">Our Mission</h3>
-                <p className="body-text">
-                  To transform African industries through innovative AI-powered software solutions that drive efficiency, accessibility, and sustainable growth across East Africa and beyond.
+                <h3 className="font-display font-bold text-navy
+                       text-2xl mb-4 group-hover:text-gold
+                       transition-colors duration-300">
+                  Our Mission
+                </h3>
+                <p className="font-body font-light text-base
+                      leading-relaxed flex-grow"
+                   style={{ color: '#545454' }}>
+                  To transform African industries through innovative 
+                  AI-powered software solutions that drive efficiency, 
+                  accessibility, and sustainable growth across East 
+                  Africa and beyond.
                 </p>
               </div>
 
               {/* Vision */}
-              <div className="text-center md:text-left">
-                <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mx-auto md:mx-0 mb-6">
-                  <Eye className="text-gold-400" size={32} />
+              <div className="bg-white border border-navy/10
+                      rounded-2xl p-10 flex flex-col
+                      hover:border-gold hover:-translate-y-1
+                      hover:shadow-xl transition-all
+                      duration-300 group">
+                <div className="w-14 h-14 bg-gold/10 border
+                        border-gold/20 rounded-xl flex
+                        items-center justify-center mb-6
+                        flex-shrink-0">
+                  <Eye className="text-gold w-6 h-6" />
                 </div>
-                <h3 className="heading-3 mb-4">Our Vision</h3>
-                <p className="body-text">
-                  To become Africa's most trusted technology partner, empowering organizations with intelligent solutions that bridge the digital divide and unlock human potential across the continent.
+                <h3 className="font-display font-bold text-navy
+                       text-2xl mb-4 group-hover:text-gold
+                       transition-colors duration-300">
+                  Our Vision
+                </h3>
+                <p className="font-body font-light text-base
+                      leading-relaxed flex-grow"
+                   style={{ color: '#545454' }}>
+                  To become Africa's most trusted technology partner, 
+                  empowering organizations with intelligent solutions 
+                  that bridge the digital divide and unlock human 
+                  potential across the continent.
                 </p>
               </div>
+
             </div>
           </div>
         </section>
 
-        {/* Core Values */}
+        {/* MYLES Values Section */}
         <MYLESValues />
 
-        {/* Leadership Team */}
-        <section className="section bg-off-white">
-          <div className="section-padding">
+        {/* Leadership Team Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4">Leadership Team</h2>
-              <p className="body-text max-w-2xl mx-auto">
-                Meet the visionaries driving MylesCorp's mission to transform African technology.
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="w-8 h-0.5 bg-gold" />
+                <span className="text-gold text-[11px] font-bold
+                         tracking-[2.5px] uppercase font-body">
+                  Leadership
+                </span>
+                <div className="w-8 h-0.5 bg-gold" />
+              </div>
+              <h2 className="font-display font-bold text-navy
+                     text-4xl md:text-5xl mb-4">
+                Meet Our{' '}
+                <span className="text-transparent bg-clip-text
+                  bg-gradient-to-r from-gold to-gold-light italic">
+                  Team
+                </span>
+              </h2>
+              <p className="font-body font-light max-w-2xl mx-auto
+                    text-lg leading-relaxed"
+                 style={{ color: '#545454' }}>
+                The visionaries driving MylesCorp's mission to transform 
+                African technology through innovation and excellence.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-  {TEAM_MEMBERS.map((member, index) => (
-    <div
-      key={index}
-      className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col border border-gray-100 min-h-[420px]"
-    >
-      {/* Navy header */}
-      <div className="bg-gradient-to-r from-navy to-navy-dark p-8 text-center">
-        {/* Avatar — photo if available, icon placeholder if not */}
-        <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 ring-2 ring-gold/40">
-          {member.image ? (
-            <Image
-              src={member.image}
-              alt={`${member.name} — ${member.role}`}
-              width={96}
-              height={96}
-              className="w-full h-full object-cover object-top"
-              priority={false}
-            />
-          ) : (
-            <div className="w-full h-full bg-gold/20 flex items-center justify-center">
-              <Users className="w-12 h-12 text-gold" />
+              {TEAM_MEMBERS.map((member, index) => (
+                <div
+                  key={index}
+                  className="bg-white border border-navy/10 rounded-2xl p-8
+                         hover:border-gold hover:-translate-y-1
+                         hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-24 h-24 bg-gradient-to-br from-gold/20 to-gold/10
+                           rounded-full flex items-center justify-center mb-6
+                           border-2 border-gold/20">
+                      {member.image ? (
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          width={96}
+                          height={96}
+                          className="rounded-full object-cover"
+                        />
+                      ) : (
+                        <div className="text-gold text-2xl font-display font-bold">
+                          {member.name.split(' ').map(n => n[0]).join('')}
+                        </div>
+                      )}
+                    </div>
+                    <h3 className="font-display font-bold text-navy text-xl mb-2">
+                      {member.name}
+                    </h3>
+                    <p className="text-gold font-body font-medium text-sm mb-4">
+                      {member.role}
+                    </p>
+                    <p className="font-body font-light text-sm leading-relaxed mb-6"
+                       style={{ color: '#545454' }}>
+                      {member.bio}
+                    </p>
+                    <div className="flex items-center justify-center gap-4">
+                      {member.email && (
+                        <a
+                          href={`mailto:${member.email}`}
+                          className="text-navy hover:text-gold transition-colors"
+                        >
+                          <Mail className="w-5 h-5" />
+                        </a>
+                      )}
+                      {member.social?.linkedin && (
+                        <a
+                          href={member.social.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-navy hover:text-gold transition-colors"
+                        >
+                          <Linkedin className="w-5 h-5" />
+                        </a>
+                      )}
+                      {member.social?.twitter && (
+                        <a
+                          href={member.social.twitter}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-navy hover:text-gold transition-colors"
+                        >
+                          <Twitter className="w-5 h-5" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          )}
-        </div>
-        <h3 className="text-xl font-display font-bold text-white mb-1">
-          {member.name}
-        </h3>
-        <p className="text-gold font-semibold text-sm font-body mb-1">
-          {member.role}
-        </p>
-        {member.email && (
-          <p className="text-light-blue text-xs font-body opacity-80">
-            {member.email}
-          </p>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="p-8 flex-grow flex flex-col">
-        <p className="text-gray-600 leading-relaxed font-body text-base mb-6 flex-grow">
-          {member.bio}
-        </p>
-
-        {/* Social links */}
-        <div className="flex items-center justify-center space-x-3 mt-auto">
-          {member.email && (
-            <a
-              href={`mailto:${member.email}`}
-              className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
-              title={`Email ${member.name}`}
-            >
-              <Mail className="w-4 h-4" />
-            </a>
-          )}
-          <a
-            href={member.social.linkedin}
-            className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Linkedin className="w-4 h-4" />
-          </a>
-          <a
-            href={member.social.twitter}
-            className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Twitter className="w-4 h-4" />
-          </a>
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
           </div>
         </section>
 
-        {/* Company Stats */}
-        <section className="section gradient-navy">
-          <div className="section-padding">
-            <div className="text-center text-white mb-12">
-              <h2 className="heading-2 mb-4">By the Numbers</h2>
-              <p className="text-xl text-navy-100">
-                Our impact across East Africa speaks for itself
+        {/* Company Stats Section */}
+        <section className="py-20" style={{ background: '#080e18' }}>
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(199,150,57,0.04) 1px,
+                        transparent 1px),
+                linear-gradient(90deg,rgba(199,150,57,0.04) 1px,
+                        transparent 1px)
+              `,
+              backgroundSize: '64px 64px',
+            }}
+          />
+          <div
+            className="absolute top-0 left-0 right-0 h-[3px]"
+            style={{
+              background:
+                'linear-gradient(90deg,transparent,#C79639,transparent)',
+            }}
+          />
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="w-8 h-px" style={{ background: '#C79639' }} />
+                <span style={{
+                  color: '#C79639',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '2.5px',
+                  textTransform: 'uppercase',
+                }}>
+                  IMPACT
+                </span>
+                <div className="w-8 h-px" style={{ background: '#C79639' }} />
+              </div>
+              <h2 className="font-display font-bold text-white
+                     text-4xl md:text-5xl mb-4">
+                Our{' '}
+                <em style={{
+                  fontStyle: 'italic',
+                  background: 'linear-gradient(135deg,#C79639,#e0b055)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}>
+                  Numbers
+                </em>
+              </h2>
+              <p className="font-body font-light max-w-2xl mx-auto
+                    text-lg leading-relaxed"
+                 style={{ color: '#C7D7EF' }}>
+                Measuring our impact across East Africa through 
+                transformative technology solutions.
               </p>
             </div>
-            
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { number: "500+", label: "Schools" },
-                { number: "250K+", label: "Students" },
-                { number: "100+", label: "Hospitals" },
-                { number: "1K+", label: "Farmers" },
-                { number: "18", label: "Sectors" },
-                { number: "47", label: "Counties" },
-                { number: "20+", label: "Products" },
-                { number: "4", label: "Countries" }
+                { num: '500+', label: 'Schools', desc: 'Across Kenya' },
+                { num: '50K+', label: 'Students', desc: 'Empowered' },
+                { num: '47', label: 'Counties', desc: 'Reached' },
+                { num: '100+', label: 'Health', desc: 'Facilities' },
+                { num: '18', label: 'Products', desc: 'Available' },
+                { num: '4', label: 'Years', desc: 'of Innovation' },
+                { num: '24/7', label: 'Support', desc: 'Available' },
+                { num: '99%', label: 'Uptime', desc: 'Guaranteed' },
               ].map((stat, index) => (
-                <div key={index} className="text-center scale-in" style={{animationDelay: `${index * 100}ms`}}>
-                  <div className="stat-number mb-2">{stat.number}</div>
-                  <div className="stat-label">{stat.label}</div>
+                <div key={index} className="text-center">
+                  <div className="font-display font-bold text-4xl md:text-5xl mb-2"
+                       style={{ color: '#C79639' }}>
+                    {stat.num}
+                  </div>
+                  <div className="text-white font-semibold text-lg mb-1">
+                    {stat.label}
+                  </div>
+                  <div className="font-body text-sm"
+                       style={{ color: '#95A9CC' }}>
+                    {stat.desc}
+                  </div>
                 </div>
               ))}
             </div>
@@ -412,17 +679,67 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section">
-          <div className="section-padding">
-            <div className="text-center">
-              <h2 className="heading-2 mb-4">Join Our Journey</h2>
-              <p className="body-text max-w-2xl mx-auto mb-8">
-                Whether you're looking to transform your organization with our solutions or join our growing team, we'd love to hear from you.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button>Book a Demo</Button>
-                <Button variant="secondary">View Careers</Button>
-              </div>
+        <section className="py-20" style={{ background: '#080e18' }}>
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(199,150,57,0.04) 1px,
+                        transparent 1px),
+                linear-gradient(90deg,rgba(199,150,57,0.04) 1px,
+                        transparent 1px)
+              `,
+              backgroundSize: '64px 64px',
+            }}
+          />
+          <div
+            className="absolute top-0 left-0 right-0 h-[3px]"
+            style={{
+              background:
+                'linear-gradient(90deg,transparent,#C79639,transparent)',
+            }}
+          />
+
+          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-8 h-px" style={{ background: '#C79639' }} />
+              <span style={{
+                color: '#C79639',
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '2.5px',
+                textTransform: 'uppercase',
+              }}>
+                JOIN US
+              </span>
+              <div className="w-8 h-px" style={{ background: '#C79639' }} />
+            </div>
+            <h2 className="font-display font-bold text-white
+                   text-4xl md:text-5xl mb-6">
+              Join Our{' '}
+              <em style={{
+                fontStyle: 'italic',
+                background: 'linear-gradient(135deg,#C79639,#e0b055)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}>
+                Journey
+              </em>
+            </h2>
+            <p className="font-body font-light text-xl leading-relaxed
+                 max-w-2xl mx-auto mb-10"
+              style={{ color: '#C7D7EF' }}>
+              Whether you're looking to transform your organization 
+              with our solutions or join our growing team, we'd love 
+              to hear from you.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button className="bg-gold text-navy hover:bg-gold-light">
+                Book a Demo
+              </Button>
+              <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white">
+                Contact Us
+              </Button>
             </div>
           </div>
         </section>
