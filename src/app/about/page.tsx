@@ -11,13 +11,20 @@ import {
   Users, 
   Award, 
   Globe,
-  TrendingUp,
-  Shield,
+  Lightbulb,
   Zap,
   Mail,
   Linkedin,
   Twitter
 } from 'lucide-react'
+
+export const metadata = {
+  title: 'About Us — Our Story & Team',
+  description: 'Learn about MylesCorp Technologies — our story, mission, vision, M.Y.L.E.S. values, and the team transforming East Africa with AI-powered technology.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/about',
+  },
+}
 
 export default function AboutPage() {
   return (

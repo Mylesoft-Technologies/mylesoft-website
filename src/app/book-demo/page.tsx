@@ -4,6 +4,14 @@ import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 import { Calendar, Clock, Users, Check, Star } from 'lucide-react'
 
+export const metadata = {
+  title: 'Book a Demo — MylesCorp Technologies',
+  description: 'Book a free live demo of any MylesCorp product. Our team will walk you through EduMyles, MylesCare, AgriMyles, or MylesCRM tailored to your needs.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/book-demo',
+  },
+}
+
 export default function BookDemoPage() {
   return (
     <Layout>

@@ -10,7 +10,9 @@ import {
   Search,
   ChevronRight,
   ArrowRight,
-  Brain
+  Brain,
+  TrendingUp,
+  BookOpen
 } from 'lucide-react'
 
 const blogPosts = [

@@ -14,8 +14,18 @@ import {
   Award,
   Briefcase,
   DollarSign,
-  ArrowRight
+  ArrowRight,
+  Zap,
+  Globe
 } from 'lucide-react'
+
+export const metadata = {
+  title: 'Careers — Join MylesCorp Technologies',
+  description: 'Join East Africa\'s leading AI-powered software company. Explore open positions in engineering, design, sales, and customer success at MylesCorp Technologies in Nairobi, Kenya.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/careers',
+  },
+}
 
 const openPositions = [
   {

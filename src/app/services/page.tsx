@@ -8,9 +8,11 @@ import {
   Shield, 
   TrendingUp,
   Clock,
+  Code,
+  Globe,
+  Zap,
   CheckCircle,
   ArrowRight,
-  Globe,
   Heart,
   Monitor
 } from 'lucide-react'

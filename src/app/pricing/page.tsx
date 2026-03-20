@@ -4,6 +4,14 @@ import { Icon } from '@/components/ui/Icon'
 import { Check, X, CheckCircle, Star, Shield, Zap, Users } from 'lucide-react'
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Pricing — Affordable Plans for African Organisations',
+  description: 'Simple, transparent pricing for MylesCorp products. EduMyles from KES 5,000/month. MylesCare from KES 8,000/month. No hidden fees. 14-day free trial.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/pricing',
+  },
+}
+
 const pricingPlans = [
   {
     name: 'Starter',

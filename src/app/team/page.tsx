@@ -8,6 +8,14 @@ import { TEAM_MEMBERS } from '@/lib/constants/team'
 import Image from 'next/image'
 import { MYLESValues } from '@/components/sections/MYLESValues'
 
+export const metadata = {
+  title: 'Our Team — Leadership at MylesCorp Technologies',
+  description: 'Meet the leadership team behind MylesCorp Technologies — the brilliant minds transforming Education, Healthcare, Agriculture, and Business across East Africa.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/team',
+  },
+}
+
 export default function TeamPage() {
   return (
     <Layout>

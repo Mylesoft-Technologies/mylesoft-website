@@ -3,6 +3,14 @@ import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Web & App Design Kenya | MylesCorp Technologies',
+  description: 'Premium UI/UX design and responsive website design for businesses across East Africa. Accessible, conversion-focused, mobile-first.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/services/web-app-design',
+  },
+}
+
 const WHATSAPP_LINK =
   'https://wa.me/254743993715?' +
   'text=Hi%20MylesCorp!%20I%20found%20you%20on%20' +

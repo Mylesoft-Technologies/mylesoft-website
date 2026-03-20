@@ -2,8 +2,11 @@ import { ProductPageLayout } from '@/components/layout/ProductPageLayout'
 import { EDURYDE_DATA } from '@/lib/constants/products'
 
 export const metadata = {
-  title: EDURYDE_DATA.metadata.title,
-  description: EDURYDE_DATA.metadata.description,
+  title: 'EduRyde — School Transport Management System',
+  description: 'Real-time GPS school bus tracking, instant parent notifications, and route optimisation. Keep every student safe from door to door across East Africa.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/products/eduryde',
+  },
 }
 
 export default function EduRydePage() {

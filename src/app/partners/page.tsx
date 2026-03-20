@@ -5,6 +5,14 @@ import { Handshake, Target, Globe, Award, TrendingUp, Users, Mail, Phone, ArrowR
 import { Button } from '@/components/ui/Button'
 import { Logo } from '@/components/ui/Logo'
 
+export const metadata = {
+  title: 'Partners — MylesCorp Technologies',
+  description: 'Partner with MylesCorp Technologies to deliver AI-powered solutions across East Africa. Technology, reseller, and integration partnerships.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/partners',
+  },
+}
+
 const partnershipTypes = [
   {
     icon: <Handshake className="w-8 h-8" />,

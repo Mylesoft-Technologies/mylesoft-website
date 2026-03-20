@@ -3,6 +3,14 @@ import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Website Development & Hosting Kenya | MylesCorp',
+  description: 'Professional websites built on Next.js and hosted on Vercel for businesses, schools, and organisations across Kenya. Mobile-first, SEO-optimised, SSL. From KES 25,000.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/services/website-development',
+  },
+}
+
 const WHATSAPP_LINK =
   'https://wa.me/254743993715?' +
   'text=Hi%20MylesCorp!%20I%20found%20you%20on%20' +

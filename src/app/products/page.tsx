@@ -5,6 +5,14 @@ import { Icon } from '@/components/ui/Icon'
 import { ArrowRight } from 'lucide-react'
 import { StaggerReveal } from '@/components/ui/ScrollReveal'
 
+export const metadata = {
+  title: 'Our Products — AI-Powered Solutions',
+  description: 'Explore MylesCorp\'s suite of AI-powered products: EduMyles (school management), MylesCare (healthcare), AgriMyles (agriculture), MylesCRM (business) — built for East Africa.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/products',
+  },
+}
+
 const allProducts = [
   // Education Sector
   {

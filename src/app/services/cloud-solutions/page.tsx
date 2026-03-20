@@ -3,6 +3,14 @@ import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Cloud Solutions & Infrastructure | MylesCorp',
+  description: 'Cloud migration, AWS/Azure/GCP setup, and 24/7 infrastructure management for East African businesses. Cut costs by up to 50% with the cloud.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/services/cloud-solutions',
+  },
+}
+
 const WHATSAPP_LINK =
   'https://wa.me/254743993715?' +
   'text=Hi%20MylesCorp!%20I%20found%20you%20on%20' +

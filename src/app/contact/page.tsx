@@ -14,6 +14,14 @@ import {
 } from 'lucide-react'
 import { ContactForm } from '@/components/ui/ContactForm'
 
+export const metadata = {
+  title: 'Contact Us — MylesCorp Technologies',
+  description: 'Contact MylesCorp Technologies in Nairobi, Kenya. Call +254 743 993 715, email info@mylescorp.co.ke, or WhatsApp us. We respond within 2 business hours.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/contact',
+  },
+}
+
 export default function ContactPage() {
   const departments = [
     {
