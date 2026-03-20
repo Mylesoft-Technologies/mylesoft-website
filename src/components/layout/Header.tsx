@@ -31,6 +31,7 @@ export function Header() {
   }, [])
 
   const navigation = [
+    { name: 'Home', href: '/' },
     { name: 'Mega Menu', href: '/products' },
     { name: 'Services', href: '/services' },
     { name: 'Pricing', href: '/pricing' },
@@ -78,9 +79,16 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
+            <Link href="/" transitionTypes={['fade']} className="flex items-center group">
+              <Logo size="md" className="group-hover:scale-110 transition-transform duration-300" />
+              <span className="ml-3 flex flex-col">
+                <span className="text-[14px] font-body font-bold text-white group-hover:text-gold transition-colors duration-300">Home</span>
+                <span className="text-[10px] font-body text-gold uppercase tracking-[1.5px]">Start Here</span>
+              </span>
+            </Link>
             <MegaMenu />
             {navigation
-              .filter((item) => item.name !== 'Mega Menu' && item.name !== 'Coverage')
+              .filter((item) => item.name !== 'Home' && item.name !== 'Mega Menu' && item.name !== 'Coverage')
               .map((item) => (
                 <button
                   key={item.name}
@@ -123,7 +131,9 @@ export function Header() {
         <div className="lg:hidden bg-navy-deep/98 backdrop-blur-md border-t border-gold/20">
           <div className="px-4 py-6 space-y-4">
             <div className="flex flex-col space-y-4">
-              {navigation.map((item) => (
+              {navigation
+                .filter((item) => item.name !== 'Home' && item.name !== 'Mega Menu' && item.name !== 'Coverage')
+                .map((item) => (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}

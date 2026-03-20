@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { MYLESValues } from '@/components/sections/MYLESValues'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
 import {
   Zap,
   MapPin,
@@ -22,11 +24,27 @@ export const metadata = {
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      {/* SECTION 1 — Hero */}
-      <section
-        className="relative min-h-screen flex items-center
-                 justify-center overflow-hidden"
-        style={{ background: '#080e18' }}
+      <Header />
+      <main>
+        {/* SECTION 1 — Hero */}
+        <section
+          className="relative min-h-screen flex items-center
+                   justify-center overflow-hidden"
+          style={{ background: '#080e18' }}
+        >
+          {/* Grid texture */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(199,150,57,0.04) 1px,
+                          transparent 1px),
+                linear-gradient(90deg,rgba(199,150,57,0.04) 1px,
+                          transparent 1px)
+              `,
+              backgroundSize: '64px 64px',
+            }}
+          />
       >
         {/* Grid texture */}
         <div
@@ -582,6 +600,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </main>
+      <Footer />
     </div>
   )
 }
