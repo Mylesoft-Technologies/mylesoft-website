@@ -48,7 +48,7 @@ export function ProductCard({
 
   return (
     <div
-      className={`bg-white rounded-2xl p-6 cursor-pointer group relative ${className}`}
+      className={`bg-white rounded-2xl p-6 cursor-pointer group relative h-full flex flex-col ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -75,14 +75,14 @@ export function ProductCard({
       </div>
 
       {/* Features */}
-      <div className="space-y-3 mb-6">
+      <div className="space-y-3 mb-6 flex-grow">
         {features.slice(0, 3).map((feature, index) => (
           <div 
             key={index} 
             className="flex items-center space-x-3 group/item"
           >
             <div 
-              className="w-2 h-2 bg-gradient-to-r from-gold-400 to-gold-500 rounded-full"
+              className="w-2 h-2 bg-gradient-to-r from-gold-400 to-gold-500 rounded-full flex-shrink-0"
             />
             <span className="text-gray-600 text-sm group-hover/item:text-navy-500 transition-colors duration-200">
               {feature}
@@ -98,7 +98,7 @@ export function ProductCard({
 
       {/* Action Button */}
       <div 
-        className="flex items-center justify-between pt-4 border-t border-gray-200"
+        className="flex items-center justify-between pt-4 border-t border-gray-200 mt-auto"
       >
         <div className="flex items-center space-x-2">
           <span className="text-gold-500 text-sm font-medium group-hover:text-gold-600 transition-colors duration-200">
@@ -130,8 +130,8 @@ export function ProductCard({
 // Product Card Skeleton Component
 function ProductCardSkeleton({ className = '' }: { className?: string }) {
   return (
-    <div className={`bg-white p-6 rounded-2xl ${className}`}>
-      <div className="space-y-4">
+    <div className={`bg-white p-6 rounded-2xl h-full flex flex-col ${className}`}>
+      <div className="space-y-4 flex-grow">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="w-16 h-16 bg-gradient-to-br from-gold-100 to-gold-200 rounded-xl" />
