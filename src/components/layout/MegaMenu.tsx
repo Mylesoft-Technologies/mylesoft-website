@@ -86,14 +86,189 @@ export function MegaMenu() {
           href: '/products/mylescrm',
           icon: <Users className="w-5 h-5" />,
           features: ['Lead Management', 'Sales Pipeline', 'Customer Analytics', 'Automation']
-        },
+        }
+      ]
+    },
+    {
+      title: 'AI Platform',
+      description: 'Africa\'s intelligence engine powering all solutions',
+      products: [
         {
           name: 'Myles AI',
-          description: 'Custom AI development services',
+          description: 'Africa\'s intelligence engine with local language support',
           href: '/products/myles-ai',
           icon: <Zap className="w-5 h-5" />,
-          features: ['Machine Learning', 'NLP Solutions', 'Computer Vision', 'Consulting'],
+          features: ['Multi-language AI', 'Industry Solutions', 'Real-time Analytics', 'NLP Processing'],
           badge: 'New'
+        }
+      ]
+    },
+    {
+      title: 'Financial Services',
+      description: 'Revolutionizing financial transactions with secure digital solutions',
+      products: [
+        {
+          name: 'MylesPay',
+          description: 'Digital payment solution for seamless transactions',
+          href: '/products/mylespay',
+          icon: <Star className="w-5 h-5" />,
+          features: ['Mobile Money Integration', 'Multi-currency Support', 'Instant Settlements', 'Payment Analytics']
+        }
+      ]
+    },
+    {
+      title: 'Logistics',
+      description: 'Optimizing supply chains and fleet operations with intelligent tracking',
+      products: [
+        {
+          name: 'MylesLogistics',
+          description: 'Supply chain and fleet management solution',
+          href: '/products/myleslogistics',
+          icon: <Shield className="w-5 h-5" />,
+          features: ['Fleet Tracking', 'Route Optimization', 'Delivery Management', 'Warehouse Management']
+        }
+      ]
+    },
+    {
+      title: 'Real Estate',
+      description: 'Streamlining property management and real estate operations',
+      products: [
+        {
+          name: 'MylesProperty',
+          description: 'Property management system for real estate professionals',
+          href: '/products/mylesproperty',
+          icon: <Target className="w-5 h-5" />,
+          features: ['Property Listings', 'Tenant Management', 'Rent Collection', 'Maintenance Tracking']
+        }
+      ]
+    },
+    {
+      title: 'Retail',
+      description: 'Enhancing retail operations with integrated POS and inventory management',
+      products: [
+        {
+          name: 'MylesRetail',
+          description: 'Point of sale and inventory management for retail businesses',
+          href: '/products/mylesretail',
+          icon: <Users className="w-5 h-5" />,
+          features: ['POS System', 'Inventory Management', 'Customer Loyalty', 'Sales Analytics']
+        }
+      ]
+    },
+    {
+      title: 'Government',
+      description: 'Digitalizing public sector services for improved citizen engagement',
+      products: [
+        {
+          name: 'MylesGov',
+          description: 'Digital governance solution for public sector efficiency',
+          href: '/products/mylesgov',
+          icon: <Shield className="w-5 h-5" />,
+          features: ['Citizen Services', 'Document Management', 'Workflow Automation', 'Public Records']
+        }
+      ]
+    },
+    {
+      title: 'Manufacturing',
+      description: 'Optimizing production processes with smart manufacturing solutions',
+      products: [
+        {
+          name: 'MylesManufacturing',
+          description: 'Production and quality management for manufacturers',
+          href: '/products/mylesmanufacturing',
+          icon: <Zap className="w-5 h-5" />,
+          features: ['Production Planning', 'Quality Control', 'Equipment Maintenance', 'Cost Analysis']
+        }
+      ]
+    },
+    {
+      title: 'Hospitality',
+      description: 'Elevating guest experiences with comprehensive hospitality management',
+      products: [
+        {
+          name: 'MylesHospitality',
+          description: 'Hotel and restaurant management system',
+          href: '/products/myleshospitality',
+          icon: <Heart className="w-5 h-5" />,
+          features: ['Reservation Management', 'Room Service', 'Restaurant POS', 'Guest Services']
+        }
+      ]
+    },
+    {
+      title: 'Legal',
+      description: 'Streamlining legal practice management with intelligent automation',
+      products: [
+        {
+          name: 'MylesLegal',
+          description: 'Practice management solution for law firms',
+          href: '/products/myleslegal',
+          icon: <Shield className="w-5 h-5" />,
+          features: ['Case Management', 'Document Management', 'Time Tracking', 'Billing System']
+        }
+      ]
+    },
+    {
+      title: 'Energy',
+      description: 'Optimizing energy consumption and management with smart monitoring',
+      products: [
+        {
+          name: 'MylesEnergy',
+          description: 'Energy management and monitoring solution',
+          href: '/products/mylesenergy',
+          icon: <Zap className="w-5 h-5" />,
+          features: ['Energy Monitoring', 'Consumption Analytics', 'Predictive Maintenance', 'Cost Optimization']
+        }
+      ]
+    },
+    {
+      title: 'Non-Profit',
+      description: 'Empowering NGOs with tools for donor and volunteer management',
+      products: [
+        {
+          name: 'MylesNonProfit',
+          description: 'Donor and volunteer management for NGOs',
+          href: '/products/mylesnonprofit',
+          icon: <Heart className="w-5 h-5" />,
+          features: ['Donor Management', 'Volunteer Coordination', 'Grant Tracking', 'Impact Reporting']
+        }
+      ]
+    },
+    {
+      title: 'Construction',
+      description: 'Managing construction projects with intelligent project tracking',
+      products: [
+        {
+          name: 'MylesConstruction',
+          description: 'Project management for construction companies',
+          href: '/products/mylesconstruction',
+          icon: <Target className="w-5 h-5" />,
+          features: ['Project Planning', 'Resource Management', 'Budget Tracking', 'Progress Monitoring']
+        }
+      ]
+    },
+    {
+      title: 'Media',
+      description: 'Streamlining content creation and distribution for media organizations',
+      products: [
+        {
+          name: 'MylesMedia',
+          description: 'Content management and publishing platform',
+          href: '/products/mylesmedia',
+          icon: <Shield className="w-5 h-5" />,
+          features: ['Content Management', 'Publishing Workflow', 'Media Library', 'Analytics Dashboard']
+        }
+      ]
+    },
+    {
+      title: 'Transportation',
+      description: 'Modernizing public transit with intelligent management systems',
+      products: [
+        {
+          name: 'MylesTransit',
+          description: 'Public transportation management system',
+          href: '/products/mylestransit',
+          icon: <Users className="w-5 h-5" />,
+          features: ['Route Management', 'Fare Collection', 'Vehicle Tracking', 'Schedule Management']
         }
       ]
     }
