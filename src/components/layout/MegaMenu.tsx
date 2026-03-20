@@ -311,7 +311,7 @@ export function MegaMenu() {
 
   return (
     <div className="relative" ref={menuRef}>
-      {/* Products Dropdown Trigger */}
+      {/* Mega Menu Dropdown Trigger */}
       <div
         className="relative"
         onMouseEnter={handleMouseEnter}
@@ -323,7 +323,7 @@ export function MegaMenu() {
           aria-expanded={isOpen}
           aria-haspopup="true"
         >
-          <span>Products</span>
+          <span>Mega Menu</span>
           <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
           <span className="absolute bottom-[-2px] left-0 w-0 h-[1.5px] bg-gold group-hover:w-full transition-all duration-300"></span>
         </button>
@@ -333,7 +333,7 @@ export function MegaMenu() {
           <div className="absolute top-full left-0 w-screen max-w-7xl bg-white border border-gold/20 rounded-2xl shadow-2xl mt-2 z-50 overflow-hidden">
             <div className="flex">
               {/* Categories Sidebar */}
-              <div className="w-80 bg-gray-50 border-r border-gold/20 p-6">
+              <div className="w-80 bg-gray-50 border-r border-gold/20 p-6 overflow-y-auto max-h-[600px]">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-display font-bold text-navy mb-4">Our Solutions</h3>
                   <button
@@ -343,6 +343,30 @@ export function MegaMenu() {
                     <X size={20} className="text-medium-grey" />
                   </button>
                 </div>
+                
+                {/* All Products Option */}
+                <Link
+                  href="/products"
+                  onClick={closeMenu}
+                  className={`w-full text-left p-3 rounded-lg transition-colors mb-4 block ${
+                    activeCategory === 'all'
+                      ? 'bg-white text-navy border-l-4 border-gold'
+                      : 'hover:bg-white text-gray-600'
+                  }`}
+                  onMouseEnter={() => setActiveCategory('all')}
+                >
+                  <div className="flex items-center space-x-2">
+                    <div className="w-8 h-8 bg-gradient-to-br from-gold-400 to-gold-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">ALL</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold font-body">All Products</h4>
+                      <p className="text-sm text-gray-500 mt-1 font-body">
+                        View all 18 MylesCorp solutions
+                      </p>
+                    </div>
+                  </div>
+                </Link>
                 
                 <div className="space-y-2">
                   {categories.map((category) => (
@@ -364,17 +388,17 @@ export function MegaMenu() {
                 </div>
 
                 {/* Quick Actions */}
-                <div className="mt-8 p-4 bg-white rounded-lg border border-gold/20">
+                <div className="mt-8 p-4 bg-white rounded-lg border border-gold/20 sticky bottom-0">
                   <h4 className="font-semibold text-navy mb-3 font-body">Get Started</h4>
                   <div className="space-y-2">
                     <Link href="/book-demo" onClick={closeMenu}>
-                      <Button size="sm" className="w-full">
+                      <Button size="sm" className="w-full bg-gold text-navy hover:bg-gold-light">
                         Book a Demo
                       </Button>
                     </Link>
-                    <Link href="/pricing" onClick={closeMenu}>
-                      <Button variant="outline" size="sm" className="w-full">
-                        View Pricing
+                    <Link href="/contact" onClick={closeMenu}>
+                      <Button variant="outline" size="sm" className="w-full border-gold text-gold hover:bg-gold hover:text-white">
+                        Contact Us
                       </Button>
                     </Link>
                   </div>
@@ -382,151 +406,139 @@ export function MegaMenu() {
               </div>
 
               {/* Products Content */}
-              <div className="flex-1 p-6">
-                {activeCategory ? (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    {categories
-                      .find((cat) => cat.title === activeCategory)
-                      ?.products.map((product) => (
-                        <Link
-                          key={product.name}
-                          href={product.href}
-                          onClick={closeMenu}
-                          className="group p-6 bg-white border border-gold/20 rounded-xl hover:border-gold hover:shadow-lg transition-all duration-300"
-                        >
-                          <div className="flex items-start justify-between mb-4">
-                            <div className="flex items-center space-x-3">
-                              <div className="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center text-gold group-hover:bg-gold/20 transition-colors">
+              <div className="flex-1 p-6 overflow-y-auto max-h-[600px]">
+                {activeCategory && activeCategory !== 'all' ? (
+                  <div>
+                    <h3 className="text-2xl font-display font-bold text-navy mb-6">
+                      {activeCategory} Solutions
+                    </h3>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                      {categories
+                        .find((cat) => cat.title === activeCategory)
+                        ?.products.map((product) => (
+                          <Link
+                            key={product.name}
+                            href={product.href}
+                            onClick={closeMenu}
+                            className="group p-6 bg-white border border-gold/20 rounded-xl hover:border-gold hover:shadow-lg transition-all duration-300"
+                          >
+                            <div className="flex items-start justify-between mb-4">
+                              <div className="flex items-center space-x-3">
+                                <div className="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center text-gold group-hover:bg-gold/20 transition-colors">
+                                  {product.icon}
+                                </div>
+                                <div>
+                                  <h4 className="text-lg font-semibold text-navy group-hover:text-gold transition-colors font-body">
+                                    {product.name}
+                                  </h4>
+                                  <p className="text-sm text-gray-600 font-body">
+                                    {product.description}
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                {product.popular && (
+                                  <span className="px-2 py-1 bg-gold/10 text-gold text-xs font-semibold rounded-full font-body">
+                                    Popular
+                                  </span>
+                                )}
+                                {product.badge && (
+                                  <span className="px-2 py-1 bg-navy/10 text-navy text-xs font-semibold rounded-full font-body">
+                                    {product.badge}
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                            
+                            <div className="space-y-2 mb-4">
+                              {product.features.map((feature, index) => (
+                                <div key={index} className="flex items-center space-x-2">
+                                  <div className="w-1.5 h-1.5 bg-gold rounded-full"></div>
+                                  <span className="text-sm text-gray-600 font-body">{feature}</span>
+                                </div>
+                              ))}
+                            </div>
+                            
+                            <div className="flex items-center justify-between">
+                              <span className="text-gold text-sm font-medium group-hover:text-gold-light transition-colors font-body">
+                                Learn more →
+                              </span>
+                            </div>
+                          </Link>
+                        ))}
+                    </div>
+                  </div>
+                ) : activeCategory === 'all' ? (
+                  <div>
+                    <h3 className="text-2xl font-display font-bold text-navy mb-6">
+                      All MylesCorp Solutions
+                    </h3>
+                    <p className="text-gray-600 mb-8 max-w-2xl">
+                      Discover our complete suite of 18 AI-powered solutions designed to transform businesses across East Africa. From education to healthcare, agriculture to logistics - we have the perfect solution for your industry.
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {categories.flatMap((category) => 
+                        category.products.map((product) => (
+                          <Link
+                            key={product.name}
+                            href={product.href}
+                            onClick={closeMenu}
+                            className="group p-4 bg-white border border-gold/20 rounded-lg hover:border-gold hover:shadow-lg transition-all duration-300"
+                          >
+                            <div className="flex items-center space-x-3 mb-3">
+                              <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center text-gold group-hover:bg-gold/20 transition-colors">
                                 {product.icon}
                               </div>
                               <div>
-                                <h4 className="text-lg font-semibold text-navy group-hover:text-gold transition-colors font-body">
+                                <h4 className="font-semibold text-navy group-hover:text-gold transition-colors font-body text-base">
                                   {product.name}
                                 </h4>
-                                <p className="text-sm text-gray-600 font-body">
-                                  {product.description}
+                                <p className="text-xs text-gray-500 font-body">
+                                  {category.title}
                                 </p>
                               </div>
                             </div>
-                            <div className="flex items-center space-x-2">
+                            <div className="flex items-center justify-between">
+                              <span className="text-gold text-xs font-medium group-hover:text-gold-light transition-colors font-body">
+                                View Details →
+                              </span>
                               {product.popular && (
                                 <span className="px-2 py-1 bg-gold/10 text-gold text-xs font-semibold rounded-full font-body">
                                   Popular
                                 </span>
                               )}
-                              {product.badge && (
-                                <span className="px-2 py-1 bg-navy/10 text-navy text-xs font-semibold rounded-full font-body">
-                                  {product.badge}
-                                </span>
-                              )}
                             </div>
-                          </div>
-                          
-                          <div className="space-y-2 mb-4">
-                            {product.features.map((feature, index) => (
-                              <div key={index} className="flex items-center space-x-2">
-                                <div className="w-1.5 h-1.5 bg-gold rounded-full"></div>
-                                <span className="text-sm text-gray-600 font-body">{feature}</span>
-                              </div>
-                            ))}
-                          </div>
-                          
-                          <div className="flex items-center justify-between">
-                            <span className="text-gold text-sm font-medium group-hover:text-gold-light transition-colors font-body">
-                              Learn more
-                            </span>
-                            <ArrowRight className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform" />
-                          </div>
+                          </Link>
+                        ))
+                      )}
+                    </div>
+                    <div className="mt-8 p-6 bg-gray-50 rounded-xl">
+                      <h4 className="font-semibold text-navy mb-4 font-body">Can't find what you're looking for?</h4>
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Link href="/contact" onClick={closeMenu}>
+                          <Button className="bg-gold text-navy hover:bg-gold-light">
+                            Talk to an Expert
+                          </Button>
                         </Link>
-                      ))}
+                        <Link href="/book-demo" onClick={closeMenu}>
+                          <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white">
+                            Schedule Demo
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 ) : (
                   <div className="text-center py-12">
-                    <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Target className="w-8 h-8 text-gold" />
+                    <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center text-gold mx-auto mb-4">
+                      <Target className="w-8 h-8" />
                     </div>
-                    <h3 className="text-xl font-semibold text-navy mb-2 font-display">
-                      Explore Our Solutions
-                    </h3>
-                    <p className="text-gray-600 mb-6 font-body">
-                      Choose a category to see our AI-powered products designed for East African businesses
+                    <h3 className="text-xl font-semibold text-navy mb-2 font-body">Choose a Category</h3>
+                    <p className="text-gray-600 font-body">
+                      Select a category from the sidebar to explore our solutions
                     </p>
-                    
-                    {/* Featured Products Preview */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-                      {categories.slice(0, 3).map((category) => (
-                        <div key={category.title} className="p-4 bg-gray-50 rounded-lg border border-gold/20">
-                          <h4 className="font-semibold text-navy mb-2 font-body">{category.title}</h4>
-                          <p className="text-sm text-gray-600 mb-3 font-body">{category.description}</p>
-                          <div className="space-y-1">
-                            {category.products.map((product) => (
-                              <Link
-                                key={product.name}
-                                href={product.href}
-                                onClick={closeMenu}
-                                className="flex items-center space-x-2 text-sm text-gold hover:text-gold-light transition-colors font-body"
-                              >
-                                <span>{product.name}</span>
-                                <ArrowRight className="w-3 h-3" />
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 )}
-              </div>
-
-              {/* Benefits Sidebar */}
-              <div className="w-64 bg-navy text-white p-6 hidden xl:block">
-                <h3 className="text-lg font-bold mb-4 font-display">Why Choose MylesCorp?</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <Star className="w-5 h-5 text-gold-400 flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-semibold font-body">East African Focus</h4>
-                      <p className="text-sm text-light-blue font-body">
-                        Solutions designed for African markets and challenges
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Shield className="w-5 h-5 text-gold-400 flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-semibold font-body">Secure & Compliant</h4>
-                      <p className="text-sm text-light-blue font-body">
-                        Data protection and regulatory compliance
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Zap className="w-5 h-5 text-gold-400 flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-semibold font-body">AI-Powered</h4>
-                      <p className="text-sm text-light-blue font-body">
-                        Cutting-edge artificial intelligence technology
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Users className="w-5 h-5 text-gold-400 flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-semibold font-body">24/7 Support</h4>
-                      <p className="text-sm text-light-blue font-body">
-                        Round-the-clock customer assistance
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mt-8">
-                  <Link href="/about" onClick={closeMenu}>
-                    <Button variant="secondary" className="w-full font-body">
-                      About Us
-                    </Button>
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
