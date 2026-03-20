@@ -1,5 +1,3 @@
-'use client'
-
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Card, CardIcon, CardHeader, CardContent } from '@/components/ui/Card'
@@ -117,7 +115,7 @@ export default function ContactPage() {
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
-          {/* Grid texture overlay — always present on dark sections */}
+          {/* Grid texture overlay */}
           <div 
             className="absolute inset-0 pointer-events-none"
             style={{
@@ -305,32 +303,30 @@ export default function ContactPage() {
                 <div className="mb-12">
                   <h3 className="heading-3 mb-4">Departments</h3>
                   <div className="space-y-4">
-                    <StaggerReveal staggerDelay={0.1} itemDelay={0.3} direction="up">
-                      {departments.map((dept: any) => (
-                        <Card variant="light" key={dept.name} className="h-full">
-                          <CardHeader>
-                            <h4 className="text-2xl font-display font-bold text-navy mb-2">{dept.title}</h4>
-                          </CardHeader>
-                          <CardContent>
-                            <p className="text-gray-600 leading-relaxed mb-4 font-body text-sm">{dept.description}</p>
-                            <div className="space-y-2">
-                              <div className="flex items-center text-sm">
-                                <Mail size={16} className="text-gold mr-2" />
-                                <a href={`mailto:${dept.email}`} className="text-gold hover:text-gold-light font-body">
-                                  {dept.email}
-                                </a>
-                              </div>
-                              <div className="flex items-center text-sm">
-                                <Phone size={16} className="text-gold mr-2" />
-                                <a href={`tel:${dept.phone}`} className="text-gold hover:text-gold-light font-body">
-                                  {dept.phone}
-                                </a>
-                              </div>
+                    {departments.map((dept: any) => (
+                      <Card variant="light" key={dept.name} className="h-full">
+                        <CardHeader>
+                          <h4 className="text-2xl font-display font-bold text-navy mb-2">{dept.title}</h4>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-gray-600 leading-relaxed mb-4 font-body text-sm">{dept.description}</p>
+                          <div className="space-y-2">
+                            <div className="flex items-center text-sm">
+                              <Mail size={16} className="text-gold mr-2" />
+                              <a href={`mailto:${dept.email}`} className="text-gold hover:text-gold-light font-body">
+                                {dept.email}
+                              </a>
                             </div>
-                          </CardContent>
-                        </Card>
-                      ))}
-                    </StaggerReveal>
+                            <div className="flex items-center text-sm">
+                              <Phone size={16} className="text-gold mr-2" />
+                              <a href={`tel:${dept.phone}`} className="text-gold hover:text-gold-light font-body">
+                                {dept.phone}
+                              </a>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
                   </div>
                 </div>
 
@@ -381,46 +377,44 @@ export default function ContactPage() {
               </p>
             </div>
             
-            <StaggerReveal staggerDelay={0.2} itemDelay={0.3} direction="up">
-              <>
-                {offices.map((office: any, index: number) => (
-                  <Card variant="light" key={index} className="h-full flex flex-col">
-                    {office.isHeadquarters && (
-                      <div className="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-semibold mb-4 font-body">
-                        Headquarters
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {offices.map((office: any, index: number) => (
+                <Card variant="light" key={index} className="h-full flex flex-col">
+                  {office.isHeadquarters && (
+                    <div className="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-semibold mb-4 font-body">
+                      Headquarters
+                    </div>
+                  )}
+                  <CardHeader>
+                    <h3 className="text-2xl font-display font-bold text-navy mb-4">{office.city}</h3>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <MapPin size={16} className="text-gold mr-2 mt-1 flex-shrink-0" />
+                        <span className="text-sm text-gray-600 font-body">{office.address}</span>
                       </div>
-                    )}
-                    <CardHeader>
-                      <h3 className="text-2xl font-display font-bold text-navy mb-4">{office.city}</h3>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <div className="space-y-3">
-                        <div className="flex items-start">
-                          <MapPin size={16} className="text-gold mr-2 mt-1 flex-shrink-0" />
-                          <span className="text-sm text-gray-600 font-body">{office.address}</span>
-                        </div>
-                        <div className="flex items-center">
-                          <Phone size={16} className="text-gold mr-2" />
-                          <a href={`tel:${office.phone}`} className="text-gold hover:text-gold-light font-body">
-                            {office.phone}
-                          </a>
-                        </div>
-                        <div className="flex items-center">
-                          <Mail size={16} className="text-gold mr-2" />
-                          <a href={`mailto:${office.email}`} className="text-gold hover:text-gold-light font-body">
-                            {office.email}
-                          </a>
-                        </div>
-                        <div className="flex items-start">
-                          <Clock size={16} className="text-gold mr-2 mt-1 flex-shrink-0" />
-                          <span className="text-sm text-gray-600 font-body">{office.hours}</span>
-                        </div>
+                      <div className="flex items-center">
+                        <Phone size={16} className="text-gold mr-2" />
+                        <a href={`tel:${office.phone}`} className="text-gold hover:text-gold-light font-body">
+                          {office.phone}
+                        </a>
                       </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </>
-            </StaggerReveal>
+                      <div className="flex items-center">
+                        <Mail size={16} className="text-gold mr-2" />
+                        <a href={`mailto:${office.email}`} className="text-gold hover:text-gold-light font-body">
+                          {office.email}
+                        </a>
+                      </div>
+                      <div className="flex items-start">
+                        <Clock size={16} className="text-gold mr-2 mt-1 flex-shrink-0" />
+                        <span className="text-sm text-gray-600 font-body">{office.hours}</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </section>
 
