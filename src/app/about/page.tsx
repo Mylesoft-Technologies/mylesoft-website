@@ -195,9 +195,9 @@ export default function AboutPage() {
             <Image
               src={member.image}
               alt={`${member.name} — ${member.role}`}
-              width={96}
-              height={96}
-              className="w-full h-full object-cover object-top"
+              fill
+              sizes="96px"
+              className="object-cover object-center"
               priority={false}
               onError={(e) => {
                 console.error('Image failed to load:', member.image, e);
