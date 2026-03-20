@@ -31,49 +31,69 @@ const dmMono = DM_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'MylesCorp Technologies - AI-Powered Software Solutions for East Africa',
-  description: 'East Africa\'s leading AI-powered software company. Transforming Education, Healthcare, Agriculture, and Business with innovative solutions.',
-  keywords: 'AI software Kenya, school management system, hospital management software, agricultural technology, business solutions, East Africa',
-  authors: [{ name: 'MylesCorp Technologies' }],
-  creator: 'MylesCorp Technologies',
-  publisher: 'MylesCorp Technologies',
+  title: {
+    default: 'MylesCorp Technologies Ltd - AI-Powered Software Solutions',
+    template: '%s | MylesCorp Technologies',
+  },
+  description:
+    'East Africa\'s leading AI-powered software company delivering ' +
+    'innovative solutions for Education, Healthcare, Agriculture, ' +
+    'and Business across East Africa and beyond.',
+  keywords: [
+    'MylesCorp', 'MylesCorp Technologies',
+    'School Management System Kenya',
+    'Healthcare Software Kenya',
+    'EduMyles', 'MylesCare', 'AgriMyles', 'MylesCRM',
+    'AI Software East Africa',
+    'EdTech Kenya', 'HealthTech Kenya',
+  ],
+  authors: [{ name: 'MylesCorp Technologies Ltd' }],
+  creator: 'MylesCorp Technologies Ltd',
+  publisher: 'MylesCorp Technologies Ltd',
+  metadataBase: new URL('https://www.mylescorp.co.ke'),
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://mylescorp.co.ke'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
-    url: 'https://mylescorp.co.ke',
-    title: 'MylesCorp Technologies - AI-Powered Software Solutions for East Africa',
-    description: 'East Africa\'s leading AI-powered software company. Transforming Education, Healthcare, Agriculture, and Business with innovative solutions.',
-    siteName: 'MylesCorp Technologies',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'MylesCorp Technologies - AI-Powered Software Solutions',
-      },
-    ],
+    locale: 'en_KE',
+    url: 'https://www.mylescorp.co.ke',
+    siteName: 'MylesCorp Technologies Ltd',
+    title: 'MylesCorp Technologies — AI-Powered Software Solutions',
+    description:
+      'East Africa\'s leading AI-powered software company ' +
+      'transforming Education, Healthcare, Agriculture, ' +
+      'and Business.',
+    images: [{
+      url: '/og-image.png',
+      width: 1200,
+      height: 630,
+      alt: 'MylesCorp Technologies Ltd',
+    }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MylesCorp Technologies - AI-Powered Software Solutions for East Africa',
-    description: 'East Africa\'s leading AI-powered software company. Transforming Education, Healthcare, Agriculture, and Business with innovative solutions.',
+    title: 'MylesCorp Technologies Ltd',
+    description:
+      'AI-powered software solutions for East Africa.',
     images: ['/og-image.png'],
   },
   robots: {
-    index: true,
-    follow: true,
+    index: true, follow: true,
     googleBot: {
-      index: true,
-      follow: true,
+      index: true, follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,

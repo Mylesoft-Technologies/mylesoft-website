@@ -175,7 +175,7 @@ export default function InteractiveMap() {
 
         // Add office markers
         offices.forEach(office => {
-          const markerColor = office.type === 'headquarters' ? '#C4972A' : '#1B3A6B'
+          const markerColor = office.type === 'headquarters' ? '#C79639' : '#1A395B'
           const markerHtml = `
             <div style="
               background-color: ${markerColor};
