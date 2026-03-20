@@ -448,52 +448,9 @@ export function MegaMenu() {
 
               {/* Products Content */}
               <div className="flex-1 p-6 overflow-y-auto max-h-[600px]">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                  {/* Left: Why Choose MylesCorp Section */}
-                  <div className="lg:col-span-1">
-                    <div className="bg-navy-deep/5 rounded-xl border border-gold/20 p-6 sticky top-6">
-                      <h3 className="text-xl font-display font-bold text-navy mb-4">Why Choose MylesCorp?</h3>
-                      <div className="space-y-4">
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
-                          <div>
-                            <h4 className="font-semibold text-navy text-sm font-body">East African Focus</h4>
-                            <p className="text-xs text-gray-600 font-body mt-1">Solutions designed for African markets and challenges</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
-                          <div>
-                            <h4 className="font-semibold text-navy text-sm font-body">Secure & Compliant</h4>
-                            <p className="text-xs text-gray-600 font-body mt-1">Data protection and regulatory compliance</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
-                          <div>
-                            <h4 className="font-semibold text-navy text-sm font-body">AI-Powered</h4>
-                            <p className="text-xs text-gray-600 font-body mt-1">Cutting-edge artificial intelligence technology</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
-                          <div>
-                            <h4 className="font-semibold text-navy text-sm font-body">24/7 Support</h4>
-                            <p className="text-xs text-gray-600 font-body mt-1">Round-the-clock customer assistance</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mt-6 pt-4 border-t border-gold/20">
-                        <Link href="/about" onClick={closeMenu} className="flex items-center justify-between text-gold hover:text-gold-light transition-colors text-sm font-medium font-body">
-                          <span>About Us</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right: Dynamic Content Area */}
-                  <div className="lg:col-span-2">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                  {/* Left: Dynamic Content Area */}
+                  <div className="lg:col-span-3">
                     {activeCategory && activeCategory !== 'all' ? (
                       <div>
                         <h3 className="text-2xl font-display font-bold text-navy mb-6">
@@ -563,7 +520,7 @@ export function MegaMenu() {
                         <p className="text-gray-600 mb-8 max-w-2xl">
                           Discover our complete suite of 18 AI-powered solutions designed to transform businesses across East Africa. From education to healthcare, agriculture to logistics - we have the perfect solution for your industry.
                         </p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                           {categories.flatMap((category) => 
                             category.products.map((product) => (
                               <Link
@@ -626,6 +583,49 @@ export function MegaMenu() {
                         </p>
                       </div>
                     )}
+                  </div>
+
+                  {/* Far Right: Why Choose MylesCorp Section */}
+                  <div className="lg:col-span-1">
+                    <div className="bg-navy-deep/5 rounded-xl border border-gold/20 p-6 sticky top-6">
+                      <h3 className="text-xl font-display font-bold text-navy mb-4">Why Choose MylesCorp?</h3>
+                      <div className="space-y-4">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                          <div>
+                            <h4 className="font-semibold text-navy text-sm font-body">East African Focus</h4>
+                            <p className="text-xs text-gray-600 font-body mt-1">Solutions designed for African markets and challenges</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                          <div>
+                            <h4 className="font-semibold text-navy text-sm font-body">Secure & Compliant</h4>
+                            <p className="text-xs text-gray-600 font-body mt-1">Data protection and regulatory compliance</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                          <div>
+                            <h4 className="font-semibold text-navy text-sm font-body">AI-Powered</h4>
+                            <p className="text-xs text-gray-600 font-body mt-1">Cutting-edge artificial intelligence technology</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+                          <div>
+                            <h4 className="font-semibold text-navy text-sm font-body">24/7 Support</h4>
+                            <p className="text-xs text-gray-600 font-body mt-1">Round-the-clock customer assistance</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-6 pt-4 border-t border-gold/20">
+                        <Link href="/about" onClick={closeMenu} className="flex items-center justify-between text-gold hover:text-gold-light transition-colors text-sm font-medium font-body">
+                          <span>About Us</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
