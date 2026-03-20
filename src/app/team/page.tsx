@@ -5,6 +5,7 @@ import { Users, Award, Target, Heart, Mail, Phone, MapPin, Linkedin, Twitter } f
 import { Button } from '@/components/ui/Button'
 import { Logo } from '@/components/ui/Logo'
 import { TEAM_MEMBERS } from '@/lib/constants/team'
+import Image from 'next/image'
 
 const values = [
   { icon: <Target className="w-8 h-8" />, title: "Mission-Driven", description: "We're committed to solving real problems for African businesses" },
@@ -138,8 +139,22 @@ export default function TeamPage() {
                 <Card variant="light" key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col min-h-[480px]">
                   {/* Professional Header */}
                   <div className="bg-gradient-to-r from-navy to-navy-dark p-8 text-center">
-                    <div className="w-24 h-24 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="w-12 h-12 text-gold" />
+                    {/* Avatar — photo if available, icon placeholder if not */}
+                    <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 ring-2 ring-gold/40">
+                      {member.image ? (
+                        <Image
+                          src={member.image}
+                          alt={`${member.name} — ${member.role}`}
+                          width={96}
+                          height={96}
+                          className="w-full h-full object-cover object-top"
+                          priority={false}
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gold/20 flex items-center justify-center">
+                          <Users className="w-12 h-12 text-gold" />
+                        </div>
+                      )}
                     </div>
                     <h3 className="text-xl font-display font-bold text-white mb-1">{member.name}</h3>
                     <p className="text-gold font-semibold text-sm font-body mb-1">{member.role}</p>

@@ -2,6 +2,7 @@ import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 import { TEAM_MEMBERS } from '@/lib/constants/team'
+import Image from 'next/image'
 import { 
   Target, 
   Eye, 
@@ -188,8 +189,22 @@ export default function AboutPage() {
     >
       {/* Navy header */}
       <div className="bg-gradient-to-r from-navy to-navy-dark p-8 text-center">
-        <div className="w-24 h-24 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-          <Users className="w-12 h-12 text-gold" />
+        {/* Avatar — photo if available, icon placeholder if not */}
+        <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 ring-2 ring-gold/40">
+          {member.image ? (
+            <Image
+              src={member.image}
+              alt={`${member.name} — ${member.role}`}
+              width={96}
+              height={96}
+              className="w-full h-full object-cover object-top"
+              priority={false}
+            />
+          ) : (
+            <div className="w-full h-full bg-gold/20 flex items-center justify-center">
+              <Users className="w-12 h-12 text-gold" />
+            </div>
+          )}
         </div>
         <h3 className="text-xl font-display font-bold text-white mb-1">
           {member.name}
