@@ -2,6 +2,7 @@ import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { ProductCard } from '@/components/ui/ProductCard'
 import { Icon } from '@/components/ui/Icon'
+import { ArrowRight } from 'lucide-react'
 
 const allProducts = [
   // Education Sector
@@ -74,6 +75,24 @@ const allProducts = [
     status: 'live' as const,
     href: '/products/mylescrm',
     sector: 'Business'
+  },
+  
+  // Education Sector - School Transport
+  {
+    name: 'EduRyde',
+    description: 'Modern school transport management and safety system with real-time tracking.',
+    icon: <Icon name="bus" className="text-gold-400" />,
+    features: [
+      'Real-time GPS Tracking',
+      'Route Optimization',
+      'Parent Notifications',
+      'Driver Management',
+      'Safety Monitoring',
+      'Emergency Alerts'
+    ],
+    status: 'live' as const,
+    href: '/products/eduryde',
+    sector: 'Education'
   },
   
   // AI Platform
@@ -336,13 +355,69 @@ export default function ProductsPage() {
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="section gradient-navy">
-          <div className="section-padding">
-            <div className="text-center text-white">
-              <h1 className="heading-1 mb-6 fade-in">Our Products</h1>
-              <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed mb-8 slide-up">
-                Discover our comprehensive suite of AI-powered solutions designed to transform 18 different sectors across East Africa and beyond.
-              </p>
+        <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
+          {/* Grid texture overlay — always present on dark sections */}
+          <div className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
+              backgroundSize: '64px 64px',
+            }}
+          />
+
+          {/* Radial glow top-right */}
+          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
+            }}
+          />
+
+          {/* Radial glow bottom-left */}
+          <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
+            }}
+          />
+
+          {/* Gold top accent line */}
+          <div className="absolute top-0 left-0 right-0 h-[3px]"
+            style={{
+              background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
+            }}
+          />
+          
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            {/* Eyebrow label */}
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="w-8 h-0.5 bg-gold" />
+              <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                OUR PRODUCTS
+              </span>
+              <div className="w-8 h-0.5 bg-gold" />
+            </div>
+
+            {/* Main heading */}
+            <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
+              Transform Your
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
+                Business
+              </span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+              Discover our comprehensive suite of AI-powered solutions designed to transform 
+              18 different sectors across East Africa and beyond.
+            </p>
+
+            {/* CTA buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-gold text-navy font-body font-bold text-[15px] tracking-[0.4px] px-9 py-4 rounded-md hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(199,150,57,0.3)] active:scale-[0.98] transition-all duration-200">
+                Explore Solutions
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </button>
+              <button className="bg-transparent text-white font-body font-semibold text-[15px] px-9 py-4 rounded-md border border-white/20 hover:border-gold hover:text-gold transition-all duration-200">
+                View All Products
+              </button>
             </div>
           </div>
         </section>

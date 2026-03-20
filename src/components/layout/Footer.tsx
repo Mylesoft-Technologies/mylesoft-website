@@ -100,6 +100,7 @@ export function Footer() {
                 <h3 className="text-2xl font-display font-bold text-white mb-8">Company</h3>
                 <ul className="space-y-3">
                   {[
+                    { name: 'Products', href: '/products' },
                     { name: 'About Us', href: '/about' },
                     { name: 'Pricing', href: '/pricing' },
                     { name: 'Our Team', href: '/team' },
