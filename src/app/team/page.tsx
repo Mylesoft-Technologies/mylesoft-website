@@ -136,47 +136,61 @@ export default function TeamPage() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           >
             {TEAM_MEMBERS.map((member, index) => (
-                <Card variant="light" key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col min-h-[480px]">
-                  {/* Professional Header */}
-                  <div className="bg-gradient-to-r from-navy to-navy-dark p-8 text-center">
-                    {/* Avatar — photo if available, icon placeholder if not */}
-                    <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 ring-2 ring-gold/40">
-                      {member.image ? (
-                        <Image
-                          src={member.image}
-                          alt={`${member.name} — ${member.role}`}
-                          width={96}
-                          height={96}
-                          className="w-full h-full object-cover object-top"
-                          priority={false}
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-gold/20 flex items-center justify-center">
-                          <Users className="w-12 h-12 text-gold" />
-                        </div>
-                      )}
+                <Card variant="light" key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col border border-gray-100">
+                  {/* LARGE PHOTO AREA — top of card */}
+                  <div className="relative w-full h-64 overflow-hidden bg-gradient-to-br from-navy to-navy-dark flex-shrink-0">
+                    {member.image ? (
+                      <Image
+                        src={member.image}
+                        alt={`${member.name} — ${member.role}`}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        priority={false}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <Users className="w-20 h-20 text-gold/40" />
+                      </div>
+                    )}
+
+                    {/* Gold gradient overlay at bottom of photo */}
+                    <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-navy/80 to-transparent" />
+
+                    {/* Role badge overlaid on photo bottom */}
+                    <div className="absolute bottom-3 left-4">
+                      <span className="text-gold font-body font-semibold text-xs uppercase tracking-wider bg-navy/60 px-2 py-1 rounded-md backdrop-blur-sm">
+                        {member.role}
+                      </span>
                     </div>
-                    <h3 className="text-xl font-display font-bold text-white mb-1">{member.name}</h3>
-                    <p className="text-gold font-semibold text-sm font-body mb-1">{member.role}</p>
+                  </div>
+
+                  {/* CARD CONTENT — below photo */}
+                  <div className="p-6 flex-grow flex flex-col">
+                    
+                    {/* Name */}
+                    <h3 className="text-lg font-display font-bold text-navy mb-1 group-hover:text-gold transition-colors duration-300">
+                      {member.name}
+                    </h3>
+
+                    {/* Email */}
                     {member.email && (
-                      <p className="text-light-blue text-xs font-body opacity-80">
+                      <p className="text-muted-blue text-xs font-body mb-3">
                         {member.email}
                       </p>
                     )}
-                  </div>
-                  
-                  {/* Professional Content */}
-                  <div className="p-8 flex-grow flex flex-col">
-                    <p className="text-gray-600 leading-relaxed font-body text-base mb-6 flex-grow">
+
+                    {/* Bio */}
+                    <p className="text-gray-600 leading-relaxed font-body text-sm mb-5 flex-grow">
                       {member.bio}
                     </p>
-                    
-                    {/* Professional Social Links */}
-                    <div className="flex items-center justify-center space-x-3 mt-auto">
+
+                    {/* Social links */}
+                    <div className="flex items-center gap-2 mt-auto">
                       {member.email && (
                         <a
                           href={`mailto:${member.email}`}
-                          className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300 group"
+                          className="w-9 h-9 bg-navy/8 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
                           title={`Email ${member.name}`}
                         >
                           <Mail className="w-4 h-4" />
@@ -184,7 +198,7 @@ export default function TeamPage() {
                       )}
                       <a
                         href={member.social.linkedin}
-                        className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300 group"
+                        className="w-9 h-9 bg-navy/8 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -192,7 +206,7 @@ export default function TeamPage() {
                       </a>
                       <a
                         href={member.social.twitter}
-                        className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300 group"
+                        className="w-9 h-9 bg-navy/8 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
