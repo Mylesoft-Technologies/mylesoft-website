@@ -81,6 +81,150 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Story Behind Our Name */}
+        <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
+          {/* Grid texture overlay — always present on dark sections */}
+          <div className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
+              backgroundSize: '64px 64px',
+            }}
+          />
+
+          {/* Radial glow top-right */}
+          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
+            }}
+          />
+
+          {/* Radial glow bottom-left */}
+          <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
+            }}
+          />
+
+          {/* Gold top accent line */}
+          <div className="absolute top-0 left-0 right-0 h-[3px]"
+            style={{
+              background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
+            }}
+          />
+          
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            {/* Eyebrow label */}
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="w-8 h-0.5 bg-gold" />
+              <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                OUR NAME
+              </span>
+              <div className="w-8 h-0.5 bg-gold" />
+            </div>
+
+            {/* Main heading */}
+            <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
+              The Story Behind Our
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
+                Name
+              </span>
+            </h1>
+
+            {/* Body content */}
+            <div className="font-body font-light text-light-blue text-xl leading-relaxed max-w-3xl mx-auto mb-12 text-center">
+              <p className="mb-6">
+                MylesCorp Technologies Ltd is a name built on ancient foundations — two words, two languages, one powerful identity.
+              </p>
+              <p className="mb-6">
+                <span className="text-gold font-semibold">MYLES</span> traces its roots to the Latin word <em>miles</em> — meaning soldier, warrior, and devoted champion. Throughout history the name has carried connotations of courage, strength, loyalty, and noble purpose. A miles was not simply a fighter — he was a disciplined servant of a cause greater than himself. Driven by conviction. Defined by commitment. Relentless in pursuit of mission.
+              </p>
+              <p className="mb-6">
+                <span className="text-gold font-semibold">CORP</span> derives from the Latin <em>corpus</em> — meaning body, whole, and unified structure. A corporation in its truest sense is not a building or a logo — it is a living, breathing body of people, united as one, moving toward a common purpose with shared discipline and shared vision.
+              </p>
+              <p className="mb-12">
+                Together, MylesCorp means: "A disciplined body of warriors, united in purpose, devoted to service, and relentless in pursuit of transformation."
+              </p>
+              <p>
+                This is not just a company name. It is a declaration. Every solution we build, every client we serve, and every industry we touch carries the spirit of these ancient roots — warrior's courage to tackle hard problems, and the unity of a body working as one.
+              </p>
+            </div>
+
+            {/* Word breakdown cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* Card 1: MYLES */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+                <h3 className="text-gold font-display font-bold text-2xl mb-4">MYLES</h3>
+                <p className="text-white font-body mb-4">Latin: <em>miles</em></p>
+                <ul className="space-y-2 text-white">
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <span>Warrior</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <span>Soldier</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <span>Devoted Champion</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <span>Courage</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <span>Strength</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <span>Loyalty</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Card 2: CORP */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+                <h3 className="text-gold font-display font-bold text-2xl mb-4">CORP</h3>
+                <p className="text-white font-body mb-4">Latin: <em>corpus</em></p>
+                <ul className="space-y-2 text-white">
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <span>Body</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <span>Unity</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <span>Whole</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <span>Structure</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <span>Collective</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-gold rounded-full mr-3" />
+                    <span>Purpose</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Quote */}
+            <div className="mt-12 max-w-2xl mx-auto">
+              <p className="font-display italic text-gold text-2xl text-center">
+                "A unified body of warriors devoted to a cause."
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Company Story */}
         <section className="section">
           <div className="section-padding">
