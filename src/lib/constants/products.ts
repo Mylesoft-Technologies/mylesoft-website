@@ -1,0 +1,586 @@
+export const EDUMYLES_DATA = {
+  metadata: {
+    title: 'EduMyles — School Management System | MylesCorp',
+    description: 'Complete AI-powered school management system transforming schools across East Africa. Manage students, fees, exams, timetables, and parent communication in one platform.',
+  },
+  hero: {
+    eyebrow: "EDUCATION TECHNOLOGY",
+    heading: "Transforming Schools,",
+    goldWord: "One Mile at a Time.",
+    subtitle: "The complete AI-powered school management system built for Kenyan schools — managing students, fees, exams, timetables, and parent communication all in one platform.",
+    badge: "LIVE",
+    primaryCta: { text: "Book a Free Demo", href: "/book-demo" },
+    secondaryCta: { text: "View Pricing", href: "#pricing" }
+  },
+  overview: {
+    stats: [
+      { number: "500+", label: "Schools" },
+      { number: "50,000+", label: "Students Managed" },
+      { number: "CBC & 8-4-4", label: "Supported" },
+      { number: "M-Pesa", label: "Integrated" }
+    ],
+    description: "EduMyles is MylesCorp's flagship AI-powered school management system designed specifically for Kenyan educational institutions. From CBC primary schools to secondary schools, EduMyles digitises every aspect of school administration — eliminating paperwork, reducing errors, and giving administrators, teachers, and parents real-time visibility into school operations.\n\nBuilt with deep knowledge of the Kenyan education system, EduMyles supports all local curricula including CBC, 8-4-4, and IGCSE, and integrates natively with M-Pesa and major Kenyan banks for seamless fee collection and financial management."
+  },
+  features: [
+    {
+      title: "Student Information Management",
+      description: "Complete student profiles, admission records, class allocation, and digital ID cards — all searchable and accessible from any device.",
+      icon: "users"
+    },
+    {
+      title: "Fee Management & M-Pesa Integration",
+      description: "Automated fee collection via M-Pesa, Airtel Money, and major banks. Generate invoices, track payments, send automated fee reminders to parents, and produce financial reports in seconds.",
+      icon: "credit-card"
+    },
+    {
+      title: "Exam & Results Management",
+      description: "Create exam schedules, record marks online or offline, auto-generate report cards in multiple formats, and publish results to parents via the parent portal. Supports CBC and 8-4-4 grading.",
+      icon: "file-text"
+    },
+    {
+      title: "Attendance Tracking",
+      description: "Digital attendance for students and staff. Generate class-wise, student-wise, and staff-wise attendance reports. Automated absence notifications to parents via SMS.",
+      icon: "check-circle"
+    },
+    {
+      title: "Parent & Communication Portal",
+      description: "Dedicated parent portal and mobile app for viewing fees, results, attendance, and school announcements. Two-way communication between parents and teachers.",
+      icon: "message-circle"
+    },
+    {
+      title: "Timetable & Class Management",
+      description: "Automated timetable generation with conflict detection. Manage classes, subjects, streams, and teacher allocations across all levels.",
+      icon: "calendar"
+    },
+    {
+      title: "HR & Payroll Management",
+      description: "Complete staff management — employee records, leave management, payroll processing, and payslip generation for all school staff.",
+      icon: "briefcase"
+    },
+    {
+      title: "AI-Powered Analytics & Reports",
+      description: "Real-time dashboards showing school performance, fee collection trends, attendance patterns, and exam analytics to support data-driven decisions.",
+      icon: "bar-chart"
+    }
+  ],
+  process: [
+    { step: 1, title: "Sign Up", description: "Register your school online in minutes" },
+    { step: 2, title: "Setup", description: "Configure classes, subjects, and staff" },
+    { step: 3, title: "Import Data", description: "Upload existing student and staff data" },
+    { step: 4, title: "Go Live", description: "Start managing your school digitally" },
+    { step: 5, title: "Grow", description: "Scale with AI insights and automation" }
+  ],
+  targets: [
+    "Primary Schools",
+    "Secondary Schools", 
+    "ECDE Centres",
+    "Private Schools",
+    "Public Schools",
+    "School Chains"
+  ],
+  pricing: [
+    {
+      name: "Starter",
+      price: "KES 5,000/month",
+      description: "up to 200 students",
+      features: ["Core school management", "Student records", "Basic reporting", "Email support"]
+    },
+    {
+      name: "Professional",
+      price: "KES 12,000/month",
+      description: "up to 800 students",
+      features: ["Everything in Starter", "Parent portal", "Advanced analytics", "M-Pesa integration", "Priority support", "Most Popular"]
+    },
+    {
+      name: "Enterprise",
+      price: "KES 25,000/month",
+      description: "unlimited students + multi-campus support",
+      features: ["Everything in Professional", "Multi-campus management", "Custom integrations", "Dedicated support", "Advanced AI features"]
+    }
+  ],
+  testimonials: [
+    {
+      quote: "EduMyles transformed how we manage our 600 students. Fee collection via M-Pesa alone saved us 3 days of admin work every month.",
+      author: "James Mwangi",
+      role: "Principal",
+      organization: "Westlands Academy, Nairobi"
+    },
+    {
+      quote: "The parent portal has completely changed our relationship with parents. They can see results and fees in real-time — no more phone calls to the office.",
+      author: "Mary Wanjiku",
+      role: "Head Teacher",
+      organization: "Starehe Primary School"
+    },
+    {
+      quote: "The CBC report card generation is incredible. What used to take two weeks now takes two hours. Our teachers love EduMyles.",
+      author: "Dr. Peter Odhiambo",
+      role: "Director",
+      organization: "Kisumu Green Academy"
+    }
+  ]
+}
+
+export const EDURYDE_DATA = {
+  metadata: {
+    title: 'EduRyde — School Transport Management | MylesCorp',
+    description: 'Real-time school transport management and student safety system. Live GPS tracking, parent notifications, and route optimisation for school buses across East Africa.',
+  },
+  hero: {
+    eyebrow: "SCHOOL TRANSPORT",
+    heading: "Student Safety,",
+    goldWord: "Every Journey.",
+    subtitle: "Real-time GPS tracking, instant parent notifications, and smart route management for school buses — keeping every student safe from door to door.",
+    badge: "LIVE",
+    primaryCta: { text: "Book a Free Demo", href: "/book-demo" },
+    secondaryCta: { text: "Learn More", href: "#features" }
+  },
+  overview: {
+    stats: [
+      { number: "Real-time GPS", label: "Tracking" },
+      { number: "Instant Parent", label: "Alerts" },
+      { number: "Route", label: "Optimisation" },
+      { number: "24/7", label: "Monitoring" }
+    ],
+    description: "EduRyde is a modern school transport management system built to give parents peace of mind and school administrators full control over student transportation. With live GPS tracking, automated parent notifications, and intelligent route planning, EduRyde makes school bus management safer, smarter, and more efficient.\n\nParents receive real-time notifications when their child boards the bus, when the bus is approaching their stop, and when the student arrives at school — all via SMS and the EduRyde parent app."
+  },
+  features: [
+    {
+      title: "Live GPS Bus Tracking",
+      description: "Track every school bus in real-time on an interactive map. View location, speed, and route compliance at any moment.",
+      icon: "map-pin"
+    },
+    {
+      title: "Instant Parent Notifications",
+      description: "Automated SMS and app notifications to parents when students board, arrive at stops, and reach school safely.",
+      icon: "smartphone"
+    },
+    {
+      title: "Route Planning & Optimisation",
+      description: "Create and optimise bus routes, assign stops, map students to routes, and calculate the most efficient paths to reduce time and fuel costs.",
+      icon: "route"
+    },
+    {
+      title: "Student Boarding Records",
+      description: "Digital attendance for bus boarding — know exactly which students are on which bus at any point in time.",
+      icon: "users"
+    },
+    {
+      title: "Driver & Vehicle Management",
+      description: "Manage driver profiles, vehicle maintenance schedules, insurance records, and compliance documents in one place.",
+      icon: "truck"
+    },
+    {
+      title: "Emergency Alerts",
+      description: "One-tap emergency alerts for drivers, instant notifications to school administrators and parents in case of incidents or delays.",
+      icon: "alert-triangle"
+    }
+  ],
+  process: [
+    { step: 1, title: "Setup Routes", description: "Create bus routes and assign stops" },
+    { step: 2, title: "Map Students", description: "Assign students to routes and stops" },
+    { step: 3, title: "Install App", description: "Drivers get the EduRyde driver app" },
+    { step: 4, title: "Go Live", description: "Start tracking in real-time" },
+    { step: 5, title: "Notify", description: "Parents get automatic updates" }
+  ],
+  targets: [
+    "Primary Schools",
+    "Secondary Schools",
+    "School Van Operators",
+    "Private School Buses"
+  ],
+  pricing: [
+    {
+      name: "Starter",
+      price: "KES 3,000/month",
+      description: "up to 2 buses",
+      features: ["Basic GPS tracking", "Parent notifications", "Route management", "Email support"]
+    },
+    {
+      name: "Professional",
+      price: "KES 7,000/month",
+      description: "up to 8 buses",
+      features: ["Everything in Starter", "Advanced analytics", "Driver management", "Priority support", "Most Popular"]
+    },
+    {
+      name: "Enterprise",
+      price: "KES 15,000/month",
+      description: "unlimited fleet",
+      features: ["Everything in Professional", "Unlimited buses", "Custom integrations", "Dedicated support", "Advanced reporting"]
+    }
+  ],
+  testimonials: [
+    {
+      quote: "Parents were constantly calling to ask about buses. EduRyde ended all of that. They track the bus themselves and we get zero panic calls now.",
+      author: "Sarah Kamau",
+      role: "Transport Manager",
+      organization: "Nairobi Academy"
+    },
+    {
+      quote: "We reduced our fuel costs by 18% in the first month just through route optimisation. EduRyde paid for itself immediately.",
+      author: "David Otieno",
+      role: "School Administrator",
+      organization: "Kisumu"
+    },
+    {
+      quote: "The parent notifications are the best feature. Every parent knows when their child is safe. Trust in our school has never been higher.",
+      author: "Grace Auma",
+      role: "Principal",
+      organization: "Mombasa Hill School"
+    }
+  ]
+}
+
+export const MYLESCARE_DATA = {
+  metadata: {
+    title: 'MylesCare — Healthcare Management System | MylesCorp',
+    description: 'AI-powered hospital and clinic management system for East Africa. Patient records, appointments, billing, pharmacy, lab, and M-Pesa payments in one platform.',
+  },
+  hero: {
+    eyebrow: "HEALTHCARE TECHNOLOGY",
+    heading: "Better Care,",
+    goldWord: "Smarter Systems.",
+    subtitle: "The complete AI-powered healthcare management system for hospitals, clinics, and health centres — streamlining patient care, billing, pharmacy, and laboratory management.",
+    badge: "LIVE",
+    primaryCta: { text: "Book a Free Demo", href: "/book-demo" },
+    secondaryCta: { text: "View Pricing", href: "#pricing" }
+  },
+  overview: {
+    stats: [
+      { number: "100+", label: "Health Facilities" },
+      { number: "Electronic Patient", label: "Records" },
+      { number: "M-Pesa & SHA", label: "Integrated" },
+      { number: "24/7 System", label: "Uptime" }
+    ],
+    description: "MylesCare is an AI-powered hospital and clinic management system built for East African healthcare facilities. From small clinics to multi-branch hospitals, MylesCare digitises every aspect of healthcare administration — from patient registration and appointment scheduling to billing, pharmacy management, and laboratory information.\n\nMylesCare integrates with M-Pesa, major Kenyan banks, and the Social Health Authority (SHA) for seamless insurance claims processing — making it the most locally-integrated healthcare solution in Kenya."
+  },
+  features: [
+    {
+      title: "Electronic Patient Records (EPR)",
+      description: "Comprehensive digital patient profiles including medical history, diagnoses, prescriptions, allergies, and treatment plans — accessible to authorised staff from any device.",
+      icon: "file-text"
+    },
+    {
+      title: "Appointment & Queue Management",
+      description: "Online and walk-in appointment booking, automated reminders to patients, and intelligent queue management to reduce waiting times.",
+      icon: "calendar"
+    },
+    {
+      title: "Billing & M-Pesa Payments",
+      description: "Automated billing with M-Pesa, Airtel Money, card, and bank payment integration. Generate invoices, receipts, and financial reports instantly.",
+      icon: "credit-card"
+    },
+    {
+      title: "Pharmacy Management",
+      description: "Digital prescription management, drug inventory tracking, automated reorder alerts, and pharmacy dispensing records linked to patient files.",
+      icon: "pill"
+    },
+    {
+      title: "Laboratory Information System (LIS)",
+      description: "Manage lab requests, record test results, generate lab reports, and link results directly to patient records and prescriptions.",
+      icon: "microscope"
+    },
+    {
+      title: "SHA & Insurance Integration",
+      description: "Direct integration with Social Health Authority (SHA) and major insurance providers for seamless claims submission, pre-authorisation, and reimbursement tracking.",
+      icon: "shield"
+    },
+    {
+      title: "Inpatient & Ward Management",
+      description: "Manage admissions, bed allocation, ward rounds, nursing notes, and discharge processes for inpatient care facilities.",
+      icon: "bed"
+    },
+    {
+      title: "Analytics & Reporting Dashboard",
+      description: "Real-time hospital performance metrics, revenue reports, patient flow analytics, and clinical outcome tracking to support better healthcare decisions.",
+      icon: "bar-chart"
+    }
+  ],
+  process: [
+    { step: 1, title: "Setup", description: "Configure departments, staff, and billing" },
+    { step: 2, title: "Register", description: "Digitise existing patient records" },
+    { step: 3, title: "Integrate", description: "Connect M-Pesa, SHA, and insurance" },
+    { step: 4, title: "Go Live", description: "Start managing patients digitally" },
+    { step: 5, title: "Improve", description: "Use analytics to optimise care" }
+  ],
+  targets: [
+    "Hospitals",
+    "Clinics",
+    "Health Centres",
+    "Pharmacies",
+    "Diagnostic Labs",
+    "Medical Chains"
+  ],
+  pricing: [
+    {
+      name: "Clinic",
+      price: "KES 8,000/month",
+      description: "clinic or small facility",
+      features: ["Patient records", "Appointment booking", "Basic billing", "Email support"]
+    },
+    {
+      name: "Hospital",
+      price: "KES 20,000/month",
+      description: "full hospital deployment",
+      features: ["Everything in Clinic", "Inpatient management", "Pharmacy module", "Lab integration", "Priority support", "Most Popular"]
+    },
+    {
+      name: "Enterprise",
+      price: "KES 45,000/month",
+      description: "multi-branch + advanced AI",
+      features: ["Everything in Hospital", "Multi-branch support", "Advanced AI diagnostics", "Dedicated support", "Custom integrations"]
+    }
+  ],
+  testimonials: [
+    {
+      quote: "MylesCare reduced our patient registration time from 20 minutes to 3 minutes. Our patients notice the difference and our staff love it.",
+      author: "Dr. Aisha Kamau",
+      role: "Director",
+      organization: "Kilimani Medical Centre"
+    },
+    {
+      quote: "The SHA integration alone made MylesCare worth it. Our insurance claims that used to take weeks now process in days.",
+      author: "Dr. Francis Mwenda",
+      role: "Medical Director",
+      organization: "Nairobi General Hospital"
+    },
+    {
+      quote: "The pharmacy module is outstanding. We no longer have drug stock-outs because the system alerts us before we run low.",
+      author: "Jane Otieno",
+      role: "Pharmacist",
+      organization: "Kisumu Wellness Clinic"
+    }
+  ]
+}
+
+export const AGRIMYLES_DATA = {
+  metadata: {
+    title: 'AgriMyles — Agricultural Technology Platform | MylesCorp',
+    description: 'Smart agricultural technology platform for farmers, cooperatives, and agribusinesses across East Africa. Crop tracking, market access, supply chain management and AI farming insights.',
+  },
+  hero: {
+    eyebrow: "AGRICULTURAL TECHNOLOGY",
+    heading: "Farming Smarter",
+    goldWord: "Across Africa.",
+    subtitle: "The smart agritech platform connecting farmers, cooperatives, and agribusinesses — with AI crop insights, supply chain management, and direct market access.",
+    badge: "LIVE",
+    primaryCta: { text: "Book a Free Demo", href: "/book-demo" },
+    secondaryCta: { text: "Learn More", href: "#features" }
+  },
+  overview: {
+    stats: [
+      { number: "1,000+", label: "Farmers Onboarded" },
+      { number: "47", label: "Counties Covered" },
+      { number: "M-Pesa", label: "Payments" },
+      { number: "AI Crop", label: "Advisory" }
+    ],
+    description: "AgriMyles is a comprehensive agricultural technology platform designed to modernise farming across East Africa. By connecting smallholder farmers, cooperatives, and large agribusinesses on a single digital platform, AgriMyles delivers AI-powered crop advisory, market price information, supply chain tools, and direct market linkages — all accessible via smartphone or basic feature phone.\n\nBuilt for the realities of Kenyan agriculture, AgriMyles supports M-Pesa payments, works in low-bandwidth environments, and is available in English and Swahili."
+  },
+  features: [
+    {
+      title: "AI Crop Advisory",
+      description: "AI-powered recommendations for planting, fertilisation, pest control, and harvesting based on location, weather, and crop type. Delivered via SMS and app.",
+      icon: "brain"
+    },
+    {
+      title: "Farm Record Management",
+      description: "Digital farm profiles, crop calendars, input records, yield tracking, and season-by-season performance history for every farmer.",
+      icon: "clipboard"
+    },
+    {
+      title: "Market Price & Linkage",
+      description: "Real-time market prices from major markets across Kenya. Direct connections to buyers, off-takers, and export agents — eliminating exploitative middlemen.",
+      icon: "trending-up"
+    },
+    {
+      title: "Supply Chain Management",
+      description: "Track produce from farm to market. Manage collection centres, transportation, grading, storage, and delivery for cooperatives and agribusinesses.",
+      icon: "truck"
+    },
+    {
+      title: "Financial Services Access",
+      description: "Connect farmers to agricultural loans, input credit, crop insurance, and savings products via integrated fintech partnerships.",
+      icon: "dollar-sign"
+    },
+    {
+      title: "Cooperative Management",
+      description: "Manage farmer cooperative membership, contribution records, dividend calculations, and member communications digitally.",
+      icon: "users"
+    }
+  ],
+  process: [
+    { step: 1, title: "Register", description: "Farmers sign up via smartphone or USSD" },
+    { step: 2, title: "Profile", description: "Create digital farm profile and history" },
+    { step: 3, title: "Advisory", description: "Receive AI crop recommendations" },
+    { step: 4, title: "Sell", description: "Connect with verified buyers" },
+    { step: 5, title: "Get Paid", description: "Receive payments via M-Pesa" }
+  ],
+  targets: [
+    "Smallholder Farmers",
+    "Cooperatives",
+    "Agribusinesses",
+    "County Governments",
+    "NGOs & Development Organisations"
+  ],
+  pricing: [
+    {
+      name: "Farmer",
+      price: "Free",
+      description: "individual farmer access",
+      features: ["Basic crop advisory", "Market prices", "SMS alerts", "Community access"]
+    },
+    {
+      name: "Cooperative",
+      price: "KES 5,000/month",
+      description: "cooperative management",
+      features: ["Everything in Farmer", "Member management", "Supply chain tools", "Financial services", "Most Popular"]
+    },
+    {
+      name: "Enterprise",
+      price: "KES 20,000/month",
+      description: "full agribusiness suite",
+      features: ["Everything in Cooperative", "Advanced analytics", "Custom integrations", "Dedicated support", "Multi-location management"]
+    }
+  ],
+  testimonials: [
+    {
+      quote: "The market price feature alone changed my life. I now know the fair price before I sell and stopped being cheated by middlemen.",
+      author: "John Kamau",
+      role: "Maize Farmer",
+      organization: "Nakuru County"
+    },
+    {
+      quote: "We onboarded 400 of our cooperative members on AgriMyles in one week. Managing contributions and dividends is now fully digital.",
+      author: "Catherine Wangari",
+      role: "Chairperson",
+      organization: "Meru Tea SACCO"
+    },
+    {
+      quote: "The AI crop advisory is remarkably accurate. Our tomato yield increased 35% in one season by following the recommendations.",
+      author: "Samuel Odhiambo",
+      role: "Horticulture Farmer",
+      organization: "Kiambu"
+    }
+  ]
+}
+
+export const MYLESCRM_DATA = {
+  metadata: {
+    title: 'MylesCRM — Business CRM & Solutions | MylesCorp',
+    description: 'Complete customer relationship management and business solutions platform for East African businesses. Manage leads, sales, invoicing, and customer data in one system.',
+  },
+  hero: {
+    eyebrow: "BUSINESS SOLUTIONS",
+    heading: "Grow Your Business",
+    goldWord: "Intelligently.",
+    subtitle: "The complete CRM and business management platform for East African businesses — managing leads, sales pipelines, customers, invoicing, and business reporting in one powerful system.",
+    badge: "LIVE",
+    primaryCta: { text: "Book a Free Demo", href: "/book-demo" },
+    secondaryCta: { text: "View Pricing", href: "#pricing" }
+  },
+  overview: {
+    stats: [
+      { number: "Full CRM", label: "Suite" },
+      { number: "M-Pesa", label: "Invoicing" },
+      { number: "Sales Pipeline", label: "Management" },
+      { number: "AI Business", label: "Insights" }
+    ],
+    description: "MylesCRM is a comprehensive customer relationship management and business solutions platform built for East African businesses. From managing your first sales lead to tracking invoices, monitoring customer relationships, and analysing business performance — MylesCRM puts every business tool in one integrated platform.\n\nBuilt for African business realities, MylesCRM integrates with M-Pesa for instant payment collection, supports Kenyan tax compliance, and works seamlessly on mobile devices — even in low-connectivity environments."
+  },
+  features: [
+    {
+      title: "Lead & Contact Management",
+      description: "Capture, organise, and track all leads and contacts. Record every interaction, set follow-up reminders, and never lose a sales opportunity again.",
+      icon: "users"
+    },
+    {
+      title: "Sales Pipeline Management",
+      description: "Visual sales pipeline with drag-and-drop deal management. Track deals through every stage from prospect to close.",
+      icon: "trending-up"
+    },
+    {
+      title: "Invoicing & M-Pesa Payments",
+      description: "Create professional invoices, send payment links, receive M-Pesa payments automatically, and track payment status in real-time.",
+      icon: "file-text"
+    },
+    {
+      title: "Customer Service Management",
+      description: "Log customer issues, assign to team members, track resolution times, and measure customer satisfaction across all touchpoints.",
+      icon: "headset"
+    },
+    {
+      title: "Email & SMS Marketing",
+      description: "Create and send targeted email and SMS campaigns to your customer segments directly from MylesCRM. Track open rates and responses.",
+      icon: "mail"
+    },
+    {
+      title: "Inventory & Product Management",
+      description: "Manage product catalogues, track stock levels, set reorder points, and link inventory directly to your sales and invoicing workflows.",
+      icon: "package"
+    },
+    {
+      title: "Business Analytics Dashboard",
+      description: "Real-time business performance metrics — revenue trends, pipeline value, conversion rates, and customer lifetime value — all in one dashboard.",
+      icon: "bar-chart"
+    },
+    {
+      title: "Team & Task Management",
+      description: "Assign tasks, track team performance, set targets, and manage your sales team's activities from a single management view.",
+      icon: "check-square"
+    }
+  ],
+  process: [
+    { step: 1, title: "Setup", description: "Configure your business and team" },
+    { step: 2, title: "Import", description: "Upload existing contacts and data" },
+    { step: 3, title: "Pipeline", description: "Build your sales pipeline stages" },
+    { step: 4, title: "Sell", description: "Manage leads and close deals" },
+    { step: 5, title: "Grow", description: "Use analytics to scale revenue" }
+  ],
+  targets: [
+    "SMEs & Startups",
+    "Sales Teams",
+    "Service Businesses",
+    "Retailers",
+    "Real Estate Agencies",
+    "Insurance Firms"
+  ],
+  pricing: [
+    {
+      name: "Starter",
+      price: "KES 3,500/month",
+      description: "up to 3 users",
+      features: ["Lead management", "Basic pipeline", "Email support", "Mobile app"]
+    },
+    {
+      name: "Professional",
+      price: "KES 10,000/month",
+      description: "up to 15 users",
+      features: ["Everything in Starter", "Advanced analytics", "M-Pesa invoicing", "Priority support", "Most Popular"]
+    },
+    {
+      name: "Enterprise",
+      price: "KES 25,000/month",
+      description: "unlimited users + AI",
+      features: ["Everything in Professional", "Unlimited users", "AI sales insights", "Dedicated support", "Custom integrations"]
+    }
+  ],
+  testimonials: [
+    {
+      quote: "MylesCRM gave us complete visibility into our sales pipeline. We increased our close rate by 40% in the first quarter of using it.",
+      author: "Brian Otieno",
+      role: "Sales Director",
+      organization: "Nairobi Tech Ltd"
+    },
+    {
+      quote: "The M-Pesa invoice integration is incredible. Clients pay immediately and the system reconciles automatically. Zero manual work.",
+      author: "Esther Kamau",
+      role: "Finance Manager",
+      organization: "Savanna Logistics"
+    },
+    {
+      quote: "Finally a CRM that understands African business. The SMS marketing feature reaches our customers where they actually are — on their phones.",
+      author: "Michael Njoroge",
+      role: "CEO",
+      organization: "Eastlands Distributors"
+    }
+  ]
+}

@@ -18,7 +18,25 @@ import {
   Twitter,
   Github,
   Youtube,
-  Settings
+  Settings,
+  CheckCircle,
+  Calendar,
+  TrendingUp,
+  MapPin,
+  Smartphone,
+  Route,
+  AlertTriangle,
+  Clipboard,
+  DollarSign,
+  Pill,
+  Microscope,
+  Bed,
+  BarChart,
+  Headset,
+  Mail,
+  Package,
+  CheckSquare,
+  MessageCircle
 } from 'lucide-react'
 
 interface IconProps {
@@ -47,6 +65,24 @@ const iconMap = {
   'github': Github,
   'youtube': Youtube,
   'settings': Settings,
+  'check-circle': CheckCircle,
+  'calendar': Calendar,
+  'trending-up': TrendingUp,
+  'map-pin': MapPin,
+  'smartphone': Smartphone,
+  'route': Route,
+  'alert-triangle': AlertTriangle,
+  'clipboard': Clipboard,
+  'dollar-sign': DollarSign,
+  'pill': Pill,
+  'microscope': Microscope,
+  'bed': Bed,
+  'bar-chart': BarChart,
+  'headset': Headset,
+  'mail': Mail,
+  'package': Package,
+  'check-square': CheckSquare,
+  'message-circle': MessageCircle,
 }
 
 export function Icon({ name, size = 48, className = '' }: IconProps) {
