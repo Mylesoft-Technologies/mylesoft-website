@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { MYLESValues } from '@/components/sections/MYLESValues'
@@ -8,16 +6,6 @@ import { Footer } from '@/components/layout/Footer'
 import {
   Zap, MapPin, Shield, Users, TrendingUp, Award
 } from 'lucide-react'
-
-export const metadata = {
-  title: 'MylesCorp Technologies Ltd — ' +
-         'AI-Powered Software Solutions for East Africa',
-  description:
-    'East Africa\'s leading AI-powered software company. ' +
-    'EduMyles, MylesCare, AgriMyles, MylesCRM — ' +
-    'transforming Education, Healthcare, Agriculture, ' +
-    'and Business.',
-}
 
 export default function HomePage() {
   return (
