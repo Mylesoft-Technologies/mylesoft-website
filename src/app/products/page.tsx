@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/Button'
 import { ProductCard } from '@/components/ui/ProductCard'
 import { Icon } from '@/components/ui/Icon'
 import { ArrowRight } from 'lucide-react'
+import { StaggerReveal } from '@/components/ui/ScrollReveal'
 
 const allProducts = [
   // Education Sector
@@ -350,140 +351,312 @@ const allProducts = [
 
 const sectors = Array.from(new Set(allProducts.map(product => product.sector)))
 
+const sectorData = {
+  'Education': {
+    eyebrow: 'EDUCATION',
+    name: 'Education Sector',
+    description: 'Transforming educational institutions with comprehensive management solutions.'
+  },
+  'Healthcare': {
+    eyebrow: 'HEALTHCARE',
+    name: 'Healthcare Sector',
+    description: 'Modernizing healthcare delivery with AI-powered systems and patient management.'
+  },
+  'Agriculture': {
+    eyebrow: 'AGRICULTURE',
+    name: 'Agriculture Sector',
+    description: 'Empowering farmers with smart technology for increased productivity and sustainability.'
+  },
+  'Business': {
+    eyebrow: 'BUSINESS',
+    name: 'Business Sector',
+    description: 'Driving business growth with intelligent customer relationship and operational management.'
+  },
+  'AI Platform': {
+    eyebrow: 'AI PLATFORM',
+    name: 'AI Platform',
+    description: 'Africa\'s intelligence engine powering all our solutions with advanced AI capabilities.'
+  },
+  'Financial Services': {
+    eyebrow: 'FINANCIAL',
+    name: 'Financial Services',
+    description: 'Revolutionizing financial transactions with secure digital payment solutions.'
+  },
+  'Logistics': {
+    eyebrow: 'LOGISTICS',
+    name: 'Logistics Sector',
+    description: 'Optimizing supply chains and fleet operations with intelligent tracking systems.'
+  },
+  'Real Estate': {
+    eyebrow: 'REAL ESTATE',
+    name: 'Real Estate',
+    description: 'Streamlining property management and real estate operations.'
+  },
+  'Retail': {
+    eyebrow: 'RETAIL',
+    name: 'Retail Sector',
+    description: 'Enhancing retail operations with integrated POS and inventory management.'
+  },
+  'Government': {
+    eyebrow: 'GOVERNMENT',
+    name: 'Government Sector',
+    description: 'Digitalizing public sector services for improved citizen engagement.'
+  },
+  'Manufacturing': {
+    eyebrow: 'MANUFACTURING',
+    name: 'Manufacturing',
+    description: 'Optimizing production processes with smart manufacturing solutions.'
+  },
+  'Hospitality': {
+    eyebrow: 'HOSPITALITY',
+    name: 'Hospitality',
+    description: 'Elevating guest experiences with comprehensive hospitality management.'
+  },
+  'Legal': {
+    eyebrow: 'LEGAL',
+    name: 'Legal Sector',
+    description: 'Streamlining legal practice management with intelligent automation.'
+  },
+  'Energy': {
+    eyebrow: 'ENERGY',
+    name: 'Energy',
+    description: 'Optimizing energy consumption and management with smart monitoring.'
+  },
+  'Non-Profit': {
+    eyebrow: 'NON-PROFIT',
+    name: 'Non-Profit',
+    description: 'Empowering NGOs with tools for donor and volunteer management.'
+  },
+  'Construction': {
+    eyebrow: 'CONSTRUCTION',
+    name: 'Construction',
+    description: 'Managing construction projects with intelligent project tracking.'
+  },
+  'Media': {
+    eyebrow: 'MEDIA',
+    name: 'Media',
+    description: 'Streamlining content creation and distribution for media organizations.'
+  },
+  'Transportation': {
+    eyebrow: 'TRANSPORTATION',
+    name: 'Transportation',
+    description: 'Modernizing public transit with intelligent management systems.'
+  }
+}
+
 export default function ProductsPage() {
   return (
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
-          {/* Grid texture overlay — always present on dark sections */}
-          <div className="absolute inset-0 pointer-events-none"
+        <section
+          className="relative min-h-[60vh] flex items-center justify-center overflow-hidden"
+          style={{ background: '#080e18' }}
+        >
+          {/* Grid texture */}
+          <div
+            className="absolute inset-0 pointer-events-none"
             style={{
-              backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
+              backgroundImage: `
+                linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)
+              `,
               backgroundSize: '64px 64px',
             }}
           />
 
-          {/* Radial glow top-right */}
-          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+          {/* Glow top-right */}
+          <div
+            className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
             style={{
               background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
             }}
           />
 
-          {/* Radial glow bottom-left */}
-          <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
+          {/* Glow bottom-left */}
+          <div
+            className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(199,150,57,0.07) 0%, transparent 70%)',
             }}
           />
 
-          {/* Gold top accent line */}
-          <div className="absolute top-0 left-0 right-0 h-[3px]"
+          {/* Gold top rule */}
+          <div
+            className="absolute top-0 left-0 right-0 h-[3px]"
             style={{
               background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
             }}
           />
-          
-          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-            {/* Eyebrow label */}
+
+          {/* Content — relative + z-10 is MANDATORY */}
+          <div
+            className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24 md:py-32"
+          >
+            {/* Eyebrow */}
             <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="w-8 h-0.5 bg-gold" />
-              <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+              <div className="w-8 h-px" style={{ background: '#C79639' }} />
+              <span style={{
+                color: '#C79639',
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '2.5px',
+                textTransform: 'uppercase',
+              }}>
                 OUR PRODUCTS
               </span>
-              <div className="w-8 h-0.5 bg-gold" />
+              <div className="w-8 h-px" style={{ background: '#C79639' }} />
             </div>
 
-            {/* Main heading */}
-            <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
-              Transform Your
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
+            {/* Heading */}
+            <h1
+              className="font-display font-bold leading-[1.05] text-5xl md:text-6xl lg:text-7xl mb-6"
+              style={{ color: '#ffffff' }}
+            >
+              Transform Your{' '}
+              <em style={{
+                fontStyle: 'italic',
+                background: 'linear-gradient(135deg, #C79639, #e0b055)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}>
                 Business
-              </span>
+              </em>
             </h1>
 
             {/* Subtitle */}
-            <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-              Discover our comprehensive suite of AI-powered solutions designed to transform 
-              18 different sectors across East Africa and beyond.
+            <p
+              className="font-body font-light text-xl leading-relaxed max-w-2xl mx-auto mb-10"
+              style={{ color: '#C7D7EF' }}
+            >
+              Discover our comprehensive suite of AI-powered solutions 
+              designed to transform different sectors across East Africa 
+              and beyond.
             </p>
 
-            {/* CTA buttons */}
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gold text-navy font-body font-bold text-[15px] tracking-[0.4px] px-9 py-4 rounded-md hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(199,150,57,0.3)] active:scale-[0.98] transition-all duration-200">
+              <a
+                href="/book-demo"
+                className="inline-flex items-center justify-center px-9 py-4 rounded-md font-body font-bold text-[15px] tracking-[0.4px] transition-all duration-200 hover:-translate-y-0.5"
+                style={{ background: '#C79639', color: '#1A395B' }}
+              >
                 Explore Solutions
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="bg-transparent text-white font-body font-semibold text-[15px] px-9 py-4 rounded-md border border-white/20 hover:border-gold hover:text-gold transition-all duration-200">
+              </a>
+              <a
+                href="/services"
+                className="inline-flex items-center justify-center px-9 py-4 rounded-md font-body font-semibold text-[15px] transition-all duration-200 hover:border-gold hover:text-gold"
+                style={{
+                  background: 'transparent',
+                  color: '#ffffff',
+                  border: '1.5px solid rgba(255,255,255,0.2)',
+                }}
+              >
                 View All Products
-              </button>
+              </a>
             </div>
           </div>
         </section>
 
         {/* Stats Overview */}
-        <section className="section bg-off-white">
-          <div className="section-padding">
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div className="fade-in">
-                <div className="stat-number mb-2">18</div>
-                <div className="stat-label">Sectors Served</div>
+        <section className="py-16 bg-white border-b border-gray-100">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="font-display font-bold text-4xl md:text-5xl mb-2" style={{ color: '#C79639' }}>
+                  18
+                </div>
+                <div className="font-body text-sm font-medium tracking-wide" style={{ color: '#545454' }}>
+                  Sectors Served
+                </div>
               </div>
-              <div className="fade-in" style={{animationDelay: '100ms'}}>
-                <div className="stat-number mb-2">20+</div>
-                <div className="stat-label">Products</div>
+              <div className="text-center">
+                <div className="font-display font-bold text-4xl md:text-5xl mb-2" style={{ color: '#C79639' }}>
+                  20+
+                </div>
+                <div className="font-body text-sm font-medium tracking-wide" style={{ color: '#545454' }}>
+                  Products
+                </div>
               </div>
-              <div className="fade-in" style={{animationDelay: '200ms'}}>
-                <div className="stat-number mb-2">6</div>
-                <div className="stat-label">Live Products</div>
+              <div className="text-center">
+                <div className="font-display font-bold text-4xl md:text-5xl mb-2" style={{ color: '#C79639' }}>
+                  6
+                </div>
+                <div className="font-body text-sm font-medium tracking-wide" style={{ color: '#545454' }}>
+                  Live Products
+                </div>
               </div>
-              <div className="fade-in" style={{animationDelay: '300ms'}}>
-                <div className="stat-number mb-2">14</div>
-                <div className="stat-label">In Development</div>
+              <div className="text-center">
+                <div className="font-display font-bold text-4xl md:text-5xl mb-2" style={{ color: '#C79639' }}>
+                  14
+                </div>
+                <div className="font-body text-sm font-medium tracking-wide" style={{ color: '#545454' }}>
+                  In Development
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Products by Sector */}
-        {sectors.map((sector) => (
-          <section key={sector} className="section">
-            <div className="section-padding">
-              <div className="mb-12">
-                <h2 className="heading-2 mb-4">{sector} Sector</h2>
-                <p className="body-text">
-                  {sector === 'Education' && 'Transforming educational institutions with comprehensive management solutions.'}
-                  {sector === 'Healthcare' && 'rnizing healthcare delivery with AI-powered systems and patient management.'}
-                  {sector === 'Agriculture' && 'Empowering farmers with smart technology for increased productivity and sustainability.'}
-                  {sector === 'Business' && 'Driving business growth with intelligent customer relationship and operational management.'}
-                  {sector === 'AI Platform' && 'Africa\'s intelligence engine powering all our solutions with advanced AI capabilities.'}
-                  {sector === 'Financial Services' && 'Revolutionizing financial transactions with secure digital payment solutions.'}
-                  {sector === 'Logistics' && 'Optimizing supply chains and fleet operations with intelligent tracking systems.'}
-                  {sector === 'Real Estate' && 'Streamlining property management and real estate operations.'}
-                  {sector === 'Retail' && 'Enhancing retail operations with integrated POS and inventory management.'}
-                  {sector === 'Government' && 'Digitalizing public sector services for improved citizen engagement.'}
-                  {sector === 'Manufacturing' && 'Optimizing production processes with smart manufacturing solutions.'}
-                  {sector === 'Hospitality' && 'Elevating guest experiences with comprehensive hospitality management.'}
-                  {sector === 'Legal' && 'Streamlining legal practice management with intelligent automation.'}
-                  {sector === 'Energy' && 'Optimizing energy consumption and management with smart monitoring.'}
-                  {sector === 'Non-Profit' && 'Empowering NGOs with tools for donor and volunteer management.'}
-                  {sector === 'Construction' && 'Managing construction projects with intelligent project tracking.'}
-                  {sector === 'Media' && 'Streamlining content creation and distribution for media organizations.'}
-                  {sector === 'Transportation' && 'rnizing public transit with intelligent management systems.'}
-                </p>
+        {sectors.map((sector, index) => {
+          const sectorProducts = allProducts.filter(product => product.sector === sector)
+          const data = sectorData[sector as keyof typeof sectorData]
+          const isEven = index % 2 === 0
+          
+          return (
+            <section key={sector} className={`py-16 ${isEven ? 'bg-white' : 'bg-[#f8f6f2]'}`}>
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Sector header */}
+                <div className="mb-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-8 h-0.5 bg-gold" />
+                    <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                      {data.eyebrow}
+                    </span>
+                  </div>
+                  <h2 className="font-display font-bold text-navy text-3xl md:text-4xl mb-3">
+                    {data.name}
+                  </h2>
+                  <p className="font-body font-light text-gray-600 text-base leading-relaxed max-w-2xl">
+                    {data.description}
+                  </p>
+                </div>
+                
+                {/* Product cards grid */}
+                {sectorProducts.length === 1 ? (
+                  <div className="flex justify-start">
+                    <div className="w-full sm:w-[360px]">
+                      <ProductCard {...sectorProducts[0]} />
+                    </div>
+                  </div>
+                ) : sectorProducts.length === 2 ? (
+                  <StaggerReveal
+                    staggerDelay={0.1}
+                    itemDelay={0.2}
+                    direction="up"
+                    className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+                  >
+                    {sectorProducts.map((product) => (
+                      <ProductCard key={product.name} {...product} />
+                    ))}
+                  </StaggerReveal>
+                ) : (
+                  <StaggerReveal
+                    staggerDelay={0.1}
+                    itemDelay={0.2}
+                    direction="up"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                  >
+                    {sectorProducts.map((product) => (
+                      <ProductCard key={product.name} {...product} />
+                    ))}
+                  </StaggerReveal>
+                )}
               </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {allProducts
-                  .filter(product => product.sector === sector)
-                  .map((product) => (
-                    <ProductCard key={product.name} {...product} />
-                  ))}
-              </div>
-            </div>
-          </section>
-        ))}
+            </section>
+          )
+        })}
 
         {/* CTA Section */}
         <section className="section gradient-navy">

@@ -48,7 +48,7 @@ export function ProductCard({
 
   return (
     <div
-      className={`bg-white rounded-2xl p-6 cursor-pointer group relative h-full flex flex-col ${className}`}
+      className={`w-full h-full flex flex-col min-h-[380px] bg-white rounded-2xl border border-gray-100 hover:border-gold hover:shadow-xl transition-all duration-300 overflow-hidden p-6 ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
