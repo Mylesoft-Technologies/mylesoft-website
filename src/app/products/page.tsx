@@ -679,9 +679,11 @@ export default function ProductsPage() {
                 <Link href="/book-demo" transitionTypes={['slide']}>
                   <Button>Book a Consultation</Button>
                 </Link>
-                <Button variant="secondary" onClick={() => window.open('/brochure.pdf', '_blank')}>
-                  Download Brochure
-                </Button>
+                <Link href="/brochure.pdf" target="_blank" rel="noopener noreferrer">
+                  <Button variant="secondary">
+                    Download Brochure
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

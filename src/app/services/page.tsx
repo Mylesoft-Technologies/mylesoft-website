@@ -416,9 +416,11 @@ export default function ServicesPage() {
                 <Link href="/book-demo" transitionTypes={['slide']}>
                   <Button>Schedule Consultation</Button>
                 </Link>
-                <Button variant="secondary" onClick={() => window.open('/case-studies.pdf', '_blank')}>
-                  View Case Studies
-                </Button>
+                <Link href="/case-studies.pdf" target="_blank" rel="noopener noreferrer">
+                  <Button variant="secondary">
+                    View Case Studies
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

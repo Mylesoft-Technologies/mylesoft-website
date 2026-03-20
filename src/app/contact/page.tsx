@@ -2,6 +2,7 @@ import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Card, CardIcon, CardHeader, CardContent } from '@/components/ui/Card'
 import { ScrollReveal, StaggerReveal } from '@/components/ui/ScrollReveal'
+import Link from 'next/link'
 import { 
   Mail, 
   Phone, 
@@ -303,9 +304,11 @@ export default function ContactPage() {
               <MapPin className="w-16 h-16 text-gold mx-auto mb-4" />
               <h3 className="text-2xl font-display font-bold text-white mb-2">Westlands, Nairobi</h3>
               <p className="text-light-blue mb-4">Visit us at our headquarters</p>
-              <Button size="lg" onClick={() => window.open('https://maps.google.com/?q=MylesCorp+Technologies+Westlands+Nairobi', '_blank')}>
-                Get Directions
-              </Button>
+              <Link href="https://maps.google.com/?q=MylesCorp+Technologies+Westlands+Nairobi" target="_blank" rel="noopener noreferrer">
+                <Button size="lg">
+                  Get Directions
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
