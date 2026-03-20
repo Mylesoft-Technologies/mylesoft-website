@@ -9,36 +9,72 @@ export default function EduMylesPage() {
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="section gradient-navy relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy-deep/80 to-navy-900/90"></div>
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/10 to-transparent"></div>
-          </div>
-          <div className="section-padding relative z-10">
-            <div className="text-center mb-8 fade-in">
-              <div className="inline-flex items-center gap-2 bg-gold/10 backdrop-blur-sm px-4 py-2 rounded-full border border-gold/30 mb-4">
-                <Icon name="graduation-cap" className="w-5 h-5 text-gold" />
-                <span className="text-gold font-body font-semibold">Education Management Solution</span>
-              </div>
-              <h1 className="heading-1 mb-4 fade-in text-white">EduMyles</h1>
-              <p className="text-2xl text-navy-100 leading-relaxed mb-6 slide-up max-w-3xl mx-auto">
-                The Complete School Management System Powered by AI
-              </p>
-              <div className="flex items-center justify-center gap-8 text-sm text-navy-200 mb-8">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-gold" />
-                  <span>500+ Schools</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-gold" />
-                  <span>250K+ Students</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-gold" />
-                  <span>99.9% Uptime</span>
-                </div>
-              </div>
+        <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
+          {/* Grid texture overlay — always present on dark sections */}
+          <div className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
+              backgroundSize: '64px 64px',
+            }}
+          />
+
+          {/* Radial glow top-right */}
+          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
+            }}
+          />
+
+          {/* Radial glow bottom-left */}
+          <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
+            }}
+          />
+
+          {/* Gold top accent line */}
+          <div className="absolute top-0 left-0 right-0 h-[3px]"
+            style={{
+              background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
+            }}
+          />
+          
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            {/* Eyebrow label */}
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="w-8 h-0.5 bg-gold" />
+              <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                EDUCATION MANAGEMENT
+              </span>
+              <div className="w-8 h-0.5 bg-gold" />
             </div>
+
+            {/* Main heading */}
+            <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
+              Complete School
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
+                Management
+              </span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+              Transform your educational institution with intelligent automation, comprehensive 
+              analytics, and seamless parent-teacher communication.
+            </p>
+
+            {/* CTA buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-gold text-navy font-body font-bold text-[15px] tracking-[0.4px] px-9 py-4 rounded-md hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(199,150,57,0.3)] active:scale-[0.98] transition-all duration-200">
+                Request Demo
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </button>
+              <button className="bg-transparent text-white font-body font-semibold text-[15px] px-9 py-4 rounded-md border border-white/20 hover:border-gold hover:text-gold transition-all duration-200">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </section>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="text-white">
                 <p className="text-xl text-navy-100 leading-relaxed mb-8 slide-up">
