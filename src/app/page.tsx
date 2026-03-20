@@ -35,75 +35,79 @@ export default function HomePage() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-navy-deep overflow-hidden">
-        {/* CSS Grid Texture Overlay */}
-        <div className="absolute inset-0 opacity-100" style={{
-          backgroundImage: `
-            linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)
-          `,
-          backgroundSize: '64px 64px'
-        }} />
-        
-        {/* Radial Glow Elements */}
-        <div className="absolute top-right right-10 top-20 w-[600px] h-[600px] bg-navy/50 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-left left-10 bottom-20 w-[500px] h-[500px] bg-gold/7 rounded-full blur-3xl pointer-events-none" />
-        
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="space-y-8">
-            <SimpleReveal delay={0.2}>
-              <div className="flex justify-center mb-6">
-                <Logo size="lg" fallbackColor="gold" />
-              </div>
-            </SimpleReveal>
-            
-            <SimpleReveal delay={0.4}>
-              <div>
-                <h1 className="font-display font-bold text-white leading-tight" 
-                    style={{ fontSize: 'clamp(44px, 5.5vw, 76px)' }}>
-                  Transform Your Business with
-                  <em className="block text-gold">
-                    AI-Powered Solutions
-                  </em>
-                </h1>
-              </div>
-            </SimpleReveal>
-            
-            <SimpleReveal delay={0.6}>
-              <div className="max-w-3xl mx-auto">
-                <p className="font-body text-[18px] font-light text-light-blue leading-relaxed mb-4">
-                  East Africa's leading technology company delivering innovative solutions for Education, Healthcare, Agriculture, and Business.
-                </p>
-                <p className="font-display italic font-bold text-gold text-center">
-                  Transforming Industries, Empowering Generation.
-                </p>
-              </div>
-            </SimpleReveal>
-            
-            <SimpleReveal delay={0.8}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <div>
-                  <Button 
-                    variant="primary"
-                    className="bg-gold text-navy hover:bg-gold-light hover:-translate-y-2 shadow-gold hover:shadow-gold px-9 py-4 font-body font-bold text-[14px] tracking-[0.4px]"
-                  >
-                    <Sparkles className="mr-2 w-5 h-5" />
-                    Get Started Today
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </div>
-                
-                <div>
-                  <Button 
-                    variant="outline" 
-                    className="border-white/20 text-white hover:border-gold hover:text-gold font-body"
-                  >
-                    Book a Demo
-                  </Button>
-                </div>
-              </div>
-            </SimpleReveal>
+      <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
+        {/* Grid texture overlay — always present on dark sections */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
+            backgroundSize: '64px 64px',
+          }}
+        />
+
+        {/* Radial glow top-right */}
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
+          }}
+        />
+
+        {/* Radial glow bottom-left */}
+        <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
+          }}
+        />
+
+        {/* Gold top accent line */}
+        <div className="absolute top-0 left-0 right-0 h-[3px]"
+          style={{
+            background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
+          }}
+        />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+          {/* Eyebrow label */}
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="w-8 h-0.5 bg-gold" />
+            <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+              EAST AFRICA'S LEADING TECH COMPANY
+            </span>
+            <div className="w-8 h-0.5 bg-gold" />
           </div>
+
+          {/* Main heading */}
+          <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
+            Transform Your Business with
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
+              AI-Powered Solutions
+            </span>
+          </h1>
+
+          {/* Subtitle */}
+          <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-4">
+            East Africa's leading technology company delivering innovative solutions for Education,
+            Healthcare, Agriculture, and Business.
+          </p>
+
+          {/* Tagline line */}
+          <p className="font-display italic font-bold text-gold text-center mb-10">
+            "Transforming Industries, Empowering Generations."
+          </p>
+
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-gold text-navy font-body font-bold text-[15px] tracking-[0.4px] px-9 py-4 rounded-md hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(199,150,57,0.3)] active:scale-[0.98] transition-all duration-200">
+              <Sparkles className="mr-2 w-5 h-5" />
+              Get Started Today
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </button>
+            <button className="bg-transparent text-white font-body font-semibold text-[15px] px-9 py-4 rounded-md border border-white/20 hover:border-gold hover:text-gold transition-all duration-200">
+              Book a Demo
+            </button>
+          </div>
+
         </div>
       </section>
 

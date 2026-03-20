@@ -9,17 +9,65 @@ export default function BookDemoPage() {
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="section bg-navy-500">
-          <div className="section-padding">
-            <div className="text-center text-white">
-              <h1 className="heading-1 mb-6">Book a Demo</h1>
-              <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed">
-                Experience our AI-powered solutions firsthand. Schedule a personalized demonstration with our experts to see how MylesCorp can transform your organization.
-              </p>
-              <div className="mt-8">
-                <Button size="lg">Schedule Your Demo</Button>
-              </div>
+        <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
+          {/* Grid texture overlay — always present on dark sections */}
+          <div className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
+              backgroundSize: '64px 64px',
+            }}
+          />
+
+          {/* Radial glow top-right */}
+          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
+            }}
+          />
+
+          {/* Radial glow bottom-left */}
+          <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
+            }}
+          />
+
+          {/* Gold top accent line */}
+          <div className="absolute top-0 left-0 right-0 h-[3px]"
+            style={{
+              background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
+            }}
+          />
+          
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            {/* Eyebrow label */}
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="w-8 h-0.5 bg-gold" />
+              <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                SCHEDULE A DEMO
+              </span>
+              <div className="w-8 h-0.5 bg-gold" />
             </div>
+
+            {/* Main heading */}
+            <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
+              Book a
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
+                Demo
+              </span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+              Experience our AI-powered solutions firsthand with a personalized demo 
+              tailored to your organisation's needs.
+            </p>
+
+            {/* CTA button */}
+            <button className="bg-gold text-navy font-body font-bold text-[15px] tracking-[0.4px] px-9 py-4 rounded-md hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(199,150,57,0.3)] active:scale-[0.98] transition-all duration-200">
+              <Calendar className="mr-2 w-5 h-5" />
+              Schedule Your Demo
+            </button>
           </div>
         </section>
 

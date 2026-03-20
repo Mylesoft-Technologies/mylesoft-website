@@ -181,82 +181,88 @@ export default function PricingPage() {
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="section gradient-navy relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy-deep/80 to-navy-900/90"></div>
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/10 to-transparent"></div>
-          </div>
-          <div className="section-padding relative z-10">
-            <div className="text-center mb-8 fade-in">
-              <div className="inline-flex items-center gap-2 bg-gold/10 backdrop-blur-sm px-4 py-2 rounded-full border border-gold/30 mb-4">
-                <Icon name="dollar-sign" className="w-5 h-5 text-gold" />
-                <span className="text-gold font-body font-semibold">Transparent Pricing</span>
-              </div>
-              <h1 className="heading-1 mb-4 fade-in text-white">Pricing Plans</h1>
-              <p className="text-2xl text-navy-100 leading-relaxed mb-6 slide-up max-w-3xl mx-auto">
-                Affordable Solutions for African Organizations
-              </p>
-              <div className="flex items-center justify-center gap-8 text-sm text-navy-200 mb-8">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-gold" />
-                  <span>No Hidden Fees</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-gold" />
-                  <span>14-Day Free Trial</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-gold" />
-                  <span>20% Annual Discount</span>
-                </div>
-              </div>
+        <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
+          {/* Grid texture overlay — always present on dark sections */}
+          <div className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
+              backgroundSize: '64px 64px',
+            }}
+          />
+
+          {/* Radial glow top-right */}
+          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
+            }}
+          />
+
+          {/* Radial glow bottom-left */}
+          <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
+            }}
+          />
+
+          {/* Gold top accent line */}
+          <div className="absolute top-0 left-0 right-0 h-[3px]"
+            style={{
+              background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
+            }}
+          />
+
+          {/* Content */}
+          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+            {/* Eyebrow label */}
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="w-8 h-0.5 bg-gold" />
+              <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                TRANSPARENT PRICING
+              </span>
+              <div className="w-8 h-0.5 bg-gold" />
             </div>
-            <div className="text-center text-white">
-              <p className="text-xl text-navy-100 leading-relaxed mb-8 slide-up max-w-3xl mx-auto">
-                Transparent pricing designed for African organizations. Choose the plan that fits your needs and scale as you grow with flexible options tailored to your budget and requirements.
-              </p>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-8 border border-white/20 max-w-2xl mx-auto">
-                <h3 className="text-lg font-semibold text-white mb-4">Why Choose MylesCorp?</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <Star className="w-6 h-6 text-gold" />
-                    </div>
-                    <p className="text-sm text-white font-medium">4.9/5 Rating</p>
-                    <p className="text-xs text-navy-200">500+ Reviews</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <Shield className="w-6 h-6 text-gold" />
-                    </div>
-                    <p className="text-sm text-white font-medium">Secure</p>
-                    <p className="text-xs text-navy-200">Bank-Level</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <Zap className="w-6 h-6 text-gold" />
-                    </div>
-                    <p className="text-sm text-white font-medium">Fast Setup</p>
-                    <p className="text-xs text-navy-200">24 Hours</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <Users className="w-6 h-6 text-gold" />
-                    </div>
-                    <p className="text-sm text-white font-medium">24/7 Support</p>
-                    <p className="text-xs text-navy-200">Enterprise</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in">
-                <Link href="/book-demo">
-                  <Button size="lg">Start Free Trial</Button>
-                </Link>
-                <Link href="/contact">
-                  <Button variant="secondary" size="lg">Contact Sales</Button>
-                </Link>
-              </div>
+
+            {/* Main heading */}
+            <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
+              Simple, Honest
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
+                Pricing
+              </span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-6">
+              Affordable plans designed for African organisations. No hidden fees. No surprises. 
+              Start free and scale as you grow.
+            </p>
+
+            {/* Trust badges */}
+            <div className="flex flex-wrap justify-center gap-6 mt-6 mb-8">
+              <span className="flex items-center gap-2 text-light-blue text-sm font-body">
+                <span className="text-gold">✓</span>
+                No Hidden Fees
+              </span>
+              <span className="flex items-center gap-2 text-light-blue text-sm font-body">
+                <span className="text-gold">✓</span>
+                14-Day Free Trial
+              </span>
+              <span className="flex items-center gap-2 text-light-blue text-sm font-body">
+                <span className="text-gold">✓</span>
+                20% Annual Discount
+              </span>
             </div>
+
+            {/* CTA buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-gold text-navy font-body font-bold text-[15px] tracking-[0.4px] px-9 py-4 rounded-md hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(199,150,57,0.3)] active:scale-[0.98] transition-all duration-200">
+                Start Free Trial
+              </button>
+              <button className="bg-transparent text-white font-body font-semibold text-[15px] px-9 py-4 rounded-md border border-white/20 hover:border-gold hover:text-gold transition-all duration-200">
+                Contact Sales
+              </button>
+            </div>
+
           </div>
         </section>
 
