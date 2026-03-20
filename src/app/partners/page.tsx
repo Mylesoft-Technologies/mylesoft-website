@@ -164,33 +164,36 @@ export default function PartnersPage() {
             </div>
           </ScrollReveal>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
-              {partnershipTypes.map((type, index) => (
-                <Card variant="light" key={index} className="h-full flex flex-col">
-                  <CardHeader>
-                    <h3 className="text-2xl font-display font-bold text-navy mb-3">{type.title}</h3>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <p className="text-gray-600 leading-relaxed mb-6 font-body">{type.description}</p>
-                    <ul className="space-y-3">
-                      {type.benefits.map((benefit, benefitIndex) => (
-                        <li key={benefitIndex} className="flex items-start">
-                          <div className="w-2 h-2 bg-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm font-body">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <div className="mt-auto p-6 pt-0">
-                    <Button variant="secondary" className="w-full">
-                      Explore {type.title}
-                    </Button>
-                  </div>
-                </Card>
-              ))}
-            </StaggerReveal>
-          </div>
+          <StaggerReveal
+            staggerDelay={0.2}
+            itemDelay={0.4}
+            direction="up"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            {partnershipTypes.map((type, index) => (
+              <Card variant="light" key={index} className="h-full flex flex-col">
+                <CardHeader>
+                  <h3 className="text-2xl font-display font-bold text-navy mb-3">{type.title}</h3>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="text-gray-600 leading-relaxed mb-6 font-body">{type.description}</p>
+                  <ul className="space-y-3">
+                    {type.benefits.map((benefit, benefitIndex) => (
+                      <li key={benefitIndex} className="flex items-start">
+                        <div className="w-2 h-2 bg-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <span className="text-gray-600 text-sm font-body">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <div className="mt-auto p-6 pt-0">
+                  <Button variant="secondary" className="w-full">
+                    Explore {type.title}
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </StaggerReveal>
         </div>
       </section>
 
@@ -216,24 +219,27 @@ export default function PartnersPage() {
             </div>
           </ScrollReveal>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
-              {currentPartners.map((partner, index) => (
-                <Card variant="light" key={index} className="h-full flex flex-col">
-                  <CardIcon size="md">
-                    <Award className="text-gold" />
-                  </CardIcon>
-                  <CardHeader>
-                    <h3 className="text-xl font-display font-bold text-navy mb-2">{partner.name}</h3>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <p className="text-gold font-semibold text-sm mb-3 font-body">{partner.type}</p>
-                    <p className="text-gray-600 leading-relaxed font-body">{partner.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </StaggerReveal>
-          </div>
+          <StaggerReveal
+            staggerDelay={0.2}
+            itemDelay={0.4}
+            direction="up"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            {currentPartners.map((partner, index) => (
+              <Card variant="light" key={index} className="h-full flex flex-col">
+                <CardIcon size="md">
+                  <Award className="text-gold" />
+                </CardIcon>
+                <CardHeader>
+                  <h3 className="text-xl font-display font-bold text-navy mb-2">{partner.name}</h3>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="text-gold font-semibold text-sm mb-3 font-body">{partner.type}</p>
+                  <p className="text-gray-600 leading-relaxed font-body">{partner.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </StaggerReveal>
         </div>
       </section>
 

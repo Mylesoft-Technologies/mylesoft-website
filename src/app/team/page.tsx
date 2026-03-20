@@ -164,22 +164,27 @@ export default function TeamPage() {
             staggerDelay={0.1}
             itemDelay={0.2}
             direction="up"
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8"
           >
             {teamMembers.map((member, index) => (
-                <Card variant="light" key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+                <Card variant="light" key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col min-h-[480px]">
                   {/* Professional Header */}
-                  <div className="bg-gradient-to-r from-navy to-navy-dark p-6 text-center">
-                    <div className="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="w-10 h-10 text-gold" />
+                  <div className="bg-gradient-to-r from-navy to-navy-dark p-8 text-center">
+                    <div className="w-24 h-24 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Users className="w-12 h-12 text-gold" />
                     </div>
                     <h3 className="text-xl font-display font-bold text-white mb-1">{member.name}</h3>
-                    <p className="text-gold font-semibold text-sm font-body">{member.role}</p>
+                    <p className="text-gold font-semibold text-sm font-body mb-1">{member.role}</p>
+                    {member.email && (
+                      <p className="text-light-blue text-xs font-body opacity-80">
+                        {member.email}
+                      </p>
+                    )}
                   </div>
                   
                   {/* Professional Content */}
-                  <div className="p-6 flex-grow flex flex-col">
-                    <p className="text-gray-600 leading-relaxed font-body text-sm mb-6 line-clamp-3 flex-grow">
+                  <div className="p-8 flex-grow flex flex-col">
+                    <p className="text-gray-600 leading-relaxed font-body text-base mb-6 flex-grow">
                       {member.bio}
                     </p>
                     

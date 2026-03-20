@@ -178,8 +178,7 @@ export default function BlogPage() {
                 </div>
               </ScrollReveal>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-                <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
+              <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
                   {featuredPosts.map((post, index) => (
                     <Card variant="light" key={index} className="overflow-hidden group h-full flex flex-col">
                       <div className="aspect-video bg-gold/10 flex items-center justify-center flex-shrink-0">
@@ -218,8 +217,7 @@ export default function BlogPage() {
                       </div>
                     </Card>
                   ))}
-                </StaggerReveal>
-              </div>
+              </StaggerReveal>
             </div>
           </section>
         )}
@@ -244,8 +242,7 @@ export default function BlogPage() {
               </div>
             </ScrollReveal>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
+            <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {recentPosts.map((post, index) => (
                   <Card variant="light" key={index} className="overflow-hidden group h-full flex flex-col">
                     <div className="aspect-video bg-gold/10 flex items-center justify-center flex-shrink-0">
@@ -282,8 +279,7 @@ export default function BlogPage() {
                     </div>
                   </Card>
                 ))}
-              </StaggerReveal>
-            </div>
+            </StaggerReveal>
           </div>
         </section>
 
@@ -307,8 +303,7 @@ export default function BlogPage() {
               </div>
             </ScrollReveal>
             
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
-              <StaggerReveal staggerDelay={0.1} itemDelay={0.3} direction="up">
+            <StaggerReveal staggerDelay={0.1} itemDelay={0.3} direction="up" className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 {categories.map((category, index) => (
                   <Card variant="light" key={index} className="text-center h-full flex flex-col">
                     <div className="p-6">
@@ -318,8 +313,7 @@ export default function BlogPage() {
                     </div>
                   </Card>
                 ))}
-              </StaggerReveal>
-            </div>
+            </StaggerReveal>
           </div>
         </section>
 
