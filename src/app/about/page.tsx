@@ -197,7 +197,7 @@ export default function AboutPage() {
               alt={`${member.name} — ${member.role}`}
               fill
               sizes="96px"
-              className="object-cover object-center"
+              className="object-cover object-top"
               priority={false}
             />
           ) : (
