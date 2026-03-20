@@ -17,7 +17,7 @@ const blogPosts = [
   {
     title: 'The Future of AI in African Education',
     excerpt: 'Exploring how artificial intelligence is transforming educational landscapes across East Africa, from personalized learning to administrative efficiency.',
-    author: 'Michael Myles',
+    author: 'Jonathan Myles',
     role: 'CEO & Founder',
     date: '2024-03-15',
     readTime: '5 min read',

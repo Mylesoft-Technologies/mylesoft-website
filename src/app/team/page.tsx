@@ -4,39 +4,7 @@ import { Card, CardIcon, CardHeader, CardContent } from '@/components/ui/Card'
 import { Users, Award, Target, Heart, Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Logo } from '@/components/ui/Logo'
-
-const teamMembers = [
-  {
-    name: "Jonathan Myles",
-    role: "CEO & Founder",
-    email: "jonathan@mylescorp.co.ke",
-    bio: "A visionary software engineer and entrepreneur, Jonathan founded MylesCorp Technologies in 2020 with a mission to build AI-powered solutions addressing East Africa's most critical challenges. He leads the company's overall strategy, product development, and technology architecture across all 20+ MylesCorp products.",
-    image: "/team/jonathan.jpg",
-    social: { linkedin: "#", twitter: "#" }
-  },
-   {
-    name: "Pauline Moraa",
-    role: "COO",
-    email: "pauline@mylescorp.co.ke",
-    bio: "Pauline brings operational excellence and business development expertise to MylesCorp. As COO, she drives the company's day-to-day operations, sales, marketing, and customer partnerships — ensuring every MylesCorp product delivers measurable impact across East Africa.",
-    image: "/team/pauline.jpg",
-    social: { linkedin: "#", twitter: "#" }
-  },
-  {
-    name: "Sarah Chen",
-    role: "CTO",
-    bio: "AI and machine learning expert with extensive experience in building scalable enterprise solutions. MIT graduate with multiple patents in AI.",
-    image: "/team/sarah.jpg",
-    social: { linkedin: "#", twitter: "#" }
-  },
-  {
-    name: "Amina Hassan",
-    role: "Head of Design",
-    bio: "Creative director passionate about user-centered design. Award-winning designer with experience in fintech and healthcare applications.",
-    image: "/team/amina.jpg",
-    social: { linkedin: "#", twitter: "#" }
-  }
-]
+import { TEAM_MEMBERS } from '@/lib/constants/team'
 
 const values = [
   { icon: <Target className="w-8 h-8" />, title: "Mission-Driven", description: "We're committed to solving real problems for African businesses" },
@@ -164,9 +132,9 @@ export default function TeamPage() {
             staggerDelay={0.1}
             itemDelay={0.2}
             direction="up"
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           >
-            {teamMembers.map((member, index) => (
+            {TEAM_MEMBERS.map((member, index) => (
                 <Card variant="light" key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col min-h-[480px]">
                   {/* Professional Header */}
                   <div className="bg-gradient-to-r from-navy to-navy-dark p-8 text-center">

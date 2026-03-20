@@ -1,6 +1,7 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
+import { TEAM_MEMBERS } from '@/lib/constants/team'
 import { 
   Target, 
   Eye, 
@@ -10,7 +11,10 @@ import {
   Globe,
   TrendingUp,
   Shield,
-  Zap
+  Zap,
+  Mail,
+  Linkedin,
+  Twitter
 } from 'lucide-react'
 
 export default function AboutPage() {
@@ -176,45 +180,68 @@ export default function AboutPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  name: "Michael Myles",
-                  role: "Founder & CEO",
-                  bio: "Visionary leader with 15+ years in software development and African business strategy.",
-                  avatar: null
-                },
-                {
-                  name: "Sarah Kimani",
-                  role: "CTO",
-                  bio: "AI expert driving technical innovation and product architecture.",
-                  avatar: null
-                },
-                {
-                  name: "David Ochieng",
-                  role: "Head of Operations",
-                  bio: "Operations specialist ensuring seamless delivery across 18 sectors.",
-                  avatar: null
-                },
-                {
-                  name: "Grace Achieng",
-                  role: "Head of Customer Success",
-                  bio: "Customer experience champion serving 500+ organizations across East Africa.",
-                  avatar: null
-                }
-              ].map((member, index) => (
-                <div key={index} className="text-center h-full flex flex-col">
-                  <div className="w-32 h-32 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-4 flex-shrink-0">
-                    <span className="text-gold-600 font-bold text-2xl">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <h3 className="heading-3 mb-2">{member.name}</h3>
-                  <p className="text-gold-600 font-medium mb-3">{member.role}</p>
-                  <p className="body-text text-sm flex-grow">{member.bio}</p>
-                </div>
-              ))}
-            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  {TEAM_MEMBERS.map((member, index) => (
+    <div
+      key={index}
+      className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col border border-gray-100 min-h-[420px]"
+    >
+      {/* Navy header */}
+      <div className="bg-gradient-to-r from-navy to-navy-dark p-8 text-center">
+        <div className="w-24 h-24 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <Users className="w-12 h-12 text-gold" />
+        </div>
+        <h3 className="text-xl font-display font-bold text-white mb-1">
+          {member.name}
+        </h3>
+        <p className="text-gold font-semibold text-sm font-body mb-1">
+          {member.role}
+        </p>
+        {member.email && (
+          <p className="text-light-blue text-xs font-body opacity-80">
+            {member.email}
+          </p>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="p-8 flex-grow flex flex-col">
+        <p className="text-gray-600 leading-relaxed font-body text-base mb-6 flex-grow">
+          {member.bio}
+        </p>
+
+        {/* Social links */}
+        <div className="flex items-center justify-center space-x-3 mt-auto">
+          {member.email && (
+            <a
+              href={`mailto:${member.email}`}
+              className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
+              title={`Email ${member.name}`}
+            >
+              <Mail className="w-4 h-4" />
+            </a>
+          )}
+          <a
+            href={member.social.linkedin}
+            className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Linkedin className="w-4 h-4" />
+          </a>
+          <a
+            href={member.social.twitter}
+            className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Twitter className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
           </div>
         </section>
 
