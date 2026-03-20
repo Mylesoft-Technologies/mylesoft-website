@@ -2,20 +2,6 @@ import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 import Link from 'next/link'
-
-export const metadata = {
-  title: 'Custom Software Development Kenya | MylesCorp',
-  description: 'Custom web applications, mobile apps, ERP systems, and API development for East African businesses. Built by MylesCorp Technologies in Nairobi.',
-  alternates: {
-    canonical: 'https://www.mylescorp.co.ke/services/software-development',
-  },
-}
-
-const WHATSAPP_LINK =
-  'https://wa.me/254743993715?' +
-  'text=Hi%20MylesCorp!%20I%20found%20you%20on%20' +
-  'your%20website%20and%20would%20like%20to%20' +
-  'learn%20more%20about%20your%20products.'
 import { 
   Users, 
   Settings, 
@@ -36,9 +22,18 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-  title: 'Custom Software Development | MylesCorp Technologies',
-  description: 'Custom web and mobile applications, ERP systems, and API development for businesses across East Africa. Built by MylesCorp Technologies.',
+  title: 'Custom Software Development Kenya | MylesCorp',
+  description: 'Custom web applications, mobile apps, ERP systems, and API development for East African businesses. Built by MylesCorp Technologies in Nairobi.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/services/software-development',
+  },
 }
+
+const WHATSAPP_LINK =
+  'https://wa.me/254743993715?' +
+  'text=Hi%20MylesCorp!%20I%20found%20you%20on%20' +
+  'your%20website%20and%20would%20like%20to%20' +
+  'learn%20more%20about%20your%20products.'
 
 export default function SoftwareDevelopmentPage() {
   return (

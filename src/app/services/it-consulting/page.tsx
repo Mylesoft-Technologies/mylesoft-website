@@ -2,20 +2,6 @@ import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 import Link from 'next/link'
-
-export const metadata = {
-  title: 'IT Consulting & Digital Transformation | MylesCorp',
-  description: 'Strategic IT consulting, technology audits, and digital transformation advisory for organisations across East Africa. Expert guidance from Nairobi.',
-  alternates: {
-    canonical: 'https://www.mylescorp.co.ke/services/it-consulting',
-  },
-}
-
-const WHATSAPP_LINK =
-  'https://wa.me/254743993715?' +
-  'text=Hi%20MylesCorp!%20I%20found%20you%20on%20' +
-  'your%20website%20and%20would%20like%20to%20' +
-  'learn%20more%20about%20your%20products.'
 import { 
   Users, 
   Settings, 
@@ -39,9 +25,18 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-  title: 'IT Consulting | MylesCorp Technologies',
-  description: 'Strategic IT consulting and digital transformation advisory for East African organisations.',
+  title: 'IT Consulting & Digital Transformation | MylesCorp',
+  description: 'Strategic IT consulting, technology audits, and digital transformation advisory for organisations across East Africa. Expert guidance from Nairobi.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/services/it-consulting',
+  },
 }
+
+const WHATSAPP_LINK =
+  'https://wa.me/254743993715?' +
+  'text=Hi%20MylesCorp!%20I%20found%20you%20on%20' +
+  'your%20website%20and%20would%20like%20to%20' +
+  'learn%20more%20about%20your%20products.'
 
 export default function ITConsultingPage() {
   return (

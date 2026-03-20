@@ -2,20 +2,6 @@ import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 import Link from 'next/link'
-
-export const metadata = {
-  title: 'Website Development & Hosting Kenya | MylesCorp',
-  description: 'Professional websites built on Next.js and hosted on Vercel for businesses, schools, and organisations across Kenya. Mobile-first, SEO-optimised, SSL. From KES 25,000.',
-  alternates: {
-    canonical: 'https://www.mylescorp.co.ke/services/website-development',
-  },
-}
-
-const WHATSAPP_LINK =
-  'https://wa.me/254743993715?' +
-  'text=Hi%20MylesCorp!%20I%20found%20you%20on%20' +
-  'your%20website%20and%20would%20like%20to%20' +
-  'learn%20more%20about%20your%20products.'
 import { 
   Users, 
   Settings, 
@@ -45,9 +31,18 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-  title: 'Website Development & Hosting | MylesCorp Technologies',
-  description: 'Professional websites built on Next.js and hosted on Vercel. From KES 25,000. Mobile-first, SEO optimised, 99.9% uptime guaranteed.',
+  title: 'Website Development & Hosting Kenya | MylesCorp',
+  description: 'Professional websites built on Next.js and hosted on Vercel for businesses, schools, and organisations across Kenya. Mobile-first, SEO-optimised, SSL. From KES 25,000.',
+  alternates: {
+    canonical: 'https://www.mylescorp.co.ke/services/website-development',
+  },
 }
+
+const WHATSAPP_LINK =
+  'https://wa.me/254743993715?' +
+  'text=Hi%20MylesCorp!%20I%20found%20you%20on%20' +
+  'your%20website%20and%20would%20like%20to%20' +
+  'learn%20more%20about%20your%20products.'
 
 export default function WebsiteDevelopmentPage() {
   return (
