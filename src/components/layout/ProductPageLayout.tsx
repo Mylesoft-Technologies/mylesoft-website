@@ -109,6 +109,13 @@ export function ProductPageLayout({
           <div
             className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24 md:py-32"
           >
+            {/* Product Name */}
+            <div className="mb-4">
+              <h2 className="font-display font-bold text-2xl md:text-3xl text-white/80">
+                {metadata.title.split(' — ')[0]}
+              </h2>
+            </div>
+
             {/* Badge */}
             <div className="mb-6">
               <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-green-500 to-emerald-600">
