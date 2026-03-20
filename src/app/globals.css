@@ -2,35 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS Custom Properties - Exact Brand Tokens */
+/* CSS Custom Properties - Exact Brand Tokens from HTML Design */
 :root {
   /* ── Primary Brand ── */
-  --color-navy:           #1A395B;   /* corrected */
-  --color-navy-dark:      #0f1f35;
-  --color-navy-deep:      #080e18;
-  --color-gold:           #C79639;   /* corrected */
-  --color-gold-light:     #e0b055;
-  --color-gold-pale:      #f5e4b8;
+  --navy: #1A395B;
+  --navy-dark: #0f1f35;
+  --navy-deep: #080e18;
+  --gold: #C79639;
+  --gold-light: #e0b055;
+  --gold-pale: #f5e4b8;
 
   /* ── Supporting ── */
-  --color-white:          #ffffff;
-  --color-off-white:      #f8f6f2;
-  --color-ice:            #EEF2F8;
-  --color-light-blue:     #C7D7EF;
-  --color-muted-blue:     #95A9CC;
-  --color-dark-grey:      #212121;
-  --color-med-grey:       #545454;
+  --white: #fff;
+  --off: #f8f6f2;
+  --ice: #EEF2F8;
+  --light-blue: #C7D7EF;
+  --muted: #95A9CC;
+  --dark: #212121;
+  --med: #545454;
 
   /* ── Semantic UI ── */
-  --color-bg-primary:     var(--color-navy-deep);
-  --color-bg-card:        #0d1929;
-  --color-bg-surface:     var(--color-navy-dark);
-  --color-text-primary:   var(--color-white);
-  --color-text-body:      var(--color-light-blue);
-  --color-text-muted:     var(--color-muted-blue);
-  --color-border:         rgba(199, 150, 57, 0.2);
-  --color-border-hover:   rgba(199, 150, 57, 0.5);
-  --color-border-subtle:  rgba(255, 255, 255, 0.08);
+  --color-bg-primary: var(--navy-deep);
+  --color-bg-card: #0d1929;
+  --color-bg-surface: var(--navy-dark);
+  --color-text-primary: var(--white);
+  --color-text-body: var(--light-blue);
+  --color-text-muted: var(--muted);
+  --color-border: rgba(199, 150, 57, 0.2);
+  --color-border-hover: rgba(199, 150, 57, 0.5);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
 
   /* ── Typography ── */
   --font-display:  var(--font-playfair), Georgia, serif;

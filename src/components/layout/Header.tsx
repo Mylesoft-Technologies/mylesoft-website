@@ -32,7 +32,7 @@ export function Header() {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Mega Menu', href: '/products' },
+    { name: 'Products', href: '/products' },
     { name: 'Services', href: '/services' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'About', href: '/about' },
@@ -67,18 +67,18 @@ export function Header() {
           : 'bg-navy-deep border-b border-gold/15'
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 w-full">
           {/* Logo */}
           <Link href="/" transitionTypes={['fade']} className="flex items-center group">
             <Logo size="md" className="group-hover:scale-110 transition-transform duration-300" />
             <div className="ml-3 flex flex-col">
               <span className="text-[14px] font-body font-bold text-white group-hover:text-gold transition-colors duration-300">MylesCorp</span>
-              <span className="text-[10px] font-body text-gold uppercase tracking-[1.5px]">Technologies Ltd</span>
+              <span className="text-[10px] font-body text-gold uppercase tracking-[1.5px]">Technologies</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             <Link href="/" transitionTypes={['fade']} className="flex items-center group">
               <Logo size="md" className="group-hover:scale-110 transition-transform duration-300" />
               <span className="ml-3 flex flex-col">

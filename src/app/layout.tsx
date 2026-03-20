@@ -34,8 +34,8 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'MylesCorp Technologies Ltd - AI-Powered Software Solutions',
-    template: '%s | MylesCorp Technologies',
+    default: 'MylesCorp - AI-Powered Software Solutions',
+    template: '%s | MylesCorp',
   },
   description:
     'East Africa\'s leading AI-powered software company delivering ' +
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     'AI Software East Africa',
     'EdTech Kenya', 'HealthTech Kenya',
   ],
-  authors: [{ name: 'MylesCorp Technologies Ltd' }],
-  creator: 'MylesCorp Technologies Ltd',
-  publisher: 'MylesCorp Technologies Ltd',
+  authors: [{ name: 'MylesCorp' }],
+  creator: 'MylesCorp',
+  publisher: 'MylesCorp',
   metadataBase: new URL('https://www.mylescorp.co.ke'),
   icons: {
     icon: [
@@ -72,8 +72,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_KE',
     url: 'https://www.mylescorp.co.ke',
-    siteName: 'MylesCorp Technologies Ltd',
-    title: 'MylesCorp Technologies — AI-Powered Software Solutions',
+    siteName: 'MylesCorp',
+    title: 'MylesCorp — AI-Powered Software Solutions',
     description:
       'East Africa\'s leading AI-powered software company ' +
       'transforming Education, Healthcare, Agriculture, ' +
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
       url: '/og-image.png',
       width: 1200,
       height: 630,
-      alt: 'MylesCorp Technologies Ltd',
+      alt: 'MylesCorp',
     }],
   },
   twitter: {
