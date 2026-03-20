@@ -339,7 +339,7 @@ export function MegaMenu() {
                 
                 <div className="mt-8">
                   <Link href="/about" onClick={closeMenu}>
-                    <Button variant="secondary" className="w-full bg-white text-navy hover:bg-gray-100 font-body">
+                    <Button variant="secondary" className="w-full font-body">
                       About Us
                     </Button>
                   </Link>
