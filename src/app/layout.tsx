@@ -6,6 +6,8 @@ import { AnalyticsProvider } from '@/components/analytics/Analytics'
 import { CookieConsent } from '@/components/ui/CookieConsent'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 import { LiveChat } from '@/components/ui/LiveChat'
+import { ScrollProgress } from '@/components/ui/ScrollProgress'
+import { DarkModeToggle } from '@/components/ui/DarkModeToggle'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -162,6 +164,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-white text-gray-900 antialiased font-body">
+        <ScrollProgress />
         {/* Skip to main content link */}
         <a 
           href="#main-content" 
@@ -180,6 +183,7 @@ export default function RootLayout({
         <WhatsAppButton />
         <LiveChat />
         <AnalyticsProvider />
+        <DarkModeToggle />
       </body>
     </html>
   )

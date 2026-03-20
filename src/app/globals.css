@@ -1248,6 +1248,40 @@
   }
 }
 
+/* Dark Mode Variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #080e18;
+    --foreground: #EEF2F8;
+  }
+}
+
+.dark {
+  --background: #080e18;
+  --foreground: #EEF2F8;
+  
+  /* Cards */
+  --card-bg: #0d1929;
+  --card-border: rgba(199,150,57,0.2);
+  
+  /* Text */
+  --text-primary: #EEF2F8;
+  --text-secondary: #C7D7EF;
+  --text-muted: #95A9CC;
+}
+
+.light {
+  --background: #ffffff;
+  --foreground: #212121;
+  
+  --card-bg: #ffffff;
+  --card-border: rgba(26,57,91,0.1);
+  
+  --text-primary: #212121;
+  --text-secondary: #545454;
+  --text-muted: #95A9CC;
+}
+
 @keyframes scaleInPremium {
   0% { 
     opacity: 0; 
