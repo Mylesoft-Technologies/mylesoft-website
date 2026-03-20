@@ -1,6 +1,7 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
+import Link from 'next/link'
 import { 
   Users, 
   Settings, 
@@ -16,7 +17,6 @@ import {
   Heart,
   Monitor
 } from 'lucide-react'
-import Link from 'next/link'
 
 const services = [
   {
@@ -224,13 +224,17 @@ export default function ServicesPage() {
 
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gold text-navy font-body font-bold text-[15px] tracking-[0.4px] px-9 py-4 rounded-md hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(199,150,57,0.3)] active:scale-[0.98] transition-all duration-200">
-                Explore Services
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="bg-transparent text-white font-body font-semibold text-[15px] px-9 py-4 rounded-md border border-white/20 hover:border-gold hover:text-gold transition-all duration-200">
-                Book a Consultation
-              </button>
+              <Link href="#services" transitionTypes={['slide']}>
+                <button className="bg-gold text-navy font-body font-bold text-[15px] tracking-[0.4px] px-9 py-4 rounded-md hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(199,150,57,0.3)] active:scale-[0.98] transition-all duration-200">
+                  Explore Services
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </button>
+              </Link>
+              <Link href="/book-demo" transitionTypes={['slide']}>
+                <button className="bg-transparent text-white font-body font-semibold text-[15px] px-9 py-4 rounded-md border border-white/20 hover:border-gold hover:text-gold transition-all duration-200">
+                  Book a Consultation
+                </button>
+              </Link>
             </div>
 
           </div>
@@ -409,8 +413,12 @@ export default function ServicesPage() {
                 Let's discuss how our services can help you achieve your digital transformation goals. Schedule a consultation with our experts today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button>Schedule Consultation</Button>
-                <Button variant="secondary">View Case Studies</Button>
+                <Link href="/book-demo" transitionTypes={['slide']}>
+                  <Button>Schedule Consultation</Button>
+                </Link>
+                <Button variant="secondary" onClick={() => window.open('/case-studies.pdf', '_blank')}>
+                  View Case Studies
+                </Button>
               </div>
             </div>
           </div>

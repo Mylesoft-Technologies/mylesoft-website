@@ -44,7 +44,7 @@ export default function HomePage() {
           <div
             className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(26,57,91,0.3) 0%, transparent 70%)',
             }}
           />
           
@@ -52,7 +52,7 @@ export default function HomePage() {
           <div
             className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(199,150,57,0.03) 0%, transparent 70%)',
             }}
           />
           

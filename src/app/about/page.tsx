@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 import { TEAM_MEMBERS } from '@/lib/constants/team'
 import Image from 'next/image'
+import Link from 'next/link'
 import { MYLESValues } from '@/components/sections/MYLESValues'
 import { 
   Target, 
@@ -741,12 +742,16 @@ export default function AboutPage() {
               to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gold text-navy hover:bg-gold-light">
-                Book a Demo
-              </Button>
-              <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white">
-                Contact Us
-              </Button>
+              <Link href="/book-demo" transitionTypes={['slide']}>
+                <Button className="bg-gold text-navy hover:bg-gold-light">
+                  Book a Demo
+                </Button>
+              </Link>
+              <Link href="/contact" transitionTypes={['slide']}>
+                <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white">
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

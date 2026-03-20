@@ -2,6 +2,7 @@ import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { ProductCard } from '@/components/ui/ProductCard'
 import { Icon } from '@/components/ui/Icon'
+import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { StaggerReveal } from '@/components/ui/ScrollReveal'
 
@@ -675,8 +676,12 @@ export default function ProductsPage() {
                 Not sure which product is right for you? Let our experts help you find the perfect solution for your organization.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button>Book a Consultation</Button>
-                <Button variant="secondary">Download Brochure</Button>
+                <Link href="/book-demo" transitionTypes={['slide']}>
+                  <Button>Book a Consultation</Button>
+                </Link>
+                <Button variant="secondary" onClick={() => window.open('/brochure.pdf', '_blank')}>
+                  Download Brochure
+                </Button>
               </div>
             </div>
           </div>

@@ -107,7 +107,7 @@ export default function ContactPage() {
           <div 
             className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(26,57,91,0.3) 0%, transparent 70%)',
             }}
           />
 
@@ -115,7 +115,7 @@ export default function ContactPage() {
           <div 
             className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(199,150,57,0.03) 0%, transparent 70%)',
             }}
           />
 
@@ -218,8 +218,8 @@ export default function ContactPage() {
                       <Mail size={20} className="text-gold-400 mr-3" />
                       <div>
                         <div className="font-semibold">Email</div>
-                        <a href="mailto:info@MylesCorp.com" className="text-gold-400 hover:text-gold-300">
-                          info@MylesCorp.com
+                        <a href="mailto:info@mylescorp.co.ke" className="text-gold-400 hover:text-gold-300">
+                          info@mylescorp.co.ke
                         </a>
                       </div>
                     </div>
@@ -303,7 +303,7 @@ export default function ContactPage() {
               <MapPin className="w-16 h-16 text-gold mx-auto mb-4" />
               <h3 className="text-2xl font-display font-bold text-white mb-2">Westlands, Nairobi</h3>
               <p className="text-light-blue mb-4">Visit us at our headquarters</p>
-              <Button size="lg">
+              <Button size="lg" onClick={() => window.open('https://maps.google.com/?q=MylesCorp+Technologies+Westlands+Nairobi', '_blank')}>
                 Get Directions
               </Button>
             </div>
@@ -327,8 +327,8 @@ export default function ContactPage() {
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
                   <div className="text-2xl font-bold text-gold-400 mb-2">Email Support</div>
-                  <a href="mailto:emergency@MylesCorp.com" className="text-xl text-white hover:text-gold-300">
-                    emergency@MylesCorp.com
+                  <a href="mailto:emergency@mylescorp.co.ke" className="text-xl text-white hover:text-gold-300">
+                    emergency@mylescorp.co.ke
                   </a>
                 </div>
               </div>
