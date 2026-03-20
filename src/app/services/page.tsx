@@ -11,8 +11,10 @@ import {
   CheckCircle,
   ArrowRight,
   Globe,
-  Heart
+  Heart,
+  Monitor
 } from 'lucide-react'
+import Link from 'next/link'
 
 const services = [
   {
@@ -28,7 +30,8 @@ const services = [
       'Implementation Planning'
     ],
     duration: '3-6 months',
-    price: 'Starting from KES 500,000'
+    price: 'Starting from KES 500,000',
+    href: '/services/software-development'
   },
   {
     name: 'Custom Software Development',
@@ -43,7 +46,8 @@ const services = [
       'Ongoing Support'
     ],
     duration: '2-8 months',
-    price: 'Custom Quote'
+    price: 'Custom Quote',
+    href: '/services/software-development'
   },
   {
     name: 'AI Implementation Services',
@@ -58,7 +62,8 @@ const services = [
       'Performance Monitoring'
     ],
     duration: '4-12 weeks',
-    price: 'Starting from KES 750,000'
+    price: 'Starting from KES 750,000',
+    href: '/services/software-development'
   },
   {
     name: 'Cloud Migration Services',
@@ -73,7 +78,8 @@ const services = [
       'Performance Optimization'
     ],
     duration: '6-12 weeks',
-    price: 'Starting from KES 300,000'
+    price: 'Starting from KES 300,000',
+    href: '/services/cloud-solutions'
   },
   {
     name: 'Cybersecurity Consulting',
@@ -88,7 +94,8 @@ const services = [
       'Incident Response Planning'
     ],
     duration: '2-4 weeks',
-    price: 'Starting from KES 200,000'
+    price: 'Starting from KES 200,000',
+    href: '/services/it-consulting'
   },
   {
     name: 'Training & Support Services',
@@ -103,7 +110,25 @@ const services = [
       'Performance Monitoring'
     ],
     duration: 'Ongoing',
-    price: 'Monthly Retainer'
+    price: 'Monthly Retainer',
+    href: '/services/it-consulting'
+  },
+  {
+    name: 'Website Development & Hosting',
+    description: 'We design, build, and host professional websites for businesses, schools, hospitals, NGOs, and government institutions across East Africa — built on the same world-class technology stack powering MylesCorp itself.',
+    icon: <Monitor className="text-gold-400" size={48} />,
+    features: [
+      'Custom design from scratch — no templates',
+      'Mobile-first, fully responsive',
+      'Next.js + Vercel — enterprise performance',
+      'SSL security + 99.9% uptime guaranteed',
+      'SEO optimised from day one',
+      'Packages from KES 25,000'
+    ],
+    duration: '2-6 weeks',
+    price: 'Starting from KES 25,000',
+    href: '/services/website-development',
+    cta: 'View Packages'
   }
 ]
 
@@ -250,6 +275,16 @@ export default function ServicesPage() {
                       </div>
                     </div>
                   </div>
+                  
+                  {/* Learn More Link */}
+                  {service.href && (
+                    <Link 
+                      href={service.href}
+                      className="text-gold text-sm font-bold font-body flex items-center gap-1 mt-auto pt-4 hover:gap-2 transition-all duration-200"
+                    >
+                      Learn More →
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>

@@ -5,6 +5,7 @@ import { Counter } from '@/components/ui/ScrollReveal'
 import { Card, CardIcon, CardHeader, CardContent } from '@/components/ui/Card'
 import { ArrowRight, Sparkles, Target, Users, Shield, Heart, Globe, TrendingUp, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import Link from 'next/link'
 
 const stats = [
   { number: 500, label: 'Schools Transformed', icon: <Target className="w-8 h-8" /> },
@@ -212,13 +213,17 @@ export default function HomePage() {
               Join hundreds of organizations across East Africa already using our solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-navy hover:bg-gray-100 shadow-2xl hover:shadow-3xl">
-                Start Your Journey
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-navy">
-                Schedule Consultation
-              </Button>
+              <Link href="/book-demo">
+                <Button size="lg" className="bg-white text-navy hover:bg-gray-100 shadow-2xl hover:shadow-3xl">
+                  Start Your Journey
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-navy">
+                  Schedule Consultation
+                </Button>
+              </Link>
             </div>
           </SimpleReveal>
         </div>
