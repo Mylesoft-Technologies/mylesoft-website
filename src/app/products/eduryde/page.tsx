@@ -9,18 +9,63 @@ export default function EduRydePage() {
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="section gradient-navy">
-          <div className="section-padding">
+        <section className="section gradient-navy relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy-deep/80 to-navy-900/90"></div>
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/10 to-transparent"></div>
+          </div>
+          <div className="section-padding relative z-10">
+            <div className="text-center mb-8 fade-in">
+              <div className="inline-flex items-center gap-2 bg-gold/10 backdrop-blur-sm px-4 py-2 rounded-full border border-gold/30 mb-4">
+                <Icon name="bus" className="w-5 h-5 text-gold" />
+                <span className="text-gold font-body font-semibold">School Transport Management</span>
+                <span className="bg-gold text-navy px-2 py-1 rounded-full text-xs font-body font-semibold">New</span>
+              </div>
+              <h1 className="heading-1 mb-4 fade-in text-white">EduRyde</h1>
+              <p className="text-2xl text-navy-100 leading-relaxed mb-6 slide-up max-w-3xl mx-auto">
+                Modern School Transport Management & Safety System
+              </p>
+              <div className="flex items-center justify-center gap-8 text-sm text-navy-200 mb-8">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-gold" />
+                  <span>200+ Schools</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-gold" />
+                  <span>50K+ Students</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-gold" />
+                  <span>100% Safety Record</span>
+                </div>
+              </div>
+            </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="text-white">
-                <div className="flex items-center gap-2 mb-4 fade-in">
-                  <span className="bg-gold text-navy px-3 py-1 rounded-full text-sm font-body font-semibold">New</span>
-                  <span className="text-gold text-sm font-body">Education Transport Solution</span>
-                </div>
-                <h1 className="heading-1 mb-6 fade-in">EduRyde</h1>
                 <p className="text-xl text-navy-100 leading-relaxed mb-8 slide-up">
-                  Modern school transport management and tracking system. Ensure student safety with real-time GPS tracking, intelligent route optimization, and instant parent notifications.
+                  Ensure student safety with real-time GPS tracking, intelligent route optimization, and instant parent notifications. EduRyde combines cutting-edge technology with comprehensive safety protocols for complete transport management.
                 </p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-8 border border-white/20">
+                  <h3 className="text-lg font-semibold text-white mb-4">Safety Features</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-gold" />
+                      <span className="text-sm">Live GPS Tracking</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-gold" />
+                      <span className="text-sm">Route Optimization</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-gold" />
+                      <span className="text-sm">Parent Alerts</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-gold" />
+                      <span className="text-sm">Emergency SOS</span>
+                    </div>
+                  </div>
+                </div>
                 <div className="flex flex-col sm:flex-row gap-4 fade-in">
                   <Link href="/book-demo">
                     <Button size="lg">Book a Demo</Button>
@@ -31,8 +76,11 @@ export default function EduRydePage() {
                 </div>
               </div>
               <div className="relative">
-                <div className="aspect-square bg-gold-100 rounded-2xl flex items-center justify-center">
+                <div className="aspect-square bg-gradient-to-br from-gold/20 to-gold/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-gold/30">
                   <Icon name="bus" className="text-gold-400" size={96} />
+                </div>
+                <div className="absolute -bottom-4 -right-4 bg-gold text-navy px-4 py-2 rounded-full font-body font-semibold text-sm">
+                  Safety First
                 </div>
               </div>
             </div>
