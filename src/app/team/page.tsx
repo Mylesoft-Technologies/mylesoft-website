@@ -145,9 +145,9 @@ export default function TeamPage() {
                         <Image
                           src={member.image}
                           alt={`${member.name} — ${member.role}`}
-                          fill
-                          sizes="96px"
-                          className="object-cover object-top"
+                          width={96}
+                          height={96}
+                          className="w-full h-full object-cover object-top"
                           priority={false}
                         />
                       ) : (
