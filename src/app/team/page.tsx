@@ -6,13 +6,7 @@ import { Button } from '@/components/ui/Button'
 import { Logo } from '@/components/ui/Logo'
 import { TEAM_MEMBERS } from '@/lib/constants/team'
 import Image from 'next/image'
-
-const values = [
-  { icon: <Target className="w-8 h-8" />, title: "Mission-Driven", description: "We're committed to solving real problems for African businesses" },
-  { icon: <Heart className="w-8 h-8" />, title: "Customer-Centric", description: "Our success is measured by our customers' success" },
-  { icon: <Award className="w-8 h-8" />, title: "Excellence", description: "We strive for excellence in everything we do" },
-  { icon: <Users className="w-8 h-8" />, title: "Collaboration", description: "We believe in the power of teamwork and partnership" }
-]
+import { MYLESValues } from '@/components/sections/MYLESValues'
 
 export default function TeamPage() {
   return (
@@ -79,51 +73,7 @@ export default function TeamPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal direction="up" delay={0.2}>
-            <div className="text-center mb-16">
-              {/* Eyebrow Label */}
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-8 h-0.5 bg-gold" />
-                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
-                  OUR VALUES
-                </span>
-                <div className="w-8 h-0.5 bg-gold" />
-              </div>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-navy mb-4">
-                Our Core Values
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto font-body">
-                The principles that guide everything we do
-              </p>
-            </div>
-          </ScrollReveal>
-          
-          <StaggerReveal
-            staggerDelay={0.1}
-            itemDelay={0.4}
-            direction="up"
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            {values.map((value, index) => (
-              <Card variant="light" key={index} className="text-center group h-full flex flex-col">
-                <CardIcon size="md">
-                  <div className="text-gold">{value.icon}</div>
-                </CardIcon>
-                <CardHeader>
-                  <h3 className="text-2xl font-display font-bold text-navy mb-4 group-hover:text-gold transition-colors duration-300">
-                    {value.title}
-                  </h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 leading-relaxed font-body">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </StaggerReveal>
-        </div>
-      </section>
+      <MYLESValues />
 
       {/* Team Members Section */}
       <section className="py-20 bg-gradient-to-r from-gray-50 to-gray-100">

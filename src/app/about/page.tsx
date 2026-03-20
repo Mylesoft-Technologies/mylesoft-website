@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 import { TEAM_MEMBERS } from '@/lib/constants/team'
 import Image from 'next/image'
+import { MYLESValues } from '@/components/sections/MYLESValues'
 import { 
   Target, 
   Eye, 
@@ -289,78 +290,7 @@ export default function AboutPage() {
         </section>
 
         {/* Core Values */}
-        <section className="section">
-          <div className="section-padding">
-            <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4">Our Core Values</h2>
-              <p className="body-text max-w-2xl mx-auto">
-                The principles that guide everything we do, from product development to customer service.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="text-center group h-full flex flex-col">
-                <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-200 transition-colors">
-                  <Heart className="text-gold-400" size={40} />
-                </div>
-                <h3 className="heading-3 mb-3">Customer First</h3>
-                <p className="body-text flex-grow">
-                  We exist to serve our customers. Every decision we make starts with the question: "How does this create value for our users?"
-                </p>
-              </div>
-
-              <div className="text-center group h-full flex flex-col">
-                <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-200 transition-colors">
-                  <Zap className="text-gold-400" size={40} />
-                </div>
-                <h3 className="heading-3 mb-3">Innovation</h3>
-                <p className="body-text flex-grow">
-                  We push boundaries and challenge the status quo. Innovation isn't just what we do—it's who we are.
-                </p>
-              </div>
-
-              <div className="text-center group h-full flex flex-col">
-                <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-200 transition-colors">
-                  <Shield className="text-gold-400" size={40} />
-                </div>
-                <h3 className="heading-3 mb-3">Integrity</h3>
-                <p className="body-text flex-grow">
-                  We build trust through transparency, honesty, and ethical practices in all our relationships and operations.
-                </p>
-              </div>
-
-              <div className="text-center group h-full flex flex-col">
-                <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-200 transition-colors">
-                  <Users className="text-gold-400" size={40} />
-                </div>
-                <h3 className="heading-3 mb-3">Collaboration</h3>
-                <p className="body-text flex-grow">
-                  We believe in the power of teamwork and partnerships. Together, we achieve more than we ever could alone.
-                </p>
-              </div>
-
-              <div className="text-center group h-full flex flex-col">
-                <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-200 transition-colors">
-                  <Globe className="text-gold-400" size={40} />
-                </div>
-                <h3 className="heading-3 mb-3">Local Focus</h3>
-                <p className="body-text flex-grow">
-                  While we think globally, our solutions are deeply rooted in local context. We understand African challenges because we live them.
-                </p>
-              </div>
-
-              <div className="text-center group h-full flex flex-col">
-                <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-200 transition-colors">
-                  <TrendingUp className="text-gold-400" size={40} />
-                </div>
-                <h3 className="heading-3 mb-3">Excellence</h3>
-                <p className="body-text flex-grow">
-                  We pursue excellence in everything we do. From code quality to customer service, good enough is never good enough.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <MYLESValues />
 
         {/* Leadership Team */}
         <section className="section bg-off-white">
