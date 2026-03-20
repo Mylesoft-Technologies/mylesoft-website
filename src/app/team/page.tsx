@@ -113,25 +113,28 @@ export default function TeamPage() {
             </div>
           </ScrollReveal>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <StaggerReveal staggerDelay={0.1} itemDelay={0.4} direction="up">
-              {values.map((value, index) => (
-                <Card variant="light" key={index} className="text-center group h-full flex flex-col">
-                  <CardIcon size="md">
-                    <div className="text-gold">{value.icon}</div>
-                  </CardIcon>
-                  <CardHeader>
-                    <h3 className="text-2xl font-display font-bold text-navy mb-4 group-hover:text-gold transition-colors duration-300">
-                      {value.title}
-                    </h3>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 leading-relaxed font-body">{value.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </StaggerReveal>
-          </div>
+          <StaggerReveal
+            staggerDelay={0.1}
+            itemDelay={0.4}
+            direction="up"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            {values.map((value, index) => (
+              <Card variant="light" key={index} className="text-center group h-full flex flex-col">
+                <CardIcon size="md">
+                  <div className="text-gold">{value.icon}</div>
+                </CardIcon>
+                <CardHeader>
+                  <h3 className="text-2xl font-display font-bold text-navy mb-4 group-hover:text-gold transition-colors duration-300">
+                    {value.title}
+                  </h3>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 leading-relaxed font-body">{value.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </StaggerReveal>
         </div>
       </section>
 
@@ -157,9 +160,13 @@ export default function TeamPage() {
             </div>
           </ScrollReveal>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <StaggerReveal staggerDelay={0.1} itemDelay={0.2} direction="up">
-              {teamMembers.map((member, index) => (
+          <StaggerReveal
+            staggerDelay={0.1}
+            itemDelay={0.2}
+            direction="up"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+          >
+            {teamMembers.map((member, index) => (
                 <Card variant="light" key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
                   {/* Professional Header */}
                   <div className="bg-gradient-to-r from-navy to-navy-dark p-6 text-center">
@@ -208,7 +215,6 @@ export default function TeamPage() {
                 </Card>
               ))}
             </StaggerReveal>
-          </div>
         </div>
       </section>
 
