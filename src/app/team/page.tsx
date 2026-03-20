@@ -149,6 +149,9 @@ export default function TeamPage() {
                           height={96}
                           className="w-full h-full object-cover object-top"
                           priority={false}
+                          onError={(e) => {
+                            console.error('Image failed to load:', member.image, e);
+                          }}
                         />
                       ) : (
                         <div className="w-full h-full bg-gold/20 flex items-center justify-center">
