@@ -231,7 +231,7 @@ export default function HomePage() {
               ].map((feature, index) => (
                 <div key={index} className="text-center">
                   <div className="bg-navy-500 rounded-2xl p-8 text-white h-full">
-                    <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br ${feature === 0 ? 'from-blue-500 to-blue-600' : feature === 1 ? 'from-green-500 to-green-600' : 'from-purple-500 to-purple-600'} flex items-center justify-center`}>
+                    <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br ${index === 0 ? 'from-blue-500 to-blue-600' : index === 1 ? 'from-green-500 to-green-600' : 'from-purple-500 to-purple-600'} flex items-center justify-center`}>
                       <feature.icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-display font-bold text-white mb-4">
