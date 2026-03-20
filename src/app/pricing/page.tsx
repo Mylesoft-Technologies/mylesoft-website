@@ -1,6 +1,8 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
-import { Check, X } from 'lucide-react'
+import { Icon } from '@/components/ui/Icon'
+import { Check, X, CheckCircle, Star, Shield, Zap, Users } from 'lucide-react'
+import Link from 'next/link'
 
 const pricingPlans = [
   {
@@ -179,13 +181,81 @@ export default function PricingPage() {
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="section bg-navy-500">
-          <div className="section-padding">
-            <div className="text-center text-white">
-              <h1 className="heading-1 mb-6">Pricing Plans</h1>
-              <p className="text-xl max-w-3xl mx-auto text-navy-100 leading-relaxed">
-                Transparent pricing designed for African organizations. Choose the plan that fits your needs and scale as you grow.
+        <section className="section gradient-navy relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy-deep/80 to-navy-900/90"></div>
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/10 to-transparent"></div>
+          </div>
+          <div className="section-padding relative z-10">
+            <div className="text-center mb-8 fade-in">
+              <div className="inline-flex items-center gap-2 bg-gold/10 backdrop-blur-sm px-4 py-2 rounded-full border border-gold/30 mb-4">
+                <Icon name="dollar-sign" className="w-5 h-5 text-gold" />
+                <span className="text-gold font-body font-semibold">Transparent Pricing</span>
+              </div>
+              <h1 className="heading-1 mb-4 fade-in text-white">Pricing Plans</h1>
+              <p className="text-2xl text-navy-100 leading-relaxed mb-6 slide-up max-w-3xl mx-auto">
+                Affordable Solutions for African Organizations
               </p>
+              <div className="flex items-center justify-center gap-8 text-sm text-navy-200 mb-8">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-gold" />
+                  <span>No Hidden Fees</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-gold" />
+                  <span>14-Day Free Trial</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-gold" />
+                  <span>20% Annual Discount</span>
+                </div>
+              </div>
+            </div>
+            <div className="text-center text-white">
+              <p className="text-xl text-navy-100 leading-relaxed mb-8 slide-up max-w-3xl mx-auto">
+                Transparent pricing designed for African organizations. Choose the plan that fits your needs and scale as you grow with flexible options tailored to your budget and requirements.
+              </p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-8 border border-white/20 max-w-2xl mx-auto">
+                <h3 className="text-lg font-semibold text-white mb-4">Why Choose MylesCorp?</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <Star className="w-6 h-6 text-gold" />
+                    </div>
+                    <p className="text-sm text-white font-medium">4.9/5 Rating</p>
+                    <p className="text-xs text-navy-200">500+ Reviews</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <Shield className="w-6 h-6 text-gold" />
+                    </div>
+                    <p className="text-sm text-white font-medium">Secure</p>
+                    <p className="text-xs text-navy-200">Bank-Level</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <Zap className="w-6 h-6 text-gold" />
+                    </div>
+                    <p className="text-sm text-white font-medium">Fast Setup</p>
+                    <p className="text-xs text-navy-200">24 Hours</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <Users className="w-6 h-6 text-gold" />
+                    </div>
+                    <p className="text-sm text-white font-medium">24/7 Support</p>
+                    <p className="text-xs text-navy-200">Enterprise</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+                <Link href="/book-demo">
+                  <Button size="lg">Start Free Trial</Button>
+                </Link>
+                <Link href="/contact">
+                  <Button variant="secondary" size="lg">Contact Sales</Button>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
