@@ -199,9 +199,6 @@ export default function AboutPage() {
               sizes="96px"
               className="object-cover object-center"
               priority={false}
-              onError={(e) => {
-                console.error('Image failed to load:', member.image, e);
-              }}
             />
           ) : (
             <div className="w-full h-full bg-gold/20 flex items-center justify-center">
