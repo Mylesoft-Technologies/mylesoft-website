@@ -314,7 +314,7 @@ export default function ContactPage() {
         </section>
 
         {/* Emergency Contact */}
-        <section className="section bg-navy-500">
+        <section className="section" style={{ background: '#f5e4b8' }}>
           <div className="section-padding">
             <div className="text-center text-white">
               <h2 className="heading-2 mb-4">Emergency Support</h2>
