@@ -80,7 +80,7 @@ export function Header() {
           <nav className="hidden lg:flex items-center space-x-8">
             <MegaMenu />
             {navigation
-              .filter((item) => item.name !== 'Products' && item.name !== 'Coverage')
+              .filter((item) => item.name !== 'Mega Menu' && item.name !== 'Coverage')
               .map((item) => (
                 <button
                   key={item.name}
