@@ -60,7 +60,7 @@ export function CookieConsent({ onAccept, onReject, onCustomize }: CookieConsent
   if (!isVisible) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-navy-500 text-white z-50 shadow-gold">
+    <div className="fixed bottom-0 left-0 right-0 bg-navy text-white z-50 shadow-gold border-t border-gold/20">
       <div className="container">
         <div className="flex items-center justify-between p-4">
           <div className="flex items-center space-x-3">
@@ -100,7 +100,7 @@ export function CookieConsent({ onAccept, onReject, onCustomize }: CookieConsent
         </div>
 
         {showDetails && (
-          <div className="border-t border-navy-400 p-4 space-y-4">
+          <div className="border-t border-gold/20 bg-navy/50 p-4 space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <CookieOption
                 name="Essential"
@@ -196,7 +196,7 @@ function CookieOption({ name, description, disabled = false, checked = false, on
         checked={isChecked}
         onChange={handleChange}
         disabled={disabled}
-        className="mt-1 w-4 h-4 text-gold-400 border-navy-300 rounded focus:ring-gold-400 focus:ring-2"
+        className="mt-1 w-4 h-4 text-gold bg-white border-gold/30 rounded focus:ring-gold focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
       />
       <div className="flex-1">
         <label 
