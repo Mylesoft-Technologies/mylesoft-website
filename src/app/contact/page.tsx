@@ -323,13 +323,13 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <div className="text-2xl font-bold text-navy-900 mb-2">24/7 Support</div>
+                  <div className="text-2xl font-bold text-navy-900 mb-2 transition-colors duration-200 hover:text-gold">24/7 Support</div>
                   <a href="tel:+254743993715" className="text-xl text-navy-100 hover:text-gold-400">
                     +254 743 993 715
                   </a>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <div className="text-2xl font-bold text-navy-900 mb-2">Email Support</div>
+                  <div className="text-2xl font-bold text-navy-900 mb-2 transition-colors duration-200 hover:text-gold">Email Support</div>
                   <a href="mailto:emergency@mylescorp.co.ke" className="text-xl text-navy-100 hover:text-gold-400">
                     emergency@mylescorp.co.ke
                   </a>
