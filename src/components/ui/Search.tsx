@@ -82,9 +82,9 @@ export function Search({ isOpen, onClose }: SearchProps) {
             />
             <button
               onClick={onClose}
-              className="p-2 hover:bg-off-white rounded-full transition-colors"
+              className="p-2 text-muted-blue hover:text-gold hover:bg-gold/[0.06] rounded-md transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
             >
-              <X size={20} className="text-medium-grey" />
+              <X size={20} />
             </button>
           </div>
         </div>

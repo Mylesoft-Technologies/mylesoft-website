@@ -105,7 +105,8 @@ export function LiveChat() {
       <div className="fixed bottom-6 right-6 z-40">
         <Button
           onClick={() => setIsOpen(true)}
-          className="bg-gold hover:bg-gold-light text-white rounded-full p-4 shadow-lg hover:shadow-xl"
+          size="lg"
+          className="rounded-full"
           aria-label="Open live chat"
         >
           <MessageCircle size={24} />
@@ -132,14 +133,14 @@ export function LiveChat() {
             <div className="flex items-center space-x-2">
               <button
                 onClick={() => setIsMinimized(true)}
-                className="p-1 hover:bg-navy-dark rounded transition-colors"
+                className="p-1 text-white hover:text-gold hover:bg-navy-dark/30 rounded-md transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
                 aria-label="Minimize chat"
               >
                 <Minimize2 size={18} />
               </button>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-1 hover:bg-navy-dark rounded transition-colors"
+                className="p-1 text-white hover:text-gold hover:bg-navy-dark/30 rounded-md transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
                 aria-label="Close chat"
               >
                 <X size={18} />

@@ -33,25 +33,25 @@ export function WhatsAppButton() {
             <div className="space-y-2">
               <button
                 onClick={() => handleQuickMessage('Hi! I\'d like to book a demo.')}
-                className="w-full text-left px-3 py-2 text-sm text-navy-500 hover:bg-gold-50 rounded transition-colors"
+                className="w-full text-left px-4 py-3 font-body font-semibold text-white bg-gold hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep transition-all duration-200 cursor-pointer rounded-md"
               >
                 📅 Book a Demo
               </button>
               <button
                 onClick={() => handleQuickMessage('Hi! I need pricing information.')}
-                className="w-full text-left px-3 py-2 text-sm text-navy-500 hover:bg-gold-50 rounded transition-colors"
+                className="w-full text-left px-4 py-3 font-body font-semibold text-white bg-gold hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep transition-all duration-200 cursor-pointer rounded-md"
               >
                 💰 Pricing Info
               </button>
               <button
                 onClick={() => handleQuickMessage('Hi! I have a technical question.')}
-                className="w-full text-left px-3 py-2 text-sm text-navy-500 hover:bg-gold-50 rounded transition-colors"
+                className="w-full text-left px-4 py-3 font-body font-semibold text-white bg-gold hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep transition-all duration-200 cursor-pointer rounded-md"
               >
                 🔧 Technical Support
               </button>
               <button
                 onClick={() => handleQuickMessage('Hi! I\'m interested in partnership opportunities.')}
-                className="w-full text-left px-3 py-2 text-sm text-navy-500 hover:bg-gold-50 rounded transition-colors"
+                className="w-full text-left px-4 py-3 font-body font-semibold text-white bg-gold hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep transition-all duration-200 cursor-pointer rounded-md"
               >
                 🤝 Partnership
               </button>
@@ -86,7 +86,7 @@ export function WhatsAppButton() {
         {/* Main Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="relative bg-green-500 text-white rounded-full p-4 shadow-gold hover:scale-110 transition-all duration-300 hover:shadow-gold"
+          className="relative bg-gold text-white rounded-full p-4 shadow-gold hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep transition-all duration-300 cursor-pointer font-body font-bold tracking-[0.4px]"
           aria-label="Chat on WhatsApp"
         >
           {isOpen ? (
