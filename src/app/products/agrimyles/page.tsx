@@ -1,7 +1,8 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
-import { Globe, Cloud, ArrowRight, CheckCircle } from 'lucide-react'
+import { Globe, Cloud, ArrowRight, CheckCircle, Sprout, TrendingUp, MapPin, DollarSign } from 'lucide-react'
+import Link from 'next/link'
 
 export default function AgriMylesPage() {
   return (
@@ -17,8 +18,12 @@ export default function AgriMylesPage() {
                   Smart agricultural platform. Empower farmers with data-driven insights, weather analytics, and market intelligence to maximize yields and profitability.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 fade-in">
-                  <Button size="lg">Book a Demo</Button>
-                  <Button variant="secondary" size="lg">View Features</Button>
+                  <Link href="/book-demo">
+                    <Button size="lg">Book a Demo</Button>
+                  </Link>
+                  <Link href="/pricing">
+                    <Button variant="secondary" size="lg">View Pricing</Button>
+                  </Link>
                 </div>
               </div>
               <div className="relative">
@@ -76,14 +81,24 @@ export default function AgriMylesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section bg-off-white">
+        <section className="section gradient-navy">
           <div className="section-padding">
-            <div className="text-center">
+            <div className="text-center text-white">
               <h2 className="heading-2 mb-4">Transform Your Farming Operations</h2>
-              <p className="body-text max-w-2xl mx-auto mb-8">
+              <p className="text-xl text-navy-100 mb-8 max-w-2xl mx-auto">
                 Join thousands of farmers using AgriMyles for data-driven agriculture
               </p>
-              <Button size="lg">Get Started Today</Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/book-demo">
+                  <Button size="lg">Book a Demo</Button>
+                </Link>
+                <Link href="/pricing">
+                  <Button variant="secondary" size="lg">View Pricing</Button>
+                </Link>
+                <Link href="/contact">
+                  <Button variant="outline" size="lg">Contact Sales</Button>
+                </Link>
+              </div>
             </div>
           </div>
         </section>

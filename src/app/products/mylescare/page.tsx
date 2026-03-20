@@ -1,7 +1,8 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
-import { Heart, Users, ArrowRight, CheckCircle } from 'lucide-react'
+import { Heart, Users, ArrowRight, CheckCircle, Activity, Calendar, FileText, Shield } from 'lucide-react'
+import Link from 'next/link'
 
 export default function MylesCarePage() {
   return (
@@ -17,8 +18,12 @@ export default function MylesCarePage() {
                   Intelligent hospital management system. Streamline healthcare delivery with AI-powered diagnostics, comprehensive patient records, and automated appointment scheduling.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 fade-in">
-                  <Button size="lg">Book a Demo</Button>
-                  <Button variant="secondary" size="lg">View Features</Button>
+                  <Link href="/book-demo">
+                    <Button size="lg">Book a Demo</Button>
+                  </Link>
+                  <Link href="/pricing">
+                    <Button variant="secondary" size="lg">View Pricing</Button>
+                  </Link>
                 </div>
               </div>
               <div className="relative">
@@ -76,14 +81,24 @@ export default function MylesCarePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section bg-off-white">
+        <section className="section gradient-navy">
           <div className="section-padding">
-            <div className="text-center">
+            <div className="text-center text-white">
               <h2 className="heading-2 mb-4">Transform Healthcare Delivery</h2>
-              <p className="body-text max-w-2xl mx-auto mb-8">
+              <p className="text-xl text-navy-100 mb-8 max-w-2xl mx-auto">
                 Join leading healthcare providers using MylesCare for intelligent hospital management
               </p>
-              <Button size="lg">Get Started Today</Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/book-demo">
+                  <Button size="lg">Book a Demo</Button>
+                </Link>
+                <Link href="/pricing">
+                  <Button variant="secondary" size="lg">View Pricing</Button>
+                </Link>
+                <Link href="/contact">
+                  <Button variant="outline" size="lg">Contact Sales</Button>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
