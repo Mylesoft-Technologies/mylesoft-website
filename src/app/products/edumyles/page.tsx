@@ -75,6 +75,10 @@ export default function EduMylesPage() {
             </div>
           </div>
         </section>
+
+        {/* Detailed Overview */}
+        <section className="section">
+          <div className="section-padding">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="text-white">
                 <p className="text-xl text-navy-100 leading-relaxed mb-8 slide-up">
