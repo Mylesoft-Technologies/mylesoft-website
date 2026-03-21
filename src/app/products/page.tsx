@@ -679,10 +679,8 @@ export default function ProductsPage() {
                 <Link href="/book-demo" transitionTypes={['slide']}>
                   <Button>Book a Consultation</Button>
                 </Link>
-                <Link href="/brochure.pdf" target="_blank" rel="noopener noreferrer">
-                  <Button variant="secondary">
-                    Download Brochure
-                  </Button>
+                <Link href="/contact" transitionTypes={['slide']}>
+                  <Button variant="secondary">Contact Us</Button>
                 </Link>
               </div>
             </div>
