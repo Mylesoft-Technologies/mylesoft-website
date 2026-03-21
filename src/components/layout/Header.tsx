@@ -85,18 +85,20 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 w-full">
           {/* Logo */}
-          <Link href="/" transitionTypes={['fade']} className="flex items-center group">
+          <div className="flex items-center group">
             <Logo size="md" className="group-hover:scale-110 transition-transform duration-300" />
             <div className="ml-3 flex flex-col">
               <span className="text-[14px] font-body font-bold text-white group-hover:text-gold transition-colors duration-300">MylesCorp</span>
               <span className="text-[10px] font-body text-gold uppercase tracking-[1.5px]">Technologies</span>
             </div>
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
             <Link href="/" transitionTypes={['fade']} className="flex items-center group">
-              <Logo size="md" className="group-hover:scale-110 transition-transform duration-300" />
+              <div className="w-10 h-10 bg-gradient-to-br from-navy-500 to-navy-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white font-bold text-lg">H</span>
+              </div>
               <span className="ml-3 flex flex-col">
                 <span className="text-[14px] font-body font-bold text-white group-hover:text-gold transition-colors duration-300">Home</span>
                 <span className="text-[10px] font-body text-gold uppercase tracking-[1.5px]">Start Here</span>

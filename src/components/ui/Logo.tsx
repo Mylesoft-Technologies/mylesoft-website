@@ -1,6 +1,8 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg'
@@ -27,11 +29,14 @@ export function Logo({ size = 'md', className = '', fallbackColor = 'navy' }: Lo
   }
 
   return (
-    <div className={`${sizeClasses[size]} ${className}`}>
-      <img 
-        src="/logo.png" 
-        alt="MylesCorp Technologies" 
-        className={`w-full h-full object-contain`}
+    <Link href="/" className={`${sizeClasses[size]} ${className} flex-shrink-0`}>
+      <Image
+        src="/logo.png"
+        alt="MylesCorp Technologies Ltd"
+        width={140}
+        height={108}
+        priority
+        className="h-9 w-auto object-contain"
         onError={(e) => {
           const target = e.currentTarget;
           target.style.display = 'none';
@@ -47,6 +52,6 @@ export function Logo({ size = 'md', className = '', fallbackColor = 'navy' }: Lo
       >
         <span className={`text-white font-bold ${fallbackSizeClasses[size]}`}>M</span>
       </div>
-    </div>
+    </Link>
   )
 }

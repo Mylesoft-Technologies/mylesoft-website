@@ -34,8 +34,8 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'MylesCorp - AI-Powered Software Solutions',
-    template: '%s | MylesCorp',
+    default: 'MylesCorp Technologies Ltd',
+    template: '%s | MylesCorp Technologies Ltd',
   },
   description:
     'East Africa\'s leading AI-powered software company delivering ' +
@@ -55,10 +55,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.mylescorp.co.ke'),
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-64.png', sizes: '64x64', type: 'image/png' },
     ],
-    apple: '/apple-touch-icon.png',
+    apple: '/logo-mark.png',
   },
   formatDetection: {
     email: false,
@@ -69,27 +69,17 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_KE',
+    title: 'MylesCorp Technologies Ltd',
+    description: 'Transforming Industries, Empowering Generations.',
     url: 'https://www.mylescorp.co.ke',
-    siteName: 'MylesCorp',
-    title: 'MylesCorp — AI-Powered Software Solutions',
-    description:
-      'East Africa\'s leading AI-powered software company ' +
-      'transforming Education, Healthcare, Agriculture, ' +
-      'and Business.',
-    images: [{
-      url: '/og-image.png',
-      width: 1200,
-      height: 630,
-      alt: 'MylesCorp',
-    }],
+    siteName: 'MylesCorp Technologies Ltd',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'MylesCorp Technologies Ltd',
-    description:
-      'AI-powered software solutions for East Africa.',
+    description: 'Transforming Industries, Empowering Generations.',
     images: ['/og-image.png'],
   },
   robots: {
