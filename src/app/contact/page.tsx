@@ -279,7 +279,7 @@ export default function ContactPage() {
                   <h4 className="font-body font-semibold text-navy text-lg mb-4">Departments</h4>
                   <div className="space-y-4">
                     {departments.map((dept) => (
-                      <div key={dept.name} className="bg-navy-deep/5 rounded-xl p-6 border border-navy-deep/10">
+                      <div key={dept.name} className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:border-gold/30 transition-all duration-300">
                         <h5 className="font-display font-bold text-navy text-xl mb-2">{dept.title}</h5>
                         <p className="font-body text-light-blue text-sm mb-4">{dept.description}</p>
                         <div className="space-y-2">
@@ -388,7 +388,7 @@ export default function ContactPage() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {offices.map((office, index) => (
-                <div key={index} className="bg-navy-deep/5 rounded-xl p-6 border border-navy-deep/10">
+                <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:border-gold/30 transition-all duration-300">
                   {office.isHeadquarters && (
                     <div className="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-semibold mb-4 font-body">
                       Headquarters
@@ -398,7 +398,7 @@ export default function ContactPage() {
                   <div className="space-y-3">
                     <div className="flex items-start">
                       <MapPin size={16} className="text-gold mr-2 mt-1 flex-shrink-0" />
-                      <span className="text-sm text-light-blue font-body">{office.address}</span>
+                      <span className="text-sm text-gray-700 font-body">{office.address}</span>
                     </div>
                     <div className="flex items-center">
                       <Phone size={16} className="text-gold mr-2" />
@@ -414,7 +414,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex items-start">
                       <Clock size={16} className="text-gold mr-2 mt-1 flex-shrink-0" />
-                      <span className="text-sm text-light-blue font-body">{office.hours}</span>
+                      <span className="text-sm text-gray-700 font-body">{office.hours}</span>
                     </div>
                   </div>
                 </div>
