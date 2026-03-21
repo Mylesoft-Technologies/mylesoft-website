@@ -136,51 +136,24 @@ export default function HomePage() {
     <>
       <Header />
       <main className="min-h-screen">
-        {/* SECTION 1 — Hero */}
-        <section
-          className="relative min-h-screen flex items-center
-                   justify-center overflow-hidden"
-          style={{ background: '#080e18' }}
-        >
-          {/* Grid texture */}
-          <div
-            className="absolute inset-0 pointer-events-none"
+        {/* Hero Section */}
+        <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
+          {/* Grid texture overlay */}
+          <div className="absolute inset-0 pointer-events-none"
             style={{
-              backgroundImage: `
-                linear-gradient(rgba(199,150,57,0.04) 1px,
-                          transparent 1px),
-                linear-gradient(90deg,rgba(199,150,57,0.04) 1px,
-                          transparent 1px)
-              `,
+              backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
               backgroundSize: '64px 64px',
             }}
           />
           
-          {/* Radial glow top-right */}
-          <div
-            className="hidden sm:block absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(26,57,91,0.3) 0%, transparent 70%)',
-            }}
-          />
-          
-          {/* Radial glow bottom-left */}
-          <div
-            className="hidden sm:block absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(199,150,57,0.03) 0%, transparent 70%)',
-            }}
-          />
-          
           {/* Gold top accent line */}
-          <div
-            className="absolute top-0 left-0 right-0 h-[3px]"
+          <div className="absolute top-0 left-0 right-0 h-[3px]"
             style={{
               background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
             }}
           />
           
-          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32 max-w-4xl mx-auto">
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
             {/* Company Name */}
             <div className="mb-12">
               <h2 className="font-display font-bold text-gold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] break-words text-balance">
@@ -250,14 +223,22 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SECTION 2 — Products Overview */}
-        <section className="section bg-off-white">
-          <div className="section-padding">
-            <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4">Our Products</h2>
-              <p className="body-text max-w-2xl mx-auto">
-                Comprehensive software solutions designed to transform 
-                education, healthcare, agriculture, and business operations.
+        {/* Products Overview */}
+        <section className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-5">
+                <div className="w-8 h-0.5 bg-gold" />
+                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                  OUR PRODUCTS
+                </span>
+                <div className="w-8 h-0.5 bg-gold" />
+              </div>
+              <h2 className="font-display font-bold text-navy text-4xl md:text-5xl mb-4">
+                Comprehensive Solutions
+              </h2>
+              <p className="font-body text-light-blue text-lg max-w-2xl mx-auto leading-[1.7]">
+                Transforming education, healthcare, agriculture, and business with AI-powered innovation.
               </p>
             </div>
             
@@ -266,29 +247,25 @@ export default function HomePage() {
                 {
                   name: 'EduMyles',
                   description: 'Complete School Management System',
-                  icon: Zap,
-                  color: 'from-blue-500 to-blue-600',
+                  icon: '🎓',
                   href: '/products/edumyles'
                 },
                 {
                   name: 'MylesCare',
                   description: 'Healthcare Management Platform',
-                  icon: Shield,
-                  color: 'from-green-500 to-green-600',
+                  icon: '🏥',
                   href: '/products/mylescare'
                 },
                 {
                   name: 'AgriMyles',
                   description: 'Smart Agricultural Solutions',
-                  icon: MapPin,
-                  color: 'from-yellow-500 to-yellow-600',
+                  icon: '🌾',
                   href: '/products/agrimyles'
                 },
                 {
                   name: 'MylesCRM',
                   description: 'Business Management System',
-                  icon: Users,
-                  color: 'from-purple-500 to-purple-600',
+                  icon: '💼',
                   href: '/products/mylescrm'
                 }
               ].map((product, index) => (
@@ -297,34 +274,47 @@ export default function HomePage() {
                   href={product.href}
                   className="group block"
                 >
-                  <div className={`relative overflow-hidden rounded-2xl p-8 transition-all duration-300 ${product.color}`}>
-                    <div className="absolute inset-0 bg-gradient-to-br opacity-10 group-hover:opacity-20 transition-opacity duration-300" />
-                    <div className="relative z-10">
-                      <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-white flex items-center justify-center ${product.color}`}>
-                        <product.icon className="w-8 h-8 text-white" />
-                      </div>
-                      <h3 className="text-xl font-display font-bold text-white mb-2">
-                        {product.name}
-                      </h3>
-                      <p className="text-white/90 text-sm font-body">
-                        {product.description}
-                      </p>
+                  <div className="bg-navy-deep/5 rounded-2xl p-8 border border-navy-deep/10 hover:border-gold/30 transition-all duration-300 h-full">
+                    <div className="w-16 h-16 bg-gold/10 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                      <span className="text-2xl">{product.icon}</span>
                     </div>
+                    <h3 className="font-body font-bold text-navy text-xl mb-3 text-center">{product.name}</h3>
+                    <p className="font-body text-light-blue leading-[1.7] text-center">{product.description}</p>
                   </div>
                 </Link>
               ))}
             </div>
+            
+            <div className="text-center mt-12">
+              <Link href="/products">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-gold/50 text-gold hover:border-gold hover:bg-gold hover:text-navy"
+                >
+                  Explore All Products
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
 
-        {/* SECTION 3 — Stats */}
-        <section className="section bg-navy">
-          <div className="section-padding">
-            <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4 text-white">Trusted Across East Africa</h2>
-              <p className="text-light-blue max-w-2xl mx-auto font-body">
-                Empowering thousands of users in Kenya, Uganda, Tanzania, 
-                and beyond with innovative AI-powered solutions.
+        {/* Stats Section */}
+        <section className="py-20 bg-navy-deep">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-5">
+                <div className="w-8 h-0.5 bg-gold" />
+                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                  TRUSTED ACROSS EAST AFRICA
+                </span>
+                <div className="w-8 h-0.5 bg-gold" />
+              </div>
+              <h2 className="font-display font-bold text-white text-4xl md:text-5xl mb-4">
+                Impact & Reach
+              </h2>
+              <p className="font-body text-light-blue text-lg max-w-2xl mx-auto leading-[1.7]">
+                Empowering thousands of users in Kenya, Uganda, Tanzania, and beyond with innovative AI-powered solutions.
               </p>
             </div>
             
@@ -332,15 +322,16 @@ export default function HomePage() {
               {[
                 { number: '500+', label: 'Schools Managed', icon: '🎓' },
                 { number: '50K+', label: 'Patients Served', icon: '🏥' },
-                { number: '1000+', label: 'Farmers Helped', icon: '🌾' },
+                { number: '1,000+', label: 'Farmers Helped', icon: '🌾' },
                 { number: '200+', label: 'Businesses Transformed', icon: '💼' }
               ].map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-4xl md:text-5xl font-display font-bold text-gold mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-gray-300 text-sm font-body">
-                    {stat.icon} {stat.label}
+                  <div className="text-light-blue text-sm font-body">
+                    <span className="mr-2">{stat.icon}</span>
+                    {stat.label}
                   </div>
                 </div>
               ))}
