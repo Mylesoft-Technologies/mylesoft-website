@@ -1,5 +1,11 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
+import { FeaturesSection } from '@/components/ui/FeaturesSection'
+import { TestimonialsSection } from '@/components/ui/TestimonialsSection'
+import { CTASection } from '@/components/ui/CTASection'
+import { OverviewSection } from '@/components/ui/OverviewSection'
+import { ProcessSection } from '@/components/ui/ProcessSection'
+import { TargetsSection } from '@/components/ui/TargetsSection'
 import { Icon } from '@/components/ui/Icon'
 import { TEAM_MEMBERS } from '@/lib/constants/team'
 import Image from 'next/image'
@@ -27,105 +33,141 @@ export const metadata = {
   },
 }
 
+const ABOUT_DATA = {
+  overview: {
+    title: 'About Us',
+    tagline: 'Transforming Africa Through Innovation',
+    description: [
+      'MylesCorp Technologies is East Africa\'s leading AI-powered software company.',
+      'We\'re transforming education, healthcare, agriculture, and business with innovative technology solutions.'
+    ],
+    image: '/api/og/product?name=About&category=Company',
+    stats: [
+      { number: '500+', label: 'Schools Transformed' },
+      { number: '50K+', label: 'Lives Impacted' },
+      { number: '12', label: 'Products Launched' },
+      { number: '4', label: 'East Africa Countries' }
+    ]
+  },
+  features: [
+    {
+      icon: '🎯',
+      title: 'Mission-Driven',
+      description: 'We\'re committed to solving real challenges in African markets with technology that makes a difference.'
+    },
+    {
+      icon: '🌍',
+      title: 'Local Expertise',
+      description: 'Built by Africans, for Africa – we understand the unique challenges and opportunities of our markets.'
+    },
+    {
+      icon: '🚀',
+      title: 'Innovation First',
+      description: 'We leverage cutting-edge AI and machine learning to create solutions that push boundaries.'
+    },
+    {
+      icon: '👥',
+      title: 'Expert Team',
+      description: 'Our talented team of engineers, designers, and domain experts brings diverse perspectives and skills.'
+    },
+    {
+      icon: '🏆',
+      title: 'Proven Impact',
+      description: 'With measurable results across multiple sectors, we\'ve demonstrated our ability to drive real change.'
+    },
+    {
+      icon: '⚡',
+      title: 'Agile Approach',
+      description: 'We move fast and iterate quickly to deliver solutions that meet evolving market needs.'
+    }
+  ],
+  process: [
+    { step: 1, title: 'Discovery', description: 'We deeply understand African challenges through research and engagement' },
+    { step: 2, title: 'Design', description: 'We create user-centered solutions tailored for local contexts' },
+    { step: 3, title: 'Development', description: 'We build robust, scalable systems using cutting-edge technology' },
+    { step: 4, title: 'Deployment', description: 'We implement solutions with comprehensive training and support' },
+    { step: 5, title: 'Impact', description: 'We measure and optimize for maximum positive impact' }
+  ],
+  targets: [
+    'Educational Institutions - Schools, colleges, and universities seeking digital transformation',
+    'Healthcare Providers - Hospitals, clinics, and medical centers needing management solutions',
+    'Agricultural Organizations - Farms, cooperatives, and agribusinesses',
+    'Business Enterprises - SMEs and corporations looking for operational efficiency'
+  ],
+  testimonials: [
+    {
+      quote: 'MylesCorp understands African markets like no other company. Their solutions are built for our reality.',
+      author: 'Sarah Johnson',
+      role: 'School Principal',
+      organization: 'Nairobi Academy'
+    },
+    {
+      quote: 'The impact they\'ve made in healthcare is remarkable. Their AI solutions are saving lives.',
+      author: 'Dr. Michael Chen',
+      role: 'Medical Director',
+      organization: 'East Africa Medical Center'
+    },
+    {
+      quote: 'From concept to implementation, MylesCorp delivered beyond our expectations.',
+      author: 'Grace Wanjiku',
+      role: 'CEO',
+      organization: 'Kenya Agricultural Cooperative'
+    }
+  ]
+}
+
 export default function AboutPage() {
   return (
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section
-          className="relative py-24 md:py-32 overflow-hidden"
-          style={{ background: '#080e18' }}
-        >
-          {/* Grid texture */}
-          <div
-            className="absolute inset-0 pointer-events-none"
+        <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
+          {/* Grid texture overlay */}
+          <div className="absolute inset-0 pointer-events-none"
             style={{
-              backgroundImage: `
-                linear-gradient(rgba(199,150,57,0.04) 1px,
-                        transparent 1px),
-                linear-gradient(90deg,rgba(199,150,57,0.04) 1px,
-                        transparent 1px)
-              `,
+              backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
               backgroundSize: '64px 64px',
             }}
           />
 
-          {/* Glow top-right */}
-          <div
-            className="absolute -top-32 -right-32 w-[500px]
-               h-[500px] rounded-full pointer-events-none"
+          {/* Gold top accent line */}
+          <div className="absolute top-0 left-0 right-0 h-[3px]"
             style={{
-              background: 'radial-gradient(circle,' +
-                'rgba(26,57,91,0.6) 0%,transparent 70%)',
+              background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
             }}
           />
 
-          {/* Glow bottom-left */}
-          <div
-            className="absolute -bottom-32 -left-32 w-[400px]
-               h-[400px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle,' +
-                'rgba(199,150,57,0.07) 0%,transparent 70%)',
-            }}
-          />
-
-          {/* Gold top rule */}
-          <div
-            className="absolute top-0 left-0 right-0 h-[3px]"
-            style={{
-              background:
-                'linear-gradient(90deg,transparent,#C79639,transparent)',
-            }}
-          />
-
-          {/* Content — relative + z-10 is MANDATORY */}
-          <div
-            className="relative z-10 max-w-4xl mx-auto
-               px-4 sm:px-6 lg:px-8 text-center"
-          >
-            {/* Eyebrow */}
-            <div className="flex items-center justify-center
-                    gap-3 mb-5">
-              <div className="w-8 h-px" style={{ background: '#C79639' }} />
-              <span style={{
-                color: '#C79639',
-                fontSize: '11px',
-                fontWeight: 700,
-                letterSpacing: '2.5px',
-                textTransform: 'uppercase',
-              }}>
+          {/* Content */}
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            {/* Eyebrow Label */}
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="w-8 h-0.5 bg-gold" />
+              <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
                 OUR STORY
               </span>
-              <div className="w-8 h-px" style={{ background: '#C79639' }} />
+              <div className="w-8 h-0.5 bg-gold" />
             </div>
-
-            {/* Heading */}
-            <h1
-              className="font-display font-bold text-white
-                 text-5xl md:text-6xl lg:text-7xl
-                 leading-[1.05] mb-6"
-            >
-              About{' '}
-              <em style={{
-                fontStyle: 'italic',
-                background: 'linear-gradient(135deg,#C79639,#e0b055)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>
-                MylesCorp Technologies
-              </em>
+            
+            <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
+              Transforming Africa
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
+                Through Innovation
+              </span>
             </h1>
-
-            {/* Subtitle */}
-            <p
-              className="font-body font-light text-xl leading-relaxed
-                 max-w-2xl mx-auto"
-              style={{ color: '#C7D7EF' }}
-            >
-              Transforming industries across East Africa with 
-              innovative technology solutions since 2020.
+            
+            <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+              {ABOUT_DATA.overview.description[0]}
             </p>
+            
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+              {ABOUT_DATA.overview.stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-gold mb-2">{stat.number}</div>
+                  <div className="text-sm text-light-blue font-body">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -686,75 +728,50 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20" style={{ background: '#080e18' }}>
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: `
-                linear-gradient(rgba(199,150,57,0.04) 1px,
-                        transparent 1px),
-                linear-gradient(90deg,rgba(199,150,57,0.04) 1px,
-                        transparent 1px)
-              `,
-              backgroundSize: '64px 64px',
-            }}
-          />
-          <div
-            className="absolute top-0 left-0 right-0 h-[3px]"
-            style={{
-              background:
-                'linear-gradient(90deg,transparent,#C79639,transparent)',
-            }}
-          />
+        {/* Overview */}
+        <OverviewSection 
+          title={ABOUT_DATA.overview.title}
+          description={ABOUT_DATA.overview.description}
+          stats={ABOUT_DATA.overview.stats}
+        />
 
-          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-px" style={{ background: '#C79639' }} />
-              <span style={{
-                color: '#C79639',
-                fontSize: '11px',
-                fontWeight: 700,
-                letterSpacing: '2.5px',
-                textTransform: 'uppercase',
-              }}>
-                JOIN US
-              </span>
-              <div className="w-8 h-px" style={{ background: '#C79639' }} />
-            </div>
-            <h2 className="font-display font-bold text-white
-                   text-4xl md:text-5xl mb-6">
-              Join Our{' '}
-              <em style={{
-                fontStyle: 'italic',
-                background: 'linear-gradient(135deg,#C79639,#e0b055)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>
-                Journey
-              </em>
-            </h2>
-            <p className="font-body font-light text-xl leading-relaxed
-                 max-w-2xl mx-auto mb-10"
-              style={{ color: '#C7D7EF' }}>
-              Whether you're looking to transform your organization 
-              with our solutions or join our growing team, we'd love 
-              to hear from you.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/book-demo" transitionTypes={['slide']}>
-                <Button className="bg-gold text-navy hover:bg-gold-light">
-                  Book a Demo
-                </Button>
-              </Link>
-              <Link href="/contact" transitionTypes={['slide']}>
-                <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white">
-                  Contact Us
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* Features */}
+        <FeaturesSection 
+          title="Why Choose MylesCorp?"
+          description="We combine cutting-edge technology with deep African market understanding to deliver solutions that make a real difference."
+          features={ABOUT_DATA.features}
+          centerHeader={true}
+        />
+
+        {/* Process */}
+        <ProcessSection 
+          title="Our Approach"
+          description="From discovery to impact — we follow a proven process to ensure successful outcomes."
+          steps={ABOUT_DATA.process}
+          centerHeader={true}
+        />
+
+        {/* Targets */}
+        <TargetsSection 
+          title="Who We Serve"
+          targets={ABOUT_DATA.targets}
+        />
+
+        {/* Testimonials */}
+        <TestimonialsSection 
+          title="What Our Partners Say"
+          testimonials={ABOUT_DATA.testimonials}
+          centerHeader={true}
+        />
+
+        {/* Final CTA */}
+        <CTASection 
+          title="Join Our Journey"
+          tagline="Transforming Industries, Empowering Generations."
+          description="Whether you're looking to transform your organization with our solutions or join our growing team, we'd love to hear from you."
+          primaryCta={{ text: "Book a Demo", href: "/book-demo" }}
+          secondaryCta={{ text: "Contact Us", href: "/contact" }}
+        />
       </div>
     </Layout>
   )
