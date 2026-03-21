@@ -235,37 +235,49 @@ export default function HomePage() {
                 <div className="w-8 h-0.5 bg-gold" />
               </div>
               <h2 className="font-display font-bold text-navy text-4xl md:text-5xl mb-4">
-                Comprehensive Solutions
+                Industry-Specific Solutions
               </h2>
               <p className="font-body text-light-blue text-lg max-w-2xl mx-auto leading-[1.7]">
-                Transforming education, healthcare, agriculture, and business with AI-powered innovation.
+                Transforming industries across East Africa with AI-powered software solutions designed for your specific needs.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
                   name: 'EduMyles',
-                  description: 'Complete School Management System',
+                  category: 'Education',
+                  description: 'Complete school management system with student tracking, grade management, and parent communication.',
                   icon: '🎓',
+                  color: 'blue',
+                  features: ['Student Management', 'Grade Tracking', 'Parent Portal', 'Attendance System'],
                   href: '/products/edumyles'
                 },
                 {
                   name: 'MylesCare',
-                  description: 'Healthcare Management Platform',
+                  category: 'Healthcare',
+                  description: 'Healthcare management platform for patient records, appointments, and medical billing.',
                   icon: '🏥',
+                  color: 'green',
+                  features: ['Patient Records', 'Appointment Scheduling', 'Medical Billing', 'Telemedicine'],
                   href: '/products/mylescare'
                 },
                 {
                   name: 'AgriMyles',
-                  description: 'Smart Agricultural Solutions',
+                  category: 'Agriculture',
+                  description: 'Smart agricultural solutions with crop monitoring, weather alerts, and market insights.',
                   icon: '🌾',
+                  color: 'yellow',
+                  features: ['Crop Monitoring', 'Weather Alerts', 'Market Insights', 'Farm Management'],
                   href: '/products/agrimyles'
                 },
                 {
                   name: 'MylesCRM',
-                  description: 'Business Management System',
+                  category: 'Business',
+                  description: 'Comprehensive business management system with CRM, inventory, and financial tracking.',
                   icon: '💼',
+                  color: 'purple',
+                  features: ['CRM System', 'Inventory Management', 'Financial Tracking', 'Analytics'],
                   href: '/products/mylescrm'
                 }
               ].map((product, index) => (
@@ -274,25 +286,80 @@ export default function HomePage() {
                   href={product.href}
                   className="group block"
                 >
-                  <div className="bg-navy-deep/5 rounded-2xl p-8 border border-navy-deep/10 hover:border-gold/30 transition-all duration-300 h-full">
-                    <div className="w-16 h-16 bg-gold/10 rounded-lg flex items-center justify-center mb-6 mx-auto">
-                      <span className="text-2xl">{product.icon}</span>
+                  <div className="bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:border-gold/30 transition-all duration-300 h-full overflow-hidden">
+                    {/* Product Header */}
+                    <div className={`h-2 bg-gradient-to-r ${
+                      product.color === 'blue' ? 'from-blue-500 to-blue-600' :
+                      product.color === 'green' ? 'from-green-500 to-green-600' :
+                      product.color === 'yellow' ? 'from-yellow-500 to-yellow-600' :
+                      'from-purple-500 to-purple-600'
+                    }`} />
+                    
+                    <div className="p-6">
+                      {/* Category Badge */}
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold mb-4">
+                        {product.category}
+                      </div>
+                      
+                      {/* Icon */}
+                      <div className="w-16 h-16 bg-navy-deep/5 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <span className="text-3xl">{product.icon}</span>
+                      </div>
+                      
+                      {/* Product Name */}
+                      <h3 className="font-display font-bold text-navy text-xl mb-2 text-center">
+                        {product.name}
+                      </h3>
+                      
+                      {/* Description */}
+                      <p className="font-body text-light-blue text-sm leading-[1.6] mb-4 text-center">
+                        {product.description}
+                      </p>
+                      
+                      {/* Key Features */}
+                      <div className="space-y-2 mb-4">
+                        {product.features.slice(0, 2).map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center text-xs text-gray-600">
+                            <div className="w-1 h-1 bg-gold rounded-full mr-2" />
+                            {feature}
+                          </div>
+                        ))}
+                      </div>
+                      
+                      {/* Learn More */}
+                      <div className="text-center">
+                        <span className="text-gold font-semibold text-sm group-hover:text-gold-light transition-colors">
+                          Learn More →
+                        </span>
+                      </div>
                     </div>
-                    <h3 className="font-body font-bold text-navy text-xl mb-3 text-center">{product.name}</h3>
-                    <p className="font-body text-light-blue leading-[1.7] text-center">{product.description}</p>
                   </div>
                 </Link>
               ))}
             </div>
             
-            <div className="text-center mt-12">
+            {/* Additional Products */}
+            <div className="mt-16 text-center">
+              <h3 className="font-display font-bold text-navy text-2xl mb-4">
+                More Solutions Available
+              </h3>
+              <p className="font-body text-light-blue mb-8">
+                We offer specialized solutions for Legal, Energy, NonProfit, Construction, Hospitality, Manufacturing, Media, and Transportation industries.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                {['Legal', 'Energy', 'NonProfit', 'Construction', 'Hospitality', 'Manufacturing', 'Media', 'Transportation'].map((industry, index) => (
+                  <span key={index} className="px-3 py-1 bg-navy-deep/5 text-navy text-sm rounded-full">
+                    {industry}
+                  </span>
+                ))}
+              </div>
               <Link href="/products">
                 <Button 
                   size="lg" 
-                  variant="outline"
-                  className="border-gold/50 text-gold hover:border-gold hover:bg-gold hover:text-navy"
+                  variant="primary"
+                  className="px-8 py-3"
                 >
-                  Explore All Products
+                  View All Products
                 </Button>
               </Link>
             </div>
