@@ -96,9 +96,6 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
             <Link href="/" transitionTypes={['fade']} className="flex items-center group">
-              <div className="w-10 h-10 bg-gradient-to-br from-navy-500 to-navy-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <span className="text-white font-bold text-lg">H</span>
-              </div>
               <span className="ml-3 flex flex-col">
                 <span className="text-[14px] font-body font-bold text-white group-hover:text-gold transition-colors duration-300">Home</span>
               </span>

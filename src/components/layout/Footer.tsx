@@ -75,6 +75,7 @@ export function Footer() {
                 <ul className="space-y-3">
                   {[
                     { name: 'EduMyles', href: '/products/edumyles', desc: 'School Management' },
+                    { name: 'EduRyde', href: '/products/eduryde', desc: 'School Transport' },
                     { name: 'MylesCare', href: '/products/mylescare', desc: 'Healthcare Solutions' },
                     { name: 'AgriMyles', href: '/products/agrimyles', desc: 'Agricultural Tech' },
                     { name: 'MylesCRM', href: '/products/mylescrm', desc: 'Business Solutions' }
@@ -104,12 +105,14 @@ export function Footer() {
                 <ul className="space-y-3">
                   {[
                     { name: 'Products', href: '/products' },
+                    { name: 'Services', href: '/services' },
                     { name: 'About Us', href: '/about' },
                     { name: 'Pricing', href: '/pricing' },
                     { name: 'Our Team', href: '/team' },
                     { name: 'Careers', href: '/careers' },
                     { name: 'Blog', href: '/blog' },
-                    { name: 'Partners', href: '/partners' }
+                    { name: 'Partners', href: '/partners' },
+                    { name: 'Brochure', href: '/brochure' }
                   ].map((item, index) => (
                     <li key={index}>
                       <Link 
@@ -139,17 +142,16 @@ export function Footer() {
                     ✅ Subscribed! Check your email.
                   </p>
                 ) : (
-                  <div className="flex gap-2">
+                  <div className="flex items-center gap-2">
                     <input
                       type="email"
                       value={email}
                       onChange={e => setEmail(e.target.value)}
                       placeholder="your@email.com"
-                      className="flex-1 px-3 py-2 bg-white/10 border
-                                 border-white/20 rounded-md text-white
-                                 text-sm placeholder:text-gray-400
-                                 focus:outline-none focus:border-gold
-                                 font-body"
+                      className="h-10 px-4 text-sm rounded-lg border
+                                 border-white/10 bg-white/5 text-white
+                                 placeholder:text-white/30 outline-none
+                                 focus:border-[#C79639] w-full max-w-[240px]"
                       onKeyDown={e =>
                         e.key === 'Enter' && handleSubscribe()
                       }
@@ -157,10 +159,10 @@ export function Footer() {
                     <button
                       onClick={handleSubscribe}
                       disabled={status === 'loading'}
-                      className="px-5 py-2.5 bg-[#C79639] text-[#1A395B] text-[13px]
-                                 font-bold rounded-lg whitespace-nowrap
+                      className="h-10 px-5 bg-[#C79639] text-[#1A395B]
+                                 text-[13px] font-bold rounded-lg whitespace-nowrap
                                  hover:bg-[#e0b055] transition-all duration-200
-                                 hover:-translate-y-0.5"
+                                 hover:-translate-y-0.5 flex-shrink-0"
                     >
                       {status === 'loading' ? '...' : 'Subscribe'}
                     </button>
@@ -194,7 +196,7 @@ export function Footer() {
                         className="w-9 h-9 rounded-lg bg-white/5 border border-white/10
                                    flex items-center justify-center
                                    text-[#95A9CC] hover:text-[#C79639]
-                                   hover:border-[#C79639] hover:bg-[#C79639]/10
+                                   hover:border-[#C79639]/40 hover:bg-[#C79639]/10
                                    transition-all duration-200"
                         aria-label={`MylesCorp on ${social.label}`}
                       >
@@ -214,7 +216,7 @@ export function Footer() {
             <ScrollReveal direction="up" delay={0.5}>
               <div className="flex flex-col sm:flex-row justify-between items-center space-y-6 lg:space-y-0 gap-4 text-center sm:text-left">
                 <p className="text-gray-400 text-sm font-body">
-                  &copy; 2026 <span className="text-gold font-semibold">MylesCorp Technologies</span>. All rights reserved.
+                  &copy; 2026 <span className="text-gold font-semibold">MylesCorp Technologies Ltd.</span> All rights reserved.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8 text-sm">
                   <Link href="/legal/privacy" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
@@ -235,10 +237,24 @@ export function Footer() {
 
             <ScrollReveal direction="up" delay={0.7}>
               <button
-                onClick={scrollToTop}
-                className="group flex items-center space-x-2 text-gray-300 hover:text-gold transition-all duration-300 font-body"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                aria-label="Back to top"
+                className="w-9 h-9 rounded-lg bg-[#C79639]/10
+                           border border-[#C79639]/30
+                           flex items-center justify-center
+                           text-[#C79639] hover:bg-[#C79639]
+                           hover:text-[#1A395B] transition-all duration-200"
               >
-                <ArrowUp className="w-4 h-4 group-hover:animate-bounce" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  className="w-4 h-4"
+                >
+                  <path d="M18 15l-6-6-6 6"/>
+                </svg>
               </button>
             </ScrollReveal>
           </div>
