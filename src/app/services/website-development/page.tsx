@@ -1,28 +1,20 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
-import { Icon } from '@/components/ui/Icon'
 import Link from 'next/link'
 import { 
-  Users, 
-  Settings, 
-  Brain, 
   Shield, 
-  TrendingUp,
-  Clock,
   CheckCircle,
   ArrowRight,
-  Globe,
-  Database,
   Star,
   Quote,
   Palette,
   Smartphone,
+  Eye,
   Lock,
   Rocket,
   BarChart,
   Search,
-  Mail,
-  Phone
+  Mail
 } from 'lucide-react'
 
 export const metadata = {
@@ -32,12 +24,6 @@ export const metadata = {
     canonical: 'https://www.mylescorp.co.ke/services/website-development',
   },
 }
-
-const WHATSAPP_LINK =
-  'https://wa.me/254743993715?' +
-  'text=Hi%20MylesCorp!%20I%20found%20you%20on%20' +
-  'your%20website%20and%20would%20like%20to%20' +
-  'learn%20more%20about%20your%20products.'
 
 export default function WebsiteDevelopmentPage() {
   return (
