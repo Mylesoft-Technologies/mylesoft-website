@@ -7,10 +7,9 @@ import { Button } from '@/components/ui/Button'
 interface CookieConsentProps {
   onAccept?: () => void
   onReject?: () => void
-  onCustomize?: () => void
 }
 
-export function CookieConsent({ onAccept, onReject, onCustomize }: CookieConsentProps) {
+export function CookieConsent({ onAccept, onReject }: CookieConsentProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [showDetails, setShowDetails] = useState(false)
 

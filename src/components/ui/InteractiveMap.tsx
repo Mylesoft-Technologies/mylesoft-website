@@ -173,7 +173,7 @@ export default function InteractiveMap() {
     const script = document.createElement('script')
     script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
     script.async = true
-    script.onload = (_event: Event) => {
+    script.onload = () => {
       // Initialize map after Leaflet loads
       if (typeof window !== 'undefined' && window.L) {
         const L = window.L

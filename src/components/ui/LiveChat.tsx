@@ -294,8 +294,8 @@ export function useLiveChat() {
     return currentTime >= businessHours.start && currentTime <= businessHours.end
   }
 
-  const initiateChat = (topic?: string) => {
-    // Logic to initiate chat with specific topic
+  const initiateChat = () => {
+    // Logic to initiate chat
   }
 
   return {

@@ -65,6 +65,13 @@ export default function HomePage() {
           />
           
           <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32 max-w-4xl mx-auto">
+            {/* Company Name */}
+            <div className="mb-6">
+              <span className="text-gold text-[14px] font-body font-bold tracking-[3px] uppercase">
+                MylesCorp Technologies
+              </span>
+            </div>
+            
             {/* Eyebrow Label */}
             <div className="flex items-center justify-center gap-3 mb-5">
               <div className="w-8 h-0.5 bg-gold" />

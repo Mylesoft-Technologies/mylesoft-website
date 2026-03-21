@@ -107,7 +107,7 @@ export function useAnalytics() {
 }
 
 // Specific tracking functions for common events
-export function trackNewsletterSignup(email: string) {
+export function trackNewsletterSignup() {
   // Google Analytics event
   if (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID) {
     ReactGA.event({
@@ -128,7 +128,7 @@ export function trackNewsletterSignup(email: string) {
   }
 }
 
-export function trackDemoRequest(product: string, email: string) {
+export function trackDemoRequest(product: string) {
   // Google Analytics event
   if (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID) {
     ReactGA.event({
@@ -191,7 +191,7 @@ export function trackContactFormSubmission(subject: string) {
   }
 }
 
-export function trackProductView(productName: string, category: string) {
+export function trackProductView(productName: string) {
   // Google Analytics event
   if (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID) {
     ReactGA.event({
@@ -212,7 +212,7 @@ export function trackProductView(productName: string, category: string) {
   }
 }
 
-export function trackBlogPostView(postTitle: string, category: string) {
+export function trackBlogPostView(postTitle: string) {
   // Google Analytics event
   if (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID) {
     ReactGA.event({

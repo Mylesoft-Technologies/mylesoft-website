@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { Button } from '@/components/ui/Button'
 import { ArrowRight, Star, Zap, Shield, Wrench } from 'lucide-react'
 import { Skeleton } from '@/components/ui/Skeleton'

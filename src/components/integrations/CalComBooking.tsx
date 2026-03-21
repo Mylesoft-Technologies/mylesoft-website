@@ -83,17 +83,6 @@ export function CalComBooking() {
     e.preventDefault()
     
     // Here you would integrate with Cal.com API
-    const bookingData = {
-      meetingType: selectedType,
-      date: selectedDate,
-      time: selectedTime,
-      name,
-      email,
-      company,
-      phone,
-      message
-    }
-    
     // Redirect to Cal.com or show confirmation
     alert('Booking request submitted! We will contact you shortly to confirm your appointment.')
   }
