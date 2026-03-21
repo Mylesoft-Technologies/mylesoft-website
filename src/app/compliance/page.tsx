@@ -50,7 +50,7 @@ export default function Compliance() {
       />
 
       {/* Navigation */}
-      <nav className="sticky top-0 z-[100] bg-[rgba(8,14,24,0.98)] backdrop-blur-[8px] border-b border-[rgba(199,150,57,0.15)] px-10 h-[60px] flex items-center justify-between">
+      <nav className="sticky top-0 z-[100] bg-[#080e18] border-b border-[rgba(199,150,57,0.15)] px-10 h-[60px] flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 no-underline">
           <div className="w-[34px] h-[34px] rounded-[7px] bg-gradient-to-br from-[#1A395B] to-[#0f1f35] border-[1.5px] border-[#C79639] flex items-center justify-center font-['Playfair_Display'] text-[16px] font-bold text-[#C79639]">
             M
@@ -84,7 +84,7 @@ export default function Compliance() {
       {/* Hero Section */}
       <div className="bg-[#080e18] px-10 py-16 relative overflow-hidden border-b border-[rgba(199,150,57,0.1)]">
         {/* Grid Background */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(199,150,57,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(199,150,57,0.02)_1px,transparent_1px)] bg-[48px_48px] opacity-30" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(199,150,57,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(199,150,57,0.01)_1px,transparent_1px)] bg-[48px_48px] opacity-20" />
         <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-transparent via-[#C79639] to-transparent" />
         
         <div className="max-w-[860px] mx-auto relative z-10">
@@ -107,7 +107,7 @@ export default function Compliance() {
         
         {/* Table of Contents */}
         <aside>
-          <div className="sticky top-[76px] bg-[rgba(255,255,255,0.04)] border border-[rgba(199,150,57,0.12)] rounded-[14px] p-5.5 overflow-hidden backdrop-blur-none">
+          <div className="sticky top-[76px] bg-[rgba(255,255,255,0.08)] border border-[rgba(199,150,57,0.12)] rounded-[14px] p-5.5 overflow-hidden">
             <div className="text-[10px] font-bold tracking-[2px] uppercase text-[#C79639] mb-3.5 pb-2.5 border-b border-[rgba(199,150,57,0.15)]">
               Contents
             </div>
