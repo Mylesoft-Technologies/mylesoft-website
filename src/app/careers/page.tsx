@@ -1,7 +1,12 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
-import { Card, CardHeader, CardContent, CardIcon } from '@/components/ui/Card'
-import { ScrollReveal, StaggerReveal } from '@/components/ui/ScrollReveal'
+import { FeaturesSection } from '@/components/ui/FeaturesSection'
+import { TestimonialsSection } from '@/components/ui/TestimonialsSection'
+import { CTASection } from '@/components/ui/CTASection'
+import { OverviewSection } from '@/components/ui/OverviewSection'
+import { ProcessSection } from '@/components/ui/ProcessSection'
+import { TargetsSection } from '@/components/ui/TargetsSection'
+import Link from 'next/link'
 import { 
   MapPin, 
   Clock, 
@@ -16,7 +21,10 @@ import {
   DollarSign,
   ArrowRight,
   Zap,
-  Globe
+  Globe,
+  Calendar,
+  Star,
+  CheckCircle
 } from 'lucide-react'
 
 export const metadata = {
@@ -173,31 +181,100 @@ const cultureValues = [
   }
 ]
 
+const CAREERS_DATA = {
+  overview: {
+    title: 'Careers',
+    tagline: 'Build the Future With Us',
+    description: [
+      'Join a team of innovators transforming African industries through world-class technology.',
+      'We\'re always looking for talented people who share our passion for making a difference.'
+    ],
+    image: '/api/og/product?name=Careers&category=Join',
+    stats: [
+      { number: '50+', label: 'Team Members' },
+      { number: '6', label: 'Departments' },
+      { number: '4', label: 'East Africa Offices' },
+      { number: '98%', label: 'Employee Satisfaction' }
+    ]
+  },
+  features: [
+    {
+      icon: '🎯',
+      title: 'Impactful Work',
+      description: 'Transform education, healthcare, agriculture, and business across Africa with innovative technology solutions.'
+    },
+    {
+      icon: '🚀',
+      title: 'Career Growth',
+      description: 'Continuous learning opportunities, training budgets, and clear career progression paths for professional development.'
+    },
+    {
+      icon: '🌍',
+      title: 'African Focus',
+      description: 'Build solutions for African markets by Africans, with deep understanding of local challenges and opportunities.'
+    },
+    {
+      icon: '👥',
+      title: 'Great Team',
+      description: 'Work with talented, passionate colleagues who are committed to excellence and innovation.'
+    },
+    {
+      icon: '⚖️',
+      title: 'Work-Life Balance',
+      description: 'Flexible work arrangements, hybrid options, and focus on results rather than face time.'
+    },
+    {
+      icon: '🏆',
+      title: 'Competitive Benefits',
+      description: 'Market-aligned salaries, health insurance, equity options, and comprehensive wellness programs.'
+    }
+  ],
+  process: [
+    { step: 1, title: 'Apply', description: 'Submit your application for positions that match your skills and interests' },
+    { step: 2, title: 'Review', description: 'Our team reviews your application and assesses fit for the role' },
+    { step: 3, title: 'Interview', description: 'Meet with team members to discuss your experience and our culture' },
+    { step: 4, title: 'Decision', description: 'We make a decision and extend an offer to successful candidates' },
+    { step: 5, title: 'Onboarding', description: 'Join our team with comprehensive onboarding and training program' }
+  ],
+  targets: [
+    'Engineers - Frontend, Backend, AI/ML, and DevOps professionals',
+    'Product Managers - Strategic thinkers who love building great products',
+    'Sales & Marketing - Growth drivers who can build relationships and tell our story',
+    'Operations - People who keep our business running smoothly and efficiently'
+  ],
+  testimonials: [
+    {
+      quote: 'Joining MylesCorp was the best career decision I made. The impact we\'re making across Africa is incredible.',
+      author: 'Sarah Johnson',
+      role: 'Senior Developer',
+      organization: 'Engineering Team'
+    },
+    {
+      quote: 'The culture here is amazing. We collaborate, innovate, and truly care about making a difference.',
+      author: 'Michael Chen',
+      role: 'Product Manager',
+      organization: 'Product Team'
+    },
+    {
+      quote: 'MylesCorp invested in my growth and provided opportunities I couldn\'t find anywhere else.',
+      author: 'Grace Wanjiku',
+      role: 'Sales Lead',
+      organization: 'Business Development'
+    }
+  ]
+}
+
 export default function CareersPage() {
   return (
     <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
-          {/* Grid texture overlay — always present on dark sections */}
+          {/* Grid texture overlay */}
           <div className="absolute inset-0 pointer-events-none"
             style={{
               backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
               backgroundSize: '64px 64px',
-            }}
-          />
-
-          {/* Radial glow top-right */}
-          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
-            }}
-          />
-
-          {/* Radial glow bottom-left */}
-          <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
             }}
           />
 
@@ -209,225 +286,224 @@ export default function CareersPage() {
           />
           
           <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-            <ScrollReveal direction="up" delay={0.2}>
-              {/* Eyebrow Label */}
-              <div className="flex items-center justify-center gap-3 mb-5">
-                <div className="w-8 h-0.5 bg-gold" />
-                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
-                  JOIN OUR TEAM
-                </span>
-                <div className="w-8 h-0.5 bg-gold" />
-              </div>
-            </ScrollReveal>
+            {/* Eyebrow Label */}
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="w-8 h-0.5 bg-gold" />
+              <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                JOIN OUR TEAM
+              </span>
+              <div className="w-8 h-0.5 bg-gold" />
+            </div>
             
-            <ScrollReveal direction="up" delay={0.4}>
-              <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
-                Build the Future
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
-                  With Us
-                </span>
-              </h1>
-            </ScrollReveal>
+            <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
+              Build the Future
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
+                With Us
+              </span>
+            </h1>
             
-            <ScrollReveal direction="up" delay={0.6}>
-              <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-                Join a team of innovators transforming African industries through world-class 
-                technology. We're always looking for talented people.
-              </p>
-            </ScrollReveal>
+            <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+              {CAREERS_DATA.overview.description[0]}
+            </p>
 
             {/* CTA button */}
-            <ScrollReveal direction="up" delay={0.8}>
-              <button className="bg-gold text-navy font-body font-bold text-[15px] tracking-[0.4px] px-9 py-4 rounded-md hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(199,150,57,0.3)] active:scale-[0.98] transition-all duration-200">
+            <Link href="#open-positions">
+              <Button 
+                size="lg" 
+                variant="primary"
+                className="px-8 py-4 shadow-lg hover:shadow-xl"
+              >
                 View Open Positions
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-            </ScrollReveal>
+              </Button>
+            </Link>
+            
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto mt-16">
+              {CAREERS_DATA.overview.stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-gold mb-2">{stat.number}</div>
+                  <div className="text-sm text-light-blue font-body">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
+        {/* Overview */}
+        <OverviewSection 
+          title={CAREERS_DATA.overview.title}
+          description={CAREERS_DATA.overview.description}
+          stats={CAREERS_DATA.overview.stats}
+        />
+
+        {/* Features */}
+        <FeaturesSection 
+          title="Why Join MylesCorp?"
+          description="We offer more than just a job – we offer a career with purpose, growth, and impact."
+          features={CAREERS_DATA.features}
+          centerHeader={true}
+        />
+
         {/* Open Positions */}
-        <section className="section">
-          <div className="section-padding">
-            <div className="mb-12">
-              <h2 className="heading-2 mb-4">Open Positions</h2>
-              <p className="body-text max-w-2xl mx-auto">
+        <section id="open-positions" className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-5">
+                <div className="w-8 h-0.5 bg-gold" />
+                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                  OPEN POSITIONS
+                </span>
+                <div className="w-8 h-0.5 bg-gold" />
+              </div>
+              <h2 className="font-display font-bold text-navy text-4xl md:text-5xl mb-4">
+                Current Opportunities
+              </h2>
+              <p className="font-body text-light-blue text-lg max-w-2xl mx-auto leading-[1.7]">
                 We're always looking for talented individuals to join our mission. Find your opportunity below.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-              <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
-                {openPositions.map((position, index) => (
-                  <Card variant="light" key={index} className="h-full flex flex-col">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h3 className="text-2xl font-display font-bold text-navy mb-2">{position.title}</h3>
-                        <div className="flex items-center text-sm text-gray-500 mb-4">
-                          <MapPin size={16} className="mr-2" />
-                          <span>{position.location}</span>
-                          <span className="mx-2">•</span>
-                          <span>{position.type}</span>
-                          <span className="mx-2">•</span>
-                          <span>{position.experience}</span>
-                        </div>
-                      </div>
-                      <div className="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-semibold font-body">
-                        {position.category}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {openPositions.map((position, index) => (
+                <div key={index} className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:shadow-xl hover:border-gold/30 transition-all duration-300">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="font-display font-bold text-navy text-2xl mb-2">{position.title}</h3>
+                      <div className="flex items-center text-sm text-gray-500 mb-4">
+                        <MapPin size={16} className="mr-2" />
+                        <span>{position.location}</span>
+                        <span className="mx-2">•</span>
+                        <span>{position.type}</span>
+                        <span className="mx-2">•</span>
+                        <span>{position.experience}</span>
                       </div>
                     </div>
-                    
-                    <p className="text-gray-600 leading-relaxed mb-6 font-body flex-grow">{position.description}</p>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-navy mb-3 font-body">Requirements:</h4>
-                      <ul className="space-y-2">
-                        {position.requirements.map((req, reqIndex) => (
-                          <li key={reqIndex} className="flex items-start text-sm">
-                            <div className="w-2 h-2 bg-gold rounded-full mr-3 mt-1 flex-shrink-0" />
-                            <span className="text-gray-600 font-body">{req}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-semibold font-body">
+                      {position.category}
                     </div>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-navy mb-3 font-body">Benefits:</h4>
-                      <ul className="space-y-2">
-                        {position.benefits.map((benefit, benefitIndex) => (
-                          <li key={benefitIndex} className="flex items-start text-sm">
-                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3 mt-1 flex-shrink-0" />
-                            <span className="text-gray-600 font-body">{benefit}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  </div>
+                  
+                  <p className="font-body text-gray-600 leading-relaxed mb-6">{position.description}</p>
+                  
+                  <div className="mb-6">
+                    <h4 className="font-body font-semibold text-navy mb-3">Requirements:</h4>
+                    <ul className="space-y-2">
+                      {position.requirements.map((req, reqIndex) => (
+                        <li key={reqIndex} className="flex items-start text-sm">
+                          <CheckCircle size={16} className="text-gold mr-3 mt-0.5 flex-shrink-0" />
+                          <span className="font-body text-gray-600">{req}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="mb-6">
+                    <h4 className="font-body font-semibold text-navy mb-3">Benefits:</h4>
+                    <ul className="space-y-2">
+                      {position.benefits.map((benefit, benefitIndex) => (
+                        <li key={benefitIndex} className="flex items-start text-sm">
+                          <Star size={16} className="text-gold mr-3 mt-0.5 flex-shrink-0" />
+                          <span className="font-body text-gray-600">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm text-gray-500">
+                      <Clock size={16} className="mr-2" />
+                      Posted {position.posted}
                     </div>
-                    
-                    <div className="flex items-center justify-between mt-auto">
-                      <div className="text-sm text-gray-500">
-                        <Clock size={16} className="mr-2" />
-                        Posted {position.posted}
-                      </div>
-                      <Button>Apply Now</Button>
-                    </div>
-                  </Card>
-                ))}
-              </StaggerReveal>
+                    <Link href="/contact">
+                      <Button size="lg">Apply Now</Button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
+        {/* Process */}
+        <ProcessSection 
+          title="Our Hiring Process"
+          description="From application to onboarding — we ensure a smooth and professional experience for all candidates."
+          steps={CAREERS_DATA.process}
+          centerHeader={true}
+        />
+
         {/* Departments */}
-        <section className="section bg-off-white">
-          <div className="section-padding">
-            <div className="text-center mb-12">
-              <h2 className="heading-2 mb-4">Our Teams</h2>
-              <p className="body-text max-w-2xl mx-auto">
+        <section className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-5">
+                <div className="w-8 h-0.5 bg-gold" />
+                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                  OUR TEAMS
+                </span>
+                <div className="w-8 h-0.5 bg-gold" />
+              </div>
+              <h2 className="font-display font-bold text-navy text-4xl md:text-5xl mb-4">
+                Meet Our Departments
+              </h2>
+              <p className="font-body text-light-blue text-lg max-w-2xl mx-auto leading-[1.7]">
                 Meet the departments driving our mission forward. Each team plays a crucial role in transforming African industries.
               </p>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              <StaggerReveal staggerDelay={0.2} itemDelay={0.4} direction="up">
-                {departments.map((dept, index) => (
-                  <Card variant="light" key={index} className="text-center h-full flex flex-col">
-                    <CardIcon size="lg">
-                      <Brain className="text-gold" />
-                    </CardIcon>
-                    <CardHeader>
-                      <h3 className="text-2xl font-display font-bold text-navy mb-3">{dept.name}</h3>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <p className="text-gray-600 mb-4 font-body flex-grow">{dept.description}</p>
-                      <div className="space-y-2">
-                        <div className="text-sm">
-                          <span className="font-semibold text-navy">Team Size:</span>
-                          <span className="text-gray-500 ml-2">{dept.teamSize}</span>
-                        </div>
-                        <div className="text-sm">
-                          <span className="font-semibold text-navy">Focus Areas:</span>
-                          <span className="text-gray-500 ml-2">{dept.focusAreas.join(', ')}</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                    <div className="mt-auto p-6 pt-0">
-                      <Button variant="secondary" className="w-full">
+              {departments.map((dept, index) => (
+                <div key={index} className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:shadow-xl hover:border-gold/30 transition-all duration-300 text-center">
+                  <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Brain className="text-gold w-8 h-8" />
+                  </div>
+                  <h3 className="font-display font-bold text-navy text-2xl mb-3">{dept.name}</h3>
+                  <p className="font-body text-gray-600 mb-4">{dept.description}</p>
+                  <div className="space-y-2">
+                    <div className="text-sm">
+                      <span className="font-semibold text-navy">Team Size:</span>
+                      <span className="text-gray-500 ml-2">{dept.teamSize}</span>
+                    </div>
+                    <div className="text-sm">
+                      <span className="font-semibold text-navy">Focus Areas:</span>
+                      <span className="text-gray-500 ml-2">{dept.focusAreas.join(', ')}</span>
+                    </div>
+                  </div>
+                  <div className="mt-6">
+                    <Link href="/contact">
+                      <Button variant="outline" className="w-full">
                         View {dept.name} Roles
                       </Button>
-                    </div>
-                  </Card>
-                ))}
-              </StaggerReveal>
-            </div>
-          </div>
-        </section>
-
-        {/* Culture & Benefits */}
-        <section className="section">
-          <div className="section-padding">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Culture */}
-              <div>
-                <h2 className="heading-2 mb-6">Our Culture</h2>
-                <p className="body-text mb-8">
-                  At MylesCorp, we've built a culture that brings out the best in people and drives innovation that matters for Africa.
-                </p>
-                
-                <div className="space-y-6">
-                  {cultureValues.map((value, index) => (
-                    <div key={index} className="flex items-start">
-                      <div className="mr-4 mt-1">
-                        <div className="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center">
-                          <Award size={24} className="text-gold-400" />
-                        </div>
-                      </div>
-                      <div>
-                        <h3 className="heading-3 mb-2">{value.title}</h3>
-                        <p className="body-text">{value.description}</p>
-                      </div>
-                    </div>
-                  ))}
+                    </Link>
+                  </div>
                 </div>
-              </div>
-
-              {/* Benefits */}
-              <div>
-                <h2 className="heading-2 mb-6">Why Work With Us</h2>
-                <p className="body-text mb-8">
-                  We offer comprehensive benefits and perks to support our team members' growth and well-being.
-                </p>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {benefits.map((benefit, index) => (
-                    <div key={index} className="text-center">
-                      <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        {benefit.icon}
-                      </div>
-                      <h3 className="heading-3 mb-3">{benefit.title}</h3>
-                      <p className="body-text text-sm">{benefit.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="section bg-navy-500">
-          <div className="section-padding">
-            <div className="text-center text-white">
-              <h2 className="heading-2 mb-4">Ready to Join Us?</h2>
-              <p className="text-xl text-navy-100 mb-8">
-                Take the next step in your career journey. Apply for open positions or connect with our team to explore opportunities.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button>View All Positions</Button>
-                <Button variant="secondary">Join Talent Network</Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Targets */}
+        <TargetsSection 
+          title="Who We're Looking For"
+          targets={CAREERS_DATA.targets}
+        />
+
+        {/* Testimonials */}
+        <TestimonialsSection 
+          title="Life at MylesCorp"
+          testimonials={CAREERS_DATA.testimonials}
+          centerHeader={true}
+        />
+
+        {/* Final CTA */}
+        <CTASection 
+          title="Ready to Join Our Team?"
+          tagline="Transforming Industries, Empowering Generations."
+          description={`Take the next step in your career journey. Join ${CAREERS_DATA.overview.stats[0].number} talented professionals making a difference across Africa.`}
+          primaryCta={{ text: "View All Positions", href: "#open-positions" }}
+          secondaryCta={{ text: "Join Talent Network", href: "/contact" }}
+        />
       </div>
     </Layout>
   )
