@@ -1,7 +1,15 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
-import { Heart, Users, Target, TrendingUp, Award, Check } from 'lucide-react'
+import { FeaturesSection } from '@/components/ui/FeaturesSection'
+import { PricingSection } from '@/components/ui/PricingSection'
+import { TestimonialsSection } from '@/components/ui/TestimonialsSection'
+import { CTASection } from '@/components/ui/CTASection'
+import { OverviewSection } from '@/components/ui/OverviewSection'
+import { ProcessSection } from '@/components/ui/ProcessSection'
+import { TargetsSection } from '@/components/ui/TargetsSection'
+import Link from 'next/link'
+import { Heart, Users, Target, TrendingUp, Award, Check, Calendar, DollarSign } from 'lucide-react'
 
 export const metadata = {
   title: 'MylesNonProfit - NGO Management Software | MylesCorp Technologies',

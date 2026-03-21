@@ -146,7 +146,7 @@ export default function TermsOfService() {
             <div className="font-['Playfair_Display'] text-[21px] font-bold text-white mb-3.5 pb-2.5 border-b border-[rgba(199,150,57,0.14)]">Agreement to Terms</div>
             <div className="space-y-3">
               <p className="text-[13.5px] text-[#C7D7EF] leading-[1.9] font-light">
-                These Terms of Service ("Terms") constitute a legally binding agreement between you ("User", "Client", or "you") and MylesCorp Technologies Ltd ("MylesCorp", "we", "us", or "our"), a company registered in Kenya with its principal office at Westlands, Nairobi, Kenya.
+                These Terms of Service (&ldquo;Terms&rdquo;) constitute a legally binding agreement between you (&ldquo;User&rdquo;, &ldquo;Client&rdquo;, or &ldquo;you&rdquo;) and MylesCorp Technologies Ltd (&ldquo;MylesCorp&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;), a company registered in Kenya with its principal office at Westlands, Nairobi, Kenya.
               </p>
               <p className="text-[13.5px] text-[#C7D7EF] leading-[1.9] font-light">
                 By accessing our website at <a href="https://www.mylescorp.co.ke" target="_blank" rel="noopener noreferrer" className="text-[#C79639] no-underline hover:underline">www.mylescorp.co.ke</a>, subscribing to any MylesCorp product, or engaging our services, you confirm that you have read, understood, and agree to be bound by these Terms and our Privacy Policy.

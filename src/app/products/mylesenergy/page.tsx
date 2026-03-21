@@ -23,7 +23,10 @@ const MYLESENERGY_DATA = {
   overview: {
     title: 'MylesEnergy',
     tagline: 'Smart Energy Management for Sustainable Operations',
-    description: 'Optimize energy consumption and reduce costs with our intelligent monitoring and management platform designed for African businesses.',
+    description: [
+      'Optimize energy consumption and reduce costs with our intelligent monitoring and management platform.',
+      'Designed for African businesses with AI-powered analytics and real-time insights.'
+    ],
     image: '/api/og/product?name=MylesEnergy&category=Energy',
     stats: [
       { number: '200+', label: 'Facilities Managed' },
@@ -34,48 +37,48 @@ const MYLESENERGY_DATA = {
   },
   features: [
     {
-      icon: 'bar-chart',
+      icon: '📊',
       title: 'Energy Monitoring',
       description: 'Real-time energy consumption tracking with detailed analytics and insights.'
     },
     {
-      icon: 'trending-up',
+      icon: '📈',
       title: 'Consumption Analytics',
       description: 'Advanced analytics to identify patterns, trends, and opportunities for optimization.'
     },
     {
-      icon: 'settings',
+      icon: '🔧',
       title: 'Predictive Maintenance',
       description: 'AI-powered predictions for equipment maintenance to prevent failures and downtime.'
     },
     {
-      icon: 'zap',
+      icon: '💰',
       title: 'Cost Optimization',
       description: 'Smart recommendations to reduce energy costs and improve efficiency.'
     },
     {
-      icon: 'alert-circle',
+      icon: '⚠️',
       title: 'Alert System',
       description: 'Real-time alerts for unusual consumption patterns and equipment issues.'
     },
     {
-      icon: 'check',
+      icon: '✅',
       title: 'Reporting Dashboard',
       description: 'Comprehensive reports for compliance, sustainability, and management review.'
     }
   ],
   process: [
-    { step: '1', title: 'Assessment', description: 'Energy audit and baseline establishment' },
-    { step: '2', title: 'Installation', description: 'Smart meters and sensors deployment' },
-    { step: '3', title: 'Configuration', description: 'Custom alerts and optimization rules setup' },
-    { step: '4', title: 'Training', description: 'Team training on dashboard and analytics' },
-    { step: '5', title: 'Optimization', description: 'Continuous monitoring and improvement' }
+    { step: 1, title: 'Assessment', description: 'Energy audit and baseline establishment' },
+    { step: 2, title: 'Installation', description: 'Smart meters and sensors deployment' },
+    { step: 3, title: 'Configuration', description: 'Custom alerts and optimization rules setup' },
+    { step: 4, title: 'Training', description: 'Team training on dashboard and analytics' },
+    { step: 5, title: 'Optimization', description: 'Continuous monitoring and improvement' }
   ],
   targets: [
-    { title: 'Manufacturing', description: 'Industrial facilities and production plants' },
-    { title: 'Commercial Buildings', description: 'Office buildings, malls, and commercial complexes' },
-    { title: 'Hospitality', description: 'Hotels, restaurants, and entertainment venues' },
-    { title: 'Healthcare', description: 'Hospitals, clinics, and medical facilities' }
+    'Manufacturing - Industrial facilities and production plants',
+    'Commercial Buildings - Office buildings, malls, and commercial complexes',
+    'Hospitality - Hotels, restaurants, and entertainment venues',
+    'Healthcare - Hospitals, clinics, and medical facilities'
   ],
   pricing: [
     {
@@ -89,14 +92,14 @@ const MYLESENERGY_DATA = {
       name: 'Professional',
       price: 'KES 10,000/month',
       description: 'Ideal for medium facilities',
-      features: ['Up to 25 meters', 'Advanced analytics', 'Real-time alerts', 'Predictive maintenance', 'Custom reports', 'API access'],
+      features: ['Up to 25 meters', 'Advanced analytics', 'Real-time alerts', 'Predictive maintenance', 'Custom reports', 'API access', 'Most Popular'],
       popular: true
     },
     {
       name: 'Enterprise',
       price: 'Custom',
       description: 'For large facilities and groups',
-      features: ['Unlimited meters', 'Full analytics suite', 'AI optimization', 'Dedicated support', 'Custom integrations', 'On-premise option', 'White-label option'],
+      features: ['Unlimited meters', 'Full analytics suite', 'AI optimization', 'Dedicated support', 'Custom integrations', 'On-premise option'],
       popular: false
     }
   ],
@@ -181,59 +184,63 @@ export default function MylesEnergyPage() {
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="font-display font-bold text-navy text-4xl md:text-5xl mb-4">
-                Smart Energy Management Features
-              </h2>
-              <p className="font-body text-light-blue text-lg max-w-2xl mx-auto">
-                Comprehensive tools to monitor, analyze, and optimize your energy consumption.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {MYLESENERGY_DATA.features.map((feature, index) => (
-                <div key={index} className="bg-navy-deep/5 rounded-2xl p-8 border border-navy-deep/10 hover:border-gold/30 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center mb-6">
-                    <Icon name={feature.icon} size={24} className="text-gold" />
-                  </div>
-                  <h3 className="font-body font-bold text-navy text-xl mb-3">{feature.title}</h3>
-                  <p className="font-body text-light-blue leading-[1.7]">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Overview */}
+        <OverviewSection 
+          title={MYLESENERGY_DATA.overview.title}
+          description={MYLESENERGY_DATA.overview.description}
+          stats={MYLESENERGY_DATA.overview.stats}
+        />
 
-        {/* CTA Section */}
-        <section className="py-20 bg-navy-deep text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display font-bold text-white text-4xl md:text-5xl mb-4">
-              Ready to Optimize Your Energy Usage?
-            </h2>
-            <p className="font-body text-light-blue text-lg mb-8 max-w-2xl mx-auto">
-              Join {MYLESENERGY_DATA.overview.stats[0].number} facilities across East Africa already saving with MylesEnergy.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="primary"
-                className="px-8 py-4 text-sm font-semibold"
-              >
-                Book Free Demo
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-8 py-4 text-sm font-semibold border-white/20 text-white hover:border-gold hover:text-gold"
-              >
-                WhatsApp Us
-              </Button>
-            </div>
-          </div>
-        </section>
+        {/* Features */}
+        <FeaturesSection 
+          title="Powerful Energy Management Features"
+          description="Everything you need to monitor, analyze, and optimize your energy consumption."
+          features={MYLESENERGY_DATA.features}
+          centerHeader={true}
+        />
+
+        {/* Process */}
+        <ProcessSection 
+          title="Implementation in 5 Steps"
+          description="From assessment to optimization — a clear path to energy efficiency."
+          steps={MYLESENERGY_DATA.process}
+          centerHeader={true}
+        />
+
+        {/* Targets */}
+        <TargetsSection 
+          title="Built for Every Industry"
+          targets={MYLESENERGY_DATA.targets}
+        />
+
+        {/* Pricing */}
+        <PricingSection 
+          title="Simple, Transparent Pricing"
+          description="Choose the perfect plan for your facility. All plans include free setup and support."
+          plans={MYLESENERGY_DATA.pricing.map(p => ({
+            ...p,
+            price: p.price.split('/')[0],
+            period: p.price.split('/')[1] || 'per month',
+            featured: p.features.includes('Most Popular')
+          }))}
+          centerHeader={true}
+        />
+
+        {/* Testimonials */}
+        <TestimonialsSection 
+          title="Success Stories"
+          testimonials={MYLESENERGY_DATA.testimonials}
+          centerHeader={true}
+        />
+
+        {/* CTA */}
+        <CTASection 
+          title="Ready to Optimize Your Energy Usage?"
+          tagline="Transforming Industries, Empowering Generations."
+          description={`Join ${MYLESENERGY_DATA.overview.stats[0].number} facilities across Africa already saving with MylesEnergy.`}
+          primaryCta={{ text: "Book Free Demo", href: "/book-demo" }}
+          secondaryCta={{ text: "Talk to Our Team", href: "/contact" }}
+        />
       </div>
     </Layout>
   )
