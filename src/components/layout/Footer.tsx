@@ -178,6 +178,7 @@ export function Footer() {
                   <div className="flex space-x-3">
                     {[
                       { name: 'linkedin', href: 'https://www.linkedin.com/company/mylescorp_tech' },
+                      { name: 'facebook', href: 'https://web.facebook.com/mylescorp' },
                       { name: 'twitter', href: 'https://x.com/mylescorp_tech' },
                       { name: 'github', href: 'https://github.com/MylesCorp-Technologies' },
                       { name: 'youtube', href: 'https://www.youtube.com/@mylescorp_tech' }
