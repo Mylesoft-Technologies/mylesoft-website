@@ -10,6 +10,9 @@ export const metadata = {
   },
 }
 
+// Force Node.js runtime for brochure page to avoid edge runtime issues
+export const runtime = 'nodejs'
+
 export default function BrochurePage() {
   return (
     <iframe
