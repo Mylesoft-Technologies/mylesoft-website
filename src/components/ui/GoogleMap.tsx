@@ -115,7 +115,7 @@ export function GoogleMap({
           infoWindow.open(mapInstanceRef.current!, marker)
         })
       } else {
-        console.error('Geocoding failed:', status)
+        // Geocoding failed silently
       }
     })
   }, [address, zoom])
@@ -131,7 +131,7 @@ export function GoogleMap({
     
     // Define callback function
     window.initMap = () => {
-      console.log('Google Maps loaded')
+      // Google Maps loaded successfully
     }
     
     document.head.appendChild(script)

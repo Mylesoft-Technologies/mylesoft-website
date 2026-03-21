@@ -21,7 +21,7 @@ export function TargetsSection({ title, targets }: TargetsSectionProps) {
             letterSpacing: '2.5px',
             textTransform: 'uppercase',
           }}>
-            Who It's For
+            Who It&apos;s For
           </span>
           <div className="w-7 h-0.5" style={{ background: 'var(--gold)' }} />
         </div>

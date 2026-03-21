@@ -37,7 +37,7 @@ export function Footer() {
             </div>
           </div>
           <p className="text-[12.5px] text-[#95A9CC] leading-relaxed max-w-[280px] mb-5.5">
-            East Africa's leading AI-powered software company. Building intelligent solutions that transform Education, Healthcare, Agriculture, and Business across Kenya and beyond.
+            East Africa&apos;s leading AI-powered software company. Building intelligent solutions that transform Education, Healthcare, Agriculture, and Business across Kenya and beyond.
           </p>
           <div className="flex flex-col gap-2.5">
             <a 

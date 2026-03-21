@@ -108,82 +108,190 @@ export function useAnalytics() {
 
 // Specific tracking functions for common events
 export function trackNewsletterSignup(email: string) {
-  const { trackEvent } = useAnalytics()
-  trackEvent('newsletter_signup', {
-    category: 'Lead Generation',
-    label: 'Newsletter',
-    value: 1
-  })
+  // Google Analytics event
+  if (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID) {
+    ReactGA.event({
+      category: 'Lead Generation',
+      action: 'newsletter_signup',
+      label: 'Newsletter',
+      value: 1
+    })
+  }
+
+  // Posthog event
+  if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+    posthog.capture('newsletter_signup', {
+      category: 'Lead Generation',
+      label: 'Newsletter',
+      value: 1
+    })
+  }
 }
 
 export function trackDemoRequest(product: string, email: string) {
-  const { trackEvent } = useAnalytics()
-  trackEvent('demo_request', {
-    category: 'Lead Generation',
-    label: product,
-    value: 1
-  })
+  // Google Analytics event
+  if (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID) {
+    ReactGA.event({
+      category: 'Lead Generation',
+      action: 'demo_request',
+      label: product,
+      value: 1
+    })
+  }
+
+  // Posthog event
+  if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+    posthog.capture('demo_request', {
+      category: 'Lead Generation',
+      label: product,
+      value: 1
+    })
+  }
 }
 
 export function trackJobApplication(jobTitle: string, department: string) {
-  const { trackEvent } = useAnalytics()
-  trackEvent('job_application', {
-    category: 'Careers',
-    label: `${department} - ${jobTitle}`,
-    value: 1
-  })
+  // Google Analytics event
+  if (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID) {
+    ReactGA.event({
+      category: 'Careers',
+      action: 'job_application',
+      label: `${department} - ${jobTitle}`,
+      value: 1
+    })
+  }
+
+  // Posthog event
+  if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+    posthog.capture('job_application', {
+      category: 'Careers',
+      label: `${department} - ${jobTitle}`,
+      value: 1
+    })
+  }
 }
 
 export function trackContactFormSubmission(subject: string) {
-  const { trackEvent } = useAnalytics()
-  trackEvent('contact_form_submission', {
-    category: 'Contact',
-    label: subject,
-    value: 1
-  })
+  // Google Analytics event
+  if (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID) {
+    ReactGA.event({
+      category: 'Contact',
+      action: 'contact_form_submission',
+      label: subject,
+      value: 1
+    })
+  }
+
+  // Posthog event
+  if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+    posthog.capture('contact_form_submission', {
+      category: 'Contact',
+      label: subject,
+      value: 1
+    })
+  }
 }
 
 export function trackProductView(productName: string, category: string) {
-  const { trackEvent } = useAnalytics()
-  trackEvent('product_view', {
-    category: 'Products',
-    label: productName,
-    value: 1
-  })
+  // Google Analytics event
+  if (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID) {
+    ReactGA.event({
+      category: 'Products',
+      action: 'product_view',
+      label: productName,
+      value: 1
+    })
+  }
+
+  // Posthog event
+  if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+    posthog.capture('product_view', {
+      category: 'Products',
+      label: productName,
+      value: 1
+    })
+  }
 }
 
 export function trackBlogPostView(postTitle: string, category: string) {
-  const { trackEvent } = useAnalytics()
-  trackEvent('blog_post_view', {
-    category: 'Content',
-    label: postTitle,
-    value: 1
-  })
+  // Google Analytics event
+  if (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID) {
+    ReactGA.event({
+      category: 'Content',
+      action: 'blog_post_view',
+      label: postTitle,
+      value: 1
+    })
+  }
+
+  // Posthog event
+  if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+    posthog.capture('blog_post_view', {
+      category: 'Content',
+      label: postTitle,
+      value: 1
+    })
+  }
 }
 
 export function trackSearchQuery(query: string, resultsCount: number) {
-  const { trackEvent } = useAnalytics()
-  trackEvent('search_query', {
-    category: 'Search',
-    label: query,
-    value: resultsCount
-  })
+  // Google Analytics event
+  if (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID) {
+    ReactGA.event({
+      category: 'Search',
+      action: 'search_query',
+      label: query,
+      value: resultsCount
+    })
+  }
+
+  // Posthog event
+  if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+    posthog.capture('search_query', {
+      category: 'Search',
+      label: query,
+      value: resultsCount
+    })
+  }
 }
 
 export function trackWhatsAppClick() {
-  const { trackEvent } = useAnalytics()
-  trackEvent('whatsapp_click', {
-    category: 'Social',
-    label: 'WhatsApp',
-    value: 1
-  })
+  // Google Analytics event
+  if (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID) {
+    ReactGA.event({
+      category: 'Social',
+      action: 'whatsapp_click',
+      label: 'WhatsApp',
+      value: 1
+    })
+  }
+
+  // Posthog event
+  if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+    posthog.capture('whatsapp_click', {
+      category: 'Social',
+      label: 'WhatsApp',
+      value: 1
+    })
+  }
 }
 
-export function trackSocialShare(platform: string, content: string) {
-  const { trackEvent } = useAnalytics()
-  trackEvent('social_share', {
-    category: 'Social',
-    label: platform,
-    value: 1
-  })
+export function trackSocialShare(platform: string) {
+  // Google Analytics event
+  if (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID) {
+    ReactGA.event({
+      category: 'Social',
+      action: 'social_share',
+      label: platform,
+      value: 1
+    })
+  }
+
+  // Posthog event
+  if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+    posthog.capture('social_share', {
+      category: 'Social',
+      label: platform,
+      value: 1
+    })
+  }
 }

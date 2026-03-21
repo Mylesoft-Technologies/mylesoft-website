@@ -557,7 +557,7 @@ export function MegaMenu() {
                           )}
                         </div>
                         <div className="mt-8 p-6 bg-gray-50 rounded-xl">
-                          <h4 className="font-semibold text-navy mb-4 font-body">Can't find what you're looking for?</h4>
+                          <h4 className="font-semibold text-navy mb-4 font-body">Can&apos;t find what you&apos;re looking for?</h4>
                           <div className="flex flex-col sm:flex-row gap-4">
                             <Link href="/contact" onClick={closeMenu}>
                               <Button className="bg-gold text-navy hover:bg-gold-light">

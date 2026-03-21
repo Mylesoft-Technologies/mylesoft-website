@@ -77,6 +77,17 @@ export function Header() {
         style={{ scaleX }}
       />
       
+      {/* Top Bar with Company Name */}
+      <div className="bg-navy-deep border-b border-gold/15">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center h-8">
+            <span className="text-gold text-[11px] font-body font-bold tracking-[2px] uppercase">
+              MylesCorp Technologies
+            </span>
+          </div>
+        </div>
+      </div>
+
       <header className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled 
           ? 'bg-navy-deep border-b border-gold/25 shadow-lg shadow-navy-900/20'

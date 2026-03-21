@@ -2,9 +2,8 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import { Search as SearchIcon, X, FileText, Briefcase, Users, ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
-import { InstantSearch, SearchBox, Hits } from 'react-instantsearch'
+import { InstantSearch, Hits } from 'react-instantsearch'
 
 // Initialize Algolia client
 const searchClient = {

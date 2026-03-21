@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
-import { Calendar, Clock, User, Video, Check } from 'lucide-react'
+import { Calendar, User, Video, Check } from 'lucide-react'
 
 interface TimeSlot {
   id: string
@@ -93,8 +93,6 @@ export function CalComBooking() {
       phone,
       message
     }
-    
-    console.log('Booking submitted:', bookingData)
     
     // Redirect to Cal.com or show confirmation
     alert('Booking request submitted! We will contact you shortly to confirm your appointment.')

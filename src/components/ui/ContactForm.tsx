@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { Button } from '@/components/ui/Button'
 import { sendContactEmail } from '@/app/actions/sendEmail'
 
 export function ContactForm() {

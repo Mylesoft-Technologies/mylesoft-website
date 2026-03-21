@@ -100,7 +100,6 @@ export function Icon({ name, size = 48, className = '' }: IconProps) {
   const IconComponent = iconMap[name as keyof typeof iconMap]
   
   if (!IconComponent) {
-    console.warn(`Icon "${name}" not found`)
     return null
   }
 

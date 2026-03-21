@@ -6,10 +6,23 @@ import { MapPin, Users, Building, Phone, Mail, Globe, Navigation } from 'lucide-
 // TypeScript declarations for Leaflet
 declare global {
   interface Window {
-    L: any
+    L: {
+      map: (id: string, options?: any) => {
+        setView: (coordinates: [number, number], zoom: number) => any
+        addLayer: (layer: any) => any
+        invalidateSize: () => any
+      }
+      tileLayer: (url: string, options: any) => any
+      marker: (coordinates: [number, number], options: any) => any
+      popup: (content: string) => any
+      icon: (options: any) => any
+      divIcon: (options: any) => any
+      circle: (coordinates: [number, number], options: any) => any
+      control: {
+        zoom: (options: any) => any
+      }
+    }
   }
-  
-  var L: any
 }
 
 interface Office {
@@ -160,7 +173,7 @@ export default function InteractiveMap() {
     const script = document.createElement('script')
     script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
     script.async = true
-    script.onload = () => {
+    script.onload = (_event: Event) => {
       // Initialize map after Leaflet loads
       if (typeof window !== 'undefined' && window.L) {
         const L = window.L

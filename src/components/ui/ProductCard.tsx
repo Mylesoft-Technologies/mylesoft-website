@@ -26,8 +26,6 @@ export function ProductCard({
   className = '',
   loading = false 
 }: ProductCardProps) {
-  const [isHovered, setIsHovered] = useState(false)
-
   if (loading) {
     return <ProductCardSkeleton className={className} />
   }
@@ -49,8 +47,6 @@ export function ProductCard({
   return (
     <div
       className={`w-full h-full flex flex-col min-h-[380px] bg-white rounded-2xl border border-gray-100 hover:border-gold hover:shadow-xl transition-all duration-300 overflow-hidden p-6 cursor-pointer ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onClick={() => window.location.href = href}
     >
       {/* Header */}

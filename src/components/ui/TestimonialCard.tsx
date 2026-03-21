@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { Star } from 'lucide-react'
 
 interface TestimonialCardProps {
@@ -24,16 +25,18 @@ export function TestimonialCard({ name, title, organization, quote, rating, avat
       </div>
       
       <blockquote className="testimonial-quote">
-        "{quote}"
+        &ldquo;{quote}&rdquo;
       </blockquote>
       
       <div className="testimonial-author">
         <div className="flex-shrink-0">
           {avatar ? (
-            <img 
+            <Image 
               src={avatar} 
               alt={name}
-              className="testimonial-avatar"
+              width={48}
+              height={48}
+              className="testimonial-avatar rounded-full"
             />
           ) : (
             <div className="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center">

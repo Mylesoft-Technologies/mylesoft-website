@@ -82,7 +82,7 @@ export function TestimonialsSection({ title, testimonials, centerHeader = false 
                   color: 'var(--light-blue)',
                 }}
               >
-                "{testimonial.quote}"
+                &ldquo;{testimonial.quote}&rdquo;
               </p>
 
               {/* Author */}

@@ -381,7 +381,7 @@ export function ProductPageLayout({
                     ))}
                   </div>
                   <p className="font-body text-gray-300 mb-6 italic">
-                    "{testimonial.quote}"
+                    &ldquo;{testimonial.quote}&rdquo;
                   </p>
                   <div>
                     <div className="font-display font-bold text-white">

@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { X, Cookie, Settings } from 'lucide-react'
+import { Cookie } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 
 interface CookieConsentProps {
@@ -46,11 +46,6 @@ export function CookieConsent({ onAccept, onReject, onCustomize }: CookieConsent
     onReject?.()
   }
 
-  const handleCustomize = () => {
-    setShowDetails(!showDetails)
-    onCustomize?.()
-  }
-
   const handleSavePreferences = (preferences: Record<string, boolean>) => {
     localStorage.setItem('cookie-consent', 'customized')
     localStorage.setItem('cookie-preferences', JSON.stringify(preferences))
@@ -70,7 +65,7 @@ export function CookieConsent({ onAccept, onReject, onCustomize }: CookieConsent
                 We use cookies to enhance your experience and analyze our traffic.
               </p>
               <p className="text-xs text-navy-200">
-                By clicking "Accept All", you consent to our use of cookies.
+                By clicking &ldquo;Accept All&rdquo;, you consent to our use of cookies.
                 <button 
                   onClick={() => setShowDetails(!showDetails)}
                   className="underline ml-1 hover:text-gold-400 transition-colors"

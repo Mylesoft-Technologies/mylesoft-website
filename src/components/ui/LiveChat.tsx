@@ -1,8 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { MessageCircle, X, Minimize2, Maximize2, Send, User, Bot } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
+import { X, Minimize2, Maximize2, Send, User, Bot } from 'lucide-react'
 
 interface Message {
   id: string
@@ -37,13 +36,11 @@ export function LiveChat() {
   const initializeCrisp = () => {
     // Crisp initialization would go here
     // For now, we'll use our custom chat interface
-    console.log('Crisp would be initialized here')
   }
 
   const initializeIntercom = () => {
     // Intercom initialization would go here
     // For now, we'll use our custom chat interface
-    console.log('Intercom would be initialized here')
   }
 
   const handleSendMessage = () => {
@@ -278,8 +275,8 @@ export function LiveChat() {
 
 // Hook for live chat integration
 export function useLiveChat() {
-  const [isAvailable, setIsAvailable] = useState(true)
-  const [businessHours, setBusinessHours] = useState({
+  const [isAvailable] = useState(true)
+  const [businessHours] = useState({
     start: '09:00',
     end: '18:00',
     timezone: 'EAT'
@@ -299,7 +296,6 @@ export function useLiveChat() {
 
   const initiateChat = (topic?: string) => {
     // Logic to initiate chat with specific topic
-    console.log('Initiating chat with topic:', topic)
   }
 
   return {
