@@ -2,7 +2,8 @@ import { Layout } from '@/components/layout/Layout'
 import { CalComBooking } from '@/components/integrations/CalComBooking'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
-import { Calendar, Clock, Users, Check, Star } from 'lucide-react'
+import { Calendar, Clock, Users, Check, Star, Download } from 'lucide-react'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'Book a Demo — MylesCorp Technologies',
@@ -275,7 +276,12 @@ export default function BookDemoPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg">Schedule Your Demo</Button>
-                <Button variant="secondary">Download Brochure</Button>
+                <Link href="/brochure" transitionTypes={['slide']}>
+                  <Button variant="secondary" className="flex items-center gap-2">
+                    <Download size={16} />
+                    Download Brochure
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
