@@ -1,48 +1,124 @@
 import { Layout } from '@/components/layout/Layout'
-import { ArrowRight, MessageCircle, Mail, Phone } from 'lucide-react'
-import { SimpleReveal } from '@/components/ui/SimpleReveal'
+import { Button } from '@/components/ui/Button'
+import { FeaturesSection } from '@/components/ui/FeaturesSection'
+import { TestimonialsSection } from '@/components/ui/TestimonialsSection'
+import { CTASection } from '@/components/ui/CTASection'
+import { OverviewSection } from '@/components/ui/OverviewSection'
+import { ProcessSection } from '@/components/ui/ProcessSection'
+import { TargetsSection } from '@/components/ui/TargetsSection'
+import { ArrowRight, MessageCircle, Mail, Phone, Clock, Shield, Users, Headphones } from 'lucide-react'
 
 export const metadata = {
   title: 'Support | MylesCorp Technologies',
   description: 'Get help and support for MylesCorp products. Contact our support team for technical assistance and guidance.',
 }
 
+const SUPPORT_DATA = {
+  overview: {
+    title: 'Support',
+    tagline: 'Dedicated Support for Your Success',
+    description: [
+      'Our expert support team is here to help you get the most out of our products.',
+      'From technical assistance to guidance, we ensure your success every step of the way.'
+    ],
+    image: '/api/og/product?name=Support&category=Help',
+    stats: [
+      { number: '24/7', label: 'Support Available' },
+      { number: '< 1hr', label: 'Response Time' },
+      { number: '98%', label: 'Satisfaction Rate' },
+      { number: '4.9', label: 'Average Rating' }
+    ]
+  },
+  features: [
+    {
+      icon: '🕒',
+      title: '24/7 Availability',
+      description: 'Round-the-clock support to ensure you get help whenever you need it.'
+    },
+    {
+      icon: '🛡️',
+      title: 'Expert Assistance',
+      description: 'Knowledgeable support team with deep product expertise and technical skills.'
+    },
+    {
+      icon: '⚡',
+      title: 'Quick Response',
+      description: 'Fast response times with average response under 1 hour for critical issues.'
+    },
+    {
+      icon: '👥',
+      title: 'Personalized Help',
+      description: 'Tailored support solutions based on your specific needs and requirements.'
+    },
+    {
+      icon: '🎯',
+      title: 'Proactive Support',
+      description: 'We identify and address potential issues before they impact your operations.'
+    },
+    {
+      icon: '📚',
+      title: 'Extensive Resources',
+      description: 'Comprehensive documentation, tutorials, and knowledge base for self-service.'
+    }
+  ],
+  process: [
+    { step: 1, title: 'Contact Us', description: 'Reach out through your preferred channel - phone, email, or chat' },
+    { step: 2, title: 'Initial Assessment', description: 'We quickly assess your issue and determine the best approach' },
+    { step: 3, title: 'Solution Delivery', description: 'Our experts provide solutions and guidance to resolve your issue' },
+    { step: 4, title: 'Follow-up', description: 'We ensure the solution works and address any additional concerns' },
+    { step: 5, title: 'Feedback', description: 'We collect feedback to continuously improve our support services' }
+  ],
+  targets: [
+    'Product Users - Individuals and teams using our software solutions daily',
+    'System Administrators - IT professionals managing and maintaining our products',
+    'Business Owners - Leaders responsible for operational efficiency and success',
+    'Technical Teams - Developers and engineers integrating with our platforms'
+  ],
+  testimonials: [
+    {
+      quote: 'The support team at MylesCorp is exceptional. They resolved our issue within minutes and provided clear guidance.',
+      author: 'Sarah Johnson',
+      role: 'System Administrator',
+      organization: 'Kenya Healthcare Network'
+    },
+    {
+      quote: '24/7 support has been a game-changer for our operations. Help is always available when we need it most.',
+      author: 'Michael Chen',
+      role: 'Operations Manager',
+      organization: 'East Africa Logistics'
+    },
+    {
+      quote: 'The expertise and professionalism of the support team exceeded our expectations.',
+      author: 'Grace Wanjiku',
+      role: 'CEO',
+      organization: 'Nairobi Retail Group'
+    }
+  ]
+}
+
 export default function SupportPage() {
   return (
     <Layout>
-      <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
-        {/* Grid texture overlay — always present on dark sections */}
-        <div className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
-            backgroundSize: '64px 64px',
-          }}
-        />
+      <div className="min-h-screen">
+        {/* Hero Section */}
+        <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
+          {/* Grid texture overlay */}
+          <div className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
+              backgroundSize: '64px 64px',
+            }}
+          />
 
-        {/* Radial glow top-right */}
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
-          }}
-        />
-
-        {/* Radial glow bottom-left */}
-        <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
-          }}
-        />
-
-        {/* Gold top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-[3px]"
-          style={{
-            background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
-          }}
-        />
-        
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <SimpleReveal delay={0.2}>
-            {/* Eyebrow label */}
+          {/* Gold top accent line */}
+          <div className="absolute top-0 left-0 right-0 h-[3px]"
+            style={{
+              background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
+            }}
+          />
+          
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            {/* Eyebrow Label */}
             <div className="flex items-center justify-center gap-3 mb-5">
               <div className="w-8 h-0.5 bg-gold" />
               <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
@@ -50,86 +126,75 @@ export default function SupportPage() {
               </span>
               <div className="w-8 h-0.5 bg-gold" />
             </div>
-
-            {/* Main heading */}
+            
             <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
-              24/7
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
-                Support
+              Dedicated Support
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light">
+                For Your Success
               </span>
             </h1>
-
-            {/* Subtitle */}
+            
             <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-              Our dedicated support team is here to help you get the most out of 
-              MylesCorp products and services.
+              {SUPPORT_DATA.overview.description[0]}
             </p>
+            
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+              {SUPPORT_DATA.overview.stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-gold mb-2">{stat.number}</div>
+                  <div className="text-sm text-light-blue font-body">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-            {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gold text-navy font-body font-bold text-[15px] tracking-[0.4px] px-9 py-4 rounded-md hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(199,150,57,0.3)] active:scale-[0.98] transition-all duration-200">
-                <MessageCircle className="mr-2 w-5 h-5" />
-                Start Live Chat
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="bg-transparent text-white font-body font-semibold text-[15px] px-9 py-4 rounded-md border border-white/20 hover:border-gold hover:text-gold transition-all duration-200">
-                <Mail className="mr-2 w-5 h-5" />
-                Email Support
-              </button>
-            </div>
-          </SimpleReveal>
-        </div>
-      </section>
+        {/* Overview */}
+        <OverviewSection 
+          title={SUPPORT_DATA.overview.title}
+          description={SUPPORT_DATA.overview.description}
+          stats={SUPPORT_DATA.overview.stats}
+        />
 
-      {/* Rest of the content */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SimpleReveal delay={0.4}>
-            <div className="mt-16 grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-8 h-8 text-gold" />
-                </div>
-                <h3 className="font-body font-semibold text-white mb-2">Phone Support</h3>
-                <p className="font-body text-muted-blue text-sm">
-                  +254 743 993 715<br />
-                  Mon-Fri, 9AM-6PM EAT
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-8 h-8 text-gold" />
-                </div>
-                <h3 className="font-body font-semibold text-white mb-2">Email Support</h3>
-                <p className="font-body text-muted-blue text-sm">
-                  support@mylescorp.co.ke<br />
-                  24-48 hour response
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <MessageCircle className="w-8 h-8 text-gold" />
-                </div>
-                <h3 className="font-body font-semibold text-white mb-2">Live Chat</h3>
-                <p className="font-body text-muted-blue text-sm">
-                  Available on website<br />
-                  Mon-Fri, 9AM-6PM EAT
-                </p>
-              </div>
-            </div>
-          </SimpleReveal>
-          
-          <SimpleReveal delay={0.6}>
-            <div className="mt-16 text-center">
-              <p className="font-body text-muted-blue text-sm">
-                For urgent technical issues, please include your product name and version in your communication.
-              </p>
-            </div>
-          </SimpleReveal>
-        </div>
-      </section>
+        {/* Features */}
+        <FeaturesSection 
+          title="Why Choose Our Support"
+          description="We provide comprehensive support services to ensure your success with our products."
+          features={SUPPORT_DATA.features}
+          centerHeader={true}
+        />
+
+        {/* Process */}
+        <ProcessSection 
+          title="Our Support Process"
+          description="From contact to resolution — we ensure a smooth and efficient support experience."
+          steps={SUPPORT_DATA.process}
+          centerHeader={true}
+        />
+
+        {/* Targets */}
+        <TargetsSection 
+          title="Who We Support"
+          targets={SUPPORT_DATA.targets}
+        />
+
+        {/* Testimonials */}
+        <TestimonialsSection 
+          title="Customer Success Stories"
+          testimonials={SUPPORT_DATA.testimonials}
+          centerHeader={true}
+        />
+
+        {/* Final CTA */}
+        <CTASection 
+          title="Need Help? We're Here for You"
+          tagline="Expert Support, Every Time."
+          description="Contact our support team and get the help you need to succeed with our products."
+          primaryCta={{ text: "Contact Support", href: "/contact" }}
+          secondaryCta={{ text: "Browse Documentation", href: "/docs" }}
+        />
+      </div>
     </Layout>
   )
 }
