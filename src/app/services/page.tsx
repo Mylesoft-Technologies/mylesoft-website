@@ -122,7 +122,7 @@ const services = [
     ],
     duration: '3-6 months',
     price: 'Starting from KES 500,000',
-    href: '/services/software-development'
+    href: '/services/it-consulting'
   },
   {
     name: 'Custom Software Development',
