@@ -5,8 +5,8 @@ import { Check, X, CheckCircle, Star, Shield, Zap, Users } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Pricing — Affordable Plans for African Organisations',
-  description: 'Simple, transparent pricing for MylesCorp products. EduMyles from KES 5,000/month. MylesCare from KES 8,000/month. No hidden fees. 14-day free trial.',
+  title: 'Pricing — Affordable Plans for All MylesCorp Products & Services',
+  description: 'Complete pricing for all 9 MylesCorp products and services. EduMyles, MylesCare, MylesLegal, MylesEnergy, MylesNonProfit, MylesConstruction, MylesHospitality, MylesManufacturing, MylesMedia, MylesTransit. No hidden fees. 14-day free trial.',
   alternates: {
     canonical: 'https://www.mylescorp.co.ke/pricing',
   },
@@ -93,19 +93,19 @@ const productPricing = [
         name: 'EduMyles Basic',
         price: 'KES 10,000',
         period: '/month',
-        features: ['Up to 100 students', 'Basic management', 'Parent portal']
+        features: ['Up to 100 students', 'Basic management', 'Parent portal', 'Mobile app', 'Email support']
       },
       {
         name: 'EduMyles Pro',
         price: 'KES 25,000',
         period: '/month',
-        features: ['Up to 500 students', 'Advanced features', 'Analytics', 'Mobile app']
+        features: ['Up to 500 students', 'Advanced features', 'Analytics', 'Mobile app', 'Priority support', 'Most Popular']
       },
       {
         name: 'EduMyles Enterprise',
         price: 'Custom',
         period: 'pricing',
-        features: ['Unlimited students', 'All features', 'Custom development']
+        features: ['Unlimited students', 'All features', 'Custom development', 'Dedicated support']
       }
     ]
   },
@@ -116,19 +116,19 @@ const productPricing = [
         name: 'MylesCare Basic',
         price: 'KES 15,000',
         period: '/month',
-        features: ['Up to 50 doctors', 'Basic patient management', 'Appointment scheduling']
+        features: ['Up to 50 doctors', 'Basic patient management', 'Appointment scheduling', 'Mobile app']
       },
       {
         name: 'MylesCare Pro',
         price: 'KES 40,000',
         period: '/month',
-        features: ['Up to 200 doctors', 'Advanced features', 'AI diagnostics', 'Telemedicine']
+        features: ['Up to 200 doctors', 'Advanced features', 'AI diagnostics', 'Telemedicine', 'Priority support', 'Most Popular']
       },
       {
         name: 'MylesCare Enterprise',
         price: 'Custom',
         period: 'pricing',
-        features: ['Unlimited doctors', 'All features', 'Custom integrations']
+        features: ['Unlimited doctors', 'All features', 'Custom integrations', 'Dedicated support']
       }
     ]
   },
@@ -139,19 +139,275 @@ const productPricing = [
         name: 'AgriMyles Small Farm',
         price: 'KES 5,000',
         period: '/month',
-        features: ['Up to 10 hectares', 'Basic monitoring', 'Weather alerts']
+        features: ['Up to 10 hectares', 'Basic monitoring', 'Weather alerts', 'Mobile app']
       },
       {
         name: 'AgriMyles Commercial',
         price: 'KES 20,000',
         period: '/month',
-        features: ['Up to 100 hectares', 'Advanced analytics', 'Market insights']
+        features: ['Up to 100 hectares', 'Advanced analytics', 'Market insights', 'Priority support', 'Most Popular']
       },
       {
         name: 'AgriMyles Enterprise',
         price: 'Custom',
         period: 'pricing',
-        features: ['Unlimited hectares', 'All features', 'Custom solutions']
+        features: ['Unlimited hectares', 'All features', 'Custom solutions', 'Dedicated support']
+      }
+    ]
+  },
+  {
+    category: 'Legal',
+    products: [
+      {
+        name: 'MylesLegal Starter',
+        price: 'KES 5,000',
+        period: '/month',
+        features: ['Up to 3 users', 'Basic case management', 'Document storage (5GB)', 'Mobile app', 'Email support']
+      },
+      {
+        name: 'MylesLegal Professional',
+        price: 'KES 15,000',
+        period: '/month',
+        features: ['Up to 15 users', 'Advanced case management', 'Document storage (50GB)', 'Priority support', 'Client portal', 'Time tracking', 'Most Popular']
+      },
+      {
+        name: 'MylesLegal Enterprise',
+        price: 'Custom',
+        period: 'pricing',
+        features: ['Unlimited users', 'Full feature access', 'Unlimited storage', 'Dedicated support', 'Custom integrations']
+      }
+    ]
+  },
+  {
+    category: 'Energy',
+    products: [
+      {
+        name: 'MylesEnergy Basic',
+        price: 'KES 3,000',
+        period: '/month',
+        features: ['Up to 5 meters', 'Basic monitoring', 'Monthly reports', 'Mobile app', 'Email support']
+      },
+      {
+        name: 'MylesEnergy Professional',
+        price: 'KES 10,000',
+        period: '/month',
+        features: ['Up to 25 meters', 'Advanced analytics', 'Real-time alerts', 'Predictive maintenance', 'Priority support', 'API access', 'Most Popular']
+      },
+      {
+        name: 'MylesEnergy Enterprise',
+        price: 'Custom',
+        period: 'pricing',
+        features: ['Unlimited meters', 'Full analytics suite', 'AI optimization', 'Dedicated support', 'Custom integrations']
+      }
+    ]
+  },
+  {
+    category: 'NonProfit',
+    products: [
+      {
+        name: 'MylesNonProfit Starter',
+        price: 'KES 2,000',
+        period: '/month',
+        features: ['Up to 100 donors', 'Basic volunteer management', 'Event planning', 'Mobile app', 'Email support']
+      },
+      {
+        name: 'MylesNonProfit Professional',
+        price: 'KES 8,000',
+        period: '/month',
+        features: ['Up to 1,000 donors', 'Advanced volunteer management', 'Grant tracking', 'Impact reporting', 'Priority support', 'API access', 'Most Popular']
+      },
+      {
+        name: 'MylesNonProfit Enterprise',
+        price: 'Custom',
+        period: 'pricing',
+        features: ['Unlimited donors', 'Full feature access', 'Multi-organization management', 'Dedicated support']
+      }
+    ]
+  },
+  {
+    category: 'Construction',
+    products: [
+      {
+        name: 'MylesConstruction Basic',
+        price: 'KES 5,000',
+        period: '/month',
+        features: ['Up to 10 projects', 'Basic project tracking', 'Resource management', 'Mobile app', 'Email support']
+      },
+      {
+        name: 'MylesConstruction Professional',
+        price: 'KES 20,000',
+        period: '/month',
+        features: ['Up to 50 projects', 'Advanced tracking', 'Budget control', 'Quality management', 'Priority support', 'API access', 'Most Popular']
+      },
+      {
+        name: 'MylesConstruction Enterprise',
+        price: 'Custom',
+        period: 'pricing',
+        features: ['Unlimited projects', 'Full feature access', 'Multi-site management', 'Dedicated support', 'Custom integrations']
+      }
+    ]
+  },
+  {
+    category: 'Hospitality',
+    products: [
+      {
+        name: 'MylesHospitality Basic',
+        price: 'KES 8,000',
+        period: '/month',
+        features: ['Up to 50 rooms', 'Basic booking system', 'Guest management', 'Mobile app', 'Email support']
+      },
+      {
+        name: 'MylesHospitality Professional',
+        price: 'KES 25,000',
+        period: '/month',
+        features: ['Up to 200 rooms', 'Advanced booking engine', 'Revenue management', 'Review management', 'Priority support', 'API access', 'Most Popular']
+      },
+      {
+        name: 'MylesHospitality Enterprise',
+        price: 'Custom',
+        period: 'pricing',
+        features: ['Unlimited rooms', 'Full feature access', 'Multi-property management', 'Dedicated support', 'Custom integrations']
+      }
+    ]
+  },
+  {
+    category: 'Manufacturing',
+    products: [
+      {
+        name: 'MylesManufacturing Basic',
+        price: 'KES 12,000',
+        period: '/month',
+        features: ['Up to 50 employees', 'Basic production planning', 'Inventory management', 'Mobile app', 'Email support']
+      },
+      {
+        name: 'MylesManufacturing Professional',
+        price: 'KES 35,000',
+        period: '/month',
+        features: ['Up to 200 employees', 'Advanced planning', 'Quality control', 'Maintenance management', 'Priority support', 'API access', 'Most Popular']
+      },
+      {
+        name: 'MylesManufacturing Enterprise',
+        price: 'Custom',
+        period: 'pricing',
+        features: ['Unlimited employees', 'Full feature access', 'Multi-plant management', 'Dedicated support', 'Custom integrations']
+      }
+    ]
+  },
+  {
+    category: 'Media',
+    products: [
+      {
+        name: 'MylesMedia Basic',
+        price: 'KES 6,000',
+        period: '/month',
+        features: ['Up to 10 users', 'Basic content management', 'Asset library (100GB)', 'Mobile app', 'Email support']
+      },
+      {
+        name: 'MylesMedia Professional',
+        price: 'KES 20,000',
+        period: '/month',
+        features: ['Up to 50 users', 'Advanced content management', 'Video production tools', 'Analytics dashboard', 'Priority support', 'API access', 'Most Popular']
+      },
+      {
+        name: 'MylesMedia Enterprise',
+        price: 'Custom',
+        period: 'pricing',
+        features: ['Unlimited users', 'Full feature access', 'Multi-channel publishing', 'Dedicated support', 'Custom integrations']
+      }
+    ]
+  },
+  {
+    category: 'Transportation',
+    products: [
+      {
+        name: 'MylesTransit Basic',
+        price: 'KES 8,000',
+        period: '/month',
+        features: ['Up to 20 vehicles', 'Basic route planning', 'Fleet tracking', 'Mobile app', 'Email support']
+      },
+      {
+        name: 'MylesTransit Professional',
+        price: 'KES 25,000',
+        period: '/month',
+        features: ['Up to 100 vehicles', 'Advanced route optimization', 'Driver management', 'Cost tracking', 'Priority support', 'API access', 'Most Popular']
+      },
+      {
+        name: 'MylesTransit Enterprise',
+        price: 'Custom',
+        period: 'pricing',
+        features: ['Unlimited vehicles', 'Full feature access', 'Multi-depot management', 'Dedicated support', 'Custom integrations']
+      }
+    ]
+  }
+]
+
+const servicesPricing = [
+  {
+    category: 'Web Development',
+    services: [
+      {
+        name: 'Basic Website',
+        price: 'KES 25,000',
+        period: 'one-time',
+        features: ['5-page website', 'Responsive design', 'Basic SEO', 'Contact form', 'Mobile friendly']
+      },
+      {
+        name: 'Professional Website',
+        price: 'KES 75,000',
+        period: 'one-time',
+        features: ['15-page website', 'Custom design', 'Advanced SEO', 'CMS integration', 'Analytics setup', 'Most Popular']
+      },
+      {
+        name: 'E-commerce Platform',
+        price: 'KES 150,000',
+        period: 'one-time',
+        features: ['Full e-commerce', 'Payment integration', 'Inventory management', 'Customer accounts', 'Admin dashboard']
+      }
+    ]
+  },
+  {
+    category: 'IT Consulting',
+    services: [
+      {
+        name: 'IT Assessment',
+        price: 'KES 30,000',
+        period: 'one-time',
+        features: ['System audit', 'Security assessment', 'Performance analysis', 'Recommendations', 'Implementation plan']
+      },
+      {
+        name: 'Digital Transformation',
+        price: 'KES 100,000',
+        period: 'one-time',
+        features: ['Process optimization', 'Technology roadmap', 'Staff training', 'Change management', 'Ongoing support', 'Most Popular']
+      },
+      {
+        name: 'Strategic Consulting',
+        price: 'KES 200,000',
+        period: 'one-time',
+        features: ['Business strategy', 'Technology alignment', 'ROI analysis', 'Long-term planning', 'Executive coaching']
+      }
+    ]
+  },
+  {
+    category: 'Cloud Solutions',
+    services: [
+      {
+        name: 'Cloud Migration',
+        price: 'KES 50,000',
+        period: 'one-time',
+        features: ['Data migration', 'System setup', 'Security configuration', 'Training', 'Documentation']
+      },
+      {
+        name: 'Cloud Infrastructure',
+        price: 'KES 15,000',
+        period: '/month',
+        features: ['Server management', 'Backup solutions', 'Security monitoring', 'Performance optimization', '24/7 support', 'Most Popular']
+      },
+      {
+        name: 'Enterprise Cloud',
+        price: 'Custom',
+        period: 'pricing',
+        features: ['Multi-cloud setup', 'Advanced security', 'Compliance management', 'Dedicated infrastructure', 'Custom solutions']
       }
     ]
   }
@@ -263,12 +519,16 @@ export default function PricingPage() {
 
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gold text-navy font-body font-bold text-[15px] tracking-[0.4px] px-9 py-4 rounded-md hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(199,150,57,0.3)] active:scale-[0.98] transition-all duration-200">
-                Start Free Trial
-              </button>
-              <button className="bg-transparent text-white font-body font-semibold text-[15px] px-9 py-4 rounded-md border border-white/20 hover:border-gold hover:text-gold transition-all duration-200">
-                Contact Sales
-              </button>
+              <Link href="/book-demo">
+                <button className="bg-gold text-navy font-body font-bold text-[15px] tracking-[0.4px] px-9 py-4 rounded-md hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(199,150,57,0.3)] active:scale-[0.98] transition-all duration-200">
+                  Start Free Trial
+                </button>
+              </Link>
+              <Link href="/contact">
+                <button className="bg-transparent text-white font-body font-semibold text-[15px] px-9 py-4 rounded-md border border-white/20 hover:border-gold hover:text-gold transition-all duration-200">
+                  Contact Sales
+                </button>
+              </Link>
             </div>
 
           </div>
@@ -377,6 +637,45 @@ export default function PricingPage() {
           </div>
         </section>
 
+        {/* Services Pricing */}
+        <section className="section bg-off-white">
+          <div className="section-padding">
+            <div className="text-center mb-12">
+              <h2 className="heading-2 mb-4">Services Pricing</h2>
+              <p className="body-text max-w-2xl mx-auto">
+                Professional services for organizations needing expert implementation and consulting.
+              </p>
+            </div>
+            
+            <div className="space-y-12">
+              {servicesPricing.map((category, categoryIndex) => (
+                <div key={categoryIndex}>
+                  <h3 className="heading-3 mb-6 text-center">{category.category}</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {category.services.map((service, serviceIndex) => (
+                      <div key={serviceIndex} className="bg-white rounded-lg shadow-medium p-6">
+                        <h4 className="font-semibold text-navy-500 mb-2">{service.name}</h4>
+                        <div className="mb-4">
+                          <span className="text-2xl font-bold text-gold-400">{service.price}</span>
+                          <span className="text-medium-grey text-sm">{service.period}</span>
+                        </div>
+                        <ul className="space-y-2">
+                          {service.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-center text-sm">
+                              <Check size={14} className="text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section className="section">
           <div className="section-padding">
@@ -409,8 +708,12 @@ export default function PricingPage() {
                 We offer custom pricing for large organizations and specialized requirements. Let's discuss your specific needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button>Contact Sales Team</Button>
-                <Button variant="secondary">Schedule Demo</Button>
+                <Link href="/contact">
+                  <Button>Contact Sales Team</Button>
+                </Link>
+                <Link href="/book-demo">
+                  <Button variant="secondary">Schedule Demo</Button>
+                </Link>
               </div>
             </div>
           </div>
