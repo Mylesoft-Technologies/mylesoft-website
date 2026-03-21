@@ -1,10 +1,4 @@
-import { BrochureViewer } from '@/components/ui/BrochureViewer'
-
 export const metadata = {
   title: 'MylesCorp Technologies — Company Brochure 2026',
   description: 'East Africa\'s leading AI-powered software company. View our digital brochure covering all products, services, team, and impact.',
-}
-
-export default function BrochurePage() {
-  return <BrochureViewer htmlPath="/brochure/MylesCorp_Digital_Brochure.html" />
 }
