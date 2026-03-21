@@ -1,6 +1,14 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
+import { FeaturesSection } from '@/components/ui/FeaturesSection'
+import { PricingSection } from '@/components/ui/PricingSection'
+import { TestimonialsSection } from '@/components/ui/TestimonialsSection'
+import { CTASection } from '@/components/ui/CTASection'
+import { OverviewSection } from '@/components/ui/OverviewSection'
+import { ProcessSection } from '@/components/ui/ProcessSection'
+import { TargetsSection } from '@/components/ui/TargetsSection'
+import Link from 'next/link'
 import { Hotel, Users, Calendar, DollarSign, Star, Check } from 'lucide-react'
 
 export const metadata = {
@@ -15,7 +23,10 @@ const MYLESHOSPITALITY_DATA = {
   overview: {
     title: 'MylesHospitality',
     tagline: 'Smart Hospitality Management for Exceptional Guest Experiences',
-    description: 'Comprehensive hospitality management solution designed for hotels, restaurants, and tourism businesses across Africa.',
+    description: [
+      'Comprehensive hospitality management solution designed for hotels, restaurants, and tourism businesses across Africa.',
+      'Streamline operations, enhance guest experiences, and maximize revenue with our integrated platform.'
+    ],
     image: '/api/og/product?name=MylesHospitality&category=Hospitality',
     stats: [
       { number: '100+', label: 'Hospitality Clients' },
@@ -26,84 +37,84 @@ const MYLESHOSPITALITY_DATA = {
   },
   features: [
     {
-      icon: 'hotel',
+      icon: '🏨',
       title: 'Property Management',
       description: 'Complete property management with room booking, housekeeping, and maintenance coordination.'
     },
     {
-      icon: 'users',
+      icon: '👥',
       title: 'Guest Management',
       description: 'Guest profile management, preferences, and personalized service delivery.'
     },
     {
-      icon: 'calendar',
+      icon: '📅',
       title: 'Reservation System',
       description: 'Advanced booking engine with real-time availability and automated confirmations.'
     },
     {
-      icon: 'dollar-sign',
+      icon: '💰',
       title: 'Revenue Management',
       description: 'Dynamic pricing, occupancy optimization, and revenue analytics.'
     },
     {
-      icon: 'star',
+      icon: '⭐',
       title: 'Review Management',
-      description: 'Guest review monitoring, response management, and reputation tracking.'
+      description: 'Guest review collection, response management, and reputation monitoring.'
     },
     {
-      icon: 'check',
-      title: 'Staff Management',
-      description: 'Staff scheduling, performance tracking, and training management.'
+      icon: '✅',
+      title: 'Compliance & Reporting',
+      description: 'Regulatory compliance, financial reporting, and business analytics.'
     }
   ],
   process: [
-    { step: '1', title: 'Assessment', description: 'Property analysis and requirement gathering' },
-    { step: '2', title: 'Setup', description: 'System configuration and data migration' },
-    { step: '3', title: 'Train', description: 'Staff training on all modules and best practices' },
-    { step: '4', title: 'Launch', description: 'Go-live with dedicated support team' },
-    { step: '5', title: 'Optimize', description: 'Continuous improvement based on usage analytics' }
+    { step: 1, title: 'Assessment', description: 'Property analysis and workflow customization' },
+    { step: 2, title: 'Setup', description: 'System configuration and data migration' },
+    { step: 3, title: 'Train', description: 'Staff training on all hospitality modules' },
+    { step: 4, title: 'Launch', description: 'Go-live with dedicated support team' },
+    { step: 5, title: 'Optimize', description: 'Continuous improvement based on guest feedback' }
   ],
   targets: [
-    { title: 'Hotels', description: 'Boutique hotels, business hotels, and resort properties' },
-    { title: 'Restaurants', description: 'Fine dining, casual dining, and restaurant chains' },
-    { title: 'Tourism', description: 'Tour operators, travel agencies, and tourism boards' },
-    { title: 'Events', description: 'Conference centers, event venues, and wedding planners' }
+    'Hotels & Resorts - Full-service hotels and luxury resorts',
+    'Restaurants & Cafes - Fine dining and casual dining establishments',
+    'Tourism Companies - Tour operators and travel agencies',
+    'Event Venues - Conference centers and event spaces'
   ],
   pricing: [
     {
       name: 'Basic',
       price: 'KES 8,000/month',
-      description: 'Perfect for small properties',
-      features: ['Up to 20 rooms', 'Basic booking management', 'Guest database', 'Reporting', 'Mobile app'],
+      description: 'Perfect for small hotels and restaurants',
+      features: ['Up to 50 rooms', 'Basic booking system', 'Guest management', 'Mobile app', 'Email support'],
       popular: false
     },
     {
       name: 'Professional',
       price: 'KES 25,000/month',
-      description: 'Ideal for medium properties',
-      features: ['Up to 100 rooms', 'Advanced booking engine', 'Revenue management', 'Channel management', 'Guest portal', 'Priority support'],
+      description: 'Ideal for medium-sized hospitality businesses',
+      features: ['Up to 200 rooms', 'Advanced booking engine', 'Revenue management', 'Review management', 'Priority support', 'API access', 'Most Popular'],
       popular: true
     },
     {
       name: 'Enterprise',
       price: 'Custom',
-      description: 'For large properties and chains',
-      features: ['Unlimited rooms', 'Full feature access', 'Multi-property management', 'Custom integrations', 'Dedicated support', 'API access', 'On-premise option'],
+      description: 'For large hospitality chains and resorts',
+      features: ['Unlimited rooms', 'Full feature access', 'Multi-property management', 'Dedicated support', 'Custom integrations', 'On-premise option'],
       popular: false
     }
   ],
   testimonials: [
     {
-      quote: 'MylesHospitality transformed our operations. Occupancy increased by 35% in the first year.',
-      author: 'Patricia Mwaura',
+      quote: 'MylesHospitality transformed our operations. We saw a 40% increase in efficiency and guest satisfaction improved dramatically.',
+      author: 'Sarah Kamau',
       role: 'General Manager',
-      organization: 'Safari Lodge Kenya'
+      organization: 'Serenity Hotels Nairobi'
     },
     {
-      quote: 'The guest management features have significantly improved our service quality and guest satisfaction.',
-      author: 'James Kariuki',
+      quote: 'The revenue management feature alone increased our occupancy by 25% and average daily rate by 15%.',
+      author: 'Michael Ochieng',
       role: 'Operations Director',
-      organization: 'Nairobi Hotel Group'
+      organization: 'Coastal Resort Group'
     }
   ]
 }
@@ -138,24 +149,28 @@ export default function MylesHospitalityPage() {
             </h1>
             
             <p className="font-body font-light text-light-blue text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-[1.7]">
-              {MYLESHOSPITALITY_DATA.overview.description}
+              {MYLESHOSPITALITY_DATA.overview.description[0]}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button 
-                size="lg" 
-                variant="primary"
-                className="px-8 py-4 text-sm font-semibold shadow-lg hover:shadow-xl"
-              >
-                Book Free Demo
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-8 py-4 text-sm font-semibold border-gold/50 text-gold hover:border-gold hover:bg-gold hover:text-navy"
-              >
-                View Pricing
-              </Button>
+              <Link href="/book-demo">
+                <Button 
+                  size="lg" 
+                  variant="primary"
+                  className="px-8 py-4 text-sm font-semibold shadow-lg hover:shadow-xl"
+                >
+                  Book Free Demo
+                </Button>
+              </Link>
+              <Link href="/pricing">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="px-8 py-4 text-sm font-semibold border-gold/50 text-gold hover:border-gold hover:bg-gold hover:text-navy"
+                >
+                  View Pricing
+                </Button>
+              </Link>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
@@ -169,59 +184,63 @@ export default function MylesHospitalityPage() {
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="font-display font-bold text-navy text-4xl md:text-5xl mb-4">
-                Complete Hospitality Management
-              </h2>
-              <p className="font-body text-light-blue text-lg max-w-2xl mx-auto">
-                Everything you need to manage your hospitality business efficiently and delight your guests.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {MYLESHOSPITALITY_DATA.features.map((feature, index) => (
-                <div key={index} className="bg-navy-deep/5 rounded-2xl p-8 border border-navy-deep/10 hover:border-gold/30 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center mb-6">
-                    <Icon name={feature.icon} size={24} className="text-gold" />
-                  </div>
-                  <h3 className="font-body font-bold text-navy text-xl mb-3">{feature.title}</h3>
-                  <p className="font-body text-light-blue leading-[1.7]">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Overview */}
+        <OverviewSection 
+          title={MYLESHOSPITALITY_DATA.overview.title}
+          description={MYLESHOSPITALITY_DATA.overview.description}
+          stats={MYLESHOSPITALITY_DATA.overview.stats}
+        />
 
-        {/* CTA Section */}
-        <section className="py-20 bg-navy-deep text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display font-bold text-white text-4xl md:text-5xl mb-4">
-              Ready to Elevate Your Guest Experience?
-            </h2>
-            <p className="font-body text-light-blue text-lg mb-8 max-w-2xl mx-auto">
-              Join {MYLESHOSPITALITY_DATA.overview.stats[0].number} hospitality businesses across Africa already thriving with MylesHospitality.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="primary"
-                className="px-8 py-4 text-sm font-semibold"
-              >
-                Book Free Demo
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-8 py-4 text-sm font-semibold border-white/20 text-white hover:border-gold hover:text-gold"
-              >
-                WhatsApp Us
-              </Button>
-            </div>
-          </div>
-        </section>
+        {/* Features */}
+        <FeaturesSection 
+          title="Powerful Hospitality Management Features"
+          description="Everything you need to manage your hospitality business efficiently and delight your guests."
+          features={MYLESHOSPITALITY_DATA.features}
+          centerHeader={true}
+        />
+
+        {/* Process */}
+        <ProcessSection 
+          title="Implementation in 5 Steps"
+          description="From assessment to optimization — a clear path to hospitality excellence."
+          steps={MYLESHOSPITALITY_DATA.process}
+          centerHeader={true}
+        />
+
+        {/* Targets */}
+        <TargetsSection 
+          title="Built for Every Hospitality Business"
+          targets={MYLESHOSPITALITY_DATA.targets}
+        />
+
+        {/* Pricing */}
+        <PricingSection 
+          title="Simple, Transparent Pricing"
+          description="Choose the perfect plan for your hospitality business. All plans include free setup and support."
+          plans={MYLESHOSPITALITY_DATA.pricing.map(p => ({
+            ...p,
+            price: p.price.split('/')[0],
+            period: p.price.split('/')[1] || 'per month',
+            featured: p.features.includes('Most Popular')
+          }))}
+          centerHeader={true}
+        />
+
+        {/* Testimonials */}
+        <TestimonialsSection 
+          title="Success Stories"
+          testimonials={MYLESHOSPITALITY_DATA.testimonials}
+          centerHeader={true}
+        />
+
+        {/* CTA */}
+        <CTASection 
+          title="Ready to Transform Your Hospitality Business?"
+          tagline="Transforming Industries, Empowering Generations."
+          description={`Join ${MYLESHOSPITALITY_DATA.overview.stats[0].number} hospitality businesses across Africa already thriving with MylesHospitality.`}
+          primaryCta={{ text: "Book Free Demo", href: "/book-demo" }}
+          secondaryCta={{ text: "Talk to Our Team", href: "/contact" }}
+        />
       </div>
     </Layout>
   )
