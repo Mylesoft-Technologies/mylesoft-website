@@ -101,7 +101,6 @@ export function Header() {
               </div>
               <span className="ml-3 flex flex-col">
                 <span className="text-[14px] font-body font-bold text-white group-hover:text-gold transition-colors duration-300">Home</span>
-                <span className="text-[10px] font-body text-gold uppercase tracking-[1.5px]">Start Here</span>
               </span>
             </Link>
             <MegaMenu />
@@ -121,14 +120,15 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center ml-8">
-            <Link href="/book-demo" transitionTypes={['slide']}>
-              <Button 
-                size="sm" 
-                variant="primary"
-                className="shadow-lg hover:shadow-xl px-6 py-2 text-sm font-semibold"
-              >
-                Book a Demo
-              </Button>
+            <Link 
+              href="/book-demo" 
+              transitionTypes={['slide']}
+              className="px-5 py-2.5 bg-[#C79639] text-[#1A395B] text-[13px]
+                     font-bold rounded-lg whitespace-nowrap self-center
+                     hover:bg-[#e0b055] hover:-translate-y-0.5
+                     transition-all duration-200 flex-shrink-0"
+            >
+              Book a Demo
             </Link>
           </div>
 
