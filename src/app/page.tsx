@@ -97,6 +97,15 @@ export default function HomePage() {
                   Book a Free Demo
                 </Button>
               </Link>
+              <Link href="/brochure" transitionTypes={['slide']}>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="w-full sm:w-auto border-2 border-gold/50 text-gold hover:border-gold hover:bg-gold hover:text-white px-6 py-3 text-sm font-semibold"
+                >
+                  📖 View our digital brochure
+                </Button>
+              </Link>
               <Link href="/contact" transitionTypes={['slide']}>
                 <Button 
                   size="lg" 

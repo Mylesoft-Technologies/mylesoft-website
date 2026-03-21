@@ -56,6 +56,7 @@ export function Header() {
     { name: 'Partners', href: '/partners' },
     { name: 'Blog', href: '/blog' },
     { name: 'Careers', href: '/careers' },
+    { name: 'Brochure', href: '/brochure' },
     { name: 'Contact', href: '/contact' },
   ]
 

@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react'
+import { usePathname } from 'next/navigation'
 import { Header } from './Header'
 import { Footer } from './Footer'
 
@@ -6,14 +9,17 @@ interface LayoutProps {
   children: React.ReactNode
 }
 
-export function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: LayoutProps) {
+  const pathname = usePathname()
+  const isBrochure = pathname.startsWith('/brochure')
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Header />
+      {!isBrochure && <Header />}
       <main id="main-content" className="flex-1 relative">
         {children}
       </main>
-      <Footer />
+      {!isBrochure && <Footer />}
     </div>
   )
 }
