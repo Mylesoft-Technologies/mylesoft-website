@@ -1,6 +1,14 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
+import { FeaturesSection } from '@/components/ui/FeaturesSection'
+import { PricingSection } from '@/components/ui/PricingSection'
+import { TestimonialsSection } from '@/components/ui/TestimonialsSection'
+import { CTASection } from '@/components/ui/CTASection'
+import { OverviewSection } from '@/components/ui/OverviewSection'
+import { ProcessSection } from '@/components/ui/ProcessSection'
+import { TargetsSection } from '@/components/ui/TargetsSection'
+import Link from 'next/link'
 import { Target, Users, Calendar, DollarSign, CheckCircle, Settings } from 'lucide-react'
 
 export const metadata = {
@@ -14,96 +22,99 @@ export const metadata = {
 const MYLESCONSTRUCTION_DATA = {
   overview: {
     title: 'MylesConstruction',
-    tagline: 'Smart Project Management for Construction Companies',
-    description: 'Comprehensive construction project management solution with intelligent tracking, resource management, and progress monitoring.',
+    tagline: 'Smart Construction Management for Project Excellence',
+    description: [
+      'Intelligent project management solution designed for construction companies across Africa.',
+      'Track projects, manage resources, and monitor progress in real-time.'
+    ],
     image: '/api/og/product?name=MylesConstruction&category=Construction',
     stats: [
-      { number: '100+', label: 'Projects Managed' },
-      { number: 'KES 2B+', label: 'Project Value' },
-      { number: '95%', label: 'On-Time Delivery' },
-      { number: '24/7', label: 'Site Monitoring' }
+      { number: '300+', label: 'Projects Managed' },
+      { number: '25%', label: 'Time Savings' },
+      { number: '15%', label: 'Cost Reduction' },
+      { number: '24/7', label: 'Project Monitoring' }
     ]
   },
   features: [
     {
-      icon: 'target',
-      title: 'Project Planning',
-      description: 'Advanced project planning with Gantt charts, milestone tracking, and dependency management.'
+      icon: '🎯',
+      title: 'Project Tracking',
+      description: 'Real-time project progress tracking with milestones, deadlines, and deliverables management.'
     },
     {
-      icon: 'users',
+      icon: '👥',
       title: 'Resource Management',
-      description: 'Manage workforce, equipment, and materials with real-time availability and allocation.'
+      description: 'Manage workers, equipment, and materials efficiently with allocation and scheduling tools.'
     },
     {
-      icon: 'dollar-sign',
-      title: 'Budget Tracking',
-      description: 'Comprehensive budget management with cost tracking, expense reporting, and variance analysis.'
+      icon: '📅',
+      title: 'Timeline Management',
+      description: 'Comprehensive scheduling with Gantt charts, critical path analysis, and delay tracking.'
     },
     {
-      icon: 'calendar',
-      title: 'Schedule Management',
-      description: 'Detailed scheduling with critical path analysis and automated delay notifications.'
+      icon: '💰',
+      title: 'Budget Control',
+      description: 'Track project budgets, expenses, and financial performance with detailed reporting.'
     },
     {
-      icon: 'check-circle',
-      title: 'Progress Monitoring',
-      description: 'Real-time progress tracking with photo documentation and quality control checkpoints.'
+      icon: '🔧',
+      title: 'Quality Control',
+      description: 'Quality assurance workflows, inspections, and compliance tracking for project excellence.'
     },
     {
-      icon: 'settings',
+      icon: '✅',
       title: 'Safety Management',
-      description: 'Safety protocol management, incident reporting, and compliance tracking.'
+      description: 'Safety protocols, incident reporting, and compliance with construction regulations.'
     }
   ],
   process: [
-    { step: '1', title: 'Setup', description: 'Project templates and workflow configuration' },
-    { step: '2', title: 'Configure', description: 'Customize forms, reports, and approval workflows' },
-    { step: '3', title: 'Train', description: 'Team training on mobile app and web platform' },
-    { step: '4', title: 'Deploy', description: 'Roll out across projects with dedicated support' },
-    { step: '5', title: 'Optimize', description: 'Continuous improvement based on usage analytics' }
+    { step: 1, title: 'Assessment', description: 'Project requirements and workflow analysis' },
+    { step: 2, title: 'Setup', description: 'System configuration and project data migration' },
+    { step: 3, title: 'Train', description: 'Team training on project management tools' },
+    { step: 4, title: 'Launch', description: 'Go-live with ongoing support and monitoring' },
+    { step: 5, title: 'Optimize', description: 'Continuous improvement based on project performance' }
   ],
   targets: [
-    { title: 'General Contractors', description: 'Large construction companies managing multiple projects' },
-    { title: 'Specialty Contractors', description: 'Electrical, plumbing, and HVAC specialists' },
-    { title: 'Property Developers', description: 'Real estate development companies' },
-    { title: 'Infrastructure Projects', description: 'Government and infrastructure development projects' }
+    'Residential Construction - Home builders and residential developers',
+    'Commercial Construction - Commercial buildings and office complexes',
+    'Infrastructure - Roads, bridges, and public works projects',
+    'Industrial - Factories, warehouses, and industrial facilities'
   ],
   pricing: [
     {
       name: 'Basic',
       price: 'KES 5,000/month',
       description: 'Perfect for small contractors',
-      features: ['Up to 5 projects', 'Basic planning tools', 'Resource tracking', 'Mobile app access', 'Email support'],
+      features: ['Up to 10 projects', 'Basic project tracking', 'Resource management', 'Mobile app', 'Email support'],
       popular: false
     },
     {
       name: 'Professional',
       price: 'KES 20,000/month',
-      description: 'Ideal for medium contractors',
-      features: ['Up to 25 projects', 'Advanced planning', 'Budget tracking', 'Progress monitoring', 'Safety management', 'Priority support', 'API access'],
+      description: 'Ideal for medium construction companies',
+      features: ['Up to 50 projects', 'Advanced tracking', 'Budget control', 'Quality management', 'Priority support', 'API access', 'Most Popular'],
       popular: true
     },
     {
       name: 'Enterprise',
       price: 'Custom',
-      description: 'For large construction companies',
-      features: ['Unlimited projects', 'Full feature access', 'Custom integrations', 'Dedicated support', 'Multi-company management', 'On-premise option', 'White-label solution'],
+      description: 'For large construction firms',
+      features: ['Unlimited projects', 'Full feature access', 'Multi-site management', 'Dedicated support', 'Custom integrations', 'On-premise option'],
       popular: false
     }
   ],
   testimonials: [
     {
-      quote: 'MylesConstruction helped us deliver 3 major projects on time and under budget. The ROI has been incredible.',
-      author: 'Samuel Kamau',
+      quote: 'MylesConstruction helped us complete projects 25% faster while reducing costs by 15%.',
+      author: 'James Mwangi',
       role: 'Project Director',
-      organization: 'Kenya Construction Ltd'
+      organization: 'Nairobi Builders Ltd'
     },
     {
-      quote: 'The real-time progress monitoring feature transformed how we manage our construction sites.',
-      author: 'Esther Njoroge',
+      quote: 'The resource management feature alone saved us millions in equipment optimization.',
+      author: 'Grace Njoroge',
       role: 'Operations Manager',
-      organization: 'East Africa Developers'
+      organization: 'East Africa Construction'
     }
   ]
 }
@@ -169,59 +180,63 @@ export default function MylesConstructionPage() {
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="font-display font-bold text-navy text-4xl md:text-5xl mb-4">
-                Complete Construction Management
-              </h2>
-              <p className="font-body text-light-blue text-lg max-w-2xl mx-auto">
-                Intelligent tools to plan, execute, and monitor construction projects efficiently.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {MYLESCONSTRUCTION_DATA.features.map((feature, index) => (
-                <div key={index} className="bg-navy-deep/5 rounded-2xl p-8 border border-navy-deep/10 hover:border-gold/30 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center mb-6">
-                    <Icon name={feature.icon} size={24} className="text-gold" />
-                  </div>
-                  <h3 className="font-body font-bold text-navy text-xl mb-3">{feature.title}</h3>
-                  <p className="font-body text-light-blue leading-[1.7]">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Overview */}
+        <OverviewSection 
+          title={MYLESCONSTRUCTION_DATA.overview.title}
+          description={MYLESCONSTRUCTION_DATA.overview.description}
+          stats={MYLESCONSTRUCTION_DATA.overview.stats}
+        />
 
-        {/* CTA Section */}
-        <section className="py-20 bg-navy-deep text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display font-bold text-white text-4xl md:text-5xl mb-4">
-              Ready to Build Better?
-            </h2>
-            <p className="font-body text-light-blue text-lg mb-8 max-w-2xl mx-auto">
-              Join {MYLESCONSTRUCTION_DATA.overview.stats[0].number} construction companies across East Africa building with MylesConstruction.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="primary"
-                className="px-8 py-4 text-sm font-semibold"
-              >
-                Book Free Demo
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-8 py-4 text-sm font-semibold border-white/20 text-white hover:border-gold hover:text-gold"
-              >
-                WhatsApp Us
-              </Button>
-            </div>
-          </div>
-        </section>
+        {/* Features */}
+        <FeaturesSection 
+          title="Powerful Construction Management Features"
+          description="Everything you need to manage construction projects efficiently and effectively."
+          features={MYLESCONSTRUCTION_DATA.features}
+          centerHeader={true}
+        />
+
+        {/* Process */}
+        <ProcessSection 
+          title="Implementation in 5 Steps"
+          description="From assessment to optimization — a clear path to construction project excellence."
+          steps={MYLESCONSTRUCTION_DATA.process}
+          centerHeader={true}
+        />
+
+        {/* Targets */}
+        <TargetsSection 
+          title="Built for Every Construction Sector"
+          targets={MYLESCONSTRUCTION_DATA.targets}
+        />
+
+        {/* Pricing */}
+        <PricingSection 
+          title="Simple, Transparent Pricing"
+          description="Choose the perfect plan for your construction company. All plans include free setup and support."
+          plans={MYLESCONSTRUCTION_DATA.pricing.map(p => ({
+            ...p,
+            price: p.price.split('/')[0],
+            period: p.price.split('/')[1] || 'per month',
+            featured: p.features.includes('Most Popular')
+          }))}
+          centerHeader={true}
+        />
+
+        {/* Testimonials */}
+        <TestimonialsSection 
+          title="Success Stories"
+          testimonials={MYLESCONSTRUCTION_DATA.testimonials}
+          centerHeader={true}
+        />
+
+        {/* CTA */}
+        <CTASection 
+          title="Ready to Transform Your Construction Projects?"
+          tagline="Transforming Industries, Empowering Generations."
+          description={`Join ${MYLESCONSTRUCTION_DATA.overview.stats[0].number} construction companies across Africa already building with MylesConstruction.`}
+          primaryCta={{ text: "Book Free Demo", href: "/book-demo" }}
+          secondaryCta={{ text: "Talk to Our Team", href: "/contact" }}
+        />
       </div>
     </Layout>
   )

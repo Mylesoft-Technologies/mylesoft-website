@@ -72,7 +72,7 @@ export default function TeamPage() {
           
           <ScrollReveal direction="up" delay={0.6}>
             <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-              We're a diverse group of passionate individuals united by our mission to transform 
+              We&apos;re a diverse group of passionate individuals united by our mission to transform 
               African businesses through innovative technology solutions.
             </p>
           </ScrollReveal>
@@ -211,7 +211,7 @@ export default function TeamPage() {
               Want to Join Our Team?
             </h2>
             <p className="text-xl text-light-blue mb-8 font-body">
-              We're always looking for talented individuals who share our passion for innovation and excellence.
+              We&apos;re always looking for talented individuals who share our passion for innovation and excellence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg">

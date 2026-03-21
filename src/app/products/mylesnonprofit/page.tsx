@@ -22,96 +22,99 @@ export const metadata = {
 const MYLESNONPROFIT_DATA = {
   overview: {
     title: 'MylesNonProfit',
-    tagline: 'Empowering NGOs with Smart Management Tools',
-    description: 'Complete donor and volunteer management platform designed specifically for African non-profit organizations and charities.',
-    image: '/api/og/product?name=MylesNonProfit&category=Non-Profit',
+    tagline: 'Smart NGO Management for Greater Impact',
+    description: [
+      'Empowering NGOs with comprehensive donor and volunteer management tools.',
+      'Track donations, manage volunteers, and report impact with our intuitive platform.'
+    ],
+    image: '/api/og/product?name=MylesNonProfit&category=NonProfit',
     stats: [
-      { number: '150+', label: 'NGOs Supported' },
-      { number: 'KES 50M+', label: 'Donations Tracked' },
-      { number: '10K+', label: 'Volunteers Managed' },
-      { number: '98%', label: 'Satisfaction' }
+      { number: '150+', label: 'NGO Partners' },
+      { number: '25K+', label: 'Volunteers Managed' },
+      { number: '40%', label: 'Donation Increase' },
+      { number: '24/7', label: 'Support' }
     ]
   },
   features: [
     {
-      icon: 'heart',
+      icon: '❤️',
       title: 'Donor Management',
-      description: 'Comprehensive donor database with giving history, communication preferences, and engagement tracking.'
+      description: 'Comprehensive donor database with donation tracking, automated receipts, and communication tools.'
     },
     {
-      icon: 'users',
+      icon: '👥',
       title: 'Volunteer Coordination',
-      description: 'Manage volunteer profiles, schedules, and assignments with automated reminders and tracking.'
+      description: 'Manage volunteer schedules, track hours, and coordinate activities efficiently.'
     },
     {
-      icon: 'target',
+      icon: '📅',
+      title: 'Event Management',
+      description: 'Plan and execute fundraising events with ticketing, registration, and promotion tools.'
+    },
+    {
+      icon: '💰',
       title: 'Grant Tracking',
-      description: 'Track grant applications, deadlines, and reporting requirements with automated notifications.'
+      description: 'Track grant applications, deadlines, and reporting requirements in one centralized system.'
     },
     {
-      icon: 'trending-up',
+      icon: '📊',
       title: 'Impact Reporting',
-      description: 'Create detailed impact reports for stakeholders with customizable templates and analytics.'
+      description: 'Generate comprehensive impact reports for stakeholders and compliance requirements.'
     },
     {
-      icon: 'award',
-      title: 'Fundraising Tools',
-      description: 'Online fundraising campaigns, event management, and donation processing integration.'
-    },
-    {
-      icon: 'check',
-      title: 'Compliance Management',
-      description: 'Ensure regulatory compliance with automated reporting and document management.'
+      icon: '✅',
+      title: 'Compliance Tools',
+      description: 'Ensure regulatory compliance with built-in reporting and audit trails.'
     }
   ],
   process: [
-    { step: '1', title: 'Setup', description: 'Import existing donor and volunteer data' },
-    { step: '2', title: 'Configure', description: 'Customize donation forms and volunteer opportunities' },
-    { step: '3', title: 'Integrate', description: 'Connect payment gateways and communication tools' },
-    { step: '4', title: 'Train', description: 'Train your team on all features and best practices' },
-    { step: '5', title: 'Launch', description: 'Go live with ongoing support and optimization' }
+    { step: 1, title: 'Setup', description: 'Account setup and data migration assistance' },
+    { step: 2, title: 'Configure', description: 'Customize workflows and reporting templates' },
+    { step: 3, title: 'Train', description: 'Staff and volunteer training on all features' },
+    { step: 4, title: 'Launch', description: 'Go live with dedicated support team' },
+    { step: 5, title: 'Scale', description: 'Add features and expand as organization grows' }
   ],
   targets: [
-    { title: 'Community NGOs', description: 'Local community-based organizations and associations' },
-    { title: 'International NGOs', description: 'Branches of international non-profit organizations' },
-    { title: 'Foundations', description: 'Private and corporate foundations managing grants' },
-    { title: 'Charities', description: 'Religious and charitable organizations' }
+    'Community NGOs - Local community organizations and associations',
+    'International NGOs - Branch offices of international organizations',
+    'Foundations - Charitable foundations and grant-making organizations',
+    'Social Enterprises - Mission-driven businesses with social impact'
   ],
   pricing: [
     {
       name: 'Starter',
       price: 'KES 2,000/month',
       description: 'Perfect for small NGOs',
-      features: ['Up to 500 contacts', 'Basic donation tracking', 'Volunteer management', 'Email templates', 'Monthly reports'],
+      features: ['Up to 100 donors', 'Basic volunteer management', 'Event planning', 'Email support', 'Mobile app'],
       popular: false
     },
     {
       name: 'Professional',
       price: 'KES 8,000/month',
       description: 'Ideal for growing NGOs',
-      features: ['Up to 5,000 contacts', 'Advanced donor management', 'Grant tracking', 'Online fundraising', 'Impact reporting', 'Priority support'],
+      features: ['Up to 1,000 donors', 'Advanced volunteer management', 'Grant tracking', 'Impact reporting', 'Priority support', 'Custom integrations', 'Most Popular'],
       popular: true
     },
     {
       name: 'Enterprise',
       price: 'Custom',
       description: 'For large NGOs and networks',
-      features: ['Unlimited contacts', 'Full feature access', 'Custom integrations', 'Dedicated support', 'Multi-organization management', 'API access', 'On-premise option'],
+      features: ['Unlimited donors', 'Full feature access', 'Multi-organization management', 'Dedicated support', 'Custom integrations', 'API access', 'On-premise option'],
       popular: false
     }
   ],
   testimonials: [
     {
-      quote: 'MylesNonProfit transformed how we manage our donors and volunteers. Everything is now organized and efficient.',
-      author: 'Rebecca Okonkwo',
+      quote: 'MylesNonProfit transformed how we manage our donors. We saw a 40% increase in donations in the first year.',
+      author: 'Miriam Achieng',
       role: 'Executive Director',
       organization: 'Hope Foundation Kenya'
     },
     {
-      quote: 'The impact reporting feature helped us secure a major grant that we would have otherwise missed.',
-      author: 'James Muriithi',
-      role: 'Programs Manager',
-      organization: 'East Africa Wildlife Trust'
+      quote: 'The volunteer coordination feature saved us 20 hours per week in administrative work.',
+      author: 'Samuel Njoroge',
+      role: 'Program Manager',
+      organization: 'Community Development Initiative'
     }
   ]
 }
@@ -177,59 +180,63 @@ export default function MylesNonProfitPage() {
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="font-display font-bold text-navy text-4xl md:text-5xl mb-4">
-                Complete NGO Management Solution
-              </h2>
-              <p className="font-body text-light-blue text-lg max-w-2xl mx-auto">
-                Everything you need to manage donors, volunteers, grants, and demonstrate impact.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {MYLESNONPROFIT_DATA.features.map((feature, index) => (
-                <div key={index} className="bg-navy-deep/5 rounded-2xl p-8 border border-navy-deep/10 hover:border-gold/30 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center mb-6">
-                    <Icon name={feature.icon} size={24} className="text-gold" />
-                  </div>
-                  <h3 className="font-body font-bold text-navy text-xl mb-3">{feature.title}</h3>
-                  <p className="font-body text-light-blue leading-[1.7]">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Overview */}
+        <OverviewSection 
+          title={MYLESNONPROFIT_DATA.overview.title}
+          description={MYLESNONPROFIT_DATA.overview.description}
+          stats={MYLESNONPROFIT_DATA.overview.stats}
+        />
 
-        {/* CTA Section */}
-        <section className="py-20 bg-navy-deep text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display font-bold text-white text-4xl md:text-5xl mb-4">
-              Ready to Amplify Your Impact?
-            </h2>
-            <p className="font-body text-light-blue text-lg mb-8 max-w-2xl mx-auto">
-              Join {MYLESNONPROFIT_DATA.overview.stats[0].number} NGOs across East Africa already transforming their operations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="primary"
-                className="px-8 py-4 text-sm font-semibold"
-              >
-                Book Free Demo
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-8 py-4 text-sm font-semibold border-white/20 text-white hover:border-gold hover:text-gold"
-              >
-                WhatsApp Us
-              </Button>
-            </div>
-          </div>
-        </section>
+        {/* Features */}
+        <FeaturesSection 
+          title="Powerful NGO Management Features"
+          description="Everything you need to manage donors, volunteers, and impact reporting efficiently."
+          features={MYLESNONPROFIT_DATA.features}
+          centerHeader={true}
+        />
+
+        {/* Process */}
+        <ProcessSection 
+          title="Implementation in 5 Steps"
+          description="From setup to scaling — a clear path to NGO management excellence."
+          steps={MYLESNONPROFIT_DATA.process}
+          centerHeader={true}
+        />
+
+        {/* Targets */}
+        <TargetsSection 
+          title="Built for Every Organization"
+          targets={MYLESNONPROFIT_DATA.targets}
+        />
+
+        {/* Pricing */}
+        <PricingSection 
+          title="Simple, Transparent Pricing"
+          description="Choose the perfect plan for your NGO. All plans include free setup and support."
+          plans={MYLESNONPROFIT_DATA.pricing.map(p => ({
+            ...p,
+            price: p.price.split('/')[0],
+            period: p.price.split('/')[1] || 'per month',
+            featured: p.features.includes('Most Popular')
+          }))}
+          centerHeader={true}
+        />
+
+        {/* Testimonials */}
+        <TestimonialsSection 
+          title="Success Stories"
+          testimonials={MYLESNONPROFIT_DATA.testimonials}
+          centerHeader={true}
+        />
+
+        {/* CTA */}
+        <CTASection 
+          title="Ready to Transform Your NGO?"
+          tagline="Transforming Industries, Empowering Generations."
+          description={`Join ${MYLESNONPROFIT_DATA.overview.stats[0].number} NGOs across Africa already thriving with MylesNonProfit.`}
+          primaryCta={{ text: "Book Free Demo", href: "/book-demo" }}
+          secondaryCta={{ text: "Talk to Our Team", href: "/contact" }}
+        />
       </div>
     </Layout>
   )
