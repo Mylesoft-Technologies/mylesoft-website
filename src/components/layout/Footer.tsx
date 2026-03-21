@@ -204,13 +204,27 @@ export function Footer() {
         <div className="border-t border-gold/20 py-8">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
             <ScrollReveal direction="up" delay={0.5}>
-              <div className="text-center lg:text-left">
+              <div className="flex flex-col sm:flex-row justify-between items-center space-y-6 lg:space-y-0 gap-4 text-center sm:text-left">
                 <p className="text-gray-400 text-sm font-body">
-                  © 2026 <span className="text-gold font-semibold">MylesCorp Technologies Ltd</span>. All rights reserved.
+                  &copy; 2026 <span className="text-gold font-semibold">MylesCorp Technologies</span>. All rights reserved.
                 </p>
+                <div className="flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8 text-sm">
+                  <Link href="/legal/privacy" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
+                    Privacy Policy
+                  </Link>
+                  <Link href="/legal/terms" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
+                    Terms of Service
+                  </Link>
+                  <Link href="/legal/cookies" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
+                    Cookie Policy
+                  </Link>
+                  <Link href="/legal/compliance" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
+                    Compliance
+                  </Link>
+                </div>
               </div>
             </ScrollReveal>
-            
+
             <ScrollReveal direction="up" delay={0.6}>
               <div className="flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8 text-sm">
                 <Link href="/legal/privacy" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
