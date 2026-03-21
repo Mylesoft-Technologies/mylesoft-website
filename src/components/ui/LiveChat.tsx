@@ -102,45 +102,59 @@ export function LiveChat() {
 
   if (!isOpen) {
     return (
-      <div className="fixed bottom-6 right-6 z-40">
-        <Button
+      <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40">
+        <button
           onClick={() => setIsOpen(true)}
-          size="lg"
-          className="rounded-full"
+          className="flex items-center gap-3
+                   bg-[#1A395B] border-2 border-[#C79639] text-white
+                   pl-4 pr-5 py-3 rounded-full font-bold
+                   shadow-[0_8px_32px_rgba(26,57,91,0.4)]
+                   hover:bg-[#C79639] hover:text-[#1A395B]
+                   hover:-translate-y-1 transition-all duration-200"
           aria-label="Open live chat"
         >
-          <MessageCircle size={24} />
-        </Button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            className="w-5 h-5 flex-shrink-0"
+            fill="currentColor"
+          >
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          <span className="hidden sm:inline text-[13px] font-bold tracking-wide">
+            Live Chat
+          </span>
+        </button>
       </div>
     )
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 w-96 max-w-[calc(100vw-3rem)]">
+    <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40 w-96 max-w-[calc(100vw-3rem)]">
       {!isMinimized && (
-        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gold/20">
+        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-[#C79639]/20">
           {/* Header */}
-          <div className="bg-navy text-white p-4 flex items-center justify-between">
+          <div className="bg-[#1A395B] text-white p-4 flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center">
-                <Bot size={20} className="text-gold" />
+              <div className="w-10 h-10 bg-[#C79639]/10 rounded-full flex items-center justify-center">
+                <Bot size={20} className="text-[#C79639]" />
               </div>
               <div>
                 <h3 className="font-semibold">Live Chat</h3>
-                <p className="text-sm text-light-blue">We typically reply in minutes</p>
+                <p className="text-sm text-[#C7D7EF]">We typically reply in minutes</p>
               </div>
             </div>
             <div className="flex items-center space-x-2">
               <button
                 onClick={() => setIsMinimized(true)}
-                className="p-1 text-white hover:text-gold hover:bg-navy-dark/30 rounded-md transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
+                className="p-1 text-white hover:text-[#C79639] hover:bg-[#0f1f35]/30 rounded-md transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#C79639] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A395B]"
                 aria-label="Minimize chat"
               >
                 <Minimize2 size={18} />
               </button>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-1 text-white hover:text-gold hover:bg-navy-dark/30 rounded-md transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
+                className="p-1 text-white hover:text-[#C79639] hover:bg-[#0f1f35]/30 rounded-md transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#C79639] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A395B]"
                 aria-label="Close chat"
               >
                 <X size={18} />
@@ -158,15 +172,15 @@ export function LiveChat() {
                 }`}
               >
                 {message.sender === 'bot' && (
-                  <div className="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Bot size={16} className="text-gold" />
+                  <div className="w-8 h-8 bg-[#C79639]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Bot size={16} className="text-[#C79639]" />
                   </div>
                 )}
                 <div
                   className={`max-w-[70%] p-3 rounded-lg ${
                     message.sender === 'user'
-                      ? 'bg-navy text-white'
-                      : 'bg-white text-gray-800 border border-gold/20'
+                      ? 'bg-[#C79639] text-[#1A395B]'
+                      : 'bg-white text-gray-800 border border-[#C79639]/20'
                   }`}
                 >
                   <p className="text-sm whitespace-pre-wrap">{message.text}</p>
@@ -178,8 +192,8 @@ export function LiveChat() {
                   </p>
                 </div>
                 {message.sender === 'user' && (
-                  <div className="w-8 h-8 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <User size={16} className="text-navy" />
+                  <div className="w-8 h-8 bg-[#1A395B]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <User size={16} className="text-[#1A395B]" />
                   </div>
                 )}
               </div>
@@ -187,10 +201,10 @@ export function LiveChat() {
             
             {isTyping && (
               <div className="flex items-start space-x-2 justify-start">
-                <div className="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Bot size={16} className="text-gold" />
+                <div className="w-8 h-8 bg-[#C79639]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Bot size={16} className="text-[#C79639]" />
                 </div>
-                <div className="bg-white text-gray-800 border border-gold/20 p-3 rounded-lg">
+                <div className="bg-white text-gray-800 border border-[#C79639]/20 p-3 rounded-lg">
                   <div className="flex space-x-1">
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
@@ -202,7 +216,7 @@ export function LiveChat() {
           </div>
 
           {/* Input */}
-          <div className="p-4 border-t border-gold/20 bg-white">
+          <div className="p-4 border-t border-[#C79639]/20 bg-white">
             <div className="flex items-center space-x-2">
               <input
                 type="text"
@@ -210,17 +224,16 @@ export function LiveChat() {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
-                className="flex-1 px-3 py-2 border border-gold/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                className="flex-1 px-3 py-2 border border-[#C79639]/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C79639] focus:border-transparent"
                 disabled={isTyping}
               />
-              <Button
+              <button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim() || isTyping}
-                size="sm"
-                className="p-2"
+                className="p-2 bg-[#C79639] text-[#1A395B] rounded-lg hover:bg-[#e0b055] disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
               >
                 <Send size={18} />
-              </Button>
+              </button>
             </div>
             <p className="text-xs text-gray-500 mt-2 text-center">
               Powered by MylesCorp Technologies • Available 9 AM - 6 PM EAT
@@ -231,10 +244,10 @@ export function LiveChat() {
 
       {/* Minimized Chat */}
       {isMinimized && (
-        <div className="bg-white rounded-2xl shadow-2xl border border-gold/20 p-3 flex items-center justify-between">
+        <div className="bg-white rounded-2xl shadow-2xl border border-[#C79639]/20 p-3 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center">
-              <Bot size={16} className="text-gold" />
+            <div className="w-8 h-8 bg-[#C79639]/10 rounded-full flex items-center justify-center">
+              <Bot size={16} className="text-[#C79639]" />
             </div>
             <div>
               <h3 className="font-semibold text-sm">Live Chat</h3>

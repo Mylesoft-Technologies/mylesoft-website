@@ -1349,3 +1349,38 @@ body {
   }
 }
 
+/* MylesCorp — Floating Widget Safety Net */
+
+/* WhatsApp always bottom-right */
+[aria-label="Chat with MylesCorp on WhatsApp"] {
+  bottom: 24px !important;
+  right:  24px !important;
+  left:   auto !important;
+}
+
+/* Any third-party chat always bottom-left */
+.tawk-min-container,
+.crisp-client .crisp-gwt,
+.intercom-launcher,
+.fc-widget-btn,
+#hubspot-messages-iframe-container {
+  bottom: 24px !important;
+  left:   24px !important;
+  right:  auto !important;
+}
+
+/* Mobile — tighten spacing */
+@media (max-width: 640px) {
+  [aria-label="Chat with MylesCorp on WhatsApp"] {
+    bottom: 16px !important;
+    right:  16px !important;
+  }
+  .tawk-min-container,
+  .crisp-client .crisp-gwt,
+  .intercom-launcher,
+  .fc-widget-btn {
+    bottom: 16px !important;
+    left:   16px !important;
+  }
+}
+
