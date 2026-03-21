@@ -260,6 +260,62 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* Services Grid */}
+        <section className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              {/* Eyebrow Label */}
+              <div className="flex items-center justify-center gap-3 mb-5">
+                <div className="w-8 h-0.5 bg-gold" />
+                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
+                  OUR SERVICES
+                </span>
+                <div className="w-8 h-0.5 bg-gold" />
+              </div>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-navy mb-4">
+                Services We Offer
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto font-body">
+                Comprehensive technology solutions designed to transform your business operations.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:border-gold/30 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-display font-bold text-navy mb-3">{service.name}</h3>
+                  <p className="text-gray-600 mb-4 font-body">{service.description}</p>
+                  
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-navy mb-2 font-body">Key Features:</h4>
+                    <ul className="space-y-1">
+                      {service.features.slice(0, 3).map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-sm">
+                          <CheckCircle size={16} className="text-gold mr-2" />
+                          <span className="text-gray-600 font-body">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <div className="text-sm text-gray-500 font-body">{service.duration}</div>
+                      <div className="text-gold font-semibold">{service.price}</div>
+                    </div>
+                    <Link href={service.href}>
+                      <Button size="sm">Learn More</Button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Overview */}
         <OverviewSection 
           title={SERVICES_DATA.overview.title}
