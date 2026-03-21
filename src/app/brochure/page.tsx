@@ -13,7 +13,7 @@ export const metadata = {
 export default function BrochurePage() {
   return (
     <iframe
-      src="/brochure/index.html"
+      src="/brochure/MylesCorp_Digital_Brochure.html"
       style={{
         position: 'fixed',
         top: 0,
