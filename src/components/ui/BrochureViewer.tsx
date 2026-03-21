@@ -76,11 +76,15 @@ export function BrochureViewer({ htmlPath }: BrochureViewerProps) {
 
   return (
     <>
-      <style jsx global>{`
-        ${htmlContent.styles}
-      `}</style>
       <div 
-        dangerouslySetInnerHTML={{ __html: htmlContent.body }}
+        dangerouslySetInnerHTML={{ 
+          __html: `
+            <style>
+              ${htmlContent.styles}
+            </style>
+            ${htmlContent.body}
+          ` 
+        }}
         style={{ all: 'unset', display: 'contents' }}
       />
     </>

@@ -12,16 +12,14 @@ import {
   CheckCircle,
   ArrowRight,
   Globe,
-  Heart,
-  Monitor,
-  Code,
   Database,
-  Zap,
   Star,
   Quote,
   Cloud,
   Server,
-  Lock
+  Lock,
+  Monitor,
+  Code
 } from 'lucide-react'
 
 export const metadata = {
@@ -31,12 +29,6 @@ export const metadata = {
     canonical: 'https://www.mylescorp.co.ke/services/cloud-solutions',
   },
 }
-
-const WHATSAPP_LINK =
-  'https://wa.me/254743993715?' +
-  'text=Hi%20MylesCorp!%20I%20found%20you%20on%20' +
-  'your%20website%20and%20would%20like%20to%20' +
-  'learn%20more%20about%20your%20products.'
 
 export default function CloudSolutionsPage() {
   return (

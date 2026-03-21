@@ -1,6 +1,5 @@
 import { Layout } from '@/components/layout/Layout'
-import { Button } from '@/components/ui/Button'
-import { Headphones, ArrowRight, MessageCircle, Mail, Phone } from 'lucide-react'
+import { ArrowRight, MessageCircle, Mail, Phone } from 'lucide-react'
 import { SimpleReveal } from '@/components/ui/SimpleReveal'
 
 export const metadata = {

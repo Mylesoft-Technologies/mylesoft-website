@@ -5,7 +5,6 @@ import Link from 'next/link'
 
 export default function TermsOfService() {
   const [scrollProgress, setScrollProgress] = useState(0)
-  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
     const handleScroll = () => {
