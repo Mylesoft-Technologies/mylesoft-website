@@ -22,7 +22,7 @@ export default function MylesCarePage() {
     <Layout>
       <div className="min-h-screen" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
         {/* Hero */}
-        <ProductHero {...MYLESCARE_DATA.hero} />
+        <ProductHero {...MYLESCARE_DATA.hero} productName="MylesCare" />
 
         {/* Stats */}
         <StatsSection stats={MYLESCARE_DATA.overview.stats} />

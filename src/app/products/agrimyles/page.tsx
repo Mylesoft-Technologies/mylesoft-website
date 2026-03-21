@@ -22,7 +22,7 @@ export default function AgriMylesPage() {
     <Layout>
       <div className="min-h-screen" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
         {/* Hero */}
-        <ProductHero {...AGRIMYLES_DATA.hero} />
+        <ProductHero {...AGRIMYLES_DATA.hero} productName="AgriMyles" />
 
         {/* Stats */}
         <StatsSection stats={AGRIMYLES_DATA.overview.stats} />

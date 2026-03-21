@@ -11,6 +11,7 @@ interface ProductHeroProps {
   badge: string
   primaryCta: { text: string; href: string }
   secondaryCta: { text: string; href: string }
+  productName?: string
 }
 
 export function ProductHero({
@@ -20,7 +21,8 @@ export function ProductHero({
   subtitle,
   badge,
   primaryCta,
-  secondaryCta
+  secondaryCta,
+  productName
 }: ProductHeroProps) {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden" style={{ background: 'var(--navy-deep)' }}>
@@ -109,6 +111,22 @@ export function ProductHero({
             {goldWord}
           </em>
         </h1>
+
+        {/* Product Name */}
+        {productName && (
+          <div 
+            className="text-center mb-4"
+            style={{
+              fontFamily: 'Playfair Display, serif',
+              fontSize: 'clamp(24px,3.5vw,36px)',
+              color: 'var(--gold)',
+              fontWeight: 600,
+              letterSpacing: '1px',
+            }}
+          >
+            {productName}
+          </div>
+        )}
 
         {/* Subtitle */}
         <p 

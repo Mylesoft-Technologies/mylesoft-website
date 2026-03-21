@@ -22,7 +22,7 @@ export default function EduRydePage() {
     <Layout>
       <div className="min-h-screen" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
         {/* Hero */}
-        <ProductHero {...EDURYDE_DATA.hero} />
+        <ProductHero {...EDURYDE_DATA.hero} productName="EduRyde" />
 
         {/* Stats */}
         <StatsSection stats={EDURYDE_DATA.overview.stats} />

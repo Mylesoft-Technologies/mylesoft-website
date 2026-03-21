@@ -22,7 +22,7 @@ export default function MylesCRMPage() {
     <Layout>
       <div className="min-h-screen" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
         {/* Hero */}
-        <ProductHero {...MYLESCRM_DATA.hero} />
+        <ProductHero {...MYLESCRM_DATA.hero} productName="MylesCRM" />
 
         {/* Stats */}
         <StatsSection stats={MYLESCRM_DATA.overview.stats} />

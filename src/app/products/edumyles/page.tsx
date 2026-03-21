@@ -23,7 +23,7 @@ export default function EduMylesPage() {
     <Layout>
       <div className="min-h-screen" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
         {/* Hero */}
-        <ProductHero {...EDUMYLES_DATA.hero} />
+        <ProductHero {...EDUMYLES_DATA.hero} productName="EduMyles" />
 
         {/* Stats */}
         <StatsSection stats={EDUMYLES_DATA.overview.stats} />
