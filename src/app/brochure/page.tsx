@@ -1,33 +1,19 @@
+import fs from 'fs'
+import path from 'path'
+
 export const metadata = {
   title: 'MylesCorp Technologies — Company Brochure 2026',
-  description: 'MylesCorp Technologies Ltd — East Africa\'s leading AI-powered software company. View our digital brochure covering all products, services, team, and impact.',
-  openGraph: {
-    title: 'MylesCorp Technologies — Company Brochure 2026',
-    description: 'Discover EduMyles, MylesCare, AgriMyles, EduRyde and MylesCRM — AI-powered solutions transforming East Africa.',
-    url: 'https://www.mylescorp.co.ke/brochure',
-    siteName: 'MylesCorp Technologies Ltd',
-    type: 'website',
-  },
+  description: 'East Africa\'s leading AI-powered software company. View our digital brochure covering all products, services, team, and impact.',
 }
 
-// Force Node.js runtime for brochure page to avoid edge runtime issues
-export const runtime = 'nodejs'
-
 export default function BrochurePage() {
+  const filePath = path.join(process.cwd(), 'public', 'brochure', 'MylesCorp_Digital_Brochure.html')
+  const html = fs.readFileSync(filePath, 'utf-8')
+
   return (
-    <iframe
-      src="/brochure/MylesCorp_Digital_Brochure.html"
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        border: 'none',
-        zIndex: 9999,
-      }}
-      title="MylesCorp Technologies — Digital Brochure 2026"
-      allowFullScreen
+    <div
+      dangerouslySetInnerHTML={{ __html: html }}
+      style={{ all: 'unset' }}
     />
   )
 }
