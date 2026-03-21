@@ -1,6 +1,14 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
+import { FeaturesSection } from '@/components/ui/FeaturesSection'
+import { PricingSection } from '@/components/ui/PricingSection'
+import { TestimonialsSection } from '@/components/ui/TestimonialsSection'
+import { CTASection } from '@/components/ui/CTASection'
+import { OverviewSection } from '@/components/ui/OverviewSection'
+import { ProcessSection } from '@/components/ui/ProcessSection'
+import { TargetsSection } from '@/components/ui/TargetsSection'
+import Link from 'next/link'
 import { Shield, FileText, Clock, DollarSign, Users, Check } from 'lucide-react'
 
 export const metadata = {
@@ -15,7 +23,10 @@ const MYLESLEGAL_DATA = {
   overview: {
     title: 'MylesLegal',
     tagline: 'Smart Practice Management for Modern Law Firms',
-    description: 'Transform your law firm with our comprehensive practice management solution designed specifically for the African legal landscape.',
+    description: [
+      'Transform your law firm with our comprehensive practice management solution designed specifically for the African legal landscape.',
+      'Case management, document management, time tracking, and billing system in one platform.'
+    ],
     image: '/api/og/product?name=MylesLegal&category=Legal',
     stats: [
       { number: '500+', label: 'Law Firms' },
@@ -26,48 +37,48 @@ const MYLESLEGAL_DATA = {
   },
   features: [
     {
-      icon: 'file-text',
+      icon: '📝',
       title: 'Case Management',
       description: 'Comprehensive case tracking with deadlines, documents, and client communication all in one place.'
     },
     {
-      icon: 'shield',
+      icon: '🛡️',
       title: 'Document Management',
       description: 'Secure document storage with version control, sharing permissions, and advanced search capabilities.'
     },
     {
-      icon: 'clock',
+      icon: '🗓️',
       title: 'Time Tracking',
       description: 'Automated time tracking with billable hour calculation and detailed activity logs.'
     },
     {
-      icon: 'dollar-sign',
+      icon: '💳',
       title: 'Billing System',
       description: 'Automated invoicing, expense tracking, and payment processing with multiple payment methods.'
     },
     {
-      icon: 'users',
+      icon: '👥',
       title: 'Client Portal',
       description: 'Secure client portal for case updates, document sharing, and communication.'
     },
     {
-      icon: 'check',
+      icon: '✅',
       title: 'Compliance Tools',
       description: 'Built-in compliance checks for legal regulations and court requirements.'
     }
   ],
   process: [
-    { step: '1', title: 'Setup', description: 'Quick 30-minute setup with data migration assistance' },
-    { step: '2', title: 'Configure', description: 'Customize workflows, templates, and user permissions' },
-    { step: '3', title: 'Train', description: 'Comprehensive training for your team with ongoing support' },
-    { step: '4', title: 'Launch', description: 'Go live with your dedicated account manager' },
-    { step: '5', title: 'Scale', description: 'Add more features and users as your firm grows' }
+    { step: 1, title: 'Setup', description: 'Quick 30-minute setup with data migration assistance' },
+    { step: 2, title: 'Configure', description: 'Customize workflows, templates, and user permissions' },
+    { step: 3, title: 'Train', description: 'Comprehensive training for your team with ongoing support' },
+    { step: 4, title: 'Launch', description: 'Go live with your dedicated account manager' },
+    { step: 5, title: 'Scale', description: 'Add more features and users as your firm grows' }
   ],
   targets: [
-    { title: 'Solo Practitioners', description: 'Perfect for independent lawyers and small firms' },
-    { title: 'Mid-size Firms', description: 'Scalable solution for growing legal practices' },
-    { title: 'Large Firms', description: 'Enterprise features for established law firms' },
-    { title: 'Corporate Legal', description: 'In-house legal teams and corporate counsel' }
+    'Solo Practitioners - Perfect for independent lawyers and small firms',
+    'Mid-size Firms - Scalable solution for growing legal practices',
+    'Large Firms - Enterprise features for established law firms',
+    'Corporate Legal - In-house legal teams and corporate counsel'
   ],
   pricing: [
     {
@@ -81,7 +92,7 @@ const MYLESLEGAL_DATA = {
       name: 'Professional',
       price: 'KES 15,000/month',
       description: 'Ideal for growing firms',
-      features: ['Up to 15 users', 'Advanced case management', 'Document storage (50GB)', 'Priority support', 'Client portal', 'Time tracking', 'Basic reporting'],
+      features: ['Up to 15 users', 'Advanced case management', 'Document storage (50GB)', 'Priority support', 'Client portal', 'Time tracking', 'Basic reporting', 'Most Popular'],
       popular: true
     },
     {
@@ -142,20 +153,24 @@ export default function MylesLegalPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button 
-                size="lg" 
-                variant="primary"
-                className="px-8 py-4 text-sm font-semibold shadow-lg hover:shadow-xl"
-              >
-                Book Free Demo
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-8 py-4 text-sm font-semibold border-gold/50 text-gold hover:border-gold hover:bg-gold hover:text-navy"
-              >
-                View Pricing
-              </Button>
+              <Link href="/book-demo">
+                <Button 
+                  size="lg" 
+                  variant="primary"
+                  className="px-8 py-4 text-sm font-semibold shadow-lg hover:shadow-xl"
+                >
+                  Book Free Demo
+                </Button>
+              </Link>
+              <Link href="/pricing">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="px-8 py-4 text-sm font-semibold border-gold/50 text-gold hover:border-gold hover:bg-gold hover:text-navy"
+                >
+                  View Pricing
+                </Button>
+              </Link>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
@@ -169,59 +184,63 @@ export default function MylesLegalPage() {
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="font-display font-bold text-navy text-4xl md:text-5xl mb-4">
-                Powerful Features for Modern Law Firms
-              </h2>
-              <p className="font-body text-light-blue text-lg max-w-2xl mx-auto">
-                Everything you need to manage your practice efficiently and grow your client base.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {MYLESLEGAL_DATA.features.map((feature, index) => (
-                <div key={index} className="bg-navy-deep/5 rounded-2xl p-8 border border-navy-deep/10 hover:border-gold/30 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center mb-6">
-                    <Icon name={feature.icon} size={24} className="text-gold" />
-                  </div>
-                  <h3 className="font-body font-bold text-navy text-xl mb-3">{feature.title}</h3>
-                  <p className="font-body text-light-blue leading-[1.7]">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Overview */}
+        <OverviewSection 
+          title={MYLESLEGAL_DATA.overview.title}
+          description={MYLESLEGAL_DATA.overview.description}
+          stats={MYLESLEGAL_DATA.overview.stats}
+        />
 
-        {/* CTA Section */}
-        <section className="py-20 bg-navy-deep text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display font-bold text-white text-4xl md:text-5xl mb-4">
-              Ready to Transform Your Law Practice?
-            </h2>
-            <p className="font-body text-light-blue text-lg mb-8 max-w-2xl mx-auto">
-              Join {MYLESLEGAL_DATA.overview.stats[0].number} law firms across East Africa already using MylesLegal.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="primary"
-                className="px-8 py-4 text-sm font-semibold"
-              >
-                Book Free Demo
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-8 py-4 text-sm font-semibold border-white/20 text-white hover:border-gold hover:text-gold"
-              >
-                WhatsApp Us
-              </Button>
-            </div>
-          </div>
-        </section>
+        {/* Features */}
+        <FeaturesSection 
+          title="Powerful Features for Modern Law Firms"
+          description="Everything you need to manage your practice efficiently and grow your client base."
+          features={MYLESLEGAL_DATA.features}
+          centerHeader={true}
+        />
+
+        {/* Process */}
+        <ProcessSection 
+          title="Up and Running in 5 Steps"
+          description="From sign-up to managing your law firm digitally — a clear and simple onboarding process."
+          steps={MYLESLEGAL_DATA.process}
+          centerHeader={true}
+        />
+
+        {/* Targets */}
+        <TargetsSection 
+          title="Built for Every Law Firm"
+          targets={MYLESLEGAL_DATA.targets}
+        />
+
+        {/* Pricing */}
+        <PricingSection 
+          title="Simple, Transparent Pricing"
+          description="Choose the perfect plan for your law firm. All plans include free setup and support."
+          plans={MYLESLEGAL_DATA.pricing.map(p => ({
+            ...p,
+            price: p.price.split('/')[0],
+            period: p.price.split('/')[1] || 'per month',
+            featured: p.features.includes('Most Popular')
+          }))}
+          centerHeader={true}
+        />
+
+        {/* Testimonials */}
+        <TestimonialsSection 
+          title="Success Stories"
+          testimonials={MYLESLEGAL_DATA.testimonials}
+          centerHeader={true}
+        />
+
+        {/* CTA */}
+        <CTASection 
+          title="Ready to Transform Your Law Practice?"
+          tagline="Transforming Industries, Empowering Generations."
+          description={`Join ${MYLESLEGAL_DATA.overview.stats[0].number} law firms across East Africa already using MylesLegal.`}
+          primaryCta={{ text: "Book Free Demo", href: "/book-demo" }}
+          secondaryCta={{ text: "Talk to Our Team", href: "/contact" }}
+        />
       </div>
     </Layout>
   )

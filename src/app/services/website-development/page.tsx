@@ -14,7 +14,8 @@ import {
   Rocket,
   BarChart,
   Search,
-  Mail
+  Mail,
+  Database
 } from 'lucide-react'
 
 export const metadata = {
