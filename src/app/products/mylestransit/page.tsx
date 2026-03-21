@@ -1,6 +1,14 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
+import { FeaturesSection } from '@/components/ui/FeaturesSection'
+import { PricingSection } from '@/components/ui/PricingSection'
+import { TestimonialsSection } from '@/components/ui/TestimonialsSection'
+import { CTASection } from '@/components/ui/CTASection'
+import { OverviewSection } from '@/components/ui/OverviewSection'
+import { ProcessSection } from '@/components/ui/ProcessSection'
+import { TargetsSection } from '@/components/ui/TargetsSection'
+import Link from 'next/link'
 import { MapPin, Users, Calendar, DollarSign, Route, Check } from 'lucide-react'
 
 export const metadata = {
@@ -14,96 +22,99 @@ export const metadata = {
 const MYLESTRANSIT_DATA = {
   overview: {
     title: 'MylesTransit',
-    tagline: 'Smart Transportation Management for Efficient Mobility',
-    description: 'Complete transportation management solution designed for logistics companies, schools, and public transport operators across Africa.',
+    tagline: 'Smart Transportation Management for Fleet Excellence',
+    description: [
+      'Comprehensive transportation management solution designed for African logistics and transport businesses.',
+      'Optimize routes, manage fleets, and improve operational efficiency with intelligent automation.'
+    ],
     image: '/api/og/product?name=MylesTransit&category=Transportation',
     stats: [
       { number: '120+', label: 'Transport Clients' },
-      { number: '500K+', label: 'Passengers Managed' },
-      { number: '35%', label: 'Fuel Savings' },
-      { number: '24/7', label: 'Route Monitoring' }
+      { number: '5K+', label: 'Vehicles Managed Daily' },
+      { number: '30%', label: 'Fuel Efficiency' },
+      { number: '24/7', label: 'Fleet Monitoring' }
     ]
   },
   features: [
     {
-      icon: 'map-pin',
+      icon: '📍',
       title: 'Route Optimization',
-      description: 'Intelligent route planning with real-time traffic updates and fuel optimization.'
+      description: 'AI-powered route planning with real-time traffic updates and fuel optimization.'
     },
     {
-      icon: 'users',
-      title: 'Passenger Management',
-      description: 'Complete passenger database with tracking, scheduling, and communication tools.'
-    },
-    {
-      icon: 'calendar',
+      icon: '👥',
       title: 'Fleet Management',
-      description: 'Vehicle scheduling, maintenance tracking, and performance monitoring.'
+      description: 'Complete fleet tracking with maintenance scheduling and performance monitoring.'
     },
     {
-      icon: 'dollar-sign',
-      title: 'Revenue Management',
-      description: 'Fare collection, revenue tracking, and financial reporting for transport operations.'
+      icon: '📅',
+      title: 'Driver Management',
+      description: 'Driver scheduling, performance tracking, and compliance management.'
     },
     {
-      icon: 'route',
-      title: 'Real-time Tracking',
-      description: 'GPS-based vehicle tracking with real-time location and status updates.'
+      icon: '💰',
+      title: 'Cost Tracking',
+      description: 'Real-time expense tracking with fuel monitoring and cost optimization analytics.'
     },
     {
-      icon: 'check',
-      title: 'Safety Management',
-      description: 'Driver safety monitoring, incident reporting, and compliance tracking.'
+      icon: '🛣️',
+      title: 'Dispatch Management',
+      description: 'Automated dispatch system with load optimization and delivery tracking.'
+    },
+    {
+      icon: '✅',
+      title: 'Compliance Tools',
+      description: 'Regulatory compliance, safety monitoring, and audit trail management.'
     }
   ],
   process: [
-    { step: '1', title: 'Assessment', description: 'Transport operations analysis and optimization opportunities' },
-    { step: '2', title: 'Setup', description: 'System configuration and GPS device installation' },
-    { step: '3', title: 'Train', description: 'Driver and staff training on all system features' },
-    { step: '4', title: 'Launch', description: 'Go-live with dedicated support and monitoring' },
-    { step: '5', title: 'Optimize', description: 'Continuous route optimization and system improvements' }
+    { step: 1, title: 'Assessment', description: 'Fleet analysis and workflow optimization assessment' },
+    { step: 2, title: 'Setup', description: 'System configuration and fleet data migration' },
+    { step: 3, title: 'Train', description: 'Driver and staff training on transportation modules' },
+    { step: 4, title: 'Launch', description: 'Go-live with transportation support team' },
+    { step: 5, title: 'Optimize', description: 'Continuous improvement based on fleet performance data' }
   ],
   targets: [
-    { title: 'School Transport', description: 'Educational institutions managing student transportation' },
-    { title: 'Public Transport', description: 'Bus companies and public transport operators' },
-    { title: 'Logistics', description: 'Delivery and logistics companies' },
-    { title: 'Corporate Transport', description: 'Employee transportation services' }
+    'Logistics Companies - Freight and cargo transportation businesses',
+    'School Transport - Educational institution transportation services',
+    'Public Transport - Bus and shuttle service operators',
+    'Delivery Services - Last-mile delivery and courier companies'
   ],
   pricing: [
     {
       name: 'Basic',
-      price: 'KES 3,000/month',
-      description: 'Perfect for small operators',
-      features: ['Up to 10 vehicles', 'Basic route planning', 'Driver management', 'Mobile app', 'Email support'],
+      price: 'KES 8,000/month',
+      description: 'Perfect for small transport operations',
+      features: ['Up to 20 vehicles', 'Basic route planning', 'Fleet tracking', 'Mobile app', 'Email support'],
       popular: false
     },
     {
       name: 'Professional',
-      price: 'KES 12,000/month',
-      description: 'Ideal for medium operators',
-      features: ['Up to 50 vehicles', 'Advanced optimization', 'Real-time tracking', 'Passenger management', 'Revenue tracking', 'Priority support'],
+      price: 'KES 25,000/month',
+      description: 'Ideal for medium transport companies',
+      features: ['Up to 100 vehicles', 'Advanced route optimization', 'Driver management', 'Cost tracking', 'Priority support', 'API access', 'Most Popular'],
       popular: true
     },
     {
       name: 'Enterprise',
       price: 'Custom',
-      description: 'For large transport companies',
-      features: ['Unlimited vehicles', 'Full feature access', 'Multi-location management', 'Custom integrations', 'Dedicated support', 'API access', 'On-premise option'],
+      description: 'For large transportation fleets',
+      features: ['Unlimited vehicles', 'Full feature access', 'Multi-depot management', 'Dedicated support', 'Custom integrations', 'On-premise option'],
       popular: false
     }
   ],
   testimonials: [
     {
-      quote: 'MylesTransit helped us optimize our school routes and save 30% on fuel costs. Parents love the real-time tracking!',
-      author: 'Rebecca Wanjiku',
-      role: 'Transport Manager',
-      organization: 'Nairobi International School'
+      quote: 'MylesTransit helped us reduce fuel costs by 30% while improving on-time performance by 25%.',
+      author: 'Peter Kamau',
+      role: 'Operations Manager',
+      organization: 'Nairobi Logistics Ltd'
     },
     {
-      quote: 'The route optimization feature has transformed our bus operations. We now serve more routes with fewer resources.',
-      author: 'James Muriithi',
-      role: 'Operations Director',
-      organization: 'City Bus Services Kenya'
+      quote: 'The route optimization feature transformed our school transport system. Parents are happier and our costs are down.',
+      author: 'Mary Wanjiku',
+      role: 'Transport Director',
+      organization: 'Elite Schools Kenya'
     }
   ]
 }
@@ -138,24 +149,28 @@ export default function MylesTransitPage() {
             </h1>
             
             <p className="font-body font-light text-light-blue text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-[1.7]">
-              {MYLESTRANSIT_DATA.overview.description}
+              {MYLESTRANSIT_DATA.overview.description[0]}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button 
-                size="lg" 
-                variant="primary"
-                className="px-8 py-4 text-sm font-semibold shadow-lg hover:shadow-xl"
-              >
-                Book Free Demo
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-8 py-4 text-sm font-semibold border-gold/50 text-gold hover:border-gold hover:bg-gold hover:text-navy"
-              >
-                View Pricing
-              </Button>
+              <Link href="/book-demo">
+                <Button 
+                  size="lg" 
+                  variant="primary"
+                  className="px-8 py-4 text-sm font-semibold shadow-lg hover:shadow-xl"
+                >
+                  Book Free Demo
+                </Button>
+              </Link>
+              <Link href="/pricing">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="px-8 py-4 text-sm font-semibold border-gold/50 text-gold hover:border-gold hover:bg-gold hover:text-navy"
+                >
+                  View Pricing
+                </Button>
+              </Link>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
@@ -169,59 +184,63 @@ export default function MylesTransitPage() {
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="font-display font-bold text-navy text-4xl md:text-5xl mb-4">
-                Complete Transportation Management
-              </h2>
-              <p className="font-body text-light-blue text-lg max-w-2xl mx-auto">
-                Intelligent tools to optimize routes, manage fleets, and enhance passenger experience.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {MYLESTRANSIT_DATA.features.map((feature, index) => (
-                <div key={index} className="bg-navy-deep/5 rounded-2xl p-8 border border-navy-deep/10 hover:border-gold/30 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center mb-6">
-                    <Icon name={feature.icon} size={24} className="text-gold" />
-                  </div>
-                  <h3 className="font-body font-bold text-navy text-xl mb-3">{feature.title}</h3>
-                  <p className="font-body text-light-blue leading-[1.7]">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Overview */}
+        <OverviewSection 
+          title={MYLESTRANSIT_DATA.overview.title}
+          description={MYLESTRANSIT_DATA.overview.description}
+          stats={MYLESTRANSIT_DATA.overview.stats}
+        />
 
-        {/* CTA Section */}
-        <section className="py-20 bg-navy-deep text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display font-bold text-white text-4xl md:text-5xl mb-4">
-              Ready to Optimize Your Transportation?
-            </h2>
-            <p className="font-body text-light-blue text-lg mb-8 max-w-2xl mx-auto">
-              Join {MYLESTRANSIT_DATA.overview.stats[0].number} transport operators across Africa already saving with MylesTransit.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="primary"
-                className="px-8 py-4 text-sm font-semibold"
-              >
-                Book Free Demo
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-8 py-4 text-sm font-semibold border-white/20 text-white hover:border-gold hover:text-gold"
-              >
-                WhatsApp Us
-              </Button>
-            </div>
-          </div>
-        </section>
+        {/* Features */}
+        <FeaturesSection 
+          title="Powerful Transportation Management Features"
+          description="Everything you need to manage your transportation fleet efficiently and effectively."
+          features={MYLESTRANSIT_DATA.features}
+          centerHeader={true}
+        />
+
+        {/* Process */}
+        <ProcessSection 
+          title="Implementation in 5 Steps"
+          description="From assessment to optimization — a clear path to transportation excellence."
+          steps={MYLESTRANSIT_DATA.process}
+          centerHeader={true}
+        />
+
+        {/* Targets */}
+        <TargetsSection 
+          title="Built for Every Transportation Business"
+          targets={MYLESTRANSIT_DATA.targets}
+        />
+
+        {/* Pricing */}
+        <PricingSection 
+          title="Simple, Transparent Pricing"
+          description="Choose the perfect plan for your transportation business. All plans include free setup and support."
+          plans={MYLESTRANSIT_DATA.pricing.map(p => ({
+            ...p,
+            price: p.price.split('/')[0],
+            period: p.price.split('/')[1] || 'per month',
+            featured: p.features.includes('Most Popular')
+          }))}
+          centerHeader={true}
+        />
+
+        {/* Testimonials */}
+        <TestimonialsSection 
+          title="Success Stories"
+          testimonials={MYLESTRANSIT_DATA.testimonials}
+          centerHeader={true}
+        />
+
+        {/* CTA */}
+        <CTASection 
+          title="Ready to Transform Your Transportation Operations?"
+          tagline="Transforming Industries, Empowering Generations."
+          description={`Join ${MYLESTRANSIT_DATA.overview.stats[0].number} transportation companies across Africa already thriving with MylesTransit.`}
+          primaryCta={{ text: "Book Free Demo", href: "/book-demo" }}
+          secondaryCta={{ text: "Talk to Our Team", href: "/contact" }}
+        />
       </div>
     </Layout>
   )

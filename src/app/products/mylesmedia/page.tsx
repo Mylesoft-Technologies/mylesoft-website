@@ -1,7 +1,15 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
-import { Camera, Video, Users, Calendar, Share2, Check } from 'lucide-react'
+import { FeaturesSection } from '@/components/ui/FeaturesSection'
+import { PricingSection } from '@/components/ui/PricingSection'
+import { TestimonialsSection } from '@/components/ui/TestimonialsSection'
+import { CTASection } from '@/components/ui/CTASection'
+import { OverviewSection } from '@/components/ui/OverviewSection'
+import { ProcessSection } from '@/components/ui/ProcessSection'
+import { TargetsSection } from '@/components/ui/TargetsSection'
+import Link from 'next/link'
+import { Camera, Video, Image, FileText, Users, Check } from 'lucide-react'
 
 export const metadata = {
   title: 'MylesMedia - Media Management Software | MylesCorp Technologies',
@@ -15,95 +23,98 @@ const MYLESMEDIA_DATA = {
   overview: {
     title: 'MylesMedia',
     tagline: 'Smart Media Management for Content Excellence',
-    description: 'Complete media management solution designed for content creators, broadcasters, and media companies across Africa.',
+    description: [
+      'Comprehensive media management solution designed for African content creators and media companies.',
+      'Streamline content production, manage assets, and optimize distribution with intelligent automation.'
+    ],
     image: '/api/og/product?name=MylesMedia&category=Media',
     stats: [
-      { number: '60+', label: 'Media Clients' },
-      { number: '10K+', label: 'Content Pieces Managed' },
-      { number: '80%', label: 'Production Efficiency' },
-      { number: '24/7', label: 'Content Delivery' }
+      { number: '80+', label: 'Media Clients' },
+      { number: '100K+', label: 'Content Pieces Managed' },
+      { number: '45%', label: 'Production Efficiency' },
+      { number: '24/7', label: 'Content Monitoring' }
     ]
   },
   features: [
     {
-      icon: 'camera',
+      icon: '📹',
       title: 'Content Management',
       description: 'Centralized content library with metadata tagging and advanced search capabilities.'
     },
     {
-      icon: 'video',
-      title: 'Production Workflow',
-      description: 'Streamlined production workflow from planning to final delivery.'
+      icon: '🎥',
+      title: 'Video Production',
+      description: 'Video editing workflow management with automated transcoding and distribution.'
     },
     {
-      icon: 'users',
-      title: 'Team Collaboration',
-      description: 'Real-time collaboration tools for creative teams and production staff.'
+      icon: '🖼️',
+      title: 'Asset Library',
+      description: 'Digital asset management with version control and rights management.'
     },
     {
-      icon: 'calendar',
-      title: 'Scheduling',
-      description: 'Content scheduling and publishing calendar with automated distribution.'
+      icon: '📄',
+      title: 'Publishing Tools',
+      description: 'Multi-channel publishing with automated scheduling and content optimization.'
     },
     {
-      icon: 'share2',
-      title: 'Distribution',
-      description: 'Multi-platform content distribution and social media management.'
+      icon: '👥',
+      title: 'Collaboration',
+      description: 'Team collaboration tools with approval workflows and content review processes.'
     },
     {
-      icon: 'check',
-      title: 'Analytics',
-      description: 'Comprehensive analytics to track content performance and audience engagement.'
+      icon: '✅',
+      title: 'Analytics Dashboard',
+      description: 'Content performance analytics with audience engagement and ROI tracking.'
     }
   ],
   process: [
-    { step: '1', title: 'Setup', description: 'Content library setup and workflow configuration' },
-    { step: '2', title: 'Configure', description: 'Custom workflows and team collaboration setup' },
-    { step: '3', title: 'Train', description: 'Team training on content management and production tools' },
-    { step: '4', title: 'Launch', description: 'Go-live with dedicated support and monitoring' },
-    { step: '5', title: 'Optimize', description: 'Continuous improvement based on performance analytics' }
+    { step: 1, title: 'Assessment', description: 'Content workflow analysis and requirements gathering' },
+    { step: 2, title: 'Setup', description: 'System configuration and content migration' },
+    { step: 3, title: 'Train', description: 'Team training on media management tools' },
+    { step: 4, title: 'Launch', description: 'Go-live with content production support' },
+    { step: 5, title: 'Optimize', description: 'Continuous improvement based on content performance' }
   ],
   targets: [
-    { title: 'Broadcasters', description: 'TV and radio stations with content management needs' },
-    { title: 'Production Houses', description: 'Video and audio production companies' },
-    { title: 'News Organizations', description: 'Digital news platforms and media houses' },
-    { title: 'Content Creators', description: 'YouTube creators and digital content studios' }
+    'Broadcast Media - TV stations and radio broadcasters',
+    'Digital Media - Online publishers and content creators',
+    'Advertising Agencies - Creative agencies and production houses',
+    'Corporate Communications - Internal and external communications teams'
   ],
   pricing: [
     {
       name: 'Basic',
-      price: 'KES 5,000/month',
-      description: 'Perfect for small media teams',
-      features: ['Up to 10 users', 'Content library (100GB)', 'Basic workflow', 'Social media scheduling', 'Mobile app'],
+      price: 'KES 6,000/month',
+      description: 'Perfect for small content teams',
+      features: ['Up to 10 users', 'Basic content management', 'Asset library (100GB)', 'Mobile app', 'Email support'],
       popular: false
     },
     {
       name: 'Professional',
       price: 'KES 20,000/month',
-      description: 'Ideal for growing media companies',
-      features: ['Up to 50 users', 'Content library (1TB)', 'Advanced workflows', 'Multi-platform distribution', 'Analytics dashboard', 'Priority support'],
+      description: 'Ideal for media companies',
+      features: ['Up to 50 users', 'Advanced content management', 'Video production tools', 'Analytics dashboard', 'Priority support', 'API access', 'Most Popular'],
       popular: true
     },
     {
       name: 'Enterprise',
       price: 'Custom',
       description: 'For large media organizations',
-      features: ['Unlimited users', 'Unlimited storage', 'Full feature access', 'Custom integrations', 'Dedicated support', 'API access', 'On-premise option'],
+      features: ['Unlimited users', 'Full feature access', 'Multi-channel publishing', 'Dedicated support', 'Custom integrations', 'On-premise option'],
       popular: false
     }
   ],
   testimonials: [
     {
-      quote: 'MylesMedia transformed our content production workflow. We now produce 3x more content with the same team.',
-      author: 'Miriam Achieng',
+      quote: 'MylesMedia transformed our content production workflow. We reduced production time by 45% while improving content quality significantly.',
+      author: 'James Muriuki',
       role: 'Content Director',
-      organization: 'Nairobi Media House'
+      organization: 'Nairobi Media Group'
     },
     {
-      quote: 'The analytics and distribution features have significantly increased our content reach and engagement.',
-      author: 'David Kamau',
-      role: 'Producer',
-      organization: 'East Africa Broadcast Network'
+      quote: 'The collaboration features alone improved our team productivity by 60% and streamlined our approval processes.',
+      author: 'Grace Wanjiru',
+      role: 'Production Manager',
+      organization: 'East Africa Broadcasting'
     }
   ]
 }
@@ -125,7 +136,7 @@ export default function MylesMediaPage() {
             <div className="flex items-center justify-center gap-3 mb-5">
               <div className="w-8 h-0.5 bg-gold" />
               <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
-                MEDIA MANAGEMENT
+                MEDIA SOLUTION
               </span>
               <div className="w-8 h-0.5 bg-gold" />
             </div>
@@ -138,24 +149,28 @@ export default function MylesMediaPage() {
             </h1>
             
             <p className="font-body font-light text-light-blue text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-[1.7]">
-              {MYLESMEDIA_DATA.overview.description}
+              {MYLESMEDIA_DATA.overview.description[0]}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button 
-                size="lg" 
-                variant="primary"
-                className="px-8 py-4 text-sm font-semibold shadow-lg hover:shadow-xl"
-              >
-                Book Free Demo
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-8 py-4 text-sm font-semibold border-gold/50 text-gold hover:border-gold hover:bg-gold hover:text-navy"
-              >
-                View Pricing
-              </Button>
+              <Link href="/book-demo">
+                <Button 
+                  size="lg" 
+                  variant="primary"
+                  className="px-8 py-4 text-sm font-semibold shadow-lg hover:shadow-xl"
+                >
+                  Book Free Demo
+                </Button>
+              </Link>
+              <Link href="/pricing">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="px-8 py-4 text-sm font-semibold border-gold/50 text-gold hover:border-gold hover:bg-gold hover:text-navy"
+                >
+                  View Pricing
+                </Button>
+              </Link>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
@@ -169,59 +184,63 @@ export default function MylesMediaPage() {
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="font-display font-bold text-navy text-4xl md:text-5xl mb-4">
-                Complete Media Management Solution
-              </h2>
-              <p className="font-body text-light-blue text-lg max-w-2xl mx-auto">
-                Everything you need to manage content production, distribution, and performance.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {MYLESMEDIA_DATA.features.map((feature, index) => (
-                <div key={index} className="bg-navy-deep/5 rounded-2xl p-8 border border-navy-deep/10 hover:border-gold/30 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center mb-6">
-                    <Icon name={feature.icon} size={24} className="text-gold" />
-                  </div>
-                  <h3 className="font-body font-bold text-navy text-xl mb-3">{feature.title}</h3>
-                  <p className="font-body text-light-blue leading-[1.7]">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Overview */}
+        <OverviewSection 
+          title={MYLESMEDIA_DATA.overview.title}
+          description={MYLESMEDIA_DATA.overview.description}
+          stats={MYLESMEDIA_DATA.overview.stats}
+        />
 
-        {/* CTA Section */}
-        <section className="py-20 bg-navy-deep text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display font-bold text-white text-4xl md:text-5xl mb-4">
-              Ready to Transform Your Media Operations?
-            </h2>
-            <p className="font-body text-light-blue text-lg mb-8 max-w-2xl mx-auto">
-              Join {MYLESMEDIA_DATA.overview.stats[0].number} media companies across Africa already creating more with MylesMedia.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="primary"
-                className="px-8 py-4 text-sm font-semibold"
-              >
-                Book Free Demo
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-8 py-4 text-sm font-semibold border-white/20 text-white hover:border-gold hover:text-gold"
-              >
-                WhatsApp Us
-              </Button>
-            </div>
-          </div>
-        </section>
+        {/* Features */}
+        <FeaturesSection 
+          title="Powerful Media Management Features"
+          description="Everything you need to manage your content production efficiently and effectively."
+          features={MYLESMEDIA_DATA.features}
+          centerHeader={true}
+        />
+
+        {/* Process */}
+        <ProcessSection 
+          title="Implementation in 5 Steps"
+          description="From assessment to optimization — a clear path to media excellence."
+          steps={MYLESMEDIA_DATA.process}
+          centerHeader={true}
+        />
+
+        {/* Targets */}
+        <TargetsSection 
+          title="Built for Every Media Organization"
+          targets={MYLESMEDIA_DATA.targets}
+        />
+
+        {/* Pricing */}
+        <PricingSection 
+          title="Simple, Transparent Pricing"
+          description="Choose the perfect plan for your media business. All plans include free setup and support."
+          plans={MYLESMEDIA_DATA.pricing.map(p => ({
+            ...p,
+            price: p.price.split('/')[0],
+            period: p.price.split('/')[1] || 'per month',
+            featured: p.features.includes('Most Popular')
+          }))}
+          centerHeader={true}
+        />
+
+        {/* Testimonials */}
+        <TestimonialsSection 
+          title="Success Stories"
+          testimonials={MYLESMEDIA_DATA.testimonials}
+          centerHeader={true}
+        />
+
+        {/* CTA */}
+        <CTASection 
+          title="Ready to Transform Your Media Operations?"
+          tagline="Transforming Industries, Empowering Generations."
+          description={`Join ${MYLESMEDIA_DATA.overview.stats[0].number} media organizations across Africa already thriving with MylesMedia.`}
+          primaryCta={{ text: "Book Free Demo", href: "/book-demo" }}
+          secondaryCta={{ text: "Talk to Our Team", href: "/contact" }}
+        />
       </div>
     </Layout>
   )
