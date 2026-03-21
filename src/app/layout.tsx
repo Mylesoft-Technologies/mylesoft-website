@@ -8,6 +8,7 @@ import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 import { LiveChat } from '@/components/ui/LiveChat'
 import { ScrollProgress } from '@/components/ui/ScrollProgress'
 import { DarkModeToggle } from '@/components/ui/DarkModeToggle'
+import { SOCIAL_LINKS } from '@/lib/constants/social'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -145,9 +146,13 @@ export default function RootLayout({
                 "availableLanguage": "English"
               },
               "sameAs": [
-                "https://www.linkedin.com/company/mylescorp-technologies",
-                "https://twitter.com/mylescorptech",
-                "https://github.com/MylesCorp-Technologies"
+                SOCIAL_LINKS.linkedin,
+                SOCIAL_LINKS.twitter,
+                SOCIAL_LINKS.github,
+                SOCIAL_LINKS.facebook,
+                SOCIAL_LINKS.youtube,
+                SOCIAL_LINKS.instagram,
+                SOCIAL_LINKS.tiktok
               ]
             })
           }}

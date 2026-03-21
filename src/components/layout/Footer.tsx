@@ -8,6 +8,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { ArrowUp, Mail, Phone, MapPin, Heart, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { subscribeToNewsletter } from '@/app/actions/subscribeNewsletter'
+import { SOCIAL_LINKS } from '@/lib/constants/social'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -156,10 +157,10 @@ export function Footer() {
                     <button
                       onClick={handleSubscribe}
                       disabled={status === 'loading'}
-                      className="px-4 py-2 bg-gold text-navy text-sm
-                                 font-bold rounded-md font-body
-                                 hover:bg-gold-light disabled:opacity-60
-                                 transition-all duration-200"
+                      className="px-5 py-2.5 bg-[#C79639] text-[#1A395B] text-[13px]
+                                 font-bold rounded-lg whitespace-nowrap
+                                 hover:bg-[#e0b055] transition-all duration-200
+                                 hover:-translate-y-0.5"
                     >
                       {status === 'loading' ? '...' : 'Subscribe'}
                     </button>
@@ -177,21 +178,27 @@ export function Footer() {
                   <p className="text-light-blue text-sm font-body">Follow us on social media</p>
                   <div className="flex space-x-3">
                     {[
-                      { name: 'linkedin', href: 'https://www.linkedin.com/company/mylescorp_tech' },
-                      { name: 'facebook', href: 'https://web.facebook.com/mylescorp' },
-                      { name: 'twitter', href: 'https://x.com/mylescorp_tech' },
-                      { name: 'github', href: 'https://github.com/MylesCorp-Technologies' },
-                      { name: 'youtube', href: 'https://www.youtube.com/@mylescorp_tech' }
+                      { name: 'linkedin', href: SOCIAL_LINKS.linkedin, label: 'LinkedIn' },
+                      { name: 'facebook', href: SOCIAL_LINKS.facebook, label: 'Facebook' },
+                      { name: 'instagram', href: SOCIAL_LINKS.instagram, label: 'Instagram' },
+                      { name: 'twitter', href: SOCIAL_LINKS.twitter, label: 'Twitter / X' },
+                      { name: 'youtube', href: SOCIAL_LINKS.youtube, label: 'YouTube' },
+                      { name: 'tiktok', href: SOCIAL_LINKS.tiktok, label: 'TikTok' },
+                      { name: 'github', href: SOCIAL_LINKS.github, label: 'GitHub' }
                     ].map((social, index) => (
                       <Link
                         key={index}
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-navy-dark/50 border border-gold/20 rounded-lg flex items-center justify-center text-gray-300 hover:text-gold hover:bg-navy-dark hover:border-gold/50 transform hover:scale-110 transition-all duration-300"
-                        aria-label={social.name}
+                        className="w-9 h-9 rounded-lg bg-white/5 border border-white/10
+                                   flex items-center justify-center
+                                   text-[#95A9CC] hover:text-[#C79639]
+                                   hover:border-[#C79639] hover:bg-[#C79639]/10
+                                   transition-all duration-200"
+                        aria-label={`MylesCorp on ${social.label}`}
                       >
-                        <Icon name={social.name} size={18} />
+                        <Icon name={social.name} size={16} />
                       </Link>
                     ))}
                   </div>
@@ -223,23 +230,6 @@ export function Footer() {
                     Compliance
                   </Link>
                 </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="up" delay={0.6}>
-              <div className="flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8 text-sm">
-                <Link href="/legal/privacy" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
-                  Privacy Policy
-                </Link>
-                <Link href="/legal/terms" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
-                  Terms of Service
-                </Link>
-                <Link href="/legal/cookies" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
-                  Cookie Policy
-                </Link>
-                <Link href="/legal/compliance" className="text-gray-300 hover:text-gold transition-colors duration-300 font-body">
-                  Compliance
-                </Link>
               </div>
             </ScrollReveal>
 
