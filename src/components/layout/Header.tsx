@@ -46,6 +46,7 @@ export function Header() {
   }, [])
 
   const navigation = [
+    { name: 'Mega Menu', href: '#' },
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
     { name: 'Services', href: '/services' },
@@ -95,14 +96,14 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
+            <MegaMenu />
             <Link href="/" transitionTypes={['fade']} className="flex items-center group">
               <span className="ml-3 flex flex-col">
                 <span className="text-[14px] font-body font-bold text-white group-hover:text-gold transition-colors duration-300">Home</span>
               </span>
             </Link>
-            <MegaMenu />
             {navigation
-              .filter((item) => item.name !== 'Home' && item.name !== 'Mega Menu' && item.name !== 'Coverage')
+              .filter((item) => item.name !== 'Mega Menu' && item.name !== 'Home' && item.name !== 'Coverage')
               .map((item) => (
                 <button
                   key={item.name}
@@ -153,8 +154,23 @@ export function Header() {
             </button>
             
             <div className="flex flex-col space-y-6 text-center max-w-md w-full">
+              {/* Mega Menu */}
+              <div className="px-6 py-4">
+                <MegaMenu />
+              </div>
+              
+              {/* Home */}
+              <Link
+                href="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-6 py-4 text-xl font-body font-bold text-white hover:text-gold transition-colors duration-200 text-center border-l-2 border-transparent hover:border-gold rounded-lg"
+              >
+                Home
+              </Link>
+              
+              {/* Other Navigation Items */}
               {navigation
-                .filter((item) => item.name !== 'Home' && item.name !== 'Mega Menu' && item.name !== 'Coverage')
+                .filter((item) => item.name !== 'Mega Menu' && item.name !== 'Home' && item.name !== 'Coverage')
                 .map((item) => (
                   <Link
                     key={item.name}
