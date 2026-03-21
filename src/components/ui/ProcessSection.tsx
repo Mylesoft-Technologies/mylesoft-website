@@ -62,7 +62,7 @@ export function ProcessSection({ title, description, steps, centerHeader = false
         </div>
 
         {/* Process Steps */}
-        <div className="grid grid-cols-5 gap-0 relative">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-0 relative">
           {/* Connecting Line */}
           <div 
             className="absolute top-7 left-[10%] right-[10%] h-0.5"
