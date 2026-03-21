@@ -282,8 +282,13 @@ export default function HomePage() {
               <Link href="/book-demo" transitionTypes={['slide']}>
                 <Button size="lg">Book a Free Demo</Button>
               </Link>
-              <Link href="/contact" transitionTypes={['slide']}>
+              <Link href="/brochure" transitionTypes={['slide']}>
                 <Button variant="outline" size="lg">
+                  📖 View our digital brochure
+                </Button>
+              </Link>
+              <Link href="/contact" transitionTypes={['slide']}>
+                <Button variant="secondary" size="lg">
                   Talk to Our Team
                 </Button>
               </Link>
