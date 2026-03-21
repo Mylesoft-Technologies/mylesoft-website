@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Plus_Jakarta_Sans, DM_Mono } 
   from 'next/font/google'
-import Layout from '@/components/layout/Layout'
+import { Layout } from '@/components/layout/Layout'
 import { AnalyticsProvider } from '@/components/analytics/Analytics'
 import { CookieConsent } from '@/components/ui/CookieConsent'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
