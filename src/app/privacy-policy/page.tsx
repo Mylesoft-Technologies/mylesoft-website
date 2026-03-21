@@ -43,6 +43,7 @@ export default function PrivacyPolicy() {
 
   return (
     <>
+      <div className="min-h-screen bg-[#080e18]">
       {/* Scroll Progress Bar */}
       <div 
         className="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-[#C79639] to-[#e0b055] z-50 transition-all duration-150"
@@ -359,6 +360,7 @@ export default function PrivacyPolicy() {
       <div className="border-t border-[rgba(199,150,57,0.1)] px-10 py-5 flex justify-between items-center flex-wrap gap-3 max-w-[1100px] mx-auto">
         <div className="text-[11.5px] text-[#95A9CC]">© 2026 MylesCorp Technologies Ltd. All rights reserved.</div>
         <div className="font-['Playfair_Display'] text-[12px] italic text-[#C79639]">Transforming Industries, Empowering Generations.</div>
+      </div>
       </div>
     </>
   )

@@ -66,8 +66,8 @@ export default function HomePage() {
           
           <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32 max-w-4xl mx-auto">
             {/* Company Name */}
-            <div className="mb-8">
-              <h2 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] break-words text-balance">
+            <div className="mb-12">
+              <h2 className="font-display font-bold text-gold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] break-words text-balance">
                 MylesCorp Technologies
               </h2>
             </div>
