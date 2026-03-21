@@ -1,8 +1,15 @@
 import { Layout } from '@/components/layout/Layout'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
-import { Check, X, CheckCircle, Star, Shield, Zap, Users } from 'lucide-react'
+import { FeaturesSection } from '@/components/ui/FeaturesSection'
+import { PricingSection } from '@/components/ui/PricingSection'
+import { TestimonialsSection } from '@/components/ui/TestimonialsSection'
+import { CTASection } from '@/components/ui/CTASection'
+import { OverviewSection } from '@/components/ui/OverviewSection'
+import { ProcessSection } from '@/components/ui/ProcessSection'
+import { TargetsSection } from '@/components/ui/TargetsSection'
 import Link from 'next/link'
+import { Check, X, CheckCircle, Star, Shield, Zap, Users, Crown, TrendingUp, Award } from 'lucide-react'
 
 export const metadata = {
   title: 'Pricing — Affordable Plans for All MylesCorp Products & Services',
@@ -10,6 +17,89 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.mylescorp.co.ke/pricing',
   },
+}
+
+const PRICING_DATA = {
+  overview: {
+    title: 'Pricing',
+    tagline: 'Simple, Transparent Pricing for African Businesses',
+    description: [
+      'Affordable plans designed for organizations of all sizes across Africa.',
+      'No hidden fees, no surprises. Start free and scale as you grow with confidence.'
+    ],
+    image: '/api/og/product?name=Pricing&category=Plans',
+    stats: [
+      { number: '1,000+', label: 'Happy Customers' },
+      { number: '14', label: 'Day Free Trial' },
+      { number: '20%', label: 'Annual Discount' },
+      { number: '24/7', label: 'Support Available' }
+    ]
+  },
+  features: [
+    {
+      icon: '👑',
+      title: 'No Hidden Fees',
+      description: 'Transparent pricing with no surprise charges or hidden costs. What you see is what you pay.'
+    },
+    {
+      icon: '📈',
+      title: 'Flexible Scaling',
+      description: 'Easily upgrade or downgrade your plan as your business grows or requirements change.'
+    },
+    {
+      icon: '🏆',
+      title: 'Premium Support',
+      description: '24/7 customer support with dedicated account managers for enterprise plans.'
+    },
+    {
+      icon: '🛡️',
+      title: 'Security First',
+      description: 'Enterprise-grade security with data encryption and compliance across all plans.'
+    },
+    {
+      icon: '⚡',
+      title: 'Quick Setup',
+      description: 'Get started in minutes with our streamlined onboarding process and guided setup.'
+    },
+    {
+      icon: '👥',
+      title: 'Team Collaboration',
+      description: 'Collaborate seamlessly with your team with role-based access and shared workspaces.'
+    }
+  ],
+  process: [
+    { step: 1, title: 'Choose Your Plan', description: 'Select the perfect plan based on your organization size and needs' },
+    { step: 2, title: 'Start Free Trial', description: 'Begin your 14-day free trial with full access to all features' },
+    { step: 3, title: 'Onboarding & Setup', description: 'Our team helps you get started with personalized onboarding' },
+    { step: 4, title: 'Go Live', description: 'Launch your solution with confidence and start seeing results immediately' },
+    { step: 5, title: 'Scale & Grow', description: 'Upgrade your plan as your business grows and needs evolve' }
+  ],
+  targets: [
+    'Startups - Small businesses and startups looking for affordable solutions',
+    'SMEs - Small and medium enterprises needing scalable business tools',
+    'Enterprise - Large organizations requiring comprehensive solutions',
+    'Non-Profits - Organizations with special pricing and dedicated support'
+  ],
+  testimonials: [
+    {
+      quote: 'The pricing is incredibly transparent and affordable. We started with the Professional plan and scaled as we grew.',
+      author: 'Sarah Johnson',
+      role: 'CEO',
+      organization: 'TechStart Kenya'
+    },
+    {
+      quote: 'The 14-day free trial let us test everything before committing. The value we got was exceptional.',
+      author: 'Michael Chen',
+      role: 'Operations Director',
+      organization: 'East Africa Manufacturing'
+    },
+    {
+      quote: 'Best pricing structure we have seen. No hidden fees, excellent support, and great features.',
+      author: 'Grace Wanjiku',
+      role: 'Managing Partner',
+      organization: 'LegalEdge Associates'
+    }
+  ]
 }
 
 const pricingPlans = [
@@ -446,39 +536,14 @@ export default function PricingPage() {
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
-          {/* Grid texture overlay — always present on dark sections */}
           <div className="absolute inset-0 pointer-events-none"
             style={{
               backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
               backgroundSize: '64px 64px',
             }}
           />
-
-          {/* Radial glow top-right */}
-          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
-            }}
-          />
-
-          {/* Radial glow bottom-left */}
-          <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
-            }}
-          />
-
-          {/* Gold top accent line */}
-          <div className="absolute top-0 left-0 right-0 h-[3px]"
-            style={{
-              background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
-            }}
-          />
-
-          {/* Content */}
-          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-
-            {/* Eyebrow label */}
+          
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-5">
               <div className="w-8 h-0.5 bg-gold" />
               <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
@@ -486,53 +551,78 @@ export default function PricingPage() {
               </span>
               <div className="w-8 h-0.5 bg-gold" />
             </div>
-
-            {/* Main heading */}
+            
             <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
               Simple, Honest
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
                 Pricing
               </span>
             </h1>
-
-            {/* Subtitle */}
-            <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-6">
-              Affordable plans designed for African organisations. No hidden fees. No surprises. 
-              Start free and scale as you grow.
+            
+            <p className="font-body font-light text-light-blue text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-[1.7]">
+              {PRICING_DATA.overview.description[0]}
             </p>
-
-            {/* Trust badges */}
-            <div className="flex flex-wrap justify-center gap-6 mt-6 mb-8">
-              <span className="flex items-center gap-2 text-light-blue text-sm font-body">
-                <span className="text-gold">✓</span>
-                No Hidden Fees
-              </span>
-              <span className="flex items-center gap-2 text-light-blue text-sm font-body">
-                <span className="text-gold">✓</span>
-                14-Day Free Trial
-              </span>
-              <span className="flex items-center gap-2 text-light-blue text-sm font-body">
-                <span className="text-gold">✓</span>
-                20% Annual Discount
-              </span>
-            </div>
-
-            {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Link href="/book-demo">
-                <button className="bg-gold text-navy font-body font-bold text-[15px] tracking-[0.4px] px-9 py-4 rounded-md hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(199,150,57,0.3)] active:scale-[0.98] transition-all duration-200">
+                <Button 
+                  size="lg" 
+                  variant="primary"
+                  className="px-8 py-4 text-sm font-semibold shadow-lg hover:shadow-xl"
+                >
                   Start Free Trial
-                </button>
+                </Button>
               </Link>
               <Link href="/contact">
-                <button className="bg-transparent text-white font-body font-semibold text-[15px] px-9 py-4 rounded-md border border-white/20 hover:border-gold hover:text-gold transition-all duration-200">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="px-8 py-4 text-sm font-semibold border-gold/50 text-gold hover:border-gold hover:bg-gold hover:text-navy"
+                >
                   Contact Sales
-                </button>
+                </Button>
               </Link>
             </div>
-
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+              {PRICING_DATA.overview.stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-gold mb-2">{stat.number}</div>
+                  <div className="text-sm text-light-blue font-body">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
+
+        {/* Overview */}
+        <OverviewSection 
+          title={PRICING_DATA.overview.title}
+          description={PRICING_DATA.overview.description}
+          stats={PRICING_DATA.overview.stats}
+        />
+
+        {/* Features */}
+        <FeaturesSection 
+          title="Why Choose Our Pricing?"
+          description="Transparent, flexible, and designed for African businesses of all sizes."
+          features={PRICING_DATA.features}
+          centerHeader={true}
+        />
+
+        {/* Process */}
+        <ProcessSection 
+          title="Get Started in 5 Simple Steps"
+          description="From choosing your plan to scaling your business — we make it easy."
+          steps={PRICING_DATA.process}
+          centerHeader={true}
+        />
+
+        {/* Targets */}
+        <TargetsSection 
+          title="Perfect for Every Organization"
+          targets={PRICING_DATA.targets}
+        />
 
         {/* Main Pricing Plans */}
         <section className="section">
@@ -699,25 +789,21 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="section bg-navy-500">
-          <div className="section-padding">
-            <div className="text-center text-white">
-              <h2 className="heading-2 mb-4">Need a Custom Solution?</h2>
-              <p className="text-xl text-navy-100 mb-8">
-                We offer custom pricing for large organizations and specialized requirements. Let's discuss your specific needs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
-                  <Button>Contact Sales Team</Button>
-                </Link>
-                <Link href="/book-demo">
-                  <Button variant="secondary">Schedule Demo</Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Testimonials */}
+        <TestimonialsSection 
+          title="What Our Customers Say"
+          testimonials={PRICING_DATA.testimonials}
+          centerHeader={true}
+        />
+
+        {/* Final CTA */}
+        <CTASection 
+          title="Ready to Get Started?"
+          tagline="Transforming Industries, Empowering Generations."
+          description={`Join ${PRICING_DATA.overview.stats[0].number} happy customers across Africa already thriving with MylesCorp solutions.`}
+          primaryCta={{ text: "Start Free Trial", href: "/book-demo" }}
+          secondaryCta={{ text: "Contact Sales Team", href: "/contact" }}
+        />
       </div>
     </Layout>
   )
