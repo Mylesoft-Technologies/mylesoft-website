@@ -1,10 +1,15 @@
 import { Layout } from '@/components/layout/Layout'
-import { ScrollReveal, StaggerReveal } from '@/components/ui/ScrollReveal'
-import { Card, CardIcon, CardHeader, CardContent } from '@/components/ui/Card'
-import { Users, Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { FeaturesSection } from '@/components/ui/FeaturesSection'
+import { TestimonialsSection } from '@/components/ui/TestimonialsSection'
+import { CTASection } from '@/components/ui/CTASection'
+import { OverviewSection } from '@/components/ui/OverviewSection'
+import { ProcessSection } from '@/components/ui/ProcessSection'
+import { TargetsSection } from '@/components/ui/TargetsSection'
+import { Users, Mail, Phone, MapPin, Linkedin, Twitter, Star, Award } from 'lucide-react'
 import { TEAM_MEMBERS } from '@/lib/constants/team'
 import Image from 'next/image'
+import Link from 'next/link'
 import { MYLESValues } from '@/components/sections/MYLESValues'
 
 export const metadata = {
@@ -15,42 +20,110 @@ export const metadata = {
   },
 }
 
+const TEAM_DATA = {
+  overview: {
+    title: 'Our Team',
+    tagline: 'Meet Our Amazing Team',
+    description: [
+      'We\'re a diverse group of passionate individuals united by our mission.',
+      'Transforming African businesses through innovative technology solutions.'
+    ],
+    image: '/api/og/product?name=Team&category=Leadership',
+    stats: [
+      { number: '50+', label: 'Team Members' },
+      { number: '6', label: 'Departments' },
+      { number: '15+', label: 'Years Experience' },
+      { number: '4', label: 'East Africa Offices' }
+    ]
+  },
+  features: [
+    {
+      icon: '👥',
+      title: 'Diverse Expertise',
+      description: 'Our team brings together experts from engineering, design, business, and domain-specific backgrounds.'
+    },
+    {
+      icon: '🎯',
+      title: 'Mission-Driven',
+      description: 'Every team member is passionate about making a real difference in African communities.'
+    },
+    {
+      icon: '🌍',
+      title: 'Local Understanding',
+      description: 'We understand African markets because we\'re part of them, bringing authentic local perspectives.'
+    },
+    {
+      icon: '🚀',
+      title: 'Innovation Focus',
+      description: 'Our team constantly pushes boundaries to create solutions that address real challenges.'
+    },
+    {
+      icon: '🏆',
+      title: 'Proven Track Record',
+      description: 'Our leadership team has successfully delivered transformative projects across multiple sectors.'
+    },
+    {
+      icon: '💡',
+      title: 'Continuous Learning',
+      description: 'We invest in our team\'s growth and development to stay at the forefront of technology.'
+    }
+  ],
+  process: [
+    { step: 1, title: 'Recruitment', description: 'We attract top talent who share our passion for African transformation' },
+    { step: 2, title: 'Onboarding', description: 'Comprehensive integration into our culture and processes' },
+    { step: 3, title: 'Development', description: 'Continuous learning and skill enhancement programs' },
+    { step: 4, title: 'Collaboration', description: 'Cross-functional teamwork to drive innovation' },
+    { step: 5, title: 'Growth', description: 'Career advancement and leadership development opportunities' }
+  ],
+  targets: [
+    'Engineering Talent - Frontend, Backend, AI/ML, and DevOps professionals',
+    'Product Experts - Strategic thinkers who understand African markets',
+    'Business Leaders - Sales, marketing, and operations professionals',
+    'Domain Specialists - Education, healthcare, and agriculture experts'
+  ],
+  testimonials: [
+    {
+      quote: 'Working at MylesCorp has been the most rewarding experience of my career. We\'re truly making a difference.',
+      author: 'Sarah Johnson',
+      role: 'Lead Engineer',
+      organization: 'Engineering Team'
+    },
+    {
+      quote: 'The collaborative culture and shared vision make this an amazing place to grow professionally.',
+      author: 'Michael Chen',
+      role: 'Product Manager',
+      organization: 'Product Team'
+    },
+    {
+      quote: 'I\'ve never worked with a more dedicated team. Everyone is committed to our mission.',
+      author: 'Grace Wanjiku',
+      role: 'Sales Director',
+      organization: 'Business Development'
+    }
+  ]
+}
+
 export default function TeamPage() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
-        {/* Grid texture overlay — always present on dark sections */}
-        <div className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
-            backgroundSize: '64px 64px',
-          }}
-        />
+        <section className="relative py-24 md:py-32 overflow-hidden bg-navy-deep">
+          {/* Grid texture overlay */}
+          <div className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `linear-gradient(rgba(199,150,57,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(199,150,57,0.04) 1px, transparent 1px)`,
+              backgroundSize: '64px 64px',
+            }}
+          />
 
-        {/* Radial glow top-right */}
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(26,57,91,0.6) 0%, transparent 70%)',
-          }}
-        />
-
-        {/* Radial glow bottom-left */}
-        <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(199,150,57,0.06) 0%, transparent 70%)',
-          }}
-        />
-
-        {/* Gold top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-[3px]"
-          style={{
-            background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
-          }}
-        />
-        
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <ScrollReveal direction="up" delay={0.2}>
+          {/* Gold top accent line */}
+          <div className="absolute top-0 left-0 right-0 h-[3px]"
+            style={{
+              background: 'linear-gradient(90deg, transparent, #C79639, transparent)',
+            }}
+          />
+          
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
             {/* Eyebrow Label */}
             <div className="flex items-center justify-center gap-3 mb-5">
               <div className="w-8 h-0.5 bg-gold" />
@@ -59,239 +132,77 @@ export default function TeamPage() {
               </span>
               <div className="w-8 h-0.5 bg-gold" />
             </div>
-          </ScrollReveal>
-          
-          <ScrollReveal direction="up" delay={0.4}>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-[1.05] mb-6">
+            
+            <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
               Meet Our
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light">
                 Amazing Team
               </span>
             </h1>
-          </ScrollReveal>
-          
-          <ScrollReveal direction="up" delay={0.6}>
+            
             <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-              We&apos;re a diverse group of passionate individuals united by our mission to transform 
-              African businesses through innovative technology solutions.
+              {TEAM_DATA.overview.description[0]}
             </p>
-          </ScrollReveal>
-        </div>
-      </section>
+            
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+              {TEAM_DATA.overview.stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-gold mb-2">{stat.number}</div>
+                  <div className="text-sm text-light-blue font-body">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
       {/* Values Section */}
       <MYLESValues />
 
-      {/* Team Members Section */}
-      <section className="py-20 bg-gradient-to-r from-gray-50 to-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal direction="up" delay={0.2}>
-            <div className="text-center mb-16">
-              {/* Eyebrow Label */}
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-8 h-0.5 bg-gold" />
-                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
-                  LEADERSHIP
-                </span>
-                <div className="w-8 h-0.5 bg-gold" />
-              </div>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-navy mb-4">
-                Leadership Team
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto font-body">
-                The brilliant minds behind MylesCorp's success
-              </p>
-            </div>
-          </ScrollReveal>
-          
-          <StaggerReveal
-            staggerDelay={0.1}
-            itemDelay={0.2}
-            direction="up"
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
-          >
-            {TEAM_MEMBERS.map((member, index) => (
-                <Card variant="light" key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col border border-gray-100">
-                  {/* LARGE PHOTO AREA — top of card */}
-                  <div className="relative w-full h-64 overflow-hidden bg-gradient-to-br from-navy to-navy-dark flex-shrink-0">
-                    {member.image ? (
-                      <Image
-                        src={member.image}
-                        alt={`${member.name} — ${member.role}`}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                        priority={false}
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <Users className="w-20 h-20 text-gold/40" />
-                      </div>
-                    )}
+      {/* Overview */}
+      <OverviewSection 
+        title={TEAM_DATA.overview.title}
+        description={TEAM_DATA.overview.description}
+        stats={TEAM_DATA.overview.stats}
+      />
 
-                    {/* Gold gradient overlay at bottom of photo */}
-                    <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-navy/80 to-transparent" />
+      {/* Features */}
+      <FeaturesSection 
+        title="Why Join Our Team"
+        description="We bring together diverse talent united by our mission to transform Africa through technology."
+        features={TEAM_DATA.features}
+        centerHeader={true}
+      />
 
-                    {/* Role badge overlaid on photo bottom */}
-                    <div className="absolute bottom-3 left-4">
-                      <span className="text-gold font-body font-semibold text-xs uppercase tracking-wider bg-navy/60 px-2 py-1 rounded-md backdrop-blur-sm">
-                        {member.role}
-                      </span>
-                    </div>
-                  </div>
+      {/* Process */}
+      <ProcessSection 
+        title="Our Team Development"
+        description="From recruitment to growth — we invest in our people to build a world-class team."
+        steps={TEAM_DATA.process}
+        centerHeader={true}
+      />
 
-                  {/* CARD CONTENT — below photo */}
-                  <div className="p-6 flex-grow flex flex-col">
-                    
-                    {/* Name */}
-                    <h3 className="text-lg font-display font-bold text-navy mb-1 group-hover:text-gold transition-colors duration-300">
-                      {member.name}
-                    </h3>
+      {/* Targets */}
+      <TargetsSection 
+        title="Who We're Looking For"
+        targets={TEAM_DATA.targets}
+      />
 
-                    {/* Email */}
-                    {member.email && (
-                      <p className="text-muted-blue text-xs font-body mb-3">
-                        {member.email}
-                      </p>
-                    )}
+      {/* Testimonials */}
+      <TestimonialsSection 
+        title="Life at MylesCorp"
+        testimonials={TEAM_DATA.testimonials}
+        centerHeader={true}
+      />
 
-                    {/* Bio */}
-                    <p className="text-gray-600 leading-relaxed font-body text-sm mb-5 flex-grow">
-                      {member.bio}
-                    </p>
-
-                    {/* Social links */}
-                    <div className="flex items-center gap-2 mt-auto">
-                      {member.email && (
-                        <a
-                          href={`mailto:${member.email}`}
-                          className="w-9 h-9 bg-navy/8 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
-                          title={`Email ${member.name}`}
-                        >
-                          <Mail className="w-4 h-4" />
-                        </a>
-                      )}
-                      <a
-                        href={member.social.linkedin}
-                        className="w-9 h-9 bg-navy/8 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Linkedin className="w-4 h-4" />
-                      </a>
-                      <a
-                        href={member.social.twitter}
-                        className="w-9 h-9 bg-navy/8 rounded-full flex items-center justify-center text-navy hover:bg-gold hover:text-white transition-all duration-300"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Twitter className="w-4 h-4" />
-                      </a>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </StaggerReveal>
-        </div>
-      </section>
-
-      {/* Join Us Section */}
-      <section className="py-20 bg-navy">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <ScrollReveal direction="scale" delay={0.2}>
-            {/* Eyebrow Label */}
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-0.5 bg-gold" />
-              <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
-                JOIN US
-              </span>
-              <div className="w-8 h-0.5 bg-gold" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-              Want to Join Our Team?
-            </h2>
-            <p className="text-xl text-light-blue mb-8 font-body">
-              We&apos;re always looking for talented individuals who share our passion for innovation and excellence.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg">
-                View Open Positions
-              </Button>
-              <Button variant="outline" size="lg">
-                Send Your Resume
-              </Button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal direction="up" delay={0.2}>
-            <div className="text-center mb-16">
-              {/* Eyebrow Label */}
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-8 h-0.5 bg-gold" />
-                <span className="text-gold text-[11px] font-bold tracking-[2.5px] uppercase font-body">
-                  GET IN TOUCH
-                </span>
-                <div className="w-8 h-0.5 bg-gold" />
-              </div>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-navy mb-4">
-                Get in Touch
-              </h2>
-              <p className="text-xl text-gray-600 font-body">
-                Have questions about our team or want to collaborate?
-              </p>
-            </div>
-          </ScrollReveal>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <ScrollReveal direction="up" delay={0.3}>
-              <Card variant="light" className="text-center h-full flex flex-col">
-                <CardIcon size="md">
-                  <Mail className="text-gold" />
-                </CardIcon>
-                <CardHeader>
-                  <h3 className="text-xl font-display font-bold text-navy mb-2">Email</h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 font-body">team@mylescorp.co.ke</p>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-            
-            <ScrollReveal direction="up" delay={0.4}>
-              <Card variant="light" className="text-center h-full flex flex-col">
-                <CardIcon size="md">
-                  <Phone className="text-gold" />
-                </CardIcon>
-                <CardHeader>
-                  <h3 className="text-xl font-display font-bold text-navy mb-2">Phone</h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 font-body">+254 743 993 715</p>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-            
-            <ScrollReveal direction="up" delay={0.5}>
-              <Card variant="light" className="text-center h-full flex flex-col">
-                <CardIcon size="md">
-                  <MapPin className="text-gold" />
-                </CardIcon>
-                <CardHeader>
-                  <h3 className="text-xl font-display font-bold text-navy mb-2">Office</h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 font-body">Nairobi, Kenya</p>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+      {/* Final CTA */}
+      <CTASection 
+        title="Join Our Amazing Team"
+        tagline="Transforming Industries, Empowering Generations."
+        description="Ready to make a difference? Join our team and help us transform Africa through innovative technology."
+        primaryCta={{ text: "View Open Positions", href: "/careers" }}
+        secondaryCta={{ text: "Contact Us", href: "/contact" }}
+      />
     </Layout>
   )
 }
