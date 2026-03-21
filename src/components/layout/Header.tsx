@@ -8,11 +8,13 @@ import { MegaMenu } from '@/components/layout/MegaMenu'
 import { Logo } from '@/components/ui/Logo'
 import Link from 'next/link'
 import { useSmoothScroll } from '@/components/ui/ScrollReveal'
+import { usePathname } from 'next/navigation'
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { scrollToElement } = useSmoothScroll()
+  const pathname = usePathname()
   
   // Scroll progress bar
   const { scrollYProgress } = useScroll()
@@ -21,6 +23,19 @@ export function Header() {
     damping: 30,
     restDelta: 0.001
   })
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false)
+  }, [pathname])
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset'
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMobileMenuOpen])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -128,27 +143,35 @@ export function Header() {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-navy-deep/98 backdrop-blur-md border-t border-gold/20">
-          <div className="px-4 py-6 space-y-4">
-            <div className="flex flex-col space-y-4">
+        <div className="fixed inset-0 z-50 bg-navy-deep flex items-center justify-center">
+          <div className="relative w-full h-full flex flex-col items-center justify-center gap-8 p-8">
+            <button
+              className="absolute top-4 right-4 p-2 rounded-lg text-light-blue hover:text-gold hover:bg-navy-dark/50 transition-colors duration-200"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <X size={24} />
+            </button>
+            
+            <div className="flex flex-col space-y-6 text-center max-w-md w-full">
               {navigation
                 .filter((item) => item.name !== 'Home' && item.name !== 'Mega Menu' && item.name !== 'Coverage')
                 .map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  className="block px-4 py-[11px] text-lg font-body font-medium text-light-blue hover:text-gold hover:bg-navy-dark/50 rounded-lg transition-colors duration-200 text-left border-l-2 border-transparent hover:border-gold"
-                >
-                  {item.name}
-                </button>
-              ))}
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block px-6 py-4 text-xl font-body font-medium text-light-blue hover:text-gold transition-colors duration-200 text-center border-l-2 border-transparent hover:border-gold rounded-lg"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
             </div>
 
-            <div className="mt-8 pt-6 border-t border-gold/20">
-              <Link href="/book-demo" transitionTypes={['slide']} onClick={() => setIsMobileMenuOpen(false)}>
+            <div className="mt-8">
+              <Link href="/book-demo" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button 
                   variant="primary"
-                  className="w-full shadow-lg hover:shadow-xl bg-gold text-navy hover:bg-gold-light font-body font-bold"
+                  className="w-full shadow-lg hover:shadow-xl bg-gold text-navy hover:bg-gold-light font-body font-bold px-8 py-4 text-lg"
                 >
                   Book a Demo
                 </Button>

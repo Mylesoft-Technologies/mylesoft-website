@@ -42,7 +42,7 @@ export default function HomePage() {
           
           {/* Radial glow top-right */}
           <div
-            className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+            className="hidden sm:block absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
             style={{
               background: 'radial-gradient(circle, rgba(26,57,91,0.3) 0%, transparent 70%)',
             }}
@@ -50,7 +50,7 @@ export default function HomePage() {
           
           {/* Radial glow bottom-left */}
           <div
-            className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
+            className="hidden sm:block absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none"
             style={{
               background: 'radial-gradient(circle, rgba(199,150,57,0.03) 0%, transparent 70%)',
             }}
@@ -64,7 +64,7 @@ export default function HomePage() {
             }}
           />
           
-          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32 max-w-4xl mx-auto">
             {/* Eyebrow Label */}
             <div className="flex items-center justify-center gap-3 mb-5">
               <div className="w-8 h-0.5 bg-gold" />
@@ -74,34 +74,34 @@ export default function HomePage() {
               <div className="w-8 h-0.5 bg-gold" />
             </div>
             
-            <h1 className="font-display font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
+            <h1 className="font-display font-bold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] mb-6 break-words text-balance">
               Transforming
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light italic">
                 Industries
               </span>
             </h1>
             
-            <p className="font-body font-light text-light-blue text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+            <p className="font-body font-light text-light-blue text-base sm:text-lg md:text-xl max-w-xs sm:max-w-md md:max-w-2xl mx-auto mb-10">
               East Africa&apos;s leading AI-powered software company delivering 
               innovative solutions that transform businesses and 
               empower communities across the continent.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link href="/book-demo" transitionTypes={['slide']}>
                 <Button 
                   size="lg" 
                   variant="primary"
-                  className="shadow-lg hover:shadow-xl px-8 py-4 text-lg font-semibold"
+                  className="w-full sm:w-auto shadow-lg hover:shadow-xl px-6 py-3 text-sm font-semibold"
                 >
                   Book a Free Demo
                 </Button>
               </Link>
               <Link href="/contact" transitionTypes={['slide']}>
                 <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-2 border-white/20 text-white hover:border-gold hover:text-gold px-8 py-4 text-lg font-semibold"
+                  size="lg" 
+                  variant="secondary"
+                  className="w-full sm:w-auto border-2 border-gold/50 text-gold hover:border-gold hover:bg-gold/10 px-6 py-3 text-sm font-semibold"
                 >
                   Talk to Our Team
                 </Button>

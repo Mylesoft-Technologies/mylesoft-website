@@ -112,7 +112,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${jakarta.variable} ${dmMono.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${jakarta.variable} ${dmMono.variable} overflow-x-hidden`}>
       <head>
         {/* Resource Hints */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

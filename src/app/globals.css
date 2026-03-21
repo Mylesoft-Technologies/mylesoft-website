@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global Mobile Responsiveness Fixes */
+html { 
+  scroll-behavior: smooth; 
+  overflow-x: hidden;
+}
+* { 
+  box-sizing: border-box; 
+}
+img, video { 
+  max-width: 100%; 
+  height: auto; 
+}
+body { 
+  overflow-x: hidden; 
+}
+
 /* CSS Custom Properties - Exact Brand Tokens from HTML Design */
 :root {
   /* ── Primary Brand ── */

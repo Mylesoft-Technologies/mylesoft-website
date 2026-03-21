@@ -31,7 +31,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-16">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16">
             
             {/* Brand Column */}
             <ScrollReveal direction="up" delay={0.1} className="lg:col-span-2">
@@ -40,7 +40,7 @@ export function Footer() {
                   <Logo size="lg" fallbackColor="gold" />
                   <div>
                     <h3 className="text-[14px] font-body font-bold text-white">MylesCorp</h3>
-                    <p className="text-[10px] font-body text-gold uppercase tracking-[1.5px]">Technologies Ltd</p>
+                    <p className="text-[10px] font-body text-gold uppercase tracking-[1.5px]">Technologies</p>
                   </div>
                 </div>
                 
